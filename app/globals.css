@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(106, 225, 255, 0.14), transparent 30%),
+    radial-gradient(circle at top right, rgba(89, 40, 247, 0.12), transparent 24%),
+    #f7fafc;
+  color: #181c1e;
+}
+
+::selection {
+  background: #dae2ff;
+  color: #003d9b;
+}
+
+@layer base {
+  body {
+    @apply font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-headline;
+  }
+
+  input,
+  textarea {
+    @apply outline-none;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
