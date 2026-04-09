@@ -1,70 +1,81 @@
 import {
   ArrowRight,
   BarChart3,
-  Brush,
   CheckCircle2,
+  ChevronRight,
   Clock3,
   EyeOff,
   Frown,
   Mail,
   Phone,
   Rocket,
-  Search,
   Sparkles,
   TrendingDown,
-  TrendingUp,
 } from "lucide-react";
 import ComparisonSlider from "../components/comparison-slider";
+import StickyConsultationBar from "../components/sticky-consultation-bar";
+
+const siteUrl = "https://magisdata.nl";
 
 const navLinks = [
-  { label: "Solutions", href: "#solutions" },
-  { label: "Process", href: "#process" },
+  { label: "Oplossing", href: "#solutions" },
+  { label: "Resultaten", href: "#results" },
   { label: "Tarieven", href: "#tarieven" },
-  { label: "Blog", href: "#blog" },
+  { label: "FAQ", href: "#faq" },
+];
+
+const heroBenefits = [
+  "Meer vertrouwen bij bezoekers die je nog niet kennen",
+  "Meer aanvragen zonder dat jij harder hoeft te verkopen",
+  "Een website die duidelijk maakt waarom klanten voor jou kiezen",
 ];
 
 const caseStudies = [
   {
     title: "Luxe Kapper Amsterdam",
     description:
-      "Een exclusieve online ervaring die het premium gevoel van de salon vertaalt naar digitale conversies.",
+      "Van een sfeerloze site naar een premium presentatie die direct rust, kwaliteit en exclusiviteit uitstraalt voor nieuwe klanten.",
+    outcome:
+      "De website maakt de salon geloofwaardiger, verhoogt de waargenomen waarde en stuurt bezoekers sneller naar contact of afspraak.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDVutnSnI3gmnGLnLERqlW2M_kWjI3xfzTo72ysDgMI0fWeUcTiA2lJ65djrN0xCrjzDNqcZW_zvqjxwdhyWyZKQ1RqJ4K2Qr09lLqqUNBCCZWa-hfBCvlm50XJ_Mh3ZOjASBL24agXp7xZik4gW6_Hxba8iGYgSlFL7VDA5bk3Olh-CZD-xJWhDxnRVwbSFAowYc1xl31kmLz9avzs_gxkjIUCCvtZyPbgrj2kKv-SeWc1wa7WHSVR87OcrW94assyBjsJX-PpEWtt",
-    tags: ["UI/UX Design", "SEO", "Lead Gen"],
+    tags: ["Premium uitstraling", "Meer vertrouwen", "Meer boekingen"],
   },
   {
     title: "Meester Schilder Utrecht",
     description:
-      "Van lokale vakman naar marktleider in de regio door een krachtige online autoriteit en leadflow.",
+      "Van lokale vakman met losse online zichtbaarheid naar een sterke, betrouwbare uitstraling die direct professioneler voelt.",
+    outcome:
+      "De site helpt bezoekers sneller begrijpen wat het bedrijf levert, waarom het vakmanschap telt en hoe ze eenvoudig contact opnemen.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuB6_hql4lq6U8t8uhRkIJaOgAzWA9rMmJzhLj3wU48_RElp03VBnMFHAmNFoE_FlGUm_AKw4xgkUXLXmTlcY1LQ6CcW8V4oRdP4CSKCTz51T4Pg1s0CanwkFcY5K0ahsOxpMxzbSf-pOD6tmD_3XETkgktQ1mfCv0KodVMvE4gwOEcVZqa3QLGZPncGwAtgPR7VR3UxVFA3gwhhtdegJaGOGSAgbQaOQWx11KC7kh8iYRFdmlDFZJBZM8YEJISRVxFG-7lMvHPbt0aS",
-    tags: ["UI/UX Design", "SEO", "Lead Gen"],
+    tags: ["Sterkere positionering", "Betere leadflow", "Duidelijker verhaal"],
   },
 ];
 
 const painPoints = [
   {
-    title: "Onzichtbaar voor Google",
+    title: "Je site wekt niet genoeg vertrouwen",
     description:
-      "Zonder SEO-strategie besta je simpelweg niet voor je doelgroep. Je mist dagelijks klanten die actief naar jouw diensten zoeken.",
-    icon: EyeOff,
-  },
-  {
-    title: "Verlies van vertrouwen",
-    description:
-      "Een verouderde of ontbrekende site voelt onbetrouwbaar. Bezoekers haken razendsnel af en kiezen direct voor je concurrent.",
+      "Bezoekers beslissen in seconden of jij professioneel genoeg voelt. Een verouderde website maakt je aanbod direct minder geloofwaardig.",
     icon: Frown,
   },
   {
-    title: "24/7 verkoopkans gemist",
+    title: "Goede bezoekers haken af",
     description:
-      "Terwijl jij slaapt, gaat de zoektocht door. Zonder conversiegerichte site loop je constant omzet en aanvragen mis.",
+      "Als je verhaal niet duidelijk is of de volgende stap ontbreekt, verdwijnt ook een serieuze potentiële klant zonder contact op te nemen.",
+    icon: EyeOff,
+  },
+  {
+    title: "Je mist aanvragen buiten kantooruren",
+    description:
+      "Je website hoort 24/7 vragen op te vangen, vertrouwen op te bouwen en nieuwe klanten richting contact te begeleiden.",
     icon: Clock3,
   },
   {
-    title: "Achterblijven op concurrentie",
+    title: "Concurrenten ogen sterker dan jij",
     description:
-      "Concurrenten investeren wel in hun digitale aanwezigheid. Terwijl zij groeien en marktaandeel pakken, blijf jij onnodig stilstaan.",
+      "Zelfs als jouw dienst beter is, wint online vaak degene die het duidelijkst, rustigst en meest professioneel overkomt.",
     icon: TrendingDown,
   },
 ];
@@ -72,25 +83,25 @@ const painPoints = [
 const processSteps = [
   {
     number: "01",
-    title: "Strategie & Analyse",
+    title: "We brengen jouw klantreis scherp in kaart",
     description:
-      "We duiken diep in jouw markt, doelgroep en doelstellingen om de ideale koers te bepalen.",
+      "We kijken waar bezoekers twijfelen, wat ze eerst willen begrijpen en welke informatie nodig is om vertrouwen op te bouwen.",
     icon: BarChart3,
     accent: "bg-primary",
   },
   {
     number: "02",
-    title: "Premium Design",
+    title: "We vertalen dat naar een overtuigende website",
     description:
-      "Unieke visuele identiteiten die jouw merk versterken en een blijvende indruk achterlaten.",
+      "Geen losse pagina's, maar een duidelijke opbouw met sterke copy, slimme structuur en een uitstraling die past bij jouw prijs en kwaliteit.",
     icon: Sparkles,
     accent: "bg-tertiary-container",
   },
   {
     number: "03",
-    title: "Lanceer & Groei",
+    title: "We sturen bezoekers naar een logische volgende stap",
     description:
-      "Een vlekkeloze lancering gevolgd door continue optimalisatie voor maximale groei.",
+      "De site helpt niet alleen mooi presenteren, maar ook aanvragen uitlokken met duidelijke CTA's, minder frictie en meer rust in de keuze.",
     icon: Rocket,
     accent: "bg-secondary",
   },
@@ -100,76 +111,115 @@ const pricingPlans = [
   {
     name: "Starter",
     price: "30p/m",
-    description: "Voor ZZP'ers en kleine bedrijven.",
-    features: ["Basis SEO optimalisatie", "1 landingspagina", "Contactformulier"],
-    cta: "Kies Starter",
+    description: "Voor ondernemers die een professionele basis willen zonder gedoe.",
+    features: [
+      "Sterke homepage met duidelijke propositie",
+      "Contactmogelijkheid die wél uitnodigt tot actie",
+      "Basisstructuur voor vertrouwen en conversie",
+    ],
+    cta: "Bespreek Starter",
   },
   {
     name: "Professional",
     price: "50p/m",
-    description: "Volledige professionele oplossing.",
+    description: "Voor bedrijven die hun website actief willen laten bijdragen aan groei.",
     features: [
-      "Tot 5 pagina's",
-      "Geavanceerde SEO",
+      "Tot 5 strategische pagina's",
+      "Copy en structuur gericht op aanvragen",
       "Premium maatwerk design",
-      "Blog module integratie",
+      "Ruimte om later content en blog uit te bouwen",
     ],
-    cta: "Kies Professional",
+    cta: "Bespreek Professional",
     featured: true,
   },
   {
     name: "Enterprise",
     price: "99p/m",
-    description: "Voor complexe behoeften.",
+    description: "Voor teams die maatwerk, schaalbaarheid en volledige begeleiding willen.",
     features: [
-      "Maatwerk oplossingen",
-      "Volledige ontzorging",
-      "API koppelingen & Data",
+      "Complexere structuren en maatwerkoplossingen",
+      "Strategische begeleiding en doorontwikkeling",
+      "Integraties, data en extra groeikansen",
     ],
-    cta: "Neem contact op",
+    cta: "Plan een gesprek",
   },
 ];
 
-const blogPosts = [
+const faqItems = [
   {
-    category: "Web Design",
-    title: "De impact van minimalistisch design op conversie",
-    description:
-      "Ontdek hoe minder soms meer is wanneer het gaat om het converteren van websitebezoekers naar klanten.",
-    icon: Brush,
-    accent: "text-primary",
-    surface: "bg-primary/10",
+    question: "Voor wie is MagisData het meest geschikt?",
+    answer:
+      "Voor ondernemers en bedrijven die weten dat hun huidige website niet meer past bij de kwaliteit van hun dienst. Als je serieuzer wilt overkomen en meer aanvragen uit je site wilt halen, zit je goed.",
   },
   {
-    category: "SEO",
-    title: "Bovenaan in Google: SEO trends voor 2024",
-    description:
-      "Een diepe duik in de nieuwste algoritme updates en hoe je jouw ranking kunt verbeteren.",
-    icon: Search,
-    accent: "text-secondary",
-    surface: "bg-secondary/10",
+    question: "Moet ik zelf al teksten of een plan hebben?",
+    answer:
+      "Nee. We helpen juist om jouw aanbod scherper te verwoorden, de juiste volgorde op de pagina te kiezen en bezoekers logisch richting contact te sturen.",
   },
   {
-    category: "Conversie",
-    title: "Psychologie achter een effectieve CTA",
-    description:
-      "Waarom klikken mensen? We analyseren de visuele en tekstuele triggers van succesvolle knoppen.",
-    icon: TrendingUp,
-    accent: "text-tertiary",
-    surface: "bg-tertiary/10",
+    question: "Hoe snel kan zo'n traject live staan?",
+    answer:
+      "Dat hangt af van de omvang, maar het doel is altijd snelheid zonder dat het haastwerk voelt. We bouwen doelgericht, zodat je niet maanden hoeft te wachten op resultaat.",
+  },
+  {
+    question: "Kan mijn huidige website of content worden meegenomen?",
+    answer:
+      "Ja. We kunnen bestaande content verbeteren, herstructureren of alleen gebruiken wat nog sterk genoeg is. Je hoeft dus niet automatisch helemaal opnieuw te beginnen.",
+  },
+  {
+    question: "Wat is de volgende stap als ik interesse heb?",
+    answer:
+      "Dan plannen we een korte kennismaking of websitescan. Daarin kijken we waar je nu kansen laat liggen en wat de slimste aanpak is voor jouw situatie.",
   },
 ];
 
 const footerSections = [
   {
-    title: "Services",
-    links: ["Custom Web Apps", "Digital Strategy", "UI/UX Design"],
+    title: "Aanpak",
+    links: ["Strategie", "Design", "Conversie"],
   },
   {
-    title: "Company",
-    links: ["Our Team", "Privacy Policy", "Terms of Service"],
+    title: "Navigatie",
+    links: ["Oplossing", "Resultaten", "Tarieven"],
   },
 ];
+
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      name: "MagisData",
+      url: siteUrl,
+      email: "info@magisdata.nl",
+      telephone: "+31 20 123 4567",
+      areaServed: "Nederland",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Amsterdam",
+        addressCountry: "NL",
+      },
+      description:
+        "MagisData bouwt websites die vertrouwen winnen, je aanbod helder presenteren en bezoekers richting aanvraag sturen.",
+    },
+    {
+      "@type": "WebSite",
+      name: "MagisData",
+      url: siteUrl,
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
 
 function SectionHeading({ eyebrow, title, description, centered = false }) {
   return (
@@ -216,6 +266,13 @@ function SecondaryButton({ href, children }) {
 export default function HomePage() {
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageSchema),
+        }}
+        type="application/ld+json"
+      />
+
       <header className="fixed inset-x-0 top-0 z-50">
         <nav className="glass-panel mx-auto mt-4 flex h-20 w-[min(1120px,calc(100%-1.5rem))] items-center justify-between rounded-full border border-white/40 px-6 shadow-card">
           <a className="font-headline text-xl font-extrabold tracking-tight text-slate-900" href="#">
@@ -238,7 +295,7 @@ export default function HomePage() {
             className="inline-flex items-center justify-center rounded-full bg-primary-container px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
             href="#contact"
           >
-            Get Started
+            Plan een gratis scan
           </a>
         </nav>
       </header>
@@ -252,18 +309,27 @@ export default function HomePage() {
           <div className="container grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="relative z-10">
               <SectionHeading
-                eyebrow="Premium Web Development"
+                eyebrow="Websites voor ondernemers die serieuzer willen overkomen"
                 title={
                   <>
-                    Websites die <span className="text-primary">werken</span> en gevonden worden.
+                    Laat je website <span className="text-primary">vertrouwen winnen</span> en meer aanvragen opleveren.
                   </>
                 }
-                description="Wij bouwen high-end, conversiegerichte websites voor ambitieuze ondernemers die willen groeien met een onverslaanbare online aanwezigheid."
+                description="MagisData bouwt websites die jouw verhaal helder maken, je kwaliteit zichtbaar maken en bezoekers makkelijker richting contact of aanvraag bewegen."
               />
 
+              <ul className="mt-8 space-y-4">
+                {heroBenefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-3 text-on-surface">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-primary" />
+                    <span className="leading-relaxed text-on-surface-variant">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
               <div className="mt-10 flex flex-wrap gap-4">
-                <PrimaryButton href="#contact">Begin nu</PrimaryButton>
-                <SecondaryButton href="#solutions">Bekijk portfolio</SecondaryButton>
+                <PrimaryButton href="#contact">Vraag een gratis websitescan aan</PrimaryButton>
+                <SecondaryButton href="#results">Bekijk voorbeelden</SecondaryButton>
               </div>
             </div>
 
@@ -285,10 +351,10 @@ export default function HomePage() {
             <SectionHeading
               title={
                 <>
-                  Wat kost een <span className="text-primary">onprofessionele</span> website je echt?
+                  Wat een <span className="text-primary">zwakke website</span> je vandaag kost
                 </>
               }
-              description="Het niet hebben van een geoptimaliseerde website is geen besparing, het is een dagelijkse verliespost voor je onderneming."
+              description="Een website die onduidelijk voelt of weinig vertrouwen uitstraalt, kost niet alleen zichtbaarheid. Hij kost gesprekken, aanvragen en omzet."
             />
 
             <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
@@ -314,9 +380,9 @@ export default function HomePage() {
 
             <div className="mt-16 flex flex-col items-center justify-between gap-8 border-t border-outline-variant pt-16 md:flex-row">
               <p className="text-center text-xl font-medium text-on-surface-variant md:text-left">
-                Laat je business niet langer stagneren door een zwakke online basis.
+                Je website hoort twijfel weg te nemen, niet toe te voegen.
               </p>
-              <PrimaryButton href="#contact">Begin nu</PrimaryButton>
+              <PrimaryButton href="#contact">Laat ons meekijken</PrimaryButton>
             </div>
           </div>
         </section>
@@ -325,8 +391,8 @@ export default function HomePage() {
           <div className="container">
             <SectionHeading
               centered
-              title="Onze Oplossing"
-              description="Een bewezen aanpak waarin strategie, premium design en groei samenkomen in een website die verkoopt."
+              title="De oplossing: een website die jouw klant direct verder helpt"
+              description="We bouwen geen losse pagina's, maar een heldere route van eerste indruk naar vertrouwen, interesse en contact."
             />
 
             <div className="mt-20 grid gap-10 md:grid-cols-3">
@@ -351,20 +417,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-surface-container-low py-24" id="process">
+        <section className="bg-surface-container-low py-24" id="results">
           <div className="container">
             <div className="mb-16 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div>
-                <h2 className="text-4xl font-extrabold text-on-surface">Casestudy&apos;s</h2>
-                <p className="mt-4 text-on-surface-variant">
-                  Ontdek hoe wij onze klanten helpen hun digitale doelen te overtreffen.
+                <h2 className="text-4xl font-extrabold text-on-surface">Resultaten in de praktijk</h2>
+                <p className="mt-4 max-w-2xl text-on-surface-variant">
+                  Voorbeelden van hoe een sterkere positionering en betere presentatie direct meer vertrouwen en meer actie uitlokken.
                 </p>
               </div>
               <a
                 className="inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3"
                 href="#contact"
               >
-                Alle projecten <ArrowRight className="h-4 w-4" />
+                Bespreek jouw situatie <ArrowRight className="h-4 w-4" />
               </a>
             </div>
 
@@ -392,6 +458,10 @@ export default function HomePage() {
                   <p className="mt-3 max-w-xl leading-relaxed text-on-surface-variant">
                     {study.description}
                   </p>
+                  <p className="mt-3 flex items-start gap-2 text-sm leading-relaxed text-on-surface">
+                    <ChevronRight className="mt-0.5 h-4 w-4 flex-none text-primary" />
+                    <span>{study.outcome}</span>
+                  </p>
                 </article>
               ))}
             </div>
@@ -402,8 +472,8 @@ export default function HomePage() {
           <div className="container">
             <SectionHeading
               centered
-              title="Transparante Tarieven"
-              description="Kies het pakket dat bij jouw groeiambities past."
+              title="Heldere pakketten, zonder vaag gedoe"
+              description="Kies een niveau dat past bij je fase vandaag, met ruimte om later verder te groeien."
             />
 
             <div className="mt-16 grid items-stretch gap-8 md:grid-cols-3">
@@ -419,7 +489,7 @@ export default function HomePage() {
                 >
                   {plan.featured ? (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-white">
-                      Meest gekozen
+                      Beste balans
                     </div>
                   ) : null}
                   <h3 className="text-xl font-bold text-on-surface">{plan.name}</h3>
@@ -452,55 +522,26 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-surface py-24" id="blog">
+        <section className="bg-surface py-24" id="faq">
           <div className="container">
-            <div className="mb-16 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-              <div>
-                <h2 className="text-4xl font-extrabold text-on-surface">MagisData Insights</h2>
-                <p className="mt-4 text-on-surface-variant">
-                  Leer hoe je jouw online aanwezigheid kunt optimaliseren.
-                </p>
-              </div>
-              <a
-                className="inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3"
-                href="#contact"
-              >
-                Alle artikelen <ArrowRight className="h-4 w-4" />
-              </a>
-            </div>
+            <SectionHeading
+              centered
+              title="Veelgestelde vragen"
+              description="Vragen die we vaak horen voordat iemand besluit zijn website echt serieus aan te pakken."
+            />
 
-            <div className="grid gap-8 md:grid-cols-3">
-              {blogPosts.map((post) => {
-                const Icon = post.icon;
-
-                return (
-                  <article
-                    key={post.title}
-                    className="group overflow-hidden rounded-5xl border border-outline-variant bg-surface-container-lowest transition hover:-translate-y-1 hover:shadow-card"
-                  >
-                    <div className={`flex aspect-[16/9] items-center justify-center p-8 ${post.surface}`}>
-                      <Icon className={`h-16 w-16 transition group-hover:scale-110 ${post.accent}`} />
-                    </div>
-                    <div className="p-8">
-                      <div className={`text-xs font-bold uppercase tracking-[0.22em] ${post.accent}`}>
-                        {post.category}
-                      </div>
-                      <h3 className="mt-3 text-xl font-bold leading-tight text-on-surface transition group-hover:text-primary">
-                        {post.title}
-                      </h3>
-                      <p className="mt-4 text-sm leading-relaxed text-on-surface-variant">
-                        {post.description}
-                      </p>
-                      <a
-                        className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-on-surface"
-                        href="#contact"
-                      >
-                        Lees meer <ArrowRight className="h-4 w-4" />
-                      </a>
-                    </div>
-                  </article>
-                );
-              })}
+            <div className="mx-auto mt-16 grid max-w-4xl gap-5">
+              {faqItems.map((item) => (
+                <details
+                  key={item.question}
+                  className="rounded-4xl border border-outline-variant bg-surface-container-lowest p-7 shadow-sm transition open:shadow-card"
+                >
+                  <summary className="cursor-pointer list-none pr-6 text-lg font-bold text-on-surface marker:hidden">
+                    {item.question}
+                  </summary>
+                  <p className="mt-4 leading-relaxed text-on-surface-variant">{item.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
         </section>
@@ -509,10 +550,10 @@ export default function HomePage() {
           <div className="container grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
               <h2 className="text-balance text-5xl font-extrabold text-on-surface">
-                Klaar voor de start?
+                Vraag je gratis websitescan aan
               </h2>
               <p className="mt-8 max-w-lg text-lg leading-relaxed text-on-surface-variant">
-                Heb je een vraag over onze diensten of wil je direct een project bespreken? We staan klaar om je te helpen groeien.
+                We kijken waar je website nu kansen laat liggen en hoe je sneller meer vertrouwen en meer aanvragen uit je online aanwezigheid haalt.
               </p>
 
               <div className="mt-12 space-y-8">
@@ -581,11 +622,11 @@ export default function HomePage() {
                 </label>
 
                 <label className="space-y-2 text-sm font-semibold text-on-surface">
-                  <span className="ml-1 block">Bericht</span>
+                  <span className="ml-1 block">Wat wil je verbeteren?</span>
                   <textarea
                     className="min-h-[140px] w-full rounded-2xl bg-surface px-5 py-4 text-base text-on-surface ring-1 ring-transparent transition focus:ring-primary/20"
                     name="message"
-                    placeholder="Vertel ons over je project..."
+                    placeholder="Bijvoorbeeld: meer aanvragen, sterkere uitstraling, betere structuur of een complete nieuwe website."
                   />
                 </label>
 
@@ -595,10 +636,10 @@ export default function HomePage() {
                   className="inline-flex w-full items-center justify-center rounded-2xl bg-primary px-8 py-5 font-semibold text-white shadow-glow transition hover:opacity-95"
                   type="submit"
                 >
-                  Verstuur bericht
+                  Vraag mijn gratis websitescan aan
                 </button>
                 <p className="text-center text-sm text-on-surface-variant">
-                  Formulieren worden nu rechtstreeks verzonden via Formspree.
+                  Je bericht komt direct bij ons binnen via Formspree.
                 </p>
               </form>
             </div>
@@ -611,20 +652,20 @@ export default function HomePage() {
               <div className="absolute -left-10 bottom-0 h-64 w-64 translate-y-1/3 rounded-full bg-white/10 blur-3xl" />
               <div className="absolute -right-8 top-0 h-64 w-64 -translate-y-1/3 rounded-full bg-white/10 blur-3xl" />
               <h2 className="relative z-10 text-balance text-4xl font-extrabold text-white md:text-5xl">
-                Klaar om de volgende stap te zetten?
+                Klaar om serieuzer over te komen en meer aanvragen uit je website te halen?
               </h2>
               <div className="relative z-10 mt-8 flex flex-wrap justify-center gap-5">
                 <a
                   className="inline-flex items-center justify-center rounded-full bg-white px-10 py-5 font-semibold text-primary transition hover:-translate-y-0.5"
                   href="#contact"
                 >
-                  Start je project
+                  Plan mijn gratis scan
                 </a>
                 <a
                   className="inline-flex items-center justify-center rounded-full border-2 border-white/30 px-10 py-5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
-                  href="#contact"
+                  href="tel:+31201234567"
                 >
-                  Plan adviesgesprek
+                  Bel direct
                 </a>
               </div>
             </div>
@@ -637,7 +678,7 @@ export default function HomePage() {
           <div className="md:col-span-1">
             <span className="block text-lg font-black text-slate-900">MagisData</span>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-500">
-              Wij creeren digitale meesterwerken die converteren. Jouw succes is onze hoogste prioriteit.
+              Websites die je kwaliteit beter laten voelen en bezoekers sneller richting contact bewegen.
             </p>
           </div>
 
@@ -647,7 +688,18 @@ export default function HomePage() {
               <ul className="mt-6 space-y-4 text-sm leading-relaxed text-slate-500">
                 {section.links.map((link) => (
                   <li key={link}>
-                    <a className="hover:text-primary" href="#contact">
+                    <a
+                      className="hover:text-primary"
+                      href={
+                        link === "Oplossing"
+                          ? "#solutions"
+                          : link === "Resultaten"
+                            ? "#results"
+                            : link === "Tarieven"
+                              ? "#tarieven"
+                              : "#contact"
+                      }
+                    >
                       {link}
                     </a>
                   </li>
@@ -670,6 +722,8 @@ export default function HomePage() {
           <p className="text-sm text-slate-500">© 2026 MagisData. All rights reserved.</p>
         </div>
       </footer>
+
+      <StickyConsultationBar />
     </>
   );
 }

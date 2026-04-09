@@ -12,9 +12,9 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "MagisData | Premium Web Development",
+  title: "MagisData | Websites die vertrouwen winnen en aanvragen opleveren",
   description:
-    "High-end, conversiegerichte websites voor ambitieuze ondernemers die willen groeien met een onverslaanbare online aanwezigheid.",
+    "MagisData bouwt websites die je kwaliteit helder laten voelen, vertrouwen opbouwen en bezoekers makkelijker richting contact of aanvraag bewegen.",
 };
 
 export default function RootLayout({ children }) {
@@ -26,4 +26,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
