@@ -18,6 +18,32 @@ npm run dev
 
 3. Open `http://localhost:3000`.
 
+## Decap CMS lokaal gebruiken
+
+Er is nu een Decap CMS blogsetup aanwezig.
+
+1. Start Next.js:
+
+```bash
+npm run dev
+```
+
+2. Start in een tweede terminal de lokale Decap backend:
+
+```bash
+npm run cms
+```
+
+3. Open `http://localhost:3000/admin`.
+
+4. Blogberichten worden opgeslagen in `content/blog`.
+
+## Belangrijk voor live gebruik
+
+- Lokaal werkt Decap CMS nu direct via `local_backend: true`.
+- Voor live gebruik op Cloudflare Pages met de GitHub backend heb je later nog een GitHub OAuth/auth-oplossing nodig voor `/admin`.
+- De contentstructuur en blogroutes zijn al klaar, dus we kunnen daarna alleen nog de live authlaag toevoegen.
+
 ## Productie build
 
 Gebruik:
@@ -44,11 +70,16 @@ Volgens de Cloudflare Pages gids voor een statische Next.js site:
 
 ## Belangrijk
 
-- Het contactformulier is nu alleen visueel opgebouwd. Als je echte inzendingen wilt ontvangen, koppel dan later een forms-service of eigen backend.
-- De website gebruikt externe afbeeldingen uit het aangeleverde ontwerp. Als je liever eigen assets gebruikt, vervang dan de image-URLs in `app/page.js`.
+- Het contactformulier gebruikt nu Formspree.
+- Er is nu een file-based blog onder `/blog` met content uit `content/blog`.
+- Decap CMS staat onder `/admin`.
 
 ## Handige bestanden
 
 - `app/page.js`: homepage content en secties
+- `app/blog/page.js`: blog overzicht
+- `app/blog/[slug]/page.js`: individuele blogberichten
+- `content/blog`: markdown blogcontent
+- `public/admin/config.yml`: Decap CMS configuratie
 - `components/comparison-slider.js`: interactieve before/after slider
 - `tailwind.config.js`: kleuren, fonts en design tokens

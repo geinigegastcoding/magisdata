@@ -1,0 +1,38 @@
+local_backend: true
+site_url: https://magisdata.nl
+display_url: https://magisdata.nl
+logo_url: /icon.svg
+
+backend:
+  name: github
+  repo: geinigegastcoding/magisdata
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: blog
+    label: Blog
+    label_singular: Blogbericht
+    folder: content/blog
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: Titel, name: title, widget: string }
+      - { label: Beschrijving, name: description, widget: text }
+      - { label: Publicatiedatum, name: publishedAt, widget: datetime, format: "YYYY-MM-DD" }
+      - { label: Auteur, name: author, widget: string, default: "MagisData" }
+      - { label: Cover image, name: coverImage, widget: image, required: false }
+      - { label: Uitgelicht, name: featured, widget: boolean, default: false, required: false }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        field: { label: Tag, name: tag, widget: string }
+      - { label: Inhoud, name: body, widget: markdown }
+

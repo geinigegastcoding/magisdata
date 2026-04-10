@@ -4,6 +4,7 @@
   "description": "MagisData marketing website built with Next.js and Tailwind CSS.",
   "private": true,
   "scripts": {
+    "cms": "decap-server",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -15,10 +16,12 @@
     "lucide-react": "^1.7.0",
     "next": "^16.2.2",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.27",
+    "decap-server": "^3.6.0",
     "postcss": "^8.5.9",
     "tailwindcss": "^3.4.18"
   }

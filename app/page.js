@@ -338,8 +338,8 @@ export default function HomePage() {
               <div className="absolute -right-10 top-0 h-72 w-72 rounded-full bg-tertiary-container/10 blur-3xl" />
               <div className="relative rounded-5xl border border-white/60 bg-surface-container-lowest/80 p-2 shadow-soft">
                 <ComparisonSlider
-                  afterImage="/after-image.png"
-                  beforeImage="/before-image.png"
+                  afterImage="/after-image.webp"
+                  beforeImage="/before-image.webp"
                 />
               </div>
             </div>
