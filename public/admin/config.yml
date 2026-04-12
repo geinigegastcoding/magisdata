@@ -7,6 +7,8 @@ backend:
   name: github
   repo: geinigegastcoding/magisdata
   branch: main
+  base_url: https://magisdata.nl
+  auth_endpoint: /api/auth
 
 media_folder: public/uploads
 public_folder: /uploads
@@ -35,4 +37,3 @@ collections:
         required: false
         field: { label: Tag, name: tag, widget: string }
       - { label: Inhoud, name: body, widget: markdown }
-

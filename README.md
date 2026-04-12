@@ -40,9 +40,9 @@ npm run cms
 
 ## Belangrijk voor live gebruik
 
-- Lokaal werkt Decap CMS nu direct via `local_backend: true`.
-- Voor live gebruik op Cloudflare Pages met de GitHub backend heb je later nog een GitHub OAuth/auth-oplossing nodig voor `/admin`.
-- De contentstructuur en blogroutes zijn al klaar, dus we kunnen daarna alleen nog de live authlaag toevoegen.
+- Lokaal werkt Decap CMS direct via `local_backend: true`.
+- Voor live gebruik op Cloudflare Pages is de GitHub OAuth authlaag nu ingebouwd via `functions/api/auth.js` en `functions/api/callback.js`.
+- Je hoeft in Cloudflare alleen nog `GITHUB_CLIENT_ID` en `GITHUB_CLIENT_SECRET` toe te voegen.
 
 ## Productie build
 
@@ -73,7 +73,7 @@ Volgens de Cloudflare Pages gids voor een statische Next.js site:
 - Het contactformulier gebruikt nu Formspree.
 - Er is nu een file-based blog onder `/blog` met content uit `content/blog`.
 - Decap CMS staat onder `/admin`.
-
+- Voor live Decap login op Cloudflare Pages moet je GitHub OAuth app verwijzen naar je live domein en de twee OAuth variabelen invullen in Cloudflare.
 ## Handige bestanden
 
 - `app/page.js`: homepage content en secties
