@@ -14,15 +14,15 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at top left, rgba(106, 225, 255, 0.14), transparent 30%),
-    radial-gradient(circle at top right, rgba(89, 40, 247, 0.12), transparent 24%),
-    #f7fafc;
-  color: #181c1e;
+    radial-gradient(circle at top left, rgba(187, 88, 16, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(137, 80, 51, 0.12), transparent 24%),
+    #fef9f2;
+  color: #1d1c18;
 }
 
 ::selection {
-  background: #dae2ff;
-  color: #003d9b;
+  background: #f1dcc7;
+  color: #984300;
 }
 
 @layer base {
@@ -45,7 +45,7 @@ body {
 
 @layer utilities {
   .glass-panel {
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(254, 249, 242, 0.78);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
   }
@@ -54,4 +54,3 @@ body {
     text-wrap: balance;
   }
 }
-

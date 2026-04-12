@@ -13,25 +13,25 @@ module.exports = {
     },
     extend: {
       colors: {
-        background: "#f7fafc",
-        surface: "#f7fafc",
-        primary: "#003d9b",
-        "primary-container": "#0052cc",
-        "primary-fixed": "#dae2ff",
-        secondary: "#00687a",
-        "secondary-container": "#6ae1ff",
-        tertiary: "#4100cf",
-        "tertiary-container": "#5928f7",
-        outline: "#737685",
-        "outline-variant": "#c3c6d6",
+        background: "#fef9f2",
+        surface: "#fef9f2",
+        primary: "#984300",
+        "primary-container": "#bb5810",
+        "primary-fixed": "#f1dcc7",
+        secondary: "#895033",
+        "secondary-container": "#e9d5c5",
+        tertiary: "#006096",
+        "tertiary-container": "#2e7fab",
+        outline: "#887364",
+        "outline-variant": "#dbc2b0",
         "on-primary": "#ffffff",
-        "on-secondary-container": "#006374",
-        "on-surface": "#181c1e",
-        "on-surface-variant": "#434654",
-        "surface-container": "#ebeef0",
-        "surface-container-low": "#f1f4f6",
-        "surface-container-high": "#e5e9eb",
-        "surface-container-highest": "#e0e3e5",
+        "on-secondary-container": "#5f341d",
+        "on-surface": "#1d1c18",
+        "on-surface-variant": "#554336",
+        "surface-container": "#f2ede6",
+        "surface-container-low": "#f8f3ec",
+        "surface-container-high": "#ece5dc",
+        "surface-container-highest": "#e6e2db",
         "surface-container-lowest": "#ffffff",
       },
       borderRadius: {
@@ -39,9 +39,9 @@ module.exports = {
         "5xl": "2.5rem",
       },
       boxShadow: {
-        soft: "0 24px 80px rgba(10, 38, 71, 0.10)",
-        card: "0 18px 40px rgba(15, 23, 42, 0.08)",
-        glow: "0 24px 60px rgba(0, 82, 204, 0.18)",
+        soft: "0 24px 80px rgba(29, 28, 24, 0.08)",
+        card: "0 18px 40px rgba(29, 28, 24, 0.06)",
+        glow: "0 24px 60px rgba(152, 67, 0, 0.16)",
       },
       fontFamily: {
         body: ["var(--font-inter)", "sans-serif"],
@@ -49,7 +49,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-grid":
-          "linear-gradient(to right, rgba(0, 61, 155, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 61, 155, 0.05) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(152, 67, 0, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(152, 67, 0, 0.06) 1px, transparent 1px)",
       },
       keyframes: {
         float: {
@@ -64,4 +64,3 @@ module.exports = {
   },
   plugins: [],
 };
-
