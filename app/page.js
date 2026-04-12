@@ -12,8 +12,10 @@ import {
   Sparkles,
   TrendingDown,
 } from "lucide-react";
+import Link from "next/link";
 import ComparisonSlider from "../components/comparison-slider";
 import StickyConsultationBar from "../components/sticky-consultation-bar";
+import { formatBlogDate, getAllPosts } from "../lib/blog";
 
 const siteUrl = "https://magisdata.nl";
 
@@ -264,6 +266,8 @@ function SecondaryButton({ href, children }) {
 }
 
 export default function HomePage() {
+  const blogPosts = getAllPosts().slice(0, 3);
+
   return (
     <>
       <script
@@ -695,6 +699,68 @@ export default function HomePage() {
                   Bel direct
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-surface py-24" id="blog">
+          <div className="container">
+            <div className="mb-16 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <div>
+                <span className="inline-flex rounded-full bg-secondary-container/35 px-4 py-1.5 text-sm font-semibold tracking-wide text-on-secondary-container">
+                  MagisData Blog
+                </span>
+                <h2 className="mt-5 text-4xl font-extrabold text-on-surface">
+                  Inzichten voor ondernemers die online sterker willen staan
+                </h2>
+                <p className="mt-4 max-w-2xl text-on-surface-variant">
+                  Praktische artikelen over websites, vertrouwen, conversie en hoe je
+                  online duidelijker en professioneler overkomt.
+                </p>
+              </div>
+
+              <Link
+                className="inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3"
+                href="/blog"
+              >
+                Bekijk alle artikelen <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              {blogPosts.map((post) => (
+                <article
+                  key={post.slug}
+                  className="flex h-full flex-col rounded-5xl border border-outline-variant bg-surface-container-lowest p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-card"
+                >
+                  <div className="flex flex-wrap items-center gap-3 text-sm text-on-surface-variant">
+                    {post.publishedAt ? <span>{formatBlogDate(post.publishedAt)}</span> : null}
+                    {post.author ? <span>Door {post.author}</span> : null}
+                  </div>
+                  <h3 className="mt-4 text-2xl font-bold text-on-surface">{post.title}</h3>
+                  <p className="mt-4 flex-1 leading-relaxed text-on-surface-variant">
+                    {post.description}
+                  </p>
+                  {post.tags.length ? (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-secondary-container px-3 py-1 text-xs font-bold text-on-secondary-container"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  <Link
+                    className="mt-6 inline-flex items-center gap-2 font-semibold text-primary transition hover:gap-3"
+                    href={`/blog/${post.slug}`}
+                  >
+                    Lees artikel <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </article>
+              ))}
             </div>
           </div>
         </section>
