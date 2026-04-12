@@ -16,6 +16,7 @@ import Link from "next/link";
 import ComparisonSlider from "../components/comparison-slider";
 import StickyConsultationBar from "../components/sticky-consultation-bar";
 import { formatBlogDate, getAllPosts } from "../lib/blog";
+import { getAllCaseStudies } from "../lib/case-studies";
 
 const siteUrl = "https://magisdata.nl";
 
@@ -30,29 +31,6 @@ const heroBenefits = [
   "Meer vertrouwen bij bezoekers die je nog niet kennen",
   "Meer aanvragen zonder dat jij harder hoeft te verkopen",
   "Een website die duidelijk maakt waarom klanten voor jou kiezen",
-];
-
-const caseStudies = [
-  {
-    title: "Luxe Kapper Amsterdam",
-    description:
-      "Van een sfeerloze site naar een premium presentatie die direct rust, kwaliteit en exclusiviteit uitstraalt voor nieuwe klanten.",
-    outcome:
-      "De website maakt de salon geloofwaardiger, verhoogt de waargenomen waarde en stuurt bezoekers sneller naar contact of afspraak.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDVutnSnI3gmnGLnLERqlW2M_kWjI3xfzTo72ysDgMI0fWeUcTiA2lJ65djrN0xCrjzDNqcZW_zvqjxwdhyWyZKQ1RqJ4K2Qr09lLqqUNBCCZWa-hfBCvlm50XJ_Mh3ZOjASBL24agXp7xZik4gW6_Hxba8iGYgSlFL7VDA5bk3Olh-CZD-xJWhDxnRVwbSFAowYc1xl31kmLz9avzs_gxkjIUCCvtZyPbgrj2kKv-SeWc1wa7WHSVR87OcrW94assyBjsJX-PpEWtt",
-    tags: ["Premium uitstraling", "Meer vertrouwen", "Meer boekingen"],
-  },
-  {
-    title: "Meester Schilder Utrecht",
-    description:
-      "Van lokale vakman met losse online zichtbaarheid naar een sterke, betrouwbare uitstraling die direct professioneler voelt.",
-    outcome:
-      "De site helpt bezoekers sneller begrijpen wat het bedrijf levert, waarom het vakmanschap telt en hoe ze eenvoudig contact opnemen.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuB6_hql4lq6U8t8uhRkIJaOgAzWA9rMmJzhLj3wU48_RElp03VBnMFHAmNFoE_FlGUm_AKw4xgkUXLXmTlcY1LQ6CcW8V4oRdP4CSKCTz51T4Pg1s0CanwkFcY5K0ahsOxpMxzbSf-pOD6tmD_3XETkgktQ1mfCv0KodVMvE4gwOEcVZqa3QLGZPncGwAtgPR7VR3UxVFA3gwhhtdegJaGOGSAgbQaOQWx11KC7kh8iYRFdmlDFZJBZM8YEJISRVxFG-7lMvHPbt0aS",
-    tags: ["Sterkere positionering", "Betere leadflow", "Duidelijker verhaal"],
-  },
 ];
 
 const painPoints = [
@@ -267,6 +245,7 @@ function SecondaryButton({ href, children }) {
 
 export default function HomePage() {
   const blogPosts = getAllPosts().slice(0, 3);
+  const caseStudies = getAllCaseStudies();
 
   return (
     <>
