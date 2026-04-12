@@ -387,6 +387,33 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="bg-surface py-24" id="about">
+          <div className="container">
+            <div className="grid gap-10 rounded-5xl bg-surface-container-low p-10 shadow-card lg:grid-cols-[0.8fr_1.2fr] lg:p-14">
+              <div>
+                <span className="inline-flex rounded-full bg-secondary-container/35 px-4 py-1.5 text-sm font-semibold tracking-wide text-on-secondary-container">
+                  Over mij
+                </span>
+                <h2 className="mt-5 text-4xl font-extrabold leading-tight text-on-surface">
+                  De ondernemer achter MagisData
+                </h2>
+              </div>
+
+              <div className="space-y-5 text-lg leading-relaxed text-on-surface-variant">
+                <p>
+                  Ik ben Daniël Magis, 15 jaar oud en een jonge ondernemer met een
+                  vroege passie voor websites en online groei.
+                </p>
+                <p>
+                  Ik begon al met websites toen ik acht was. Sindsdien ben ik
+                  blijven bouwen, leren en verbeteren, met als doel om bedrijven
+                  online sterker, duidelijker en professioneler neer te zetten.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-surface-container-lowest py-24" id="solutions">
           <div className="container">
             <SectionHeading
