@@ -9,5 +9,5 @@ tags:
   - Premium uitstraling
   - Meer vertrouwen
   - Meer boekingen
-order: 1
+order: 2
 ---
