@@ -1,6 +1,8 @@
 import { serviceNavigation, site } from "@/lib/site";
 import { caseStudies, insights } from "@/content/site-content";
 
+export const dynamic = "force-static";
+
 export function GET() {
   const lines = [
     "# MagisData",
