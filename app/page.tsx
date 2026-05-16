@@ -5,8 +5,7 @@ import {
   Hero,
   Process,
   Results,
-  Services,
-  TrustLogos
+  Services
 } from "@/components/homepage-sections";
 import { metadataForPath } from "@/content/seo";
 
@@ -16,7 +15,6 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <TrustLogos />
       <Services />
       <Process />
       <Results />

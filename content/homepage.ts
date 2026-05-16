@@ -19,9 +19,9 @@ export const trustLogos = ["SAASCO", "ProLine", "Elevion", "Nexora", "Verity", "
 
 export const services = [
   {
-    title: "SEO",
+    title: "Vindbaarheid in Google",
     description:
-      "SEO bureau hulp voor betere vindbaarheid in Google, lokale zoekresultaten en AI-antwoorden.",
+      "We zorgen dat klanten je bedrijf sneller vinden wanneer ze zoeken naar jouw dienst.",
     href: "/seo-bureau",
     icon: Search,
     color: "text-blue bg-blue-soft"
@@ -29,31 +29,31 @@ export const services = [
   {
     title: "Websites",
     description:
-      "Snelle, duidelijke websites die vertrouwen geven en bezoekers omzetten in aanvragen.",
+      "Professionele websites die vertrouwen geven en bezoekers helpen om contact op te nemen.",
     href: "/web-development",
     icon: MonitorSmartphone,
     color: "text-green bg-green-soft"
   },
   {
-    title: "SEA & Ads",
+    title: "Google Ads",
     description:
-      "Online marketing bureau ondersteuning voor campagnes, strategie en meetbare groei.",
+      "Gerichte advertenties voor mensen die nu zoeken naar wat jij aanbiedt.",
     href: "/online-marketing-bureau",
     icon: Megaphone,
     color: "text-yellow bg-yellow-soft"
   },
   {
-    title: "Conversie optimalisatie",
+    title: "Meer aanvragen",
     description:
-      "Meer aanvragen uit je bestaande website met betere pagina's, CTA's en bewijs.",
+      "We verbeteren je pagina's, teksten en knoppen zodat meer bezoekers klant worden.",
     href: "/conversie-optimalisatie",
     icon: ChartBarIncreasing,
     color: "text-purple bg-purple-soft"
   },
   {
-    title: "Strategisch advies",
+    title: "Online advies",
     description:
-      "Praktisch advies waarmee je betere keuzes maakt voor online groei.",
+      "Een duidelijk plan voor je website, Google en advertenties.",
     href: "/strategic-consulting",
     icon: HeartHandshake,
     color: "text-pink bg-pink-soft"
@@ -68,7 +68,7 @@ export const processSteps = [
     color: "text-blue bg-blue-soft"
   },
   {
-    title: "Strategie",
+    title: "Plan maken",
     text: "We bepalen wat het meeste resultaat kan opleveren.",
     icon: Target,
     color: "text-green bg-green-soft"
@@ -94,14 +94,14 @@ export const processSteps = [
 ];
 
 export const metrics = [
-  { value: "250+", label: "Succesvolle projecten", icon: BadgeCheck, color: "text-blue bg-blue-soft" },
-  { value: "98%", label: "Klanttevredenheid", icon: Smile, color: "text-green bg-green-soft" },
-  { value: "40+", label: "Branches geholpen", icon: Building2, color: "text-blue bg-blue-soft" },
-  { value: "10x+", label: "Gemiddelde ROI-stijging", icon: TrendingUp, color: "text-yellow bg-yellow-soft" }
+  { value: "1", label: "Vast aanspreekpunt", icon: BadgeCheck, color: "text-blue bg-blue-soft" },
+  { value: "5", label: "Heldere stappen", icon: Smile, color: "text-green bg-green-soft" },
+  { value: "24u", label: "Reactie op werkdagen", icon: Building2, color: "text-blue bg-blue-soft" },
+  { value: "Geen", label: "Vage beloftes", icon: TrendingUp, color: "text-yellow bg-yellow-soft" }
 ];
 
 export const insights = [
-  "SEO in 2026: wat werkt voor lokale bedrijven",
+  "Beter gevonden worden in Google als lokaal bedrijf",
   "5 simpele tips voor meer aanvragen via je website",
   "Waarom een snelle website meer klanten oplevert"
 ];
@@ -113,8 +113,8 @@ export const heroTrust = [
 ];
 
 export const heroStats = [
-  { label: "Nieuwe aanvragen", value: "+127%", note: "" },
-  { label: "Website bezoekers", value: "8.642", note: "+48% vs vorige maand" },
+  { label: "Meer aanvragen", value: "Stap voor stap", note: "" },
+  { label: "Beter gevonden", value: "In Google", note: "Duidelijk plan, geen omweg" },
   { label: "Klanten beoordelen ons", value: "4,9/5", note: "*****" }
 ];
 

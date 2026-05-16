@@ -54,7 +54,7 @@ export function SiteHeader() {
           className="focus-ring hidden items-center rounded-xl bg-orange px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-dark lg:inline-flex"
           href="/contact"
         >
-          Boek een strategisch gesprek
+          Plan een gratis gesprek
           <span aria-hidden className="ml-2">
             -&gt;
           </span>
@@ -80,7 +80,7 @@ export function SiteHeader() {
                 className="focus-ring mt-2 rounded-xl bg-orange px-5 py-3 text-center text-sm font-bold text-white shadow-sm"
                 href="/contact"
               >
-                Boek een strategisch gesprek
+                Plan een gratis gesprek
               </Link>
             </div>
           </div>

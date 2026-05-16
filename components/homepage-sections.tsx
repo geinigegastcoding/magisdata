@@ -128,16 +128,15 @@ export function Hero() {
       <div className="container grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-10">
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full bg-blue-soft/85 px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.16em] text-blue shadow-sm">
-            Digitale groei die werkt <Sparkles className="h-4 w-4 text-yellow" strokeWidth={2.2} />
+            Meer aanvragen via je website <Sparkles className="h-4 w-4 text-yellow" strokeWidth={2.2} />
           </div>
           <h1 className="mt-8 max-w-[640px] text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.025em] text-navy sm:text-[3.5rem] md:text-[4.45rem] lg:text-[4.65rem] lg:leading-[1.01]">
-            Website laten maken voor SEO, AI-vindbaarheid en{" "}
-            <span className="text-orange">meer aanvragen.</span>
+            Website laten maken voor betere vindbaarheid en{" "}
+            <span className="text-orange">meer aanvragen</span>
           </h1>
           <p className="mt-7 max-w-[560px] text-[1.08rem] leading-8 text-muted md:text-lg">
-            MagisData bouwt snelle websites en helpt als SEO bureau met AEO,
-            GEO, lokale vindbaarheid en conversie optimalisatie voor bedrijven
-            in Nederland.
+            MagisData maakt professionele websites voor lokale ondernemers die
+            betrouwbaar willen overkomen en beter gevonden willen worden.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <PrimaryButton>Plan een gratis gesprek</PrimaryButton>
@@ -259,11 +258,12 @@ export function Services() {
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow>Onze diensten</Eyebrow>
           <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.035em] text-navy sm:text-4xl md:text-5xl">
-            Website, SEO bureau hulp en AI-vindbaarheid in een aanpak
+            Alles geregeld om online beter gevonden te worden
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted">
-            Van website laten maken tot lokale SEO, GEO, AEO en conversie:
-            wij regelen wat nodig is om online beter te scoren.
+            We helpen met je website, Google, advertenties en duidelijke
+            aanvraagformulieren. Zo kunnen klanten je makkelijker vinden en
+            sneller contact opnemen.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
@@ -304,7 +304,7 @@ export function Process() {
             <div>
               <Eyebrow>Onze aanpak</Eyebrow>
               <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.03em] text-navy md:text-4xl">
-                Zo werken we samen
+                Zo gaan we te werk
               </h2>
               <p className="mt-5 leading-7 text-muted">Een heldere aanpak in 5 simpele stappen.</p>
             </div>
@@ -356,7 +356,7 @@ export function Results() {
             <div>
               <Eyebrow>Resultaten die tellen</Eyebrow>
               <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-[-0.03em] text-navy md:text-4xl">
-                Samen groeien we met duidelijke cijfers
+                Duidelijke afspraken, zonder vage beloftes
               </h2>
               <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {metrics.map((metric) => {
@@ -395,7 +395,7 @@ export function CaseStudyInsights() {
         <article className="overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:p-9">
           <div className="grid gap-7 md:grid-cols-[0.96fr_1.04fr] md:items-center">
             <div>
-              <Eyebrow>Case study</Eyebrow>
+              <Eyebrow>Praktijkvoorbeeld</Eyebrow>
               <h2 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] text-navy">
                 Van onzichtbaar naar meer aanvragen
               </h2>
@@ -405,12 +405,12 @@ export function CaseStudyInsights() {
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-3xl font-extrabold tabular-nums text-navy">842%</p>
-                  <p className="text-xs font-medium text-muted">Meer organisch verkeer</p>
+                  <p className="text-3xl font-extrabold tabular-nums text-navy">Google</p>
+                  <p className="text-xs font-medium text-muted">Beter gevonden</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-extrabold tabular-nums text-navy">167%</p>
-                  <p className="text-xs font-medium text-muted">Meer aanvragen</p>
+                  <p className="text-3xl font-extrabold tabular-nums text-navy">Contact</p>
+                  <p className="text-xs font-medium text-muted">Makkelijker aanvragen</p>
                 </div>
               </div>
               <div className="mt-7">
