@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/service-page";
-import { site } from "@/lib/site";
+import { ContentPage } from "@/components/content-page";
+import { pageIcons, servicePages } from "@/content/pages";
+import { metadataForPath } from "@/content/seo";
 
-export const metadata: Metadata = {
-  title: "AEO-optimalisatie",
-  description:
-    "Answer engine optimization voor featured snippets, AI-assistenten en duidelijke extractie van kopersvragen.",
-  alternates: { canonical: "/aeo-optimization" },
-  openGraph: { title: "AEO-optimalisatie | MagisData", url: `${site.url}/aeo-optimization` }
-};
+export const metadata: Metadata = metadataForPath("/aeo-optimization");
 
-export default function Page() {
-  return <ServicePage slug="aeo-optimization" />;
+export default function AeoOptimizationPage() {
+  return (
+    <ContentPage
+      content={servicePages["aeo-optimization"]}
+      icon={pageIcons["aeo-optimization"]}
+      pathname="/aeo-optimization"
+      schemaKind="service"
+    />
+  );
 }

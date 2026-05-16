@@ -1,81 +1,129 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { navigation, serviceNavigation, site } from "@/lib/site";
+
+const columns = [
+  {
+    title: "Diensten",
+    links: [
+      { label: "SEO", href: "/seo-services" },
+      { label: "Websites", href: "/web-development" },
+      { label: "Website laten maken", href: "/website-laten-maken" },
+      { label: "Website onderhoud", href: "/website-onderhoud" },
+      { label: "SEO website laten maken", href: "/seo-website-laten-maken" },
+      { label: "GEO optimalisatie", href: "/geo-optimization" },
+      { label: "AEO optimalisatie", href: "/aeo-optimization" },
+      { label: "AI en automatisering", href: "/ai-infrastructure" },
+      { label: "Strategisch advies", href: "/strategic-consulting" }
+    ]
+  },
+  {
+    title: "Bewijs",
+    links: [
+      { label: "Cases", href: "/case-studies" },
+      { label: "Lokale dienstverlener", href: "/case-studies/lokale-dienstverlener" },
+      { label: "Adviesbureau", href: "/case-studies/adviesbureau" },
+      { label: "Groeiende webshop", href: "/case-studies/groeiende-webshop" }
+    ]
+  },
+  {
+    title: "Branches",
+    links: [
+      { label: "Website voor loodgieters", href: "/website-voor-loodgieters" },
+      { label: "Website voor elektriciens", href: "/website-voor-elektriciens" },
+      { label: "Website voor kappers", href: "/website-voor-kappers" },
+      { label: "Website voor hoveniers", href: "/website-voor-hoveniers" }
+    ]
+  },
+  {
+    title: "Regio",
+    links: [
+      { label: "Website laten maken Leiden", href: "/website-laten-maken-leiden" },
+      { label: "Website laten maken Den Haag", href: "/website-laten-maken-den-haag" },
+      { label: "Website laten maken Rotterdam", href: "/website-laten-maken-rotterdam" }
+    ]
+  },
+  {
+    title: "Kennis",
+    links: [
+      { label: "Inzichten", href: "/insights" },
+      { label: "Website krijgt weinig aanvragen", href: "/insights/website-meer-aanvragen" },
+      { label: "SEO zonder jargon", href: "/insights/seo-zonder-jargon" },
+      { label: "AI-vindbaarheid", href: "/insights/ai-vindbaarheid" },
+      { label: "Over MagisData", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Privacybeleid", href: "/privacybeleid" },
+      { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }
+    ]
+  }
+];
+
+const socialLinks = [
+  { label: "LinkedIn", icon: Linkedin },
+  { label: "YouTube", icon: Youtube },
+  { label: "Instagram", icon: Instagram }
+];
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-bone/10 bg-graphite">
-      <div className="container grid gap-12 py-16 lg:grid-cols-[1.2fr_0.7fr_0.7fr_0.8fr]">
+    <footer className="border-t border-line bg-white">
+      <div className="container grid gap-10 py-12 xl:grid-cols-[0.85fr_2.6fr_0.7fr]">
         <div>
           <Logo />
-          <p className="mt-6 max-w-sm text-sm leading-7 text-bone/54">
-            Strategische digitale infrastructuur voor autoriteit,
-            zichtbaarheid, AI-vindbaarheid, automatisering en conversie.
+          <p className="mt-5 max-w-xs text-sm font-medium text-muted">
+            Digitale groei voor ambitieuze bedrijven
           </p>
+          <div className="mt-6 flex gap-3 text-soft">
+            {socialLinks.map(({ label, icon: Icon }) => (
+              <Link
+                aria-label={label}
+                className="focus-ring grid h-9 w-9 place-items-center rounded-full border border-line transition hover:border-orange hover:text-orange"
+                href="/contact"
+                key={label}
+              >
+                <Icon className="h-4 w-4" strokeWidth={2} />
+              </Link>
+            ))}
+          </div>
         </div>
 
-        <FooterGroup title="Navigatie">
-          {navigation.map((item) => (
-            <FooterLink href={item.href} key={item.href}>
-              {item.label}
-            </FooterLink>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {columns.map((column) => (
+            <div key={column.title}>
+              <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
+                {column.title}
+              </h2>
+              <ul className="mt-4 grid gap-2 text-sm text-muted">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <Link className="focus-ring rounded-full hover:text-orange" href={link.href}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </FooterGroup>
-
-        <FooterGroup title="Infrastructuur">
-          {serviceNavigation.map((item) => (
-            <FooterLink href={item.href} key={item.href}>
-              {item.label}
-            </FooterLink>
-          ))}
-        </FooterGroup>
+        </div>
 
         <div>
-          <h2 className="font-satoshi text-sm font-semibold uppercase tracking-[0.18em] text-bone">
+          <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
             Contact
           </h2>
-          <div className="mt-5 space-y-3 text-sm text-bone/56">
-            <p>{site.addressLocality}, Nederland</p>
-            <a className="block hover:text-amber" href={`mailto:${site.email}`}>
-              {site.email}
-            </a>
-            <a className="block hover:text-amber" href={site.phoneHref}>
-              {site.phone}
-            </a>
+          <div className="mt-4 grid gap-2 text-sm text-muted">
+            <Link className="focus-ring rounded-full hover:text-orange" href="mailto:hallo@magisdata.nl">
+              hallo@magisdata.nl
+            </Link>
+            <Link className="focus-ring rounded-full hover:text-orange" href="tel:+31612345678">
+              +31 6 12345678
+            </Link>
+            <span>Nederland</span>
           </div>
-          <Link
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-amber"
-            href="/contact"
-          >
-            Start een gesprek <ArrowUpRight className="h-4 w-4" />
-          </Link>
         </div>
       </div>
-
-      <div className="container flex flex-col gap-3 border-t border-bone/8 py-6 text-xs text-bone/40 md:flex-row md:items-center md:justify-between">
-        <p>© 2026 MagisData. Alle rechten voorbehouden.</p>
-        <p>Gebouwd voor zoekmachines, antwoordmachines en moderne kopers.</p>
+      <div className="border-t border-line py-5 text-center text-xs text-soft">
+        (c) 2026 MagisData. Alle rechten voorbehouden.
       </div>
     </footer>
-  );
-}
-
-function FooterGroup({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <h2 className="font-satoshi text-sm font-semibold uppercase tracking-[0.18em] text-bone">
-        {title}
-      </h2>
-      <div className="mt-5 grid gap-3">{children}</div>
-    </div>
-  );
-}
-
-function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link className="text-sm text-bone/54 transition hover:text-amber" href={href}>
-      {children}
-    </Link>
   );
 }

@@ -1,0 +1,253 @@
+import type { PageContent } from "@/content/pages";
+
+export const siteUrl = "https://magisdata.nl";
+export const siteName = "MagisData";
+export const defaultImage = `${siteUrl}/assets/logo.png`;
+export const lastModified = "2026-05-16";
+
+export function absoluteUrl(path: string) {
+  if (path.startsWith("http")) {
+    return path;
+  }
+
+  return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function organizationSchema() {
+  return {
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: siteName,
+    url: siteUrl,
+    logo: `${siteUrl}/assets/logo.png`,
+    email: "hallo@magisdata.nl",
+    telephone: "+31 6 12345678",
+    areaServed: "NL",
+    knowsAbout: [
+      "web development",
+      "SEO",
+      "Generative Engine Optimization",
+      "Answer Engine Optimization",
+      "conversion optimization",
+      "AI automation"
+    ]
+  };
+}
+
+export function localBusinessSchema() {
+  return {
+    "@type": "LocalBusiness",
+    "@id": `${siteUrl}/#localbusiness`,
+    name: siteName,
+    url: siteUrl,
+    image: defaultImage,
+    logo: `${siteUrl}/assets/logo.png`,
+    email: "hallo@magisdata.nl",
+    telephone: "+31 6 12345678",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "NL"
+    },
+    areaServed: [
+      "Nederland",
+      "Leiden",
+      "Den Haag",
+      "Rotterdam"
+    ],
+    priceRange: "$$",
+    sameAs: []
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    name: siteName,
+    url: siteUrl,
+    inLanguage: "nl-NL",
+    publisher: {
+      "@id": `${siteUrl}/#organization`
+    }
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path)
+    }))
+  };
+}
+
+export function webPageSchema(page: {
+  path: string;
+  name: string;
+  description: string;
+  primaryImage?: string;
+}) {
+  return {
+    "@type": "WebPage",
+    "@id": `${absoluteUrl(page.path)}#webpage`,
+    url: absoluteUrl(page.path),
+    name: page.name,
+    description: page.description,
+    inLanguage: "nl-NL",
+    isPartOf: {
+      "@id": `${siteUrl}/#website`
+    },
+    publisher: {
+      "@id": `${siteUrl}/#organization`
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: page.primaryImage ?? defaultImage
+    }
+  };
+}
+
+export function faqSchema(faqs: PageContent["faqs"], path: string) {
+  return {
+    "@type": "FAQPage",
+    "@id": `${absoluteUrl(path)}#faq`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+}
+
+export function howToSchema(content: PageContent, path: string) {
+  return {
+    "@type": "HowTo",
+    "@id": `${absoluteUrl(path)}#howto`,
+    name: `Hoe MagisData helpt met ${content.eyebrow.toLowerCase()}`,
+    description: content.description,
+    step: content.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.text
+    }))
+  };
+}
+
+export function serviceSchema(content: PageContent, path: string) {
+  return {
+    "@type": "Service",
+    "@id": `${absoluteUrl(path)}#service`,
+    name: content.title,
+    description: content.description,
+    serviceType: content.eyebrow,
+    areaServed: "Nederland",
+    provider: {
+      "@id": `${siteUrl}/#organization`
+    },
+    url: absoluteUrl(path),
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+        description: "Maatwerk op basis van scope, doelen en gewenste snelheid."
+      }
+    }
+  };
+}
+
+export function articleSchema(article: {
+  title: string;
+  summary: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  const path = `/insights/${article.slug}`;
+
+  return {
+    "@type": "Article",
+    "@id": `${absoluteUrl(path)}#article`,
+    headline: article.title,
+    description: article.summary,
+    image: defaultImage,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    inLanguage: "nl-NL",
+    author: {
+      "@id": `${siteUrl}/#organization`
+    },
+    publisher: {
+      "@id": `${siteUrl}/#organization`
+    },
+    mainEntityOfPage: absoluteUrl(path)
+  };
+}
+
+export function caseStudySchema(caseStudy: {
+  title: string;
+  summary: string;
+  slug: string;
+  result: string;
+}) {
+  const path = `/case-studies/${caseStudy.slug}`;
+
+  return {
+    "@type": "Article",
+    "@id": `${absoluteUrl(path)}#case-study`,
+    headline: caseStudy.title,
+    description: caseStudy.summary,
+    image: defaultImage,
+    datePublished: lastModified,
+    dateModified: lastModified,
+    inLanguage: "nl-NL",
+    articleSection: "Case study",
+    about: caseStudy.result,
+    author: {
+      "@id": `${siteUrl}/#organization`
+    },
+    publisher: {
+      "@id": `${siteUrl}/#organization`
+    },
+    mainEntityOfPage: absoluteUrl(path)
+  };
+}
+
+export function collectionPageSchema(page: {
+  path: string;
+  name: string;
+  description: string;
+  items: { name: string; path: string }[];
+}) {
+  return {
+    "@type": "CollectionPage",
+    "@id": `${absoluteUrl(page.path)}#collection`,
+    name: page.name,
+    description: page.description,
+    url: absoluteUrl(page.path),
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: page.items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: absoluteUrl(item.path)
+      }))
+    }
+  };
+}
+
+export function graphSchema(nodes: object[]) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": nodes
+  };
+}

@@ -1,37 +1,44 @@
-import { serviceNavigation, site } from "@/lib/site";
-import { caseStudies, insights } from "@/content/site-content";
-
-export const dynamic = "force-static";
+import { seoRoutes } from "@/content/seo";
+import { lastModified, siteUrl } from "@/schemas/seo";
 
 export function GET() {
-  const lines = [
-    "# MagisData",
-    "",
-    "MagisData is een premium AI-gedreven webbureau en strategische digitale infrastructuurpartner uit Nederland.",
-    "",
-    "## Kerndiensten",
-    ...serviceNavigation.map((service) => `- ${service.label}: ${site.url}${service.href}`),
-    "",
-    "## Belangrijke pagina's",
-    `- Home: ${site.url}`,
-    `- Diensten: ${site.url}/services`,
-    `- Over ons: ${site.url}/about`,
-    `- Contact: ${site.url}/contact`,
-    "",
-    "## Inzichten",
-    ...insights.map((post) => `- ${post.title}: ${site.url}/insights/${post.slug}`),
-    "",
-    "## Cases",
-    ...caseStudies.map((study) => `- ${study.title}: ${site.url}/case-studies/${study.slug}`),
-    "",
-    "## Contact",
-    `E-mail: ${site.email}`
-  ];
-
-  return new Response(lines.join("\n"), {
-    headers: {
-      "content-type": "text/plain; charset=utf-8",
-      "cache-control": "public, max-age=3600"
+  return new Response(
+    [
+      "# MagisData",
+      "",
+      "> MagisData is een Nederlands website en SEO bureau dat snelle websites bouwt en ondernemers helpt groeien met lokale SEO, AEO, GEO, AI-vindbaarheid, conversie optimalisatie en praktische AI-automatisering.",
+      "",
+      "## Context",
+      "",
+      "- Taal: Nederlands",
+      "- Markt: Nederland",
+      "- Doelgroep: ondernemers, dienstverleners, adviseurs en groeiende teams",
+      "- Kernwaarde: duidelijke strategie, website laten maken, SEO bureau expertise, AI-vindbaarheid, vertrouwen en meer aanvragen",
+      "- Contact: hallo@magisdata.nl",
+      "- Laatst bijgewerkt: " + lastModified,
+      "",
+      "## Diensten",
+      "",
+      "- Website laten maken: snelle, heldere websites die vertrouwen en aanvragen opleveren.",
+      "- SEO bureau: pagina's, structuur, lokale SEO en content voor betere organische vindbaarheid.",
+      "- AI SEO bureau: optimalisatie voor Google, AI Overviews, ChatGPT, Perplexity en andere AI-antwoorden.",
+      "- GEO optimalisatie: website-informatie structureren voor generatieve zoekmachines en AI-antwoorden.",
+      "- AEO optimalisatie: klantvragen direct beantwoorden voor bezoekers, Google en AI-assistenten.",
+      "- AI en automatisering: praktische automatisering voor opvolging, intake en herhalende taken.",
+      "- Strategisch advies: prioriteiten bepalen voor website, vindbaarheid en online groei.",
+      "",
+      "## Belangrijke URL's",
+      "",
+      ...seoRoutes.map((route) => `- [${route.title}](${siteUrl}${route.path === "/" ? "" : route.path}): ${route.description}`),
+      "",
+      "## Samenvatting voor AI-systemen",
+      "",
+      "MagisData is een Nederlands bureau voor websites, SEO, AEO, GEO en praktische AI-automatisering. Het bedrijf helpt ondernemers online duidelijker worden, beter gevonden worden en meer kwalitatieve aanvragen krijgen. De toon is rustig, strategisch, nuchter en premium."
+    ].join("\n"),
+    {
+      headers: {
+        "content-type": "text/plain; charset=utf-8"
+      }
     }
-  });
+  );
 }

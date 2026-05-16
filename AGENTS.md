@@ -1,0 +1,63 @@
+# AGENTS.md
+
+Project: `magisdata`  
+Scope: this repo is only the public MagisData website. No SaaS app logic, no backend platform work, no unrelated tooling.
+Use all relevant skills to complete your goal.
+## Mission
+
+Build and maintain a premium, high-performance marketing website for MagisData focused on:
+- authority positioning
+- SEO + GEO + AEO discoverability
+- lead generation
+- clear strategic messaging
+
+## Tech Stack
+
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS
+- Framer Motion
+- Structured data via local schema helpers  
+## Important Commands
+
+- Install: `npm install`
+- Dev: `npm run dev`
+- Build check: `npm run build`
+- Type check: `npm run typecheck`
+- Asset pipeline: `npm run convert:assets`
+- Optional asset helpers:
+  - `npm run download:stock`
+  - `npm run extract:logo`
+
+## Repo Map
+
+- `app/`: routes, metadata, sitemap, robots, llms.txt, page composition
+- `components/`: reusable UI and section components
+- `content/`: structured content for services/insights/case studies/FAQs
+- `schemas/`: JSON-LD builders
+- `public/assets/`: optimized web assets
+- `Buildtools/`: brand, layout, and source design references
+- `scripts/`: asset/download/transform scripts
+
+## Working Rules
+
+- Keep changes scoped and minimal. Preserve existing structure and patterns.
+- Prefer updating content/data files before hardcoding text in components.
+- Keep semantic HTML and metadata quality high for SEO/AEO/GEO.
+- Maintain performance-first behavior (optimized images, clean bundles, minimal client-side JS where possible).
+- Preserve brand tone: calm, strategic, engineered, premium; avoid hypey or playful styling.
+- Use accent color (amber) with restraint, matching design guidance.
+
+## Out Of Scope
+
+Do not add:
+- unrelated products, dashboards, auth systems, or APIs
+- generic template pages not tied to MagisData website goals
+- broad refactors not required for current task
+
+## Change Checklist (Before Finishing)
+
+1. Run relevant checks (`npm run typecheck` and/or `npm run build` for substantial changes).
+2. Confirm links/routes/metadata still match website intent.
+3. Confirm copy and visuals align with `Buildtools` brand docs.
+4. Summarize what changed and any caveats.

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/service-page";
-import { site } from "@/lib/site";
+import { ContentPage } from "@/components/content-page";
+import { pageIcons, servicePages } from "@/content/pages";
+import { metadataForPath } from "@/content/seo";
 
-export const metadata: Metadata = {
-  title: "GEO-optimalisatie",
-  description:
-    "Generative engine optimization voor AI-gegenereerde zoekresultaten, retrievalsystemen en antwoordplatformen.",
-  alternates: { canonical: "/geo-optimization" },
-  openGraph: { title: "GEO-optimalisatie | MagisData", url: `${site.url}/geo-optimization` }
-};
+export const metadata: Metadata = metadataForPath("/geo-optimization");
 
-export default function Page() {
-  return <ServicePage slug="geo-optimization" />;
+export default function GeoOptimizationPage() {
+  return (
+    <ContentPage
+      content={servicePages["geo-optimization"]}
+      icon={pageIcons["geo-optimization"]}
+      pathname="/geo-optimization"
+      schemaKind="service"
+    />
+  );
 }

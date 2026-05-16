@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/service-page";
-import { site } from "@/lib/site";
+import { ContentPage } from "@/components/content-page";
+import { pageIcons, servicePages } from "@/content/pages";
+import { metadataForPath } from "@/content/seo";
 
-export const metadata: Metadata = {
-  title: "AI-infrastructuur",
-  description:
-    "AI-automatisering en operationele workflows voor leadopvolging, CRM, supporttriage, rapportage en schaalbare interne systemen.",
-  alternates: { canonical: "/ai-infrastructure" },
-  openGraph: { title: "AI-infrastructuur | MagisData", url: `${site.url}/ai-infrastructure` }
-};
+export const metadata: Metadata = metadataForPath("/ai-infrastructure");
 
-export default function Page() {
-  return <ServicePage slug="ai-infrastructure" />;
+export default function AiInfrastructurePage() {
+  return (
+    <ContentPage
+      content={servicePages["ai-infrastructure"]}
+      icon={pageIcons["ai-infrastructure"]}
+      pathname="/ai-infrastructure"
+      schemaKind="service"
+    />
+  );
 }

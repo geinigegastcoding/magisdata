@@ -1,108 +1,79 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { site } from "@/lib/site";
+import { graphSchema, localBusinessSchema, organizationSchema, websiteSchema } from "@/schemas/seo";
 import "./globals.css";
+
+const googleTagId = "G-ERY87MPVTM";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter"
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-manrope"
+  variable: "--font-inter",
+  display: "swap"
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  applicationName: site.name,
+  metadataBase: new URL("https://magisdata.nl"),
+  applicationName: "MagisData",
   title: {
-    default: "MagisData | Strategische digitale infrastructuur",
+    default: "MagisData | Websites, SEO en online groei voor ambitieuze bedrijven",
     template: "%s | MagisData"
   },
-  description: site.description,
-  alternates: {
-    canonical: "/"
-  },
+  description:
+    "MagisData bouwt snelle, duidelijke websites en helpt bedrijven groeien met SEO, online marketing en conversie optimalisatie.",
   keywords: [
     "MagisData",
-    "strategische digitale infrastructuur",
-    "AI webbureau",
-    "SEO diensten",
-    "GEO optimalisatie",
-    "AEO optimalisatie",
-    "AI automatisering",
-    "premium webontwikkeling",
-    "conversie optimalisatie"
+    "webbureau Nederland",
+    "websites laten maken",
+    "SEO bureau",
+    "online groei",
+    "conversie optimalisatie",
+    "SEA campagnes"
   ],
-  verification: {
-    other: {
-      "msvalidate.01": "B2C93D86012D3C8062C2DACAF8765712"
-    }
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1
-    }
-  },
   openGraph: {
     type: "website",
     locale: "nl_NL",
-    url: site.url,
-    siteName: site.name,
-    title: "MagisData | Strategische digitale infrastructuur",
-    description: site.description,
-    images: [
-      {
-        url: "/assets/hero-dashboard.webp",
-        width: 1400,
-        height: 933,
-        alt: "Premium digitaal dashboard op een donkere laptop"
-      }
-    ]
+    url: "https://magisdata.nl",
+    siteName: "MagisData",
+    title: "MagisData | Websites, SEO en online groei voor ambitieuze bedrijven",
+    description:
+      "Snelle websites, SEO en online marketing voor bedrijven die meer klanten online willen."
   },
   twitter: {
     card: "summary_large_image",
-    title: "MagisData | Strategische digitale infrastructuur",
-    description: site.description,
-    images: ["/assets/hero-dashboard.webp"]
+    title: "MagisData | Websites, SEO en online groei",
+    description:
+      "MagisData helpt ambitieuze bedrijven met websites, vindbaarheid en conversie."
+  },
+  robots: {
+    index: true,
+    follow: true
   }
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0B0D10"
+  themeColor: "#FFF9ED"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl">
-      <body className={`${inter.variable} ${manrope.variable} antialiased`}>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-ERY87MPVTM"
-          strategy="afterInteractive"
-        />
+      <body className={inter.variable}>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-ERY87MPVTM');
+            gtag('config', '${googleTagId}');
           `}
         </Script>
+        <JsonLd data={graphSchema([organizationSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
         {children}
         <SiteFooter />

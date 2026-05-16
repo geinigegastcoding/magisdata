@@ -1,65 +1,76 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
-import { SectionHeading, SectionShell } from "@/components/section";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import { insights } from "@/content/site-content";
-import { site } from "@/lib/site";
-import { baseGraph } from "@/schemas/structured-data";
+import { RelatedLinks } from "@/components/related-links";
+import { insights } from "@/content/pages";
+import { metadataForPath } from "@/content/seo";
+import { breadcrumbSchema, collectionPageSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
-export const metadata: Metadata = {
-  title: "Inzichten",
-  description:
-    "Strategische inzichten over digitale infrastructuur, SEO, GEO, AEO, AI-vindbaarheid, premium positionering en conversiesystemen.",
-  alternates: { canonical: "/insights" },
-  openGraph: { title: "MagisData inzichten", url: `${site.url}/insights` }
-};
+export const metadata: Metadata = metadataForPath("/insights");
 
 export default function InsightsPage() {
+  const schema = graphSchema([
+    webPageSchema({
+      path: "/insights",
+      name: "Inzichten",
+      description: metadata.description ?? ""
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Inzichten", path: "/insights" }
+    ]),
+    collectionPageSchema({
+      path: "/insights",
+      name: "Inzichten",
+      description: metadata.description ?? "",
+      items: insights.map((item) => ({
+        name: item.title,
+        path: `/insights/${item.slug}`
+      }))
+    })
+  ]);
+
   return (
-    <>
-      <JsonLd data={baseGraph("/insights")} />
-      <main>
-        <section className="border-b border-bone/10 pb-20 pt-36 md:pt-44">
-          <div className="container">
-            <SectionHeading
-              eyebrow="Inzichten"
-              title="Zoekzichtbaarheid, AI-vindbaarheid en infrastructuurdenken."
-              description="Gestructureerde artikelen voor ondernemers en leiders die helderdere positionering, sterkere zichtbaarheid en digitale systemen willen die blijven doorwerken."
-            />
+    <main className="bg-cream/40">
+      <JsonLd data={schema} />
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="max-w-3xl">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+              Inzichten
+            </p>
+            <h1 className="mt-4 text-balance text-4xl font-extrabold leading-tight tracking-[-0.035em] text-navy md:text-6xl">
+              Praktische uitleg over websites, SEO en AI-vindbaarheid
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-muted">
+              Korte artikelen voor ondernemers die betere online keuzes willen maken zonder technisch woordenboek naast zich.
+            </p>
           </div>
-        </section>
-        <SectionShell>
-          <div className="grid gap-4 md:grid-cols-3">
-            {insights.map((post) => (
-              <Link href={`/insights/${post.slug}`} key={post.slug}>
-                <Card className="group h-full">
-                  <div className="-mx-6 -mt-6 mb-6 overflow-hidden rounded-t-md">
-                    <Image
-                      alt={post.image.alt}
-                      className="aspect-[16/10] w-full object-cover opacity-85 transition duration-500 group-hover:scale-[1.03]"
-                      height={875}
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      src={post.image.src}
-                      width={1400}
-                    />
-                  </div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
-                    {post.category}
-                  </p>
-                  <CardTitle className="mt-6">{post.title}</CardTitle>
-                  <CardDescription className="mt-4">{post.description}</CardDescription>
-                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-amber">
-                    Lees artikel <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </Card>
-              </Link>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {insights.map(({ icon: Icon, ...item }) => (
+              <article className="flex min-h-[330px] flex-col rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm" key={item.slug}>
+                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-blue-soft text-blue">
+                  <Icon className="h-7 w-7" strokeWidth={2.1} />
+                </span>
+                <h2 className="mt-7 text-xl font-extrabold leading-7 text-navy">{item.title}</h2>
+                <p className="mt-4 text-sm leading-7 text-muted">{item.summary}</p>
+                <Link className="focus-ring mt-auto inline-flex items-center pt-7 text-sm font-extrabold text-orange" href={`/insights/${item.slug}`}>
+                  Lees artikel <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </article>
             ))}
           </div>
-        </SectionShell>
-      </main>
-    </>
+        </div>
+      </section>
+      <RelatedLinks
+        links={[
+          { href: "/seo-services", label: "SEO diensten", description: "Zet inzichten om naar betere vindbaarheid." },
+          { href: "/aeo-optimization", label: "AEO optimalisatie", description: "Maak klantvragen directer beantwoordbaar." },
+          { href: "/contact", label: "Vraag advies aan", description: "Bespreek wat jouw site nu nodig heeft." }
+        ]}
+      />
+    </main>
   );
 }

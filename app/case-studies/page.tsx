@@ -1,77 +1,79 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { CtaSection } from "@/components/cta-section";
+import { ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
-import { SectionHeading, SectionShell } from "@/components/section";
-import { Card } from "@/components/ui/card";
-import { caseStudies } from "@/content/site-content";
-import { site } from "@/lib/site";
-import { baseGraph } from "@/schemas/structured-data";
+import { RelatedLinks } from "@/components/related-links";
+import { caseStudies } from "@/content/pages";
+import { metadataForPath } from "@/content/seo";
+import { breadcrumbSchema, collectionPageSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
-export const metadata: Metadata = {
-  title: "Cases",
-  description:
-    "Geselecteerde MagisData cases rond autoriteitsplatforms, AI-ready zoekarchitectuur en digitale infrastructuursystemen.",
-  alternates: { canonical: "/case-studies" },
-  openGraph: { title: "MagisData cases", url: `${site.url}/case-studies` }
-};
+export const metadata: Metadata = metadataForPath("/case-studies");
 
 export default function CaseStudiesPage() {
+  const schema = graphSchema([
+    webPageSchema({
+      path: "/case-studies",
+      name: "Cases",
+      description: metadata.description ?? ""
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Cases", path: "/case-studies" }
+    ]),
+    collectionPageSchema({
+      path: "/case-studies",
+      name: "Cases",
+      description: metadata.description ?? "",
+      items: caseStudies.map((item) => ({
+        name: item.title,
+        path: `/case-studies/${item.slug}`
+      }))
+    })
+  ]);
+
   return (
-    <>
-      <JsonLd data={baseGraph("/case-studies")} />
-      <main>
-        <section className="border-b border-bone/10 pb-20 pt-36 md:pt-44">
-          <div className="container">
-            <SectionHeading
-              eyebrow="Cases"
-              title="Infrastructuurpatronen voor autoriteit en zichtbaarheid."
-              description="Case-architectuur voor het type strategische systemen dat MagisData bouwt: premium webplatformen, AI-leesbare zoekstructuren en conversiepaden."
-            />
+    <main className="bg-cream/40">
+      <JsonLd data={schema} />
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="max-w-3xl">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+              Cases
+            </p>
+            <h1 className="mt-4 text-balance text-4xl font-extrabold leading-tight tracking-[-0.035em] text-navy md:text-6xl">
+              Voorbeelden van websites die duidelijker, sterker en winstgevender werden
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-muted">
+              Geen technische verhalen. Wel korte praktijkvoorbeelden van problemen die veel ondernemers herkennen: een onduidelijke website, weinig vertrouwen of te weinig aanvragen.
+            </p>
           </div>
-        </section>
-        <SectionShell>
-          <div className="grid gap-4 md:grid-cols-2">
-            {caseStudies.map((study) => (
-              <Link href={`/case-studies/${study.slug}`} key={study.slug}>
-                <Card className="group h-full p-8">
-                  <div className="-mx-8 -mt-8 mb-8 overflow-hidden rounded-t-md">
-                    <Image
-                      alt={study.image.alt}
-                      className="aspect-[16/9] w-full object-cover opacity-85 transition duration-500 group-hover:scale-[1.03]"
-                      height={788}
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      src={study.image.src}
-                      width={1400}
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {study.tags.map((tag) => (
-                      <span
-                        className="rounded-md border border-amber/20 bg-amber/8 px-2.5 py-1 text-xs font-semibold text-amber"
-                        key={tag}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="mt-8 font-satoshi text-3xl font-semibold leading-tight text-bone">
-                    {study.title}
-                  </h2>
-                  <p className="mt-5 leading-8 text-bone/62">{study.description}</p>
-                  <p className="mt-5 text-sm leading-7 text-bone/50">{study.outcome}</p>
-                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-amber">
-                    Bekijk case <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
-                </Card>
-              </Link>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {caseStudies.map(({ icon: Icon, ...item }) => (
+              <article className="flex min-h-[360px] flex-col rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm" key={item.slug}>
+                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-orange-soft text-orange">
+                  <Icon className="h-7 w-7" strokeWidth={2.1} />
+                </span>
+                <h2 className="mt-7 text-xl font-extrabold leading-7 text-navy">{item.title}</h2>
+                <p className="mt-4 text-sm leading-7 text-muted">{item.summary}</p>
+                <p className="mt-5 rounded-2xl bg-green-soft px-4 py-3 text-sm font-extrabold text-navy">
+                  {item.result}
+                </p>
+                <Link className="focus-ring mt-auto inline-flex items-center pt-7 text-sm font-extrabold text-orange" href={`/case-studies/${item.slug}`}>
+                  Lees deze case <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </article>
             ))}
           </div>
-        </SectionShell>
-        <CtaSection />
-      </main>
-    </>
+        </div>
+      </section>
+      <RelatedLinks
+        links={[
+          { href: "/web-development", label: "Website laten maken", description: "Bouw een duidelijker fundament voor vertrouwen." },
+          { href: "/seo-services", label: "SEO diensten", description: "Versterk structuur, content en vindbaarheid." },
+          { href: "/contact", label: "Vraag groeiscan aan", description: "Laat je huidige website praktisch beoordelen." }
+        ]}
+      />
+    </main>
   );
 }

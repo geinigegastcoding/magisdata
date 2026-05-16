@@ -1,16 +1,13 @@
 {
   "name": "magisdata-v1",
   "version": "1.0.0",
-  "description": "Production-ready MagisData strategic digital infrastructure website.",
+  "description": "Production-ready MagisData public website.",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit",
-    "convert:assets": "node scripts/convert-assets.mjs",
-    "download:stock": "node scripts/download-stock-assets.mjs",
-    "extract:logo": "node scripts/extract-layout-logo.mjs"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
@@ -21,7 +18,6 @@
     "next": "^16.2.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "sharp": "^0.34.5",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

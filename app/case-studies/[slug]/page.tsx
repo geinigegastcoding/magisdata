@@ -1,88 +1,130 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CtaSection } from "@/components/cta-section";
+import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { caseStudies } from "@/content/site-content";
-import { site } from "@/lib/site";
-import { baseGraph } from "@/schemas/structured-data";
+import { RelatedLinks } from "@/components/related-links";
+import { relatedLinksByPath } from "@/content/internal-links";
+import { caseStudies } from "@/content/pages";
+import { metadataForPath } from "@/content/seo";
+import { breadcrumbSchema, caseStudySchema, graphSchema, webPageSchema } from "@/schemas/seo";
+
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
 
 export function generateStaticParams() {
-  return caseStudies.map((study) => ({ slug: study.slug }));
+  return caseStudies.map((item) => ({ slug: item.slug }));
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const study = caseStudies.find((item) => item.slug === slug);
-  if (!study) return {};
+  const item = caseStudies.find((caseStudy) => caseStudy.slug === slug);
 
-  return {
-    title: study.title,
-    description: study.description,
-    alternates: { canonical: `/case-studies/${study.slug}` },
-    openGraph: {
-      title: study.title,
-      description: study.description,
-      url: `${site.url}/case-studies/${study.slug}`
-    }
-  };
+  if (!item) {
+    return {};
+  }
+
+  return metadataForPath(`/case-studies/${item.slug}`);
 }
 
-export default async function CaseStudyPage({
-  params
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function CaseStudyDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const study = caseStudies.find((item) => item.slug === slug);
-  if (!study) notFound();
+  const item = caseStudies.find((caseStudy) => caseStudy.slug === slug);
+
+  if (!item) {
+    notFound();
+  }
+
+  const Icon = item.icon;
+  const schema = graphSchema([
+    webPageSchema({
+      path: `/case-studies/${item.slug}`,
+      name: item.title,
+      description: item.summary
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Cases", path: "/case-studies" },
+      { name: item.title, path: `/case-studies/${item.slug}` }
+    ]),
+    caseStudySchema(item)
+  ]);
 
   return (
-    <>
-      <JsonLd data={baseGraph(`/case-studies/${study.slug}`)} />
-      <main>
-        <article className="container max-w-5xl pb-20 pt-36 md:pt-44">
-          <Badge>Case</Badge>
-          <h1 className="mt-6 text-balance font-satoshi text-5xl font-semibold leading-tight text-bone md:text-7xl">
-            {study.title}
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-bone/66">{study.description}</p>
-          <div className="mt-10 overflow-hidden rounded-md border border-bone/10 bg-steel shadow-premium">
-            <Image
-              alt={study.image.alt}
-              className="aspect-[16/9] w-full object-cover"
-              height={788}
-              priority
-              sizes="(min-width: 1024px) 960px, 100vw"
-              src={study.image.src}
-              width={1400}
-            />
-          </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {study.tags.map((tag) => (
-              <Card key={tag}>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">
-                  Focus
-                </p>
-                <h2 className="mt-5 font-satoshi text-xl font-semibold text-bone">{tag}</h2>
-              </Card>
-            ))}
-          </div>
-          <Card className="mt-10 bg-steel/50 p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber">
-              Resultaat
+    <main className="bg-cream/40">
+      <JsonLd data={schema} />
+      <article className="container py-16 md:py-24">
+        <Link className="focus-ring inline-flex items-center text-sm font-extrabold text-orange" href="/case-studies">
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Terug naar cases
+        </Link>
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.42fr]">
+          <div className="rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:p-10">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+              Case study
             </p>
-            <p className="mt-4 text-2xl leading-tight text-bone">{study.outcome}</p>
-          </Card>
-        </article>
-        <CtaSection />
-      </main>
-    </>
+            <h1 className="mt-4 text-balance text-4xl font-extrabold leading-tight tracking-[-0.035em] text-navy md:text-6xl">
+              {item.title}
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-muted">{item.summary}</p>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Probleem",
+                  text: "Bezoekers begrepen niet snel genoeg wat het bedrijf bood en waarom het betrouwbaar was."
+                },
+                {
+                  title: "Aanpak",
+                  text: "We maakten de boodschap scherper, verbeterden pagina's en maakten contact opnemen makkelijker."
+                },
+                {
+                  title: "Resultaat",
+                  text: item.result
+                }
+              ].map((block) => (
+                <section className="rounded-2xl bg-peach p-5" key={block.title}>
+                  <h2 className="text-base font-extrabold text-navy">{block.title}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">{block.text}</p>
+                </section>
+              ))}
+            </div>
+
+            <section className="mt-10">
+              <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                Wat ondernemers hiervan kunnen leren
+              </h2>
+              <ul className="mt-6 grid gap-4">
+                {[
+                  "Een website moet eerst duidelijk zijn, daarna pas mooi.",
+                  "Mensen nemen sneller contact op als de volgende stap rustig en zichtbaar is.",
+                  "Bewijs, voorbeelden en simpele uitleg maken een bedrijf betrouwbaarder."
+                ].map((lesson) => (
+                  <li className="flex gap-3 text-sm font-semibold leading-6 text-ink" key={lesson}>
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange" />
+                    {lesson}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+
+          <aside className="h-fit rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm">
+            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-green-soft text-green">
+              <Icon className="h-7 w-7" strokeWidth={2.1} />
+            </span>
+            <h2 className="mt-6 text-xl font-extrabold text-navy">Wil je dit ook verbeteren?</h2>
+            <p className="mt-3 text-sm leading-6 text-muted">
+              We kijken graag naar je huidige website en geven aan welke verbeteringen het meest logisch zijn.
+            </p>
+            <Link className="focus-ring mt-6 inline-flex items-center rounded-xl bg-orange px-5 py-3 text-sm font-bold text-white" href="/contact">
+              Vraag groeiscan aan
+            </Link>
+          </aside>
+        </div>
+      </article>
+      <RelatedLinks links={relatedLinksByPath[`/case-studies/${item.slug}`] ?? []} />
+    </main>
   );
 }

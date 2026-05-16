@@ -1,21 +1,21 @@
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-export function Logo({ className, markOnly = false }: { className?: string; markOnly?: boolean }) {
+type LogoProps = {
+  className?: string;
+};
+
+export function Logo({ className }: LogoProps) {
   return (
     <Link
       aria-label="MagisData home"
-      className={cn("flex items-center", className)}
+      className={cn("inline-flex items-center", className)}
       href="/"
     >
-      <Image
-        alt="MagisData logo"
-        className={cn(markOnly ? "h-12 w-auto" : "h-12 w-auto")}
-        height={markOnly ? 128 : 187}
-        priority
-        src={markOnly ? "/assets/magisdata-mark.webp" : "/assets/magisdata-logo.webp"}
-        width={markOnly ? 102 : 540}
+      <img
+        alt="MagisData"
+        className="h-12 w-auto sm:h-14"
+        src="/assets/logo.webp"
       />
     </Link>
   );

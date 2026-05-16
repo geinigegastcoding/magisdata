@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { ServicePage } from "@/components/service-page";
-import { site } from "@/lib/site";
+import { ContentPage } from "@/components/content-page";
+import { pageIcons, servicePages } from "@/content/pages";
+import { metadataForPath } from "@/content/seo";
 
-export const metadata: Metadata = {
-  title: "Webontwikkeling",
-  description:
-    "Premium Next.js-webontwikkeling met performance, toegankelijkheid, gestructureerde content, conversie en schaalbaarheid ingebouwd.",
-  alternates: { canonical: "/web-development" },
-  openGraph: { title: "Webontwikkeling | MagisData", url: `${site.url}/web-development` }
-};
+export const metadata: Metadata = metadataForPath("/web-development");
 
-export default function Page() {
-  return <ServicePage slug="web-development" />;
+export default function WebDevelopmentPage() {
+  return (
+    <ContentPage
+      content={servicePages["web-development"]}
+      icon={pageIcons["web-development"]}
+      pathname="/web-development"
+      schemaKind="service"
+    />
+  );
 }
