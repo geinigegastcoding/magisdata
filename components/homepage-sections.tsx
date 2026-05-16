@@ -64,27 +64,27 @@ function TextCta({ children, href = "/contact" }: { children: ReactNode; href?: 
 
 const stockPhotos = {
   person: {
-    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=85",
+    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=72",
     alt: "Vriendelijke ondernemer die met een laptop werkt"
   },
   team: {
-    src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85",
+    src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=75",
     alt: "Team dat samen aan online groei werkt"
   },
   laptop: {
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85",
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75",
     alt: "Laptop met website en groeicijfers"
   },
   woman: {
-    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
+    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=640&q=75",
     alt: "Vriendelijke ondernemer klaar voor een gesprek"
   },
   meeting: {
-    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=85",
+    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=640&q=75",
     alt: "Zakelijke afspraak met laptop"
   },
   local: {
-    src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85",
+    src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=640&q=75",
     alt: "Lokale ondernemer achter laptop"
   }
 } as const;
@@ -104,8 +104,10 @@ function FriendlyPhoto({ variant = "person", className }: { variant?: StockPhoto
       <img
         alt={photo.alt}
         className="h-full w-full object-cover"
+        height="540"
         loading={variant === "person" ? "eager" : "lazy"}
         src={photo.src}
+        width="900"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-orange-soft/20" />
     </figure>
@@ -208,7 +210,11 @@ export function Hero() {
               <img
                 alt="Tevreden klant van MagisData"
                 className="h-24 w-24 rounded-2xl object-cover object-top shadow-sm ring-4 ring-white sm:h-28 sm:w-28"
+                height="112"
                 src="/assets/man-review.webp"
+                srcSet="/assets/man-review-112.webp 112w, /assets/man-review-168.webp 168w, /assets/man-review.webp 400w"
+                sizes="(min-width: 640px) 112px, 96px"
+                width="112"
               />
             </div>
           </div>
@@ -461,7 +467,9 @@ export function FinalCta() {
               <img
                 alt="Vriendelijke medewerker van MagisData"
                 className="absolute bottom-0 left-0 h-[255px] w-auto object-contain md:h-[285px]"
+                height="285"
                 src="/assets/girl.webp"
+                width="285"
               />
             </div>
             <div>
