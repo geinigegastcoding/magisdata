@@ -1,6 +1,8 @@
 import { seoRoutes } from "@/content/seo";
 import { lastModified, siteUrl } from "@/schemas/seo";
 
+export const dynamic = "force-static";
+
 export function GET() {
   return new Response(
     [
