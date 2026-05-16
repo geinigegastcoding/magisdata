@@ -89,7 +89,7 @@ export function ContentPage({
               {content.description}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <PrimaryLink href={primaryHref ?? (contactMode ? "mailto:hallo@magisdata.nl" : "/contact")}>
+              <PrimaryLink href={primaryHref ?? (contactMode ? "mailto:hallo%40magisdata.nl" : "/contact")}>
                 {content.primaryCta ?? "Plan een gratis gesprek"}
               </PrimaryLink>
               <SecondaryLink href={secondaryHref}>
@@ -121,9 +121,9 @@ export function ContentPage({
             {contactMode ? (
               <div className="mt-7 grid gap-4">
                 <div className="grid gap-3 rounded-2xl bg-peach p-4 text-sm font-semibold text-ink">
-                  <Link className="focus-ring flex items-center gap-3 hover:text-orange" href="mailto:hallo@magisdata.nl">
+                  <Link className="focus-ring flex items-center gap-3 hover:text-orange" href="mailto:hallo%40magisdata.nl">
                     <Mail className="h-4 w-4 text-orange" />
-                    hallo@magisdata.nl
+                    hallo [at] magisdata.nl
                   </Link>
                   <Link className="focus-ring flex items-center gap-3 hover:text-orange" href="tel:+31612345678">
                     <Phone className="h-4 w-4 text-orange" />

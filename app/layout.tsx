@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -8,6 +7,28 @@ import { graphSchema, localBusinessSchema, organizationSchema, websiteSchema } f
 import "./globals.css";
 
 const googleTagId = "G-ERY87MPVTM";
+const analyticsLoader = `
+(() => {
+  const id = "${googleTagId}";
+  let loaded = false;
+  const load = () => {
+    if (loaded) return;
+    loaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(script);
+  };
+  window.addEventListener('load', () => window.setTimeout(load, 15000), { once: true });
+  ['pointerdown', 'keydown', 'scroll'].forEach((event) => {
+    window.addEventListener(event, load, { once: true, passive: true });
+  });
+})();
+`;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,15 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl">
       <body className={inter.variable}>
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`} strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${googleTagId}');
-          `}
-        </Script>
+        <script dangerouslySetInnerHTML={{ __html: analyticsLoader }} />
         <JsonLd data={graphSchema([organizationSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
         {children}

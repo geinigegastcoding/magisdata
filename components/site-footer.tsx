@@ -111,8 +111,8 @@ export function SiteFooter() {
             Contact
           </h2>
           <div className="mt-4 grid gap-2 text-sm text-muted">
-            <Link className="focus-ring rounded-full hover:text-orange" href="mailto:hallo@magisdata.nl">
-              hallo@magisdata.nl
+            <Link className="focus-ring rounded-full hover:text-orange" href="mailto:hallo%40magisdata.nl">
+              hallo [at] magisdata.nl
             </Link>
             <Link className="focus-ring rounded-full hover:text-orange" href="tel:+31612345678">
               +31 6 12345678

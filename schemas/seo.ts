@@ -20,7 +20,6 @@ export function organizationSchema() {
     name: siteName,
     url: siteUrl,
     logo: `${siteUrl}/assets/logo.png`,
-    email: "hallo@magisdata.nl",
     telephone: "+31 6 12345678",
     areaServed: "NL",
     knowsAbout: [
@@ -42,7 +41,6 @@ export function localBusinessSchema() {
     url: siteUrl,
     image: defaultImage,
     logo: `${siteUrl}/assets/logo.png`,
-    email: "hallo@magisdata.nl",
     telephone: "+31 6 12345678",
     address: {
       "@type": "PostalAddress",
