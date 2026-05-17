@@ -117,7 +117,7 @@ export const servicePages = {
   },
   "web-development": {
     eyebrow: "Websites",
-    title: "Een professionele website die duidelijk maakt waarom klanten jou moeten kiezen",
+    title: "Een professionele website die klanten laat kiezen voor jou",
     description:
       "We bouwen snelle, overzichtelijke websites voor ondernemers die betrouwbaar willen overkomen en meer aanvragen willen krijgen zonder technische rompslomp.",
     primaryCta: "Bespreek mijn website",

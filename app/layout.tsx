@@ -39,6 +39,20 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://magisdata.nl"),
   applicationName: "MagisData",
+  icons: {
+    icon: [
+      {
+        url: "/assets/logo-icon.png",
+        type: "image/png"
+      }
+    ],
+    apple: [
+      {
+        url: "/assets/logo-icon.png",
+        type: "image/png"
+      }
+    ]
+  },
   title: {
     default: "MagisData | Websites, SEO en online groei voor ambitieuze bedrijven",
     template: "%s | MagisData"
