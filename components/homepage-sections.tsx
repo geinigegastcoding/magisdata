@@ -39,7 +39,7 @@ function PrimaryButton({ children, href = "/contact" }: { children: ReactNode; h
   );
 }
 
-function SecondaryButton({ children, href = "/services" }: { children: ReactNode; href?: string }) {
+function SecondaryButton({ children, href = "/diensten" }: { children: ReactNode; href?: string }) {
   return (
     <Link
       className="focus-ring inline-flex items-center justify-center rounded-xl border border-line bg-white px-7 py-4 text-[0.95rem] font-bold text-navy shadow-sm transition-all duration-200 hover:border-orange-soft hover:bg-peach hover:text-orange"
@@ -376,7 +376,7 @@ export function Results() {
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <PrimaryButton>Ik wil ook groeien</PrimaryButton>
-                <SecondaryButton href="/case-studies">Bekijk resultaten</SecondaryButton>
+                <SecondaryButton href="/cases">Bekijk resultaten</SecondaryButton>
               </div>
             </div>
             <FriendlyPhoto className="h-64" variant="team" />
@@ -415,7 +415,7 @@ export function CaseStudyInsights() {
               </div>
               <div className="mt-7">
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <SecondaryButton href="/case-studies">Bekijk de case</SecondaryButton>
+                  <SecondaryButton href="/cases">Bekijk de case</SecondaryButton>
                   <TextCta>Vraag groeiplan aan</TextCta>
                 </div>
               </div>
@@ -433,14 +433,14 @@ export function CaseStudyInsights() {
           <Eyebrow>Laatste inzichten</Eyebrow>
           <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.03em] text-navy">Tips, trends en inspiratie</h2>
           <div className="mt-7 grid gap-5 md:grid-cols-3">
-            {insights.map((title, index) => (
-              <Link className="focus-ring group rounded-2xl" href="/insights" key={title}>
+            {insights.map((insight, index) => (
+              <Link className="focus-ring group rounded-2xl" href={insight.href} key={insight.href}>
                 <FriendlyPhoto
                   className="h-28 rounded-2xl"
                   variant={index === 0 ? "meeting" : index === 1 ? "local" : "team"}
                 />
                 <h3 className="mt-4 text-sm font-bold leading-5 text-navy transition group-hover:text-orange">
-                  {title}
+                  {insight.title}
                 </h3>
                 <span className="mt-3 inline-flex items-center text-xs font-bold text-orange">
                   Lees verder <ChevronRight className="ml-1 h-3.5 w-3.5" />
@@ -448,7 +448,7 @@ export function CaseStudyInsights() {
               </Link>
             ))}
           </div>
-          <Link className="focus-ring mt-7 inline-flex items-center rounded-full text-sm font-bold text-orange" href="/insights">
+          <Link className="focus-ring mt-7 inline-flex items-center rounded-full text-sm font-bold text-orange" href="/inzichten">
             Bekijk alle inzichten <ChevronRight className="ml-1 h-4 w-4" />
           </Link>
         </article>

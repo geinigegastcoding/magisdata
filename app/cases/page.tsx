@@ -7,26 +7,26 @@ import { caseStudies } from "@/content/pages";
 import { metadataForPath } from "@/content/seo";
 import { breadcrumbSchema, collectionPageSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
-export const metadata: Metadata = metadataForPath("/case-studies");
+export const metadata: Metadata = metadataForPath("/cases");
 
 export default function CaseStudiesPage() {
   const schema = graphSchema([
     webPageSchema({
-      path: "/case-studies",
+      path: "/cases",
       name: "Cases",
       description: metadata.description ?? ""
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Cases", path: "/case-studies" }
+      { name: "Cases", path: "/cases" }
     ]),
     collectionPageSchema({
-      path: "/case-studies",
+      path: "/cases",
       name: "Cases",
       description: metadata.description ?? "",
       items: caseStudies.map((item) => ({
         name: item.title,
-        path: `/case-studies/${item.slug}`
+        path: `/cases/${item.slug}`
       }))
     })
   ]);
@@ -59,7 +59,7 @@ export default function CaseStudiesPage() {
                 <p className="mt-5 rounded-2xl bg-green-soft px-4 py-3 text-sm font-extrabold text-navy">
                   {item.result}
                 </p>
-                <Link className="focus-ring mt-auto inline-flex items-center pt-7 text-sm font-extrabold text-orange" href={`/case-studies/${item.slug}`}>
+                <Link className="focus-ring mt-auto inline-flex items-center pt-7 text-sm font-extrabold text-orange" href={`/cases/${item.slug}`}>
                   Lees deze case <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </article>
@@ -69,8 +69,8 @@ export default function CaseStudiesPage() {
       </section>
       <RelatedLinks
         links={[
-          { href: "/web-development", label: "Website laten maken", description: "Bouw een duidelijker fundament voor vertrouwen." },
-          { href: "/seo-services", label: "SEO diensten", description: "Versterk structuur, content en vindbaarheid." },
+          { href: "/webontwikkeling", label: "Website laten maken", description: "Bouw een duidelijker fundament voor vertrouwen." },
+          { href: "/seo-diensten", label: "SEO diensten", description: "Versterk structuur, content en vindbaarheid." },
           { href: "/contact", label: "Vraag groeiscan aan", description: "Laat je huidige website praktisch beoordelen." }
         ]}
       />

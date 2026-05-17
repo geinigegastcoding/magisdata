@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  return metadataForPath(`/case-studies/${item.slug}`);
+  return metadataForPath(`/cases/${item.slug}`);
 }
 
 export default async function CaseStudyDetailPage({ params }: PageProps) {
@@ -39,14 +39,14 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
   const Icon = item.icon;
   const schema = graphSchema([
     webPageSchema({
-      path: `/case-studies/${item.slug}`,
+      path: `/cases/${item.slug}`,
       name: item.title,
       description: item.summary
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Cases", path: "/case-studies" },
-      { name: item.title, path: `/case-studies/${item.slug}` }
+      { name: "Cases", path: "/cases" },
+      { name: item.title, path: `/cases/${item.slug}` }
     ]),
     caseStudySchema(item)
   ]);
@@ -55,7 +55,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     <main className="bg-cream/40">
       <JsonLd data={schema} />
       <article className="container py-16 md:py-24">
-        <Link className="focus-ring inline-flex items-center text-sm font-extrabold text-orange" href="/case-studies">
+        <Link className="focus-ring inline-flex items-center text-sm font-extrabold text-orange" href="/cases">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Terug naar cases
         </Link>
@@ -124,7 +124,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
           </aside>
         </div>
       </article>
-      <RelatedLinks links={relatedLinksByPath[`/case-studies/${item.slug}`] ?? []} />
+      <RelatedLinks links={relatedLinksByPath[`/cases/${item.slug}`] ?? []} />
     </main>
   );
 }

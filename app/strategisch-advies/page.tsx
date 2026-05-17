@@ -3,14 +3,14 @@ import { ContentPage } from "@/components/content-page";
 import { pageIcons, servicePages } from "@/content/pages";
 import { metadataForPath } from "@/content/seo";
 
-export const metadata: Metadata = metadataForPath("/web-development");
+export const metadata: Metadata = metadataForPath("/strategisch-advies");
 
-export default function WebDevelopmentPage() {
+export default function StrategicConsultingPage() {
   return (
     <ContentPage
-      content={servicePages["web-development"]}
-      icon={pageIcons["web-development"]}
-      pathname="/web-development"
+      content={servicePages["strategic-consulting"]}
+      icon={pageIcons["strategic-consulting"]}
+      pathname="/strategisch-advies"
       schemaKind="service"
     />
   );

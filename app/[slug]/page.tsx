@@ -55,7 +55,7 @@ export default async function LandingPage({ params }: PageProps) {
           ? "/algemene-voorwaarden"
           : page.slug === "algemene-voorwaarden"
             ? "/privacybeleid"
-            : "/services"
+            : "/diensten"
       }
     />
   );

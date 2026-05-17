@@ -12,20 +12,20 @@ const navigation: NavigationItem[] = [
   { label: "Home", href: "/" },
   {
     label: "Diensten",
-    href: "/services",
+    href: "/diensten",
     activePaths: [
-      "/services",
-      "/web-development",
-      "/seo-services",
-      "/geo-optimization",
-      "/aeo-optimization",
-      "/ai-infrastructure",
-      "/strategic-consulting"
+      "/diensten",
+      "/webontwikkeling",
+      "/seo-diensten",
+      "/geo-optimalisatie",
+      "/aeo-optimalisatie",
+      "/ai-infrastructuur",
+      "/strategisch-advies"
     ]
   },
-  { label: "Over MagisData", href: "/about" },
-  { label: "Cases", href: "/case-studies" },
-  { label: "Inzichten", href: "/insights" },
+  { label: "Over MagisData", href: "/over-ons" },
+  { label: "Cases", href: "/cases" },
+  { label: "Inzichten", href: "/inzichten" },
   { label: "Contact", href: "/contact" }
 ];
 

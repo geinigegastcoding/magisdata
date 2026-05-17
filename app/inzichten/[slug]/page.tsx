@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  return metadataForPath(`/insights/${item.slug}`);
+  return metadataForPath(`/inzichten/${item.slug}`);
 }
 
 export default async function InsightDetailPage({ params }: PageProps) {
@@ -58,14 +58,14 @@ export default async function InsightDetailPage({ params }: PageProps) {
   const body = articleBodies[item.slug] ?? [];
   const schema = graphSchema([
     webPageSchema({
-      path: `/insights/${item.slug}`,
+      path: `/inzichten/${item.slug}`,
       name: item.title,
       description: item.summary
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Inzichten", path: "/insights" },
-      { name: item.title, path: `/insights/${item.slug}` }
+      { name: "Inzichten", path: "/inzichten" },
+      { name: item.title, path: `/inzichten/${item.slug}` }
     ]),
     articleSchema(item)
   ]);
@@ -74,7 +74,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
     <main className="bg-cream/40">
       <JsonLd data={schema} />
       <article className="container max-w-5xl py-16 md:py-24">
-        <Link className="focus-ring inline-flex items-center text-sm font-extrabold text-orange" href="/insights">
+        <Link className="focus-ring inline-flex items-center text-sm font-extrabold text-orange" href="/inzichten">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Terug naar inzichten
         </Link>
@@ -120,7 +120,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
           </section>
         </div>
       </article>
-      <RelatedLinks links={relatedLinksByPath[`/insights/${item.slug}`] ?? []} />
+      <RelatedLinks links={relatedLinksByPath[`/inzichten/${item.slug}`] ?? []} />
     </main>
   );
 }

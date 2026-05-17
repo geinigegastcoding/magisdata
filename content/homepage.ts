@@ -30,7 +30,7 @@ export const services = [
     title: "Websites",
     description:
       "Professionele websites die vertrouwen geven en bezoekers helpen om contact op te nemen.",
-    href: "/web-development",
+    href: "/webontwikkeling",
     icon: MonitorSmartphone,
     color: "text-green bg-green-soft"
   },
@@ -54,7 +54,7 @@ export const services = [
     title: "Online advies",
     description:
       "Een duidelijk plan voor je website, Google en advertenties.",
-    href: "/strategic-consulting",
+    href: "/strategisch-advies",
     icon: HeartHandshake,
     color: "text-pink bg-pink-soft"
   }
@@ -101,9 +101,18 @@ export const metrics = [
 ];
 
 export const insights = [
-  "Beter gevonden worden in Google als lokaal bedrijf",
-  "5 simpele tips voor meer aanvragen via je website",
-  "Waarom een snelle website meer klanten oplevert"
+  {
+    title: "Beter gevonden worden in Google als lokaal bedrijf",
+    href: "/inzichten/seo-zonder-jargon"
+  },
+  {
+    title: "5 simpele tips voor meer aanvragen via je website",
+    href: "/inzichten/website-meer-aanvragen"
+  },
+  {
+    title: "Waarom duidelijke uitleg belangrijker wordt voor AI",
+    href: "/inzichten/ai-vindbaarheid"
+  }
 ];
 
 export const heroTrust = [

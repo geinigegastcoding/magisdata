@@ -6,32 +6,32 @@ export type InternalLink = {
 
 const serviceLinks: InternalLink[] = [
   {
-    href: "/web-development",
+    href: "/webontwikkeling",
     label: "Website laten maken",
     description: "Bouw een snelle website die je aanbod duidelijk uitlegt."
   },
   {
-    href: "/seo-services",
+    href: "/seo-diensten",
     label: "SEO diensten",
     description: "Verbeter vindbaarheid met sterke pagina's en content."
   },
   {
-    href: "/aeo-optimization",
+    href: "/aeo-optimalisatie",
     label: "AEO optimalisatie",
     description: "Beantwoord klantvragen beter voor zoekmachines en AI."
   },
   {
-    href: "/geo-optimization",
+    href: "/geo-optimalisatie",
     label: "GEO optimalisatie",
     description: "Maak je bedrijf beter begrijpbaar voor AI-zoekmachines."
   },
   {
-    href: "/ai-infrastructure",
+    href: "/ai-infrastructuur",
     label: "AI en automatisering",
     description: "Verminder handwerk en verbeter leadopvolging."
   },
   {
-    href: "/strategic-consulting",
+    href: "/strategisch-advies",
     label: "Strategisch advies",
     description: "Kies de juiste volgorde voor online groei."
   },
@@ -58,76 +58,91 @@ const serviceLinks: InternalLink[] = [
 ];
 
 export const relatedLinksByPath: Record<string, InternalLink[]> = {
-  "/services": serviceLinks,
-  "/web-development": [
+  "/diensten": serviceLinks,
+  "/webontwikkeling": [
     serviceLinks[1],
     { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Combineer websitebouw met sterke vindbaarheid vanaf de start." },
-    { href: "/case-studies/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Zie hoe duidelijkere pagina's meer aanvragen opleverden." }
+    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Zie hoe duidelijkere pagina's meer aanvragen opleverden." }
   ],
-  "/seo-services": [
+  "/website-laten-maken": [
+    serviceLinks[0],
+    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Start met een website die ook vindbaar is." },
+    { href: "/inzichten/website-meer-aanvragen", label: "Meer aanvragen uit je website", description: "Lees waarom mooie websites soms weinig opleveren." }
+  ],
+  "/website-onderhoud": [
+    serviceLinks[0],
+    serviceLinks[1],
+    { href: "/contact", label: "Onderhoud bespreken", description: "Bekijk welke technische en contentchecks logisch zijn." }
+  ],
+  "/seo-website-laten-maken": [
+    serviceLinks[0],
+    serviceLinks[1],
+    { href: "/seo-bureau", label: "SEO bureau", description: "Bouw verder aan vindbaarheid na livegang." }
+  ],
+  "/seo-diensten": [
     serviceLinks[6],
     serviceLinks[8],
-    { href: "/insights/seo-zonder-jargon", label: "SEO zonder jargon", description: "Lees wat ondernemers echt moeten weten over SEO." }
+    { href: "/inzichten/seo-zonder-jargon", label: "SEO zonder jargon", description: "Lees wat ondernemers echt moeten weten over SEO." }
   ],
-  "/geo-optimization": [
+  "/geo-optimalisatie": [
     serviceLinks[7],
-    { href: "/insights/ai-vindbaarheid", label: "AI-vindbaarheid", description: "Waarom duidelijke uitleg belangrijker wordt voor AI." },
+    { href: "/inzichten/ai-vindbaarheid", label: "AI-vindbaarheid", description: "Waarom duidelijke uitleg belangrijker wordt voor AI." },
     serviceLinks[1]
   ],
-  "/aeo-optimization": [
+  "/aeo-optimalisatie": [
     serviceLinks[7],
-    { href: "/insights/ai-vindbaarheid", label: "AI-vindbaarheid", description: "Maak content makkelijker te begrijpen en citeren." },
+    { href: "/inzichten/ai-vindbaarheid", label: "AI-vindbaarheid", description: "Maak content makkelijker te begrijpen en citeren." },
     serviceLinks[1]
   ],
-  "/ai-infrastructure": [
+  "/ai-infrastructuur": [
     serviceLinks[5],
     serviceLinks[0],
     { href: "/contact", label: "Bespreek automatisering", description: "Bekijk welke workflow als eerste slim is." }
   ],
-  "/strategic-consulting": [
+  "/strategisch-advies": [
     serviceLinks[0],
     serviceLinks[6],
-    { href: "/case-studies", label: "Bekijk cases", description: "Zie welke verbeteringen ondernemers herkennen." }
+    { href: "/cases", label: "Bekijk cases", description: "Zie welke verbeteringen ondernemers herkennen." }
   ],
-  "/about": [
-    { href: "/services", label: "Bekijk diensten", description: "Ontdek waar MagisData praktisch bij helpt." },
-    { href: "/case-studies", label: "Bekijk cases", description: "Lees voorbeelden van duidelijkere websites en groei." },
+  "/over-ons": [
+    { href: "/diensten", label: "Bekijk diensten", description: "Ontdek waar MagisData praktisch bij helpt." },
+    { href: "/cases", label: "Bekijk cases", description: "Lees voorbeelden van duidelijkere websites en groei." },
     { href: "/contact", label: "Maak kennis", description: "Plan een rustig eerste gesprek." }
   ],
   "/contact": [
-    { href: "/services", label: "Alle diensten", description: "Bekijk eerst welke hulp past bij je vraag." },
+    { href: "/diensten", label: "Alle diensten", description: "Bekijk eerst welke hulp past bij je vraag." },
     serviceLinks[5],
-    { href: "/insights", label: "Lees inzichten", description: "Praktische uitleg over websites, SEO en AI-vindbaarheid." }
+    { href: "/inzichten", label: "Lees inzichten", description: "Praktische uitleg over websites, SEO en AI-vindbaarheid." }
   ],
-  "/case-studies/lokale-dienstverlener": [
+  "/cases/lokale-dienstverlener": [
     serviceLinks[0],
     serviceLinks[1],
-    { href: "/insights/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Lees hoe je meer vertrouwen en actie opbouwt." }
+    { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Lees hoe je meer vertrouwen en actie opbouwt." }
   ],
-  "/case-studies/adviesbureau": [
+  "/cases/adviesbureau": [
     serviceLinks[5],
     serviceLinks[0],
-    { href: "/about", label: "Over MagisData", description: "Leer hoe wij digitale groei begrijpelijk maken." }
+    { href: "/over-ons", label: "Over MagisData", description: "Leer hoe wij digitale groei begrijpelijk maken." }
   ],
-  "/case-studies/groeiende-webshop": [
+  "/cases/groeiende-webshop": [
     serviceLinks[1],
     serviceLinks[3],
-    { href: "/insights/seo-zonder-jargon", label: "SEO zonder jargon", description: "Begrijp de basis van sterke organische groei." }
+    { href: "/inzichten/seo-zonder-jargon", label: "SEO zonder jargon", description: "Begrijp de basis van sterke organische groei." }
   ],
-  "/insights/website-meer-aanvragen": [
+  "/inzichten/website-meer-aanvragen": [
     serviceLinks[0],
-    { href: "/case-studies/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Voorbeeld van duidelijkere website en meer aanvragen." },
+    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Voorbeeld van duidelijkere website en meer aanvragen." },
     { href: "/contact", label: "Vraag groeiscan aan", description: "Laat je huidige website praktisch bekijken." }
   ],
-  "/insights/seo-zonder-jargon": [
+  "/inzichten/seo-zonder-jargon": [
     serviceLinks[6],
     serviceLinks[8],
-    { href: "/case-studies/groeiende-webshop", label: "Case groeiende webshop", description: "Voorbeeld van betere SEO-structuur." }
+    { href: "/cases/groeiende-webshop", label: "Case groeiende webshop", description: "Voorbeeld van betere SEO-structuur." }
   ],
-  "/insights/ai-vindbaarheid": [
+  "/inzichten/ai-vindbaarheid": [
     serviceLinks[7],
     { href: "/ai-vindbaarheid", label: "AI vindbaarheid verbeteren", description: "Maak je bedrijf beter citeerbaar in AI-antwoorden." },
-    { href: "/services", label: "Bekijk AI-vriendelijke diensten", description: "Zie hoe SEO, AEO en GEO elkaar versterken." }
+    { href: "/diensten", label: "Bekijk AI-vriendelijke diensten", description: "Zie hoe SEO, AEO en GEO elkaar versterken." }
   ],
   "/seo-bureau": [
     serviceLinks[1],
@@ -144,6 +159,21 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
     { href: "/website-laten-maken-leiden", label: "Website laten maken Leiden", description: "Website en SEO-basis voor lokale aanvragen." },
     serviceLinks[0]
   ],
+  "/website-laten-maken-leiden": [
+    { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Versterk lokale vindbaarheid rond Leiden." },
+    serviceLinks[8],
+    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Combineer websitebouw met zoekmachinebasis." }
+  ],
+  "/website-laten-maken-den-haag": [
+    serviceLinks[8],
+    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Maak lokale vindbaarheid onderdeel van de bouw." }
+  ],
+  "/website-laten-maken-rotterdam": [
+    serviceLinks[8],
+    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Maak lokale vindbaarheid onderdeel van de bouw." }
+  ],
   "/ai-seo-bureau": [
     { href: "/ai-vindbaarheid", label: "AI vindbaarheid", description: "Verbeter zichtbaarheid in ChatGPT, Perplexity en Google." },
     serviceLinks[3],
@@ -152,7 +182,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/ai-vindbaarheid": [
     serviceLinks[7],
     serviceLinks[3],
-    { href: "/insights/ai-vindbaarheid", label: "Uitleg over AI-vindbaarheid", description: "Lees waarom duidelijke content belangrijker wordt." }
+    { href: "/inzichten/ai-vindbaarheid", label: "Uitleg over AI-vindbaarheid", description: "Lees waarom duidelijke content belangrijker wordt." }
   ],
   "/online-marketing-bureau": [
     serviceLinks[6],
@@ -160,13 +190,43 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
     serviceLinks[0]
   ],
   "/conversie-optimalisatie": [
-    { href: "/insights/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Zie waar conversie vaak stukloopt." },
+    { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Zie waar conversie vaak stukloopt." },
     serviceLinks[0],
-    { href: "/case-studies/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Voorbeeld van meer aanvragen via mobiel." }
+    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Voorbeeld van meer aanvragen via mobiel." }
   ],
-  "/website-laten-maken-amsterdam": [
-    { href: "/website-laten-maken", label: "Website laten maken", description: "Algemene uitleg over onze website-aanpak." },
-    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Website met vindbaarheid vanaf de start." },
-    serviceLinks[6]
+  "/website-voor-loodgieters": [
+    { href: "/lokale-seo", label: "Lokale SEO", description: "Word gevonden door klanten in je regio." },
+    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/conversie-optimalisatie", label: "Conversie optimalisatie", description: "Maak bellen en aanvragen makkelijker." }
+  ],
+  "/website-voor-elektriciens": [
+    { href: "/lokale-seo", label: "Lokale SEO", description: "Versterk regionale vindbaarheid voor spoed en projecten." },
+    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Leg meteen een vindbare basis." }
+  ],
+  "/website-voor-kappers": [
+    { href: "/lokale-seo", label: "Lokale SEO", description: "Help klanten in de buurt je salon vinden." },
+    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/conversie-optimalisatie", label: "Conversie optimalisatie", description: "Maak boeken en contact opnemen eenvoudiger." }
+  ],
+  "/website-voor-hoveniers": [
+    { href: "/lokale-seo", label: "Lokale SEO", description: "Word vindbaar op diensten en regio." },
+    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Zie hoe duidelijkere pagina's aanvragen helpen." }
+  ],
+  "/privacybeleid": [
+    { href: "/algemene-voorwaarden", label: "Algemene voorwaarden", description: "Lees de praktische samenwerkingsvoorwaarden." },
+    { href: "/contact", label: "Privacyvraag stellen", description: "Neem contact op bij vragen over gegevens." },
+    { href: "/over-ons", label: "Over MagisData", description: "Leer hoe MagisData werkt." }
+  ],
+  "/algemene-voorwaarden": [
+    { href: "/privacybeleid", label: "Privacybeleid", description: "Lees hoe MagisData met gegevens omgaat." },
+    { href: "/contact", label: "Vraag stellen", description: "Neem contact op over samenwerking of voorwaarden." },
+    { href: "/diensten", label: "Bekijk diensten", description: "Zie waar MagisData praktisch bij helpt." }
+  ],
+  "/bedankt": [
+    { href: "/diensten", label: "Bekijk diensten", description: "Lees alvast waar MagisData bij helpt." },
+    { href: "/inzichten", label: "Lees inzichten", description: "Praktische uitleg over websites, SEO en AI-vindbaarheid." },
+    { href: "/", label: "Terug naar home", description: "Ga terug naar de startpagina." }
   ]
 };

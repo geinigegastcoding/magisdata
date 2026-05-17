@@ -2,7 +2,7 @@ import type { PageContent } from "@/content/pages";
 
 export const siteUrl = "https://magisdata.nl";
 export const siteName = "MagisData";
-export const defaultImage = `${siteUrl}/assets/logo.png`;
+export const defaultImage = `${siteUrl}/assets/og-image.png`;
 export const lastModified = "2026-05-16";
 
 export function absoluteUrl(path: string) {
@@ -20,7 +20,6 @@ export function organizationSchema() {
     name: siteName,
     url: siteUrl,
     logo: `${siteUrl}/assets/logo.png`,
-    telephone: "+31 6 12345678",
     areaServed: "NL",
     knowsAbout: [
       "web development",
@@ -41,7 +40,6 @@ export function localBusinessSchema() {
     url: siteUrl,
     image: defaultImage,
     logo: `${siteUrl}/assets/logo.png`,
-    telephone: "+31 6 12345678",
     address: {
       "@type": "PostalAddress",
       addressCountry: "NL"
@@ -169,7 +167,7 @@ export function articleSchema(article: {
   datePublished: string;
   dateModified: string;
 }) {
-  const path = `/insights/${article.slug}`;
+  const path = `/inzichten/${article.slug}`;
 
   return {
     "@type": "Article",
@@ -196,7 +194,7 @@ export function caseStudySchema(caseStudy: {
   slug: string;
   result: string;
 }) {
-  const path = `/case-studies/${caseStudy.slug}`;
+  const path = `/cases/${caseStudy.slug}`;
 
   return {
     "@type": "Article",

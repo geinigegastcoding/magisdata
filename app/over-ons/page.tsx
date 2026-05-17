@@ -3,8 +3,8 @@ import { ContentPage } from "@/components/content-page";
 import { aboutPage, pageIcons } from "@/content/pages";
 import { metadataForPath } from "@/content/seo";
 
-export const metadata: Metadata = metadataForPath("/about");
+export const metadata: Metadata = metadataForPath("/over-ons");
 
 export default function AboutPage() {
-  return <ContentPage content={aboutPage} icon={pageIcons.about} pathname="/about" />;
+  return <ContentPage content={aboutPage} icon={pageIcons.about} pathname="/over-ons" />;
 }

@@ -7,26 +7,26 @@ import { insights } from "@/content/pages";
 import { metadataForPath } from "@/content/seo";
 import { breadcrumbSchema, collectionPageSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
-export const metadata: Metadata = metadataForPath("/insights");
+export const metadata: Metadata = metadataForPath("/inzichten");
 
 export default function InsightsPage() {
   const schema = graphSchema([
     webPageSchema({
-      path: "/insights",
+      path: "/inzichten",
       name: "Inzichten",
       description: metadata.description ?? ""
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Inzichten", path: "/insights" }
+      { name: "Inzichten", path: "/inzichten" }
     ]),
     collectionPageSchema({
-      path: "/insights",
+      path: "/inzichten",
       name: "Inzichten",
       description: metadata.description ?? "",
       items: insights.map((item) => ({
         name: item.title,
-        path: `/insights/${item.slug}`
+        path: `/inzichten/${item.slug}`
       }))
     })
   ]);
@@ -56,7 +56,7 @@ export default function InsightsPage() {
                 </span>
                 <h2 className="mt-7 text-xl font-extrabold leading-7 text-navy">{item.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-muted">{item.summary}</p>
-                <Link className="focus-ring mt-auto inline-flex items-center pt-7 text-sm font-extrabold text-orange" href={`/insights/${item.slug}`}>
+                <Link className="focus-ring mt-auto inline-flex items-center pt-7 text-sm font-extrabold text-orange" href={`/inzichten/${item.slug}`}>
                   Lees artikel <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </article>
@@ -66,8 +66,8 @@ export default function InsightsPage() {
       </section>
       <RelatedLinks
         links={[
-          { href: "/seo-services", label: "SEO diensten", description: "Zet inzichten om naar betere vindbaarheid." },
-          { href: "/aeo-optimization", label: "AEO optimalisatie", description: "Maak klantvragen directer beantwoordbaar." },
+          { href: "/seo-diensten", label: "SEO diensten", description: "Zet inzichten om naar betere vindbaarheid." },
+          { href: "/aeo-optimalisatie", label: "AEO optimalisatie", description: "Maak klantvragen directer beantwoordbaar." },
           { href: "/contact", label: "Vraag advies aan", description: "Bespreek wat jouw site nu nodig heeft." }
         ]}
       />

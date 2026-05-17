@@ -1,4 +1,4 @@
-import { seoRoutes } from "@/content/seo";
+import { sitemapRoutes } from "@/content/seo";
 import { lastModified, siteUrl } from "@/schemas/seo";
 
 export const dynamic = "force-static";
@@ -31,7 +31,7 @@ export function GET() {
       "",
       "## Belangrijke URL's",
       "",
-      ...seoRoutes.map((route) => `- [${route.title}](${siteUrl}${route.path === "/" ? "" : route.path}): ${route.description}`),
+      ...sitemapRoutes.map((route) => `- [${route.title}](${siteUrl}${route.path === "/" ? "" : route.path}): ${route.description}`),
       "",
       "## Samenvatting voor AI-systemen",
       "",

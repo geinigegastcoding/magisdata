@@ -6,24 +6,24 @@ const columns = [
   {
     title: "Diensten",
     links: [
-      { label: "SEO", href: "/seo-services" },
-      { label: "Websites", href: "/web-development" },
+      { label: "SEO", href: "/seo-diensten" },
+      { label: "Websites", href: "/webontwikkeling" },
       { label: "Website laten maken", href: "/website-laten-maken" },
       { label: "Website onderhoud", href: "/website-onderhoud" },
       { label: "SEO website laten maken", href: "/seo-website-laten-maken" },
-      { label: "GEO optimalisatie", href: "/geo-optimization" },
-      { label: "AEO optimalisatie", href: "/aeo-optimization" },
-      { label: "AI en automatisering", href: "/ai-infrastructure" },
-      { label: "Strategisch advies", href: "/strategic-consulting" }
+      { label: "GEO optimalisatie", href: "/geo-optimalisatie" },
+      { label: "AEO optimalisatie", href: "/aeo-optimalisatie" },
+      { label: "AI en automatisering", href: "/ai-infrastructuur" },
+      { label: "Strategisch advies", href: "/strategisch-advies" }
     ]
   },
   {
     title: "Bewijs",
     links: [
-      { label: "Cases", href: "/case-studies" },
-      { label: "Lokale dienstverlener", href: "/case-studies/lokale-dienstverlener" },
-      { label: "Adviesbureau", href: "/case-studies/adviesbureau" },
-      { label: "Groeiende webshop", href: "/case-studies/groeiende-webshop" }
+      { label: "Cases", href: "/cases" },
+      { label: "Lokale dienstverlener", href: "/cases/lokale-dienstverlener" },
+      { label: "Adviesbureau", href: "/cases/adviesbureau" },
+      { label: "Groeiende webshop", href: "/cases/groeiende-webshop" }
     ]
   },
   {
@@ -46,11 +46,11 @@ const columns = [
   {
     title: "Kennis",
     links: [
-      { label: "Inzichten", href: "/insights" },
-      { label: "Website krijgt weinig aanvragen", href: "/insights/website-meer-aanvragen" },
-      { label: "SEO zonder jargon", href: "/insights/seo-zonder-jargon" },
-      { label: "AI-vindbaarheid", href: "/insights/ai-vindbaarheid" },
-      { label: "Over MagisData", href: "/about" },
+      { label: "Inzichten", href: "/inzichten" },
+      { label: "Website krijgt weinig aanvragen", href: "/inzichten/website-meer-aanvragen" },
+      { label: "SEO zonder jargon", href: "/inzichten/seo-zonder-jargon" },
+      { label: "AI-vindbaarheid", href: "/inzichten/ai-vindbaarheid" },
+      { label: "Over MagisData", href: "/over-ons" },
       { label: "Contact", href: "/contact" },
       { label: "Privacybeleid", href: "/privacybeleid" },
       { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }
@@ -113,9 +113,6 @@ export function SiteFooter() {
           <div className="mt-4 grid gap-2 text-sm text-muted">
             <Link className="focus-ring rounded-full hover:text-orange" href="mailto:hallo%40magisdata.nl">
               hallo [at] magisdata.nl
-            </Link>
-            <Link className="focus-ring rounded-full hover:text-orange" href="tel:+31612345678">
-              +31 6 12345678
             </Link>
             <span>Nederland</span>
           </div>

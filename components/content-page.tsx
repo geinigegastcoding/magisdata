@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, CheckCircle2, Mail, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedLinks } from "@/components/related-links";
@@ -50,7 +50,7 @@ export function ContentPage({
   pathname,
   schemaKind = "page",
   primaryHref,
-  secondaryHref = "/services"
+  secondaryHref = "/diensten"
 }: ContentPageProps) {
   const breadcrumbItems = pathname
     ? [
@@ -124,10 +124,6 @@ export function ContentPage({
                   <Link className="focus-ring flex items-center gap-3 hover:text-orange" href="mailto:hallo%40magisdata.nl">
                     <Mail className="h-4 w-4 text-orange" />
                     hallo [at] magisdata.nl
-                  </Link>
-                  <Link className="focus-ring flex items-center gap-3 hover:text-orange" href="tel:+31612345678">
-                    <Phone className="h-4 w-4 text-orange" />
-                    +31 6 12345678
                   </Link>
                 </div>
                 <form action="/bedankt" className="grid gap-3 rounded-2xl border border-line bg-white p-4" method="get">
