@@ -89,6 +89,31 @@ function makeWebsitePage({
         ]
       }
     ],
+    detailSections: [
+      {
+        eyebrow: "Keuzehulp",
+        title: `Wat klanten willen zien voordat ze ${audience}${place} benaderen`,
+        text:
+          `Een bezoeker zoekt niet alleen een mooie website. Die wil snel weten of je beschikbaar bent, welke diensten je levert, of je in de juiste regio werkt en waarom je betrouwbaar genoeg bent om contact mee op te nemen.`,
+        items: [
+          {
+            title: "Dienst en regio duidelijk",
+            text:
+              `Pagina's moeten concreet uitleggen wat je doet${place}, welke problemen je oplost en wanneer iemand jou moet bellen of mailen.`
+          },
+          {
+            title: "Bewijs dicht bij de keuze",
+            text:
+              "Reviews, cases, foto's, garanties of voorbeelden werken het best op de plekken waar bezoekers twijfelen."
+          },
+          {
+            title: "Contact zonder zoeken",
+            text:
+              "Telefoon, formulier, e-mail en vervolgstappen moeten logisch zichtbaar zijn, vooral op mobiel."
+          }
+        ]
+      }
+    ],
     steps: [
       { title: "Kans bepalen", text: "We bekijken doelgroep, regio, diensten en concurrentie." },
       { title: "Pagina's maken", text: "We bouwen de belangrijkste pagina's eerst." },
@@ -191,6 +216,31 @@ function makeGrowthPage({
             title: "Groei opbouwen",
             text:
               "We starten met de hoogste-impact pagina's en breiden daarna uit met cases, inzichten en lokale of branchegerichte content."
+          }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Verdieping",
+        title: `Hoe je ${primaryKeyword} sterker maakt dan een standaard landingspagina`,
+        text:
+          `Een pagina over ${primaryKeyword} moet meer doen dan alleen het zoekwoord noemen. De inhoud moet uitleg geven, twijfels wegnemen, bewijs tonen en bezoekers helpen begrijpen welke volgende stap past bij hun situatie.`,
+        items: [
+          {
+            title: "Beantwoord echte vragen",
+            text:
+              "Gebruik koppen en alinea's die aansluiten op wat klanten willen weten: kosten, aanpak, timing, resultaat en geschiktheid."
+          },
+          {
+            title: "Laat expertise zien",
+            text:
+              "Concrete voorbeelden, processen, cases en duidelijke definities maken de pagina betrouwbaarder voor klanten, Google en AI-systemen."
+          },
+          {
+            title: "Verbind met andere pagina's",
+            text:
+              "Interne links naar diensten, cases en inzichten helpen bezoekers verder en versterken de thematische samenhang van de site."
           }
         ]
       }

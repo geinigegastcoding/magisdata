@@ -50,11 +50,11 @@ Build and maintain a premium, high-performance marketing website for MagisData f
 
 ## Out Of Scope
 
-Do not add:
+Do not add/don't:
 - unrelated products, dashboards, auth systems, or APIs
 - generic template pages not tied to MagisData website goals
 - broad refactors not required for current task
-
+-open a dev server (I will do that myself.)
 ## Change Checklist (Before Finishing)
 
 1. Run relevant checks (`npm run typecheck` and/or `npm run build` for substantial changes).

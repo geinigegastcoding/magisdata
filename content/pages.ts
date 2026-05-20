@@ -28,6 +28,12 @@ export type PageContent = {
     text: string;
     items: { title: string; text: string }[];
   }[];
+  detailSections?: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    items: { title: string; text: string }[];
+  }[];
   steps: { title: string; text: string }[];
   faqs: { question: string; answer: string }[];
 };
@@ -87,6 +93,31 @@ export const servicePages = {
             title: "Experts en adviseurs",
             text:
               "Voor specialisten die hun kennis beter willen uitleggen en meer vertrouwen willen opbouwen voor het eerste gesprek."
+          }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Meer context",
+        title: "Waarom losse online verbeteringen vaak te weinig doen",
+        text:
+          "Een website, SEO-pagina of automatisering werkt pas goed wanneer de onderlinge volgorde klopt. Bezoekers moeten eerst begrijpen wat je aanbiedt, daarna bewijs zien en vervolgens zonder twijfel contact kunnen opnemen.",
+        items: [
+          {
+            title: "De boodschap bepaalt de rest",
+            text:
+              "Als positionering vaag is, worden advertenties duurder, SEO-pagina's dunner en contactformulieren minder effectief."
+          },
+          {
+            title: "Zoekmachines lezen samenhang",
+            text:
+              "Google en AI-systemen herkennen expertise beter wanneer diensten, cases, antwoorden en interne links elkaar logisch ondersteunen."
+          },
+          {
+            title: "Conversie vraagt vertrouwen",
+            text:
+              "Meer bezoekers helpt pas echt wanneer de pagina ook uitlegt waarom iemand nu veilig de volgende stap kan zetten."
           }
         ]
       }
@@ -173,6 +204,31 @@ export const servicePages = {
         ]
       }
     ],
+    detailSections: [
+      {
+        eyebrow: "Websitekwaliteit",
+        title: "Wat maakt een website beter dan alleen een mooi ontwerp?",
+        text:
+          "Een goede website helpt klanten beslissen. Dat betekent dat de inhoud, techniek en visuele rust samen moeten werken: duidelijke koppen, snelle laadtijd, bewijs op de juiste plek en een contactroute die op mobiel net zo logisch voelt als op desktop.",
+        items: [
+          {
+            title: "Informatie per beslismoment",
+            text:
+              "Bovenaan staat de kernbelofte. Daarna volgen diensten, bewijs, werkwijze, veelgestelde vragen en pas dan verdieping voor wie meer wil lezen."
+          },
+          {
+            title: "SEO vanaf de basis",
+            text:
+              "Pagina's krijgen duidelijke titels, beschrijvende tussenkoppen, interne links en tekst die aansluit op hoe klanten zoeken."
+          },
+          {
+            title: "Makkelijk onderhoudbaar",
+            text:
+              "De structuur blijft geschikt om later extra diensten, cases, regio's of kennisartikelen toe te voegen zonder rommel."
+          }
+        ]
+      }
+    ],
     steps: [
       { title: "Doel bepalen", text: "We maken helder welke klanten je wilt aantrekken." },
       { title: "Structuur maken", text: "We bepalen welke pagina's en teksten nodig zijn." },
@@ -251,6 +307,31 @@ export const servicePages = {
             title: "Sterkere online autoriteit",
             text:
               "Goede uitleg, cases en kennisartikelen laten zien dat je weet waar je over praat."
+          }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "SEO-fundament",
+        title: "Waar Google en klanten allebei op letten",
+        text:
+          "Sterke SEO gaat niet over zo vaak mogelijk hetzelfde zoekwoord noemen. Het gaat over een pagina die de zoekvraag volledig beantwoordt, vertrouwen geeft en duidelijk maakt waarom jouw bedrijf een logische keuze is.",
+        items: [
+          {
+            title: "Zoekintentie boven zoekvolume",
+            text:
+              "Een kleine groep bezoekers met koopintentie is waardevoller dan veel algemeen verkeer dat nooit contact opneemt."
+          },
+          {
+            title: "Content die bewijs levert",
+            text:
+              "Cases, voorbeelden, procesuitleg en FAQ's maken een servicepagina sterker dan alleen een korte commerciële tekst."
+          },
+          {
+            title: "Interne links sturen waarde",
+            text:
+              "Logische links tussen diensten, inzichten en cases helpen bezoekers navigeren en helpen zoekmachines verbanden zien."
           }
         ]
       }
@@ -337,6 +418,31 @@ export const servicePages = {
         ]
       }
     ],
+    detailSections: [
+      {
+        eyebrow: "AI-vindbaarheid",
+        title: "Waarom duidelijke uitleg belangrijker wordt in AI-zoekresultaten",
+        text:
+          "AI-systemen proberen bedrijven samen te vatten. Hoe concreter je website uitlegt wat je doet, voor wie je werkt, welke problemen je oplost en waar bewijs staat, hoe kleiner de kans dat je verkeerd of te algemeen wordt begrepen.",
+        items: [
+          {
+            title: "Consistente entiteiten",
+            text:
+              "Bedrijfsnaam, diensten, locatie, doelgroep en expertise moeten op meerdere plekken hetzelfde verhaal vertellen."
+          },
+          {
+            title: "Citeerbare alinea's",
+            text:
+              "Korte, heldere antwoorden op belangrijke vragen zijn makkelijker te gebruiken in AI-antwoorden en samenvattingen."
+          },
+          {
+            title: "Bewijs maakt claims sterker",
+            text:
+              "Cases, contactgegevens, heldere voorwaarden en concrete voorbeelden geven systemen meer houvast dan algemene beloftes."
+          }
+        ]
+      }
+    ],
     steps: [
       { title: "Informatie ordenen", text: "We brengen diensten, doelgroep en bewijs scherp in kaart." },
       { title: "Pagina's verduidelijken", text: "We schrijven uitleg die mensen en AI goed kunnen volgen." },
@@ -415,6 +521,31 @@ export const servicePages = {
             title: "Bij lokale concurrentie",
             text:
               "Heldere antwoorden maken sneller duidelijk waarom iemand jou zou moeten bellen."
+          }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Antwoordstrategie",
+        title: "Welke vragen moet je website beantwoorden voordat iemand contact opneemt?",
+        text:
+          "Klanten willen vaak eerst weten of je hun situatie begrijpt, hoe de samenwerking werkt, wat ze ongeveer kunnen verwachten en of je ervaring hebt met vergelijkbare vragen. AEO maakt die informatie sneller vindbaar.",
+        items: [
+          {
+            title: "Vragen rond vertrouwen",
+            text:
+              "Denk aan ervaring, aanpak, voorbeelden, garanties, planning en hoe snel iemand reactie krijgt."
+          },
+          {
+            title: "Vragen rond geschiktheid",
+            text:
+              "Leg uit voor wie je dienst wel en niet past, zodat bezoekers zichzelf beter kunnen herkennen."
+          },
+          {
+            title: "Vragen rond proces",
+            text:
+              "Een korte uitleg van de stappen verlaagt onzekerheid en maakt het makkelijker om een gesprek te plannen."
           }
         ]
       }
@@ -501,6 +632,31 @@ export const servicePages = {
         ]
       }
     ],
+    detailSections: [
+      {
+        eyebrow: "Praktische automatisering",
+        title: "Waar AI en automatisering direct rust kunnen brengen",
+        text:
+          "De beste automatisering begint klein. Kijk eerst naar terugkerende taken, trage opvolging en informatie die steeds opnieuw handmatig wordt overgezet. Daar zit vaak de snelste winst.",
+        items: [
+          {
+            title: "Leadopvolging",
+            text:
+              "Een goede intake, automatische bevestiging en interne melding voorkomen dat warme aanvragen blijven liggen."
+          },
+          {
+            title: "Content en kennis",
+            text:
+              "AI kan helpen bij samenvattingen, concepten en hergebruik van bestaande expertise, zolang er menselijke controle blijft."
+          },
+          {
+            title: "Rapportage en overzicht",
+            text:
+              "Terugkerende updates, simpele dashboards en vaste checklists maken groei makkelijker te volgen."
+          }
+        ]
+      }
+    ],
     steps: [
       { title: "Proces bekijken", text: "We zoeken waar veel herhaling of vertraging zit." },
       { title: "Kans kiezen", text: "We kiezen een verbetering met duidelijke waarde." },
@@ -579,6 +735,31 @@ export const servicePages = {
             title: "Uitvoerbaar plan",
             text:
               "We maken de vervolgstappen klein genoeg om echt in beweging te komen."
+          }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Besluitvorming",
+        title: "Hoe je voorkomt dat online groei een lijst losse acties wordt",
+        text:
+          "Strategisch advies helpt vooral wanneer er veel mogelijke verbeteringen zijn. Niet alles hoeft tegelijk. Door eerst impact, urgentie en afhankelijkheden te bepalen, ontstaat een volgorde die rust geeft.",
+        items: [
+          {
+            title: "Eerst blokkades vinden",
+            text:
+              "Soms ligt de grootste winst niet in meer verkeer, maar in duidelijkere copy, betere bewijsvoering of een kortere contactroute."
+          },
+          {
+            title: "Daarna pas kanalen kiezen",
+            text:
+              "SEO, advertenties, AI-vindbaarheid en automatisering werken beter wanneer de websitebasis klopt."
+          },
+          {
+            title: "Klein genoeg om uit te voeren",
+            text:
+              "Een goed plan vertaalt ambitie naar concrete pagina's, verbeteringen en meetpunten die echt opgepakt worden."
           }
         ]
       }

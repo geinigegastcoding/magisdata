@@ -26,9 +26,9 @@ const coreSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/diensten",
-    title: "Online marketing diensten voor websites, SEO en AI-vindbaarheid",
-    description: "Bekijk diensten voor website laten maken, SEO bureau hulp, lokale SEO, AEO, GEO, conversie optimalisatie en AI-automatisering.",
-    keywords: ["online marketing bureau", "website laten maken", "SEO bureau", "lokale SEO", "AI vindbaarheid"],
+    title: "Diensten voor websites, SEO, GEO, AEO en AI | MagisData",
+    description: "Bekijk hoe MagisData webontwikkeling, SEO, GEO, AEO, AI-automatisering en strategisch advies verbindt tot een helder groeisysteem.",
+    keywords: ["website laten maken", "SEO diensten", "GEO optimalisatie", "AEO optimalisatie", "AI automatisering", "strategisch online advies"],
     priority: 0.9,
     changeFrequency: "monthly",
     lastModified
@@ -89,18 +89,18 @@ const coreSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/over-ons",
-    title: "Over MagisData",
-    description: "Leer MagisData kennen: een nuchter digitaal bureau dat websites, SEO, AEO, GEO en AI begrijpelijk maakt voor ondernemers.",
-    keywords: ["MagisData", "digitaal bureau", "webbureau", "SEO bureau Nederland"],
+    title: "Over MagisData | Strategische websites en AI-vindbaarheid",
+    description: "Leer hoe MagisData websites behandelt als digitale infrastructuur voor autoriteit, SEO, GEO, AEO, AI en conversie.",
+    keywords: ["MagisData", "AI webbureau", "strategisch webbureau", "SEO bureau Nederland", "GEO bureau"],
     priority: 0.65,
     changeFrequency: "monthly",
     lastModified
   },
   {
     path: "/contact",
-    title: "Contact met MagisData",
-    description: "Plan een gratis gesprek met MagisData over je website, SEO, AEO, GEO, AI-vindbaarheid of online groei.",
-    keywords: ["contact MagisData", "gratis website advies", "SEO gesprek", "website scan"],
+    title: "Contact met MagisData | Vraag een website-analyse aan",
+    description: "Neem contact op met MagisData voor een gratis eerste richting over je website, SEO, GEO, AEO, AI-vindbaarheid of online groei.",
+    keywords: ["contact MagisData", "website analyse", "gratis website advies", "SEO gesprek", "website scan"],
     priority: 0.8,
     changeFrequency: "monthly",
     lastModified
@@ -110,9 +110,9 @@ const coreSeoRoutes: SeoRoute[] = [
 const caseStudySeoRoutes: SeoRoute[] = [
   {
     path: "/cases",
-    title: "Case studies over websites, SEO en conversie",
-    description: "Bekijk praktijkvoorbeelden van duidelijkere websites, sterkere vindbaarheid en betere conversie voor ondernemers.",
-    keywords: ["website cases", "SEO cases", "conversie optimalisatie voorbeelden", "MagisData cases"],
+    title: "Cases over websites, SEO en digitale groei | MagisData",
+    description: "Bekijk hoe MagisData websites duidelijker, vindbaarder en conversiegerichter maakt met strategie, content en structuur.",
+    keywords: ["website cases", "SEO cases", "conversie optimalisatie voorbeelden", "digitale groei cases", "MagisData cases"],
     priority: 0.75,
     changeFrequency: "monthly",
     lastModified
@@ -131,9 +131,9 @@ const caseStudySeoRoutes: SeoRoute[] = [
 const insightSeoRoutes: SeoRoute[] = [
   {
     path: "/inzichten",
-    title: "Inzichten over websites, SEO en AI-vindbaarheid",
-    description: "Praktische uitleg over websites, SEO, AI-vindbaarheid en online groei.",
-    keywords: ["SEO inzichten", "website tips ondernemers", "AI vindbaarheid", "online groei"],
+    title: "Inzichten over SEO, AI-vindbaarheid en websites | MagisData",
+    description: "Lees praktische inzichten over websites, SEO, GEO, AEO, AI-vindbaarheid, conversie en digitale groei voor ondernemers.",
+    keywords: ["SEO inzichten", "website tips ondernemers", "AI vindbaarheid", "GEO optimalisatie", "AEO optimalisatie", "online groei"],
     priority: 0.75,
     changeFrequency: "monthly",
     lastModified

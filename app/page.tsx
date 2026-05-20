@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   CaseStudyInsights,
+  CustomerQuestions,
   FinalCta,
   Hero,
   Process,
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Services />
       <Process />
       <Results />
+      <CustomerQuestions />
       <CaseStudyInsights />
       <FinalCta />
     </main>

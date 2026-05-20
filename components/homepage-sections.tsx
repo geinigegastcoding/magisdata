@@ -4,6 +4,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ChevronRight,
+  HelpCircle,
   Sparkles,
   Star,
   Users
@@ -327,13 +328,13 @@ export function Process() {
               })}
             </div>
           </div>
-          <div className="relative mt-10 flex flex-col items-start justify-between gap-5 rounded-[1.5rem] bg-navy px-6 py-5 text-white md:flex-row md:items-center md:px-7">
+          <div className="relative mt-10 flex flex-col items-start justify-between gap-5 rounded-[1.5rem] border border-orange-soft bg-gradient-to-br from-peach via-yellow-soft to-green-soft/60 px-6 py-5 shadow-sm md:flex-row md:items-center md:px-7">
             <div>
-              <p className="text-sm font-extrabold">Binnen 24 uur duidelijkheid over je volgende stap.</p>
-              <p className="mt-1 text-sm leading-6 text-white/70">Geen lange pitch. Wel helder advies voor website, vindbaarheid en leads.</p>
+              <p className="text-sm font-extrabold text-navy">Binnen 24 uur duidelijkheid over je volgende stap.</p>
+              <p className="mt-1 text-sm leading-6 text-muted">Geen lange pitch. Wel helder advies voor website, vindbaarheid en leads.</p>
             </div>
             <Link
-              className="focus-ring inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-extrabold text-navy shadow-sm transition hover:bg-orange-soft hover:text-orange"
+              className="focus-ring inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-extrabold text-orange shadow-sm transition hover:bg-orange-soft hover:text-orange-dark"
               href="/contact"
             >
               Plan gratis gesprek
@@ -380,6 +381,59 @@ export function Results() {
               </div>
             </div>
             <FriendlyPhoto className="h-64" variant="team" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function CustomerQuestions() {
+  const questions = [
+    {
+      title: "Waarom levert mijn website te weinig aanvragen op?",
+      text:
+        "Vaak is de route naar vertrouwen niet duidelijk genoeg. Bezoekers willen snel zien wat je doet, voor wie het is, welk bewijs er is en wat er gebeurt nadat ze contact opnemen."
+    },
+    {
+      title: "Welke pagina's heb ik nodig om beter gevonden te worden?",
+      text:
+        "Begin met sterke dienstenpagina's, een duidelijke over-ons pagina, cases, veelgestelde vragen en enkele kennisartikelen rond echte zoekvragen. Daarna kun je uitbreiden met lokale of branchegerichte pagina's."
+    },
+    {
+      title: "Hoe maak ik mijn bedrijf klaar voor AI-zoekresultaten?",
+      text:
+        "Leg je expertise concreet uit, gebruik consistente termen, beantwoord klantvragen in korte alinea's en zorg dat contactgegevens, cases en diensten logisch met elkaar verbonden zijn."
+    }
+  ];
+
+  return (
+    <section className="bg-white py-10 md:py-14">
+      <div className="container">
+        <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr]">
+          <div>
+            <Eyebrow>Veelvoorkomende vragen</Eyebrow>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy md:text-4xl">
+              Goede online groei begint met betere antwoorden.
+            </h2>
+            <p className="mt-4 leading-7 text-muted">
+              Klanten zoeken niet naar marketingtermen. Ze zoeken zekerheid: past dit bedrijf bij mijn situatie, kan ik het vertrouwen en is contact opnemen de moeite waard?
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {questions.map((question) => (
+              <article className="rounded-[2rem] border border-black/[0.05] bg-cream/50 p-6 shadow-sm" key={question.title}>
+                <div className="flex gap-4">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-orange-soft text-orange">
+                    <HelpCircle className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-extrabold text-navy">{question.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-muted">{question.text}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>

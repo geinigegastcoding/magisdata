@@ -108,6 +108,20 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
                 ))}
               </ul>
             </section>
+
+            <section className="mt-10 rounded-2xl border border-black/[0.05] bg-cream/60 p-6">
+              <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                Waarom deze aanpak werkt voor vindbaarheid en vertrouwen
+              </h2>
+              <div className="mt-5 grid gap-5 text-sm leading-7 text-muted md:grid-cols-2">
+                <p>
+                  Zoekmachines hebben context nodig om te begrijpen waar een bedrijf relevant voor is. Duidelijke servicepagina's, concrete probleemomschrijvingen en interne links helpen daarbij meer dan algemene marketingclaims.
+                </p>
+                <p>
+                  Bezoekers hebben dezelfde behoefte. Ze willen snel zien of het bedrijf hun situatie begrijpt, hoe de samenwerking werkt en welke volgende stap logisch is. Daarom combineren we SEO-structuur altijd met duidelijke uitleg en conversie.
+                </p>
+              </div>
+            </section>
           </div>
 
           <aside className="h-fit rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm">

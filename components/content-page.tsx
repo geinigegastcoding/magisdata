@@ -180,26 +180,59 @@ export function ContentPage({
         </div>
       </section>
 
+      {content.detailSections?.length ? (
+        <section className="bg-white py-8 md:py-12">
+          <div className="container grid gap-6">
+            {content.detailSections.map((section) => (
+              <article
+                className="rounded-[2rem] border border-black/[0.05] bg-cream/50 p-7 shadow-sm md:p-9"
+                key={section.title}
+              >
+                <div className="grid gap-8 lg:grid-cols-[0.42fr_1fr]">
+                  <div>
+                    <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+                      {section.eyebrow}
+                    </p>
+                    <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                      {section.title}
+                    </h2>
+                    <p className="mt-4 leading-7 text-muted">{section.text}</p>
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {section.items.map((item) => (
+                      <div className="rounded-2xl border border-black/[0.05] bg-white p-5 shadow-sm" key={item.title}>
+                        <h3 className="text-base font-extrabold text-navy">{item.title}</h3>
+                        <p className="mt-3 text-sm leading-6 text-muted">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="py-8 md:py-12">
         <div className="container">
-          <div className="rounded-[2rem] bg-navy p-7 text-white shadow-sm md:p-9">
+          <div className="rounded-[2rem] border border-orange-soft bg-gradient-to-br from-peach via-yellow-soft to-green-soft/60 p-7 shadow-sm md:p-9">
             <div className="grid gap-8 lg:grid-cols-[0.35fr_1fr] lg:items-start">
               <div>
-                <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange-soft">
+                <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
                   Aanpak
                 </p>
-                <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-white">
+                <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy">
                   Zo houden we het simpel
                 </h2>
               </div>
               <div className="grid gap-4 md:grid-cols-4">
                 {content.steps.map((step, index) => (
-                  <div className="rounded-2xl bg-white/8 p-5 ring-1 ring-white/10" key={step.title}>
+                  <div className="rounded-2xl bg-white/72 p-5 shadow-sm ring-1 ring-orange-soft/70" key={step.title}>
                     <span className="grid h-8 w-8 place-items-center rounded-full bg-orange text-sm font-black text-white">
                       {index + 1}
                     </span>
-                    <h3 className="mt-4 font-extrabold text-white">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-white/72">{step.text}</p>
+                    <h3 className="mt-4 font-extrabold text-navy">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted">{step.text}</p>
                   </div>
                 ))}
               </div>
