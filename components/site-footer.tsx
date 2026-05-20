@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import { Logo } from "@/components/logo";
 
 const columns = [
@@ -110,11 +110,19 @@ export function SiteFooter() {
           <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
             Contact
           </h2>
-          <div className="mt-4 grid gap-2 text-sm text-muted">
-            <Link className="focus-ring rounded-full hover:text-orange" href="mailto:hallo%40magisdata.nl">
-              hallo [at] magisdata.nl
+          <div className="mt-4 grid gap-3 text-sm text-muted">
+            <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href="mailto:contact%40magisdata.nl">
+              <Mail className="h-4 w-4" />
+              contact [at] magisdata.nl
             </Link>
-            <span>Nederland</span>
+            <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href="tel:+31642280029">
+              <Phone className="h-4 w-4" />
+              +31 6 42280029
+            </Link>
+            <span className="inline-flex items-start gap-2 leading-6">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+              Suze Groenewegerf 25, Voorschoten
+            </span>
           </div>
         </div>
       </div>

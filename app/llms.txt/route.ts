@@ -1,5 +1,5 @@
 import { sitemapRoutes } from "@/content/seo";
-import { lastModified, siteUrl } from "@/schemas/seo";
+import { lastModified, siteEmail, sitePhone, siteUrl } from "@/schemas/seo";
 
 export const dynamic = "force-static";
 
@@ -16,7 +16,9 @@ export function GET() {
       "- Markt: Nederland",
       "- Doelgroep: ondernemers, dienstverleners, adviseurs en groeiende teams",
       "- Kernwaarde: duidelijke strategie, website laten maken, SEO bureau expertise, AI-vindbaarheid, vertrouwen en meer aanvragen",
-      "- Contact: hallo@magisdata.nl",
+      "- E-mail: " + siteEmail,
+      "- Telefoon: " + sitePhone,
+      "- Locatie: Suze Groenewegerf 25, Voorschoten",
       "- Laatst bijgewerkt: " + lastModified,
       "",
       "## Diensten",

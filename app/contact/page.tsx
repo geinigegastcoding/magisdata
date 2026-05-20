@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Mail, MessageSquareText, Search, Sparkles, Target } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, MapPin, MessageSquareText, Phone, Search, Sparkles, Target } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { metadataForPath } from "@/content/seo";
@@ -64,11 +64,19 @@ export default function ContactPage() {
             <div className="mt-8 overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white shadow-card">
               <div className="photo-scene relative min-h-[260px] p-6">
                 <div className="max-w-xs rounded-2xl bg-white/86 p-5 shadow-sm backdrop-blur">
-                  <p className="text-sm font-extrabold text-navy">Liever mailen?</p>
-                  <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-peach px-4 py-3 text-sm font-bold text-orange hover:text-orange-dark" href="mailto:hallo%40magisdata.nl">
+                  <p className="text-sm font-extrabold text-navy">Liever direct contact?</p>
+                  <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-peach px-4 py-3 text-sm font-bold text-orange hover:text-orange-dark" href="mailto:contact%40magisdata.nl">
                     <Mail className="h-4 w-4" />
-                    hallo [at] magisdata.nl
+                    contact [at] magisdata.nl
                   </Link>
+                  <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-bold text-navy hover:text-orange" href="tel:+31642280029">
+                    <Phone className="h-4 w-4" />
+                    +31 6 42280029
+                  </Link>
+                  <p className="mt-3 flex items-start gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-semibold leading-6 text-ink">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange" />
+                    Suze Groenewegerf 25, Voorschoten
+                  </p>
                 </div>
                 <img
                   alt="Oprichter en CEO van MagisData"

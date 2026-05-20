@@ -2,6 +2,8 @@ import type { PageContent } from "@/content/pages";
 
 export const siteUrl = "https://magisdata.nl";
 export const siteName = "MagisData";
+export const siteEmail = "contact@magisdata.nl";
+export const sitePhone = "+31 6 42280029";
 export const defaultImage = `${siteUrl}/assets/og-image.png`;
 export const lastModified = "2026-05-16";
 
@@ -20,6 +22,8 @@ export function organizationSchema() {
     name: siteName,
     url: siteUrl,
     logo: `${siteUrl}/assets/logo.png`,
+    telephone: sitePhone,
+    email: siteEmail,
     areaServed: "NL",
     knowsAbout: [
       "web development",
@@ -40,8 +44,12 @@ export function localBusinessSchema() {
     url: siteUrl,
     image: defaultImage,
     logo: `${siteUrl}/assets/logo.png`,
+    telephone: sitePhone,
+    email: siteEmail,
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Suze Groenewegerf 25",
+      addressLocality: "Voorschoten",
       addressCountry: "NL"
     },
     areaServed: [

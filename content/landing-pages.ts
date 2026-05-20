@@ -462,7 +462,7 @@ export const landingPages: LandingPage[] = [
     keywords: ["privacybeleid MagisData", "privacy website", "persoonsgegevens"],
     primaryCta: "Neem contact op",
     secondaryCta: "Algemene voorwaarden",
-    heroPoints: ["Alleen noodzakelijke gegevens", "Geen verkoop van persoonsgegevens", "Vragen via hallo [at] magisdata.nl"],
+    heroPoints: ["Alleen noodzakelijke gegevens", "Geen verkoop van persoonsgegevens", "Vragen via contact [at] magisdata.nl"],
     sections: [
       {
         title: "Welke gegevens we gebruiken",
@@ -483,7 +483,7 @@ export const landingPages: LandingPage[] = [
     ],
     faqs: [
       { question: "Verkoopt MagisData persoonsgegevens?", answer: "Nee. We verkopen persoonsgegevens niet." },
-      { question: "Kan ik mijn gegevens laten verwijderen?", answer: "Ja. Mail naar hallo [at] magisdata.nl." },
+      { question: "Kan ik mijn gegevens laten verwijderen?", answer: "Ja. Mail naar contact [at] magisdata.nl." },
       { question: "Gebruiken jullie analytics?", answer: "Ja. Google Analytics helpt ons de website te verbeteren." }
     ]
   },
@@ -560,7 +560,7 @@ export const landingPages: LandingPage[] = [
     faqs: [
       { question: "Wanneer krijg ik reactie?", answer: "Meestal binnen een werkdag." },
       { question: "Is het gesprek verplicht?", answer: "Nee. Eerst kijken we of we kunnen helpen." },
-      { question: "Kan ik extra informatie sturen?", answer: "Ja. Mail gerust naar hallo [at] magisdata.nl." }
+      { question: "Kan ik extra informatie sturen?", answer: "Ja. Mail gerust naar contact [at] magisdata.nl." }
     ]
   }
 ];
