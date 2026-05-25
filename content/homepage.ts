@@ -122,8 +122,8 @@ export const heroTrust = [
 ];
 
 export const heroStats = [
-  { label: "Meer aanvragen", value: "Stap voor stap", note: "" },
-  { label: "Beter gevonden", value: "In Google", note: "Duidelijk plan, geen omweg" },
+  { label: "Meer klanten", value: "Stap voor stap", note: "" },
+  { label: "Beter gevonden", value: "", note: "Duidelijk plan, geen omweg" },
   { label: "Klanten beoordelen ons", value: "4,9/5", note: "*****" }
 ];
 

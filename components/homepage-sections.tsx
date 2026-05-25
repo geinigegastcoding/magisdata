@@ -6,8 +6,7 @@ import {
   ChevronRight,
   HelpCircle,
   Sparkles,
-  Star,
-  Users
+  Star
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -125,7 +124,7 @@ function SmallDoodle({ className }: { className?: string }) {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-[4.5rem] pt-14 md:pb-24 md:pt-24 lg:pb-28 lg:pt-28">
+    <section className="relative overflow-hidden pb-[4.5rem] pt-7 md:pb-24 md:pt-14 lg:pb-28 lg:pt-16">
       <div className="container grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-10">
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full bg-blue-soft/85 px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.16em] text-blue shadow-sm">
@@ -153,17 +152,18 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative min-h-[490px] overflow-hidden rounded-[2rem] sm:min-h-[540px] sm:overflow-visible lg:min-h-[590px]">
+        <div className="relative rounded-[2rem] pt-2">
           <div className="absolute -right-6 top-9 h-52 w-52 rounded-[4.5rem] bg-yellow-soft lg:-right-2 lg:h-60 lg:w-60" />
-          <div className="absolute -bottom-2 left-7 h-36 w-36 rounded-full bg-blue-soft/70 blur-sm" />
+          <div className="absolute bottom-28 left-7 h-36 w-36 rounded-full bg-blue-soft/70 blur-sm" />
           <div className="absolute right-24 top-0 h-24 w-24 rounded-full bg-orange-soft/70" />
           <div className="doodle-loop left-0 top-64 h-28 w-28 lg:-left-4 lg:top-72 lg:h-32 lg:w-32" />
-          <FriendlyPhoto className="absolute inset-x-4 top-2 h-[455px] rounded-[2.75rem] sm:h-[500px] lg:inset-x-8 lg:h-[540px] lg:rounded-[3rem]" />
-          <div className="soft-card absolute left-0 top-16 hidden w-52 rounded-[1.6rem] p-5 sm:-left-1 sm:block sm:w-60 sm:p-6 lg:-left-3">
-            <p className="text-xs font-extrabold text-soft">{heroStats[0].label}</p>
-            <p className="mt-2 text-[2rem] font-extrabold leading-none text-navy">{heroStats[0].value}</p>
-            <div className="mt-5 rounded-2xl bg-green-soft/70 px-3 py-3">
-              <svg aria-label="Stijgende aanvraagtrend" className="h-20 w-full" role="img" viewBox="0 0 188 80">
+          <FriendlyPhoto className="relative z-10 h-[370px] rounded-[2.75rem] sm:h-[420px] lg:h-[440px] lg:rounded-[3rem]" />
+          <div className="relative z-10 mt-4 grid gap-3 sm:grid-cols-3">
+            <div className="soft-card rounded-[1.35rem] p-4">
+              <p className="text-xs font-extrabold text-soft">{heroStats[0].label}</p>
+              <p className="mt-2 text-xl font-extrabold leading-none text-navy">{heroStats[0].value}</p>
+              <div className="mt-3 rounded-xl bg-green-soft/70 px-2 py-2">
+                <svg aria-label="Stijgende klanttrend" className="h-12 w-full" role="img" viewBox="0 0 188 80">
                 <defs>
                   <linearGradient id="requestChartFill" x1="0" x2="0" y1="0" y2="1">
                     <stop offset="0%" stopColor="#22c55e" stopOpacity="0.24" />
@@ -186,36 +186,38 @@ export function Hero() {
                   />
                 ))}
               </svg>
-            </div>
-          </div>
-          <div className="soft-card absolute right-0 top-14 hidden w-48 rounded-[1.6rem] p-5 sm:block sm:w-56 sm:p-6 lg:-right-2">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="text-xs font-extrabold text-soft">{heroStats[1].label}</p>
-                <p className="mt-2 text-[2rem] font-extrabold leading-none text-navy">{heroStats[1].value}</p>
               </div>
-              <span className="grid h-11 w-11 place-items-center rounded-full bg-blue-soft text-blue">
-                <Users className="h-5 w-5" strokeWidth={2.2} />
-              </span>
             </div>
-            <p className="mt-3 text-xs font-extrabold text-green">{heroStats[1].note}</p>
-          </div>
-          <div className="soft-card absolute bottom-3 left-1/2 w-[calc(100%-1.5rem)] max-w-[21rem] -translate-x-1/2 rounded-[1.6rem] p-4 sm:left-auto sm:right-2 sm:w-[20rem] sm:translate-x-0 sm:p-5 lg:right-0">
-            <div className="grid grid-cols-[1fr_auto] items-center gap-4">
-              <div>
-                <p className="text-xs font-extrabold text-soft">{heroStats[2].label}</p>
-                <p className="mt-2 text-[2rem] font-extrabold leading-none text-navy">{heroStats[2].value}</p>
-                <p aria-label="Vijf sterren" className="mt-3 text-xl tracking-wider text-yellow">{heroStats[2].note}</p>
+            <div className="soft-card rounded-[1.35rem] p-4">
+              <div className="flex items-center gap-2">
+                <svg aria-label="Google" className="h-5 w-5 shrink-0" role="img" viewBox="0 0 24 24">
+                  <path d="M21 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.1a4.4 4.4 0 0 1-1.9 2.9v2.4h3.1c1.8-1.7 2.7-4.1 2.7-7Z" fill="#4285F4" />
+                  <path d="M12 21.3c2.6 0 4.7-.9 6.3-2.3l-3.1-2.4c-.9.6-2 .9-3.2.9-2.5 0-4.6-1.7-5.4-4l-3.2 2.5a9.5 9.5 0 0 0 8.6 5.3Z" fill="#34A853" />
+                  <path d="M6.6 13.5A5.7 5.7 0 0 1 6.3 12c0-.5.1-1 .3-1.5L3.4 8a9.5 9.5 0 0 0 0 8l3.2-2.5Z" fill="#FBBC05" />
+                  <path d="M12 6.5c1.4 0 2.7.5 3.7 1.4l2.7-2.7A9.3 9.3 0 0 0 12 2.7 9.5 9.5 0 0 0 3.4 8l3.2 2.5c.8-2.3 2.9-4 5.4-4Z" fill="#EA4335" />
+                </svg>
+                <p className="text-xs font-extrabold text-soft">Google</p>
               </div>
+              <p className="mt-2 text-xl font-extrabold leading-none text-navy">{heroStats[1].label}</p>
+              <p className="mt-3 text-xs font-extrabold text-green">{heroStats[1].note}</p>
+            </div>
+            <div className="soft-card rounded-[1.35rem] p-4">
+              <div className="grid grid-cols-[1fr_auto] items-center gap-3">
+                <div>
+                  <p className="text-xs font-extrabold text-soft">{heroStats[2].label}</p>
+                  <p className="mt-2 text-xl font-extrabold leading-none text-navy">{heroStats[2].value}</p>
+                  <p aria-label="Vijf sterren" className="mt-2 text-base tracking-wider text-yellow">{heroStats[2].note}</p>
+                </div>
               <img
                 alt="Tevreden klant van MagisData"
-                className="h-24 w-24 rounded-2xl object-cover object-top shadow-sm ring-4 ring-white sm:h-28 sm:w-28"
-                height="112"
+                className="h-16 w-16 rounded-xl object-cover object-top shadow-sm ring-2 ring-white"
+                height="64"
                 src="/assets/man-review.webp"
                 srcSet="/assets/man-review-112.webp 112w, /assets/man-review-168.webp 168w, /assets/man-review.webp 400w"
-                sizes="(min-width: 640px) 112px, 96px"
-                width="112"
+                sizes="64px"
+                width="64"
               />
+              </div>
             </div>
           </div>
         </div>

@@ -686,7 +686,7 @@ export const servicePages = {
     title: "Maak betere keuzes voor je website, vindbaarheid en online groei",
     description:
       "We helpen je bepalen wat nu echt belangrijk is. Geen lange theorie, maar scherpe keuzes die passen bij je bedrijf, klanten en budget.",
-    primaryCta: "Plan strategisch gesprek",
+    primaryCta: "Plan een vrijblijvend gesprek",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
       "Duidelijke prioriteiten",
