@@ -11,6 +11,9 @@ export type SeoRoute = {
   priority: number;
   changeFrequency: "weekly" | "monthly";
   lastModified: string;
+  image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   indexable?: boolean;
 };
 
@@ -110,21 +113,24 @@ const coreSeoRoutes: SeoRoute[] = [
 const caseStudySeoRoutes: SeoRoute[] = [
   {
     path: "/cases",
-    title: "Cases over websites, SEO en digitale groei | MagisData",
-    description: "Bekijk hoe MagisData websites duidelijker, vindbaarder en conversiegerichter maakt met strategie, content en structuur.",
-    keywords: ["website cases", "SEO cases", "conversie optimalisatie voorbeelden", "digitale groei cases", "MagisData cases"],
+    title: "Website design portfolio voor bedrijven en platforms | MagisData",
+    description: "Bekijk vier website design concepten van MagisData met uitleg over structuur, SEO, AEO, GEO en conversie voor verschillende branches.",
+    keywords: ["website design portfolio", "website ontwerp voorbeelden", "webdesign cases", "SEO website design", "MagisData website design"],
     priority: 0.75,
     changeFrequency: "monthly",
-    lastModified
+    lastModified: "2026-05-26"
   },
   ...caseStudies.map((caseStudy) => ({
     path: `/cases/${caseStudy.slug}`,
-    title: caseStudy.title,
+    title: caseStudy.metaTitle,
     description: caseStudy.summary,
-    keywords: [caseStudy.title, caseStudy.result, "case study MagisData", "website case", "SEO case"],
+    keywords: [caseStudy.title, caseStudy.sector, caseStudy.focus, "website design concept", "webdesign portfolio MagisData"],
     priority: 0.65,
     changeFrequency: "monthly" as const,
-    lastModified
+    lastModified: caseStudy.dateModified,
+    image: caseStudy.image,
+    imageWidth: caseStudy.imageWidth,
+    imageHeight: caseStudy.imageHeight
   }))
 ];
 
@@ -212,10 +218,10 @@ export function metadataForPath(path: string): Metadata {
       description: route.description,
       images: [
         {
-          url: defaultImage,
-          width: 1200,
-          height: 630,
-          alt: `${siteName} logo`
+          url: route.image ? absoluteUrl(route.image) : defaultImage,
+          width: route.imageWidth ?? 1200,
+          height: route.imageHeight ?? 630,
+          alt: route.image ? route.title : `${siteName} logo`
         }
       ]
     },
@@ -223,7 +229,7 @@ export function metadataForPath(path: string): Metadata {
       card: "summary_large_image",
       title: route.title,
       description: route.description,
-      images: [defaultImage]
+      images: [route.image ? absoluteUrl(route.image) : defaultImage]
     }
   };
 }

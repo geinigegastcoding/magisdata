@@ -241,7 +241,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               { href: "/diensten", title: "Vertaal visie naar diensten", text: "Zie hoe we website, SEO en AI-vindbaarheid praktisch maken." },
-              { href: "/cases", title: "Bekijk herkenbare vraagstukken", text: "Ontdek waar duidelijkere structuur direct verschil maakt." },
+              { href: "/cases", title: "Bekijk website designs", text: "Ontdek hoe duidelijke structuur en positionering in ontwerp samenkomen." },
               { href: "/contact", title: "Maak kennis zonder druk", text: "Leg je situatie kort voor en krijg een eerlijke eerste richting." }
             ].map((link) => (
               <Link className="focus-ring group rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft" href={link.href} key={link.href}>

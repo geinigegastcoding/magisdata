@@ -20,10 +20,11 @@ const columns = [
   {
     title: "Bewijs",
     links: [
-      { label: "Cases", href: "/cases" },
-      { label: "Lokale dienstverlener", href: "/cases/lokale-dienstverlener" },
-      { label: "Adviesbureau", href: "/cases/adviesbureau" },
-      { label: "Groeiende webshop", href: "/cases/groeiende-webshop" }
+      { label: "Website design", href: "/cases" },
+      { label: "Hoveniersbedrijf", href: "/cases/website-design-hoveniersbedrijf" },
+      { label: "Dakbedrijf", href: "/cases/website-design-dakbedrijf" },
+      { label: "Social platform", href: "/cases/website-design-social-growth-platform" },
+      { label: "IT consultancy", href: "/cases/website-design-it-consultancy" }
     ]
   },
   {

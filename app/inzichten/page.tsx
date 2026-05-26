@@ -86,7 +86,7 @@ export default function InsightsPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link className="focus-ring inline-flex items-center justify-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-bold text-navy shadow-sm transition hover:border-orange-soft hover:bg-peach hover:text-orange" href="/cases">
-                Bekijk cases
+                Bekijk website designs
               </Link>
             </div>
           </div>

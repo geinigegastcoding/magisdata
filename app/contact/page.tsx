@@ -220,7 +220,7 @@ export default function ContactPage() {
           <div className="grid gap-4">
             {[
               { href: "/diensten", title: "Nog orienteren?", text: "Bekijk eerst de diensten en kies een logische ingang." },
-              { href: "/cases", title: "Eerst bewijs zien?", text: "Bekijk herkenbare voorbeelden van website- en SEO-vraagstukken." },
+              { href: "/cases", title: "Eerst ontwerpen bekijken?", text: "Bekijk transparante websiteconcepten met uitleg over structuur, SEO en conversie." },
               { href: "/over-ons", title: "Eerst kennismaken?", text: "Lees hoe MagisData denkt over strategie, AI en groei." }
             ].map((link) => (
               <Link className="focus-ring group rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:border-orange-soft hover:bg-peach" href={link.href} key={link.href}>

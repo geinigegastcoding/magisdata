@@ -200,7 +200,11 @@ export function caseStudySchema(caseStudy: {
   title: string;
   summary: string;
   slug: string;
-  result: string;
+  image: string;
+  sector: string;
+  focus: string;
+  datePublished: string;
+  dateModified: string;
 }) {
   const path = `/cases/${caseStudy.slug}`;
 
@@ -209,12 +213,22 @@ export function caseStudySchema(caseStudy: {
     "@id": `${absoluteUrl(path)}#case-study`,
     headline: caseStudy.title,
     description: caseStudy.summary,
-    image: defaultImage,
-    datePublished: lastModified,
-    dateModified: lastModified,
+    image: absoluteUrl(caseStudy.image),
+    datePublished: caseStudy.datePublished,
+    dateModified: caseStudy.dateModified,
     inLanguage: "nl-NL",
-    articleSection: "Case study",
-    about: caseStudy.result,
+    articleSection: "Website design",
+    genre: "Portfolio concept",
+    about: [
+      {
+        "@type": "Thing",
+        name: caseStudy.sector
+      },
+      {
+        "@type": "Thing",
+        name: caseStudy.focus
+      }
+    ],
     author: {
       "@id": `${siteUrl}/#organization`
     },

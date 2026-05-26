@@ -62,7 +62,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/webontwikkeling": [
     serviceLinks[1],
     { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Combineer websitebouw met sterke vindbaarheid vanaf de start." },
-    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Zie hoe duidelijkere pagina's meer aanvragen opleverden." }
+    { href: "/cases/website-design-hoveniersbedrijf", label: "Website design voor hoveniers", description: "Bekijk hoe een lokale dienstverlener helder en vindbaar kan worden gepresenteerd." }
   ],
   "/website-laten-maken": [
     serviceLinks[0],
@@ -102,11 +102,11 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/strategisch-advies": [
     serviceLinks[0],
     serviceLinks[6],
-    { href: "/cases", label: "Bekijk cases", description: "Zie welke verbeteringen ondernemers herkennen." }
+    { href: "/cases", label: "Bekijk website designs", description: "Zie hoe strategie, structuur en conversie in ontwerp samenkomen." }
   ],
   "/over-ons": [
     { href: "/diensten", label: "Bekijk diensten", description: "Ontdek waar MagisData praktisch bij helpt." },
-    { href: "/cases", label: "Bekijk cases", description: "Lees voorbeelden van duidelijkere websites en groei." },
+    { href: "/cases", label: "Bekijk website designs", description: "Bekijk transparante portfolio concepten per branche." },
     { href: "/contact", label: "Maak kennis", description: "Plan een rustig eerste gesprek." }
   ],
   "/contact": [
@@ -114,30 +114,35 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
     serviceLinks[5],
     { href: "/inzichten", label: "Lees inzichten", description: "Praktische uitleg over websites, SEO en AI-vindbaarheid." }
   ],
-  "/cases/lokale-dienstverlener": [
+  "/cases/website-design-hoveniersbedrijf": [
     serviceLinks[0],
-    serviceLinks[1],
-    { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Lees hoe je meer vertrouwen en actie opbouwt." }
+    serviceLinks[8],
+    { href: "/website-voor-hoveniers", label: "Website voor hoveniers", description: "Lees welke structuur werkt voor diensten, projecten en lokale aanvragen." }
   ],
-  "/cases/adviesbureau": [
-    serviceLinks[5],
+  "/cases/website-design-dakbedrijf": [
     serviceLinks[0],
-    { href: "/over-ons", label: "Over MagisData", description: "Leer hoe wij digitale groei begrijpelijk maken." }
+    serviceLinks[8],
+    { href: "/conversie-optimalisatie", label: "Conversie optimalisatie", description: "Maak offerte- en spoedroutes duidelijker op je website." }
   ],
-  "/cases/groeiende-webshop": [
-    serviceLinks[1],
+  "/cases/website-design-social-growth-platform": [
+    serviceLinks[0],
     serviceLinks[3],
-    { href: "/inzichten/seo-zonder-jargon", label: "SEO zonder jargon", description: "Begrijp de basis van sterke organische groei." }
+    { href: "/ai-vindbaarheid", label: "AI vindbaarheid", description: "Structureer productinformatie voor zoekmachines en AI-antwoorden." }
+  ],
+  "/cases/website-design-it-consultancy": [
+    serviceLinks[0],
+    serviceLinks[1],
+    serviceLinks[7]
   ],
   "/inzichten/website-meer-aanvragen": [
     serviceLinks[0],
-    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Voorbeeld van duidelijkere website en meer aanvragen." },
+    { href: "/cases/website-design-hoveniersbedrijf", label: "Website design voor hoveniers", description: "Zie hoe diensten, projecten en contact logisch samenkomen." },
     { href: "/contact", label: "Vraag groeiscan aan", description: "Laat je huidige website praktisch bekijken." }
   ],
   "/inzichten/seo-zonder-jargon": [
     serviceLinks[6],
     serviceLinks[8],
-    { href: "/cases/groeiende-webshop", label: "Case groeiende webshop", description: "Voorbeeld van betere SEO-structuur." }
+    { href: "/cases/website-design-dakbedrijf", label: "Website design voor dakbedrijf", description: "Voorbeeld van duidelijke dienst- en lokale SEO-structuur." }
   ],
   "/inzichten/ai-vindbaarheid": [
     serviceLinks[7],
@@ -192,7 +197,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/conversie-optimalisatie": [
     { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Zie waar conversie vaak stukloopt." },
     serviceLinks[0],
-    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Voorbeeld van meer aanvragen via mobiel." }
+    { href: "/cases/website-design-dakbedrijf", label: "Website design voor dakbedrijf", description: "Zie hoe offertedoelen zichtbaar in het ontwerp landen." }
   ],
   "/website-voor-loodgieters": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Word gevonden door klanten in je regio." },
@@ -212,7 +217,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/website-voor-hoveniers": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Word vindbaar op diensten en regio." },
     { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
-    { href: "/cases/lokale-dienstverlener", label: "Case lokale dienstverlener", description: "Zie hoe duidelijkere pagina's aanvragen helpen." }
+    { href: "/cases/website-design-hoveniersbedrijf", label: "Website design voor hoveniers", description: "Bekijk een concept met projecten, diensten en lokale adviesroute." }
   ],
   "/privacybeleid": [
     { href: "/algemene-voorwaarden", label: "Algemene voorwaarden", description: "Lees de praktische samenwerkingsvoorwaarden." },

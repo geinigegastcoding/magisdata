@@ -15,7 +15,7 @@ import {
   TrendingUp
 } from "lucide-react";
 
-export const trustLogos = ["SAASCO", "ProLine", "Elevion", "Nexora", "Verity", "BrightCare"];
+export const trustLogos = ["Hoveniers", "Dakbedrijven", "SaaS", "IT consultancy", "Advies", "Lokale diensten"];
 
 export const services = [
   {
@@ -124,7 +124,7 @@ export const heroTrust = [
 export const heroStats = [
   { label: "Meer klanten", value: "Stap voor stap", note: "" },
   { label: "Beter gevonden", value: "", note: "Duidelijk plan, geen omweg" },
-  { label: "Klanten beoordelen ons", value: "4,9/5", note: "*****" }
+  { label: "Eerste gesprek", value: "Gratis", note: "Rustig verkennen" }
 ];
 
 export const AdviceIcon = Lightbulb;

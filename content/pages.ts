@@ -1,5 +1,4 @@
 import {
-  BarChart3,
   Bot,
   BrainCircuit,
   CheckCircle2,
@@ -9,10 +8,8 @@ import {
   LayoutTemplate,
   MessageSquareText,
   Search,
-  ShieldCheck,
   Sparkles,
   Target,
-  TrendingUp,
   Wrench
 } from "lucide-react";
 
@@ -326,7 +323,7 @@ export const servicePages = {
           {
             title: "Content die bewijs levert",
             text:
-              "Cases, voorbeelden, procesuitleg en FAQ's maken een servicepagina sterker dan alleen een korte commerciële tekst."
+              "Cases, voorbeelden, procesuitleg en FAQ's maken een servicepagina sterker dan alleen een korte commerciele tekst."
           },
           {
             title: "Interne links sturen waarde",
@@ -936,28 +933,220 @@ export const contactPage = {
 
 export const caseStudies = [
   {
-    slug: "lokale-dienstverlener",
-    title: "Lokale dienstverlener kreeg een duidelijkere website en meer aanvragen",
+    slug: "website-design-hoveniersbedrijf",
+    projectName: "BuitenLijn",
+    category: "Website design",
+    sector: "Hoveniersbedrijf",
+    title: "Website design voor een hoveniersbedrijf dat rust en vakmanschap uitstraalt",
+    metaTitle: "Website design hoveniersbedrijf | MagisData",
+    datePublished: "2026-05-26",
+    dateModified: "2026-05-26",
     summary:
-      "De oude website vertelde niet snel genoeg wat het bedrijf deed. We maakten de boodschap helderder, verbeterden de servicepagina's en maakten contact opnemen eenvoudiger.",
-    result: "Meer offerte-aanvragen via mobiel",
-    icon: TrendingUp
+      "Een premium homepageconcept voor een hoveniersbedrijf, opgebouwd rond lokale diensten, projecten, vertrouwen en een heldere adviesaanvraag.",
+    focus: "Lokale vindbaarheid en adviesaanvraag",
+    image: "/assets/Case1.png",
+    imageWidth: 1122,
+    imageHeight: 1402,
+    imageAlt: "Website design concept voor BuitenLijn hoveniersbedrijf met tuinprojecten en adviesaanvraag",
+    audience: "Particulieren en bedrijven die een tuin willen laten ontwerpen, aanleggen of onderhouden in Utrecht en omgeving.",
+    challenge:
+      "Een hovenier verkoopt geen losse dienst, maar vertrouwen in een buitenruimte die jarenlang klopt. De pagina moet sfeer tonen en tegelijk snel antwoord geven op diensten, regio en vervolgstap.",
+    objective:
+      "Een rustige merkervaring ontwerpen die bezoekers van inspiratie naar een vrijblijvende adviesaanvraag begeleidt.",
+    approach: [
+      {
+        title: "Natuurlijke positionering",
+        text: "De hero koppelt tuinontwerp direct aan woonkwaliteit. Aardse kleuren, serif typografie en projectfotografie ondersteunen de hoogwaardige, persoonlijke uitstraling."
+      },
+      {
+        title: "Diensten direct vindbaar",
+        text: "Tuinontwerp, aanleg, onderhoud, bestrating en overkappingen staan vroeg op de pagina als duidelijke routes voor bezoeker en zoekmachine."
+      },
+      {
+        title: "Bewijs als ontwerpstructuur",
+        text: "Projectkaarten, werkwijze, transformatieblok en vragensectie laten zien waar echte projectfoto's en controleerbare referenties later overtuigend kunnen landen."
+      }
+    ],
+    seoDecisions: [
+      {
+        title: "Lokale zoekintentie",
+        text: "Koppen en dienstclusters zijn ingericht op termen zoals tuinontwerp, tuinaanleg en tuinonderhoud gecombineerd met regio."
+      },
+      {
+        title: "Antwoordbare content",
+        text: "FAQ's en processtappen maken praktische vragen expliciet, geschikt voor organische zoekresultaten en AI-antwoorden."
+      }
+    ],
+    conversionChoices: [
+      "Primaire CTA voor vrijblijvend advies bovenaan en na de bewijsopbouw.",
+      "Projecten dicht bij diensten om visuele interesse naar concrete aanvraagintentie te brengen.",
+      "Contactgegevens en werkgebied zichtbaar voor lokale betrouwbaarheid."
+    ],
+    disclosure:
+      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject. Namen, beoordelingen en aantallen in de visual dienen uitsluitend als illustratieve content.",
+    icon: LayoutTemplate
   },
   {
-    slug: "adviesbureau",
-    title: "Adviesbureau bouwde meer vertrouwen op voor het eerste gesprek",
+    slug: "website-design-dakbedrijf",
+    projectName: "Dakbedrijf Hoogstad",
+    category: "Website design",
+    sector: "Dakbedrijf",
+    title: "Website design voor een dakbedrijf met focus op urgentie en vertrouwen",
+    metaTitle: "Website design dakbedrijf | MagisData",
+    datePublished: "2026-05-26",
+    dateModified: "2026-05-26",
     summary:
-      "We vertaalden een ingewikkeld aanbod naar duidelijke pagina's, praktische uitleg en bewijs dat bezoekers rustig konden beoordelen.",
-    result: "Sterkere positionering en betere leads",
-    icon: ShieldCheck
+      "Een servicegericht websiteconcept voor dakrenovatie, lekkageherstel en isolatie, met duidelijke routes naar inspectie en offerte.",
+    focus: "Lokale service-intentie en offerte",
+    image: "/assets/Case2.png",
+    imageWidth: 1086,
+    imageHeight: 1448,
+    imageAlt: "Website design concept voor Dakbedrijf Hoogstad met dakrenovatie en offerteaanvraag",
+    audience: "Huiseigenaren, VvE's en bedrijven die onderhoud, reparatie of verduurzaming van een dak zoeken.",
+    challenge:
+      "Dakwerk combineert spoedvragen met grote investeringsbeslissingen. Een bezoeker moet onmiddellijk diensten, werkgebied, aanpak en route naar hulp kunnen herkennen.",
+    objective:
+      "Een toegankelijke website ontwerpen die acute hulp en geplande renovatie binnen dezelfde heldere servicearchitectuur ondersteunt.",
+    approach: [
+      {
+        title: "Dienstenstructuur voor beslissers",
+        text: "Renovatie, isolatie, lekkage, dakgoten, bitumen en onderhoud krijgen scanbare serviceblokken met ruimte voor eigen detailpagina's."
+      },
+      {
+        title: "Voor en na als visueel argument",
+        text: "Het hero-ontwerp toont de transformatie die dakwerk tastbaar maakt, zonder dat bezoekers eerst technische specificaties hoeven te begrijpen."
+      },
+      {
+        title: "Proces reduceert twijfel",
+        text: "Inspectie, advies, uitvoering en oplevering zijn als vaste route zichtbaar, zodat offerteaanvragers weten wat volgt."
+      }
+    ],
+    seoDecisions: [
+      {
+        title: "Dienst plus locatie",
+        text: "De pagina is opgezet voor lokale zoekvragen rond dakrenovatie, dakisolatie en daklekkage in een werkgebied."
+      },
+      {
+        title: "Informatieve dekking",
+        text: "Projecttypen, procesinformatie en veelgestelde vragen bieden context voor orienterende en urgente zoekintenties."
+      }
+    ],
+    conversionChoices: [
+      "Offerteknop prominent in navigatie en hero voor bezoekers met directe behoefte.",
+      "Diensten en projecten ondersteunen vergelijking voor bezoekers die nog orienteren.",
+      "Proces en contactinformatie verminderen onzekerheid voor grotere werkzaamheden."
+    ],
+    disclosure:
+      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject. Namen, beoordelingen en aantallen in de visual dienen uitsluitend als illustratieve content.",
+    icon: Wrench
   },
   {
-    slug: "groeiende-webshop",
-    title: "Groeiende webshop kreeg betere structuur voor SEO en content",
+    slug: "website-design-social-growth-platform",
+    projectName: "OrbitFlow",
+    category: "Website design",
+    sector: "Social media platform",
+    title: "Website design voor een social growth platform met productfocus",
+    metaTitle: "Website design social platform | MagisData",
+    datePublished: "2026-05-26",
+    dateModified: "2026-05-26",
     summary:
-      "We brachten categorieen, vragen en contentlogica op orde zodat klanten sneller vonden wat ze zochten.",
-    result: "Meer organisch verkeer naar belangrijke pagina's",
-    icon: BarChart3
+      "Een SaaS-homepageconcept dat agency-expertise, platformfuncties en demo-conversie samenbrengt in een helder productverhaal.",
+    focus: "Productuitleg en demo-intentie",
+    image: "/assets/Case3.png",
+    imageWidth: 935,
+    imageHeight: 1683,
+    imageAlt: "Website design concept voor OrbitFlow social growth platform met dashboardmodules",
+    audience: "Marketingteams en merken die social content, creator-samenwerking en performance-inzicht willen centraliseren.",
+    challenge:
+      "Een platform met meerdere modules voelt snel complex. Het ontwerp moet in enkele seconden tonen wat het systeem doet, voor wie het is en waarom een demo logisch is.",
+    objective:
+      "Een productgerichte homepage ontwerpen waarin functionaliteit, workflow en commerciele route samen leesbaar blijven.",
+    approach: [
+      {
+        title: "Platform in de hero",
+        text: "Productmodules zweven rond een centraal device zodat content, planning, creators en attributie meteen als samenhangend systeem worden begrepen."
+      },
+      {
+        title: "Functies vertaald naar taken",
+        text: "Zes modulekaarten benoemen herkenbare werkzaamheden: content maken, hooks analyseren, creators beheren, plannen, testen en rapporteren."
+      },
+      {
+        title: "Demo-route op beslismomenten",
+        text: "Een ontwerp-caseblok, workflow, dashboard-preview en pakketkeuzes bouwen naar de primaire demoactie toe."
+      }
+    ],
+    seoDecisions: [
+      {
+        title: "Categorie en features",
+        text: "De inhoud verbindt social growth platform, content planning, creator CRM en attributie in expliciete secties."
+      },
+      {
+        title: "AI-leesbare productarchitectuur",
+        text: "Modulekoppen en workflowstappen geven antwoordmachines afgebakende passages om productfunctie en doelgroep te interpreteren."
+      }
+    ],
+    conversionChoices: [
+      "Demoactie blijft dominant in hero, caseblok en slot-CTA.",
+      "Dashboardbeeld maakt abstracte softwarecapaciteit concreet voor een zakelijke koper.",
+      "Pakketvergelijking ondersteunt bezoekers die al een aankoopmodel afwegen."
+    ],
+    disclosure:
+      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject of bestaand softwareplatform. Logo's, testimonials en prestatiecijfers in de visual zijn illustratief.",
+    icon: Bot
+  },
+  {
+    slug: "website-design-it-consultancy",
+    projectName: "Nexora IT Solutions",
+    category: "Website design",
+    sector: "IT consultancy",
+    title: "Website design voor een IT consultancy met technische autoriteit",
+    metaTitle: "Website design IT consultancy | MagisData",
+    datePublished: "2026-05-26",
+    dateModified: "2026-05-26",
+    summary:
+      "Een zakelijke websiteconcept voor software, cloud, cybersecurity en data & AI, gericht op heldere expertise en projectintake.",
+    focus: "Expertisepositionering en projectaanvraag",
+    image: "/assets/Case4.png",
+    imageWidth: 748,
+    imageHeight: 2103,
+    imageAlt: "Website design concept voor Nexora IT Solutions met software- en cloudoplossingen",
+    audience: "Organisaties die een technische partner zoeken voor softwareontwikkeling, cloud, cybersecurity of data en AI.",
+    challenge:
+      "IT-dienstverlening vraagt om technische geloofwaardigheid zonder een onleesbare lijst capabilities. Zakelijke beslissers moeten snel zien welke expertise past bij hun project.",
+    objective:
+      "Een heldere authority-site ontwerpen die complexe technologie omzet in herkenbare oplossingsroutes en een concrete intakeactie.",
+    approach: [
+      {
+        title: "Autoriteit met overzicht",
+        text: "De hero zet intelligente technologie naast echte bedrijfsimpact; vier kernoplossingen maken expertise direct navigeerbaar."
+      },
+      {
+        title: "Techniek krijgt context",
+        text: "Technologielogo's, procesfasen en ontworpen projectkaarten tonen hoe capability, aanpak en toepassing bij elkaar horen."
+      },
+      {
+        title: "Enterprise CTA-hierarchie",
+        text: "Start een project blijft primair; oplossingen en cases bieden verdieping voor stakeholders die eerst willen valideren."
+      }
+    ],
+    seoDecisions: [
+      {
+        title: "Service-entiteiten",
+        text: "Softwareontwikkeling, cloud engineering, cybersecurity en data & AI krijgen afzonderlijke semantische ankers voor zoekmachines."
+      },
+      {
+        title: "Citeerbare expertise",
+        text: "Proces- en oplossingssecties zijn zo opgezet dat latere inhoud concrete definities, methodes en FAQ-antwoorden kan dragen."
+      }
+    ],
+    conversionChoices: [
+      "Projectintake staat direct bovenaan voor bezoekers met concrete behoefte.",
+      "Oplossingskaarten laten verschillende stakeholders snel hun ingang vinden.",
+      "Processectie maakt samenwerking voorspelbaar voordat contact wordt gevraagd."
+    ],
+    disclosure:
+      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject. Merken, testimonials en resultaten in de visual zijn illustratieve onderdelen van het ontwerp.",
+    icon: BrainCircuit
   }
 ];
 

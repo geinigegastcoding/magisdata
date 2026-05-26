@@ -231,7 +231,7 @@ export function TrustLogos() {
     <section className="pb-16">
       <div className="container">
         <p className="text-center text-sm font-medium text-muted">
-          Vertrouwd door ambitieuze bedrijven
+          Website design voor uiteenlopende groeivragen
         </p>
         <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-6 text-center text-base font-extrabold tracking-wide text-soft grayscale sm:grid-cols-3 sm:text-xl lg:grid-cols-6">
           {trustLogos.map((logo) => (
@@ -379,7 +379,7 @@ export function Results() {
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <PrimaryButton>Ik wil ook groeien</PrimaryButton>
-                <SecondaryButton href="/cases">Bekijk resultaten</SecondaryButton>
+                <SecondaryButton href="/cases">Bekijk website designs</SecondaryButton>
               </div>
             </div>
             <FriendlyPhoto className="h-64" variant="team" />
@@ -453,33 +453,42 @@ export function CaseStudyInsights() {
             <div>
               <Eyebrow>Praktijkvoorbeeld</Eyebrow>
               <h2 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] text-navy">
-                Van onzichtbaar naar meer aanvragen
+                Website design voor IT consultancy
               </h2>
               <p className="mt-5 text-[0.95rem] leading-7 text-muted">
-                Voor Nexora bouwden we een nieuwe website en verbeterden we de vindbaarheid.
-                Het resultaat: meer bezoekers, meer aanvragen en een website die vertrouwen uitstraalt.
+                Conceptontwerp voor Nexora IT Solutions: een heldere authority-site voor software,
+                cloud, cybersecurity en data & AI. Portfolio design, geen live klantproject.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-3xl font-extrabold tabular-nums text-navy">Google</p>
-                  <p className="text-xs font-medium text-muted">Beter gevonden</p>
+                  <p className="text-3xl font-extrabold tabular-nums text-navy">SEO</p>
+                  <p className="text-xs font-medium text-muted">Dienstenstructuur</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-extrabold tabular-nums text-navy">Contact</p>
-                  <p className="text-xs font-medium text-muted">Makkelijker aanvragen</p>
+                  <p className="text-3xl font-extrabold tabular-nums text-navy">UX</p>
+                  <p className="text-xs font-medium text-muted">Projectintake</p>
                 </div>
               </div>
               <div className="mt-7">
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <SecondaryButton href="/cases">Bekijk de case</SecondaryButton>
+                  <SecondaryButton href="/cases/website-design-it-consultancy">Bekijk designcase</SecondaryButton>
                   <TextCta>Vraag groeiplan aan</TextCta>
                 </div>
               </div>
             </div>
             <div className="relative min-h-[270px]">
-              <FriendlyPhoto className="absolute right-0 top-0 h-64 w-full rounded-[1.75rem] md:h-72" variant="laptop" />
-              <div className="absolute -bottom-2 left-6 -rotate-6 rounded-2xl bg-green-soft px-5 py-4 text-sm font-bold text-navy shadow-sm">
-                Groei die blijft.
+              <figure className="absolute right-0 top-0 h-64 w-full overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-card md:h-72">
+                <img
+                  alt="Website design concept voor Nexora IT Solutions"
+                  className="h-full w-full object-cover object-top"
+                  height="2103"
+                  loading="lazy"
+                  src="/assets/Case4.png"
+                  width="748"
+                />
+              </figure>
+              <div className="absolute -bottom-2 left-6 -rotate-3 rounded-2xl bg-green-soft px-5 py-4 text-sm font-bold text-navy shadow-sm">
+                Conceptdesign.
               </div>
             </div>
           </div>
