@@ -69,7 +69,7 @@ export default function AboutPage() {
               MagisData helpt bedrijven hun website behandelen als digitale infrastructuur: een plek waar positionering, vindbaarheid, bewijs en conversie samenkomen.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white shadow-orange transition hover:bg-orange-dark" href="/diensten">
+              <Link className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white transition hover:bg-orange-dark" href="/diensten">
                 Bekijk hoe we helpen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -241,7 +241,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               { href: "/diensten", title: "Vertaal visie naar diensten", text: "Zie hoe we website, SEO en AI-vindbaarheid praktisch maken." },
-              { href: "/cases", title: "Bekijk website designs", text: "Ontdek hoe duidelijke structuur en positionering in ontwerp samenkomen." },
+              { href: "/cases", title: "Bekijk portfolio", text: "Ontdek hoe duidelijke structuur en positionering in eerder werk samenkomen." },
               { href: "/contact", title: "Maak kennis zonder druk", text: "Leg je situatie kort voor en krijg een eerlijke eerste richting." }
             ].map((link) => (
               <Link className="focus-ring group rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft" href={link.href} key={link.href}>

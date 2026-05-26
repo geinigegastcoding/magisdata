@@ -113,9 +113,9 @@ const coreSeoRoutes: SeoRoute[] = [
 const caseStudySeoRoutes: SeoRoute[] = [
   {
     path: "/cases",
-    title: "Website design portfolio voor bedrijven en platforms | MagisData",
-    description: "Bekijk vier website design concepten van MagisData met uitleg over structuur, SEO, AEO, GEO en conversie voor verschillende branches.",
-    keywords: ["website design portfolio", "website ontwerp voorbeelden", "webdesign cases", "SEO website design", "MagisData website design"],
+    title: "Webdesign portfolio voor bedrijven en platforms | MagisData",
+    description: "Bekijk het webdesign portfolio van MagisData met projecten, ontwerpkeuzes en lessen over structuur, SEO, AEO, GEO en gebruikservaring.",
+    keywords: ["webdesign portfolio", "website ontwerp voorbeelden", "portfolio webdesign", "SEO webdesign", "MagisData portfolio"],
     priority: 0.75,
     changeFrequency: "monthly",
     lastModified: "2026-05-26"
@@ -124,7 +124,7 @@ const caseStudySeoRoutes: SeoRoute[] = [
     path: `/cases/${caseStudy.slug}`,
     title: caseStudy.metaTitle,
     description: caseStudy.summary,
-    keywords: [caseStudy.title, caseStudy.sector, caseStudy.focus, "website design concept", "webdesign portfolio MagisData"],
+    keywords: [caseStudy.title, caseStudy.sector, caseStudy.focus, "webdesign portfolio", "MagisData portfolio"],
     priority: 0.65,
     changeFrequency: "monthly" as const,
     lastModified: caseStudy.dateModified,

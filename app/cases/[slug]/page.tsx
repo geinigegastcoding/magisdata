@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
-import { RelatedLinks } from "@/components/related-links";
-import { relatedLinksByPath } from "@/content/internal-links";
 import { caseStudies } from "@/content/pages";
 import { metadataForPath } from "@/content/seo";
 import { absoluteUrl, breadcrumbSchema, caseStudySchema, graphSchema, webPageSchema } from "@/schemas/seo";
@@ -19,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const item = caseStudies.find((caseStudy) => caseStudy.slug === slug);
+  const item = caseStudies.find((project) => project.slug === slug);
 
   if (!item) {
     return {};
@@ -28,15 +26,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return metadataForPath(`/cases/${item.slug}`);
 }
 
-export default async function CaseStudyDetailPage({ params }: PageProps) {
+export default async function PortfolioProjectPage({ params }: PageProps) {
   const { slug } = await params;
-  const item = caseStudies.find((caseStudy) => caseStudy.slug === slug);
+  const index = caseStudies.findIndex((project) => project.slug === slug);
+  const item = caseStudies[index];
 
   if (!item) {
     notFound();
   }
 
-  const Icon = item.icon;
+  const previous = caseStudies[(index + caseStudies.length - 1) % caseStudies.length];
+  const next = caseStudies[(index + 1) % caseStudies.length];
   const schema = graphSchema([
     webPageSchema({
       path: `/cases/${item.slug}`,
@@ -46,7 +46,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
     }),
     breadcrumbSchema([
       { name: "Home", path: "/" },
-      { name: "Website design", path: "/cases" },
+      { name: "Portfolio", path: "/cases" },
       { name: item.sector, path: `/cases/${item.slug}` }
     ]),
     caseStudySchema(item)
@@ -55,146 +55,167 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
   return (
     <main className="bg-cream/40">
       <JsonLd data={schema} />
-      <article className="container py-12 md:py-20">
+      <article className="container py-10 md:py-16">
         <Link className="focus-ring inline-flex items-center text-sm font-extrabold text-orange" href="/cases">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Terug naar website designs
+          Terug naar portfolio
         </Link>
 
-        <header className="mt-8 grid gap-8 lg:grid-cols-[0.96fr_0.48fr] lg:items-start">
-          <div>
+        <header className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-start">
+          <div className="pt-2">
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-              {item.category} / {item.sector}
+              Portfolio / {item.sector}
             </p>
-            <h1 className="mt-4 text-balance text-4xl font-extrabold leading-tight tracking-[-0.035em] text-navy md:text-6xl">
+            <h1 className="mt-4 text-balance text-4xl font-extrabold leading-tight text-navy md:text-6xl">
               {item.title}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">{item.summary}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <span className="rounded-full bg-green-soft px-4 py-2 text-sm font-extrabold text-navy">
-                Focus: {item.focus}
-              </span>
-              <span className="rounded-full border border-line bg-white px-4 py-2 text-sm font-bold text-muted">
-                Concept: {item.projectName}
-              </span>
-            </div>
+            <dl className="mt-9 grid max-w-2xl gap-5 border-y border-line py-6 sm:grid-cols-3">
+              <div>
+                <dt className="text-xs font-bold uppercase tracking-[0.12em] text-soft">Project</dt>
+                <dd className="mt-2 font-extrabold text-navy">{item.projectName}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-bold uppercase tracking-[0.12em] text-soft">Sector</dt>
+                <dd className="mt-2 font-extrabold text-navy">{item.sector}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-bold uppercase tracking-[0.12em] text-soft">Focus</dt>
+                <dd className="mt-2 font-extrabold text-navy">{item.focus}</dd>
+              </div>
+            </dl>
           </div>
 
-          <aside className="rounded-[2rem] border border-orange-soft bg-peach p-6 shadow-sm">
-            <span className="grid h-12 w-12 place-items-center rounded-xl bg-white text-orange shadow-sm">
-              <Icon className="h-6 w-6" strokeWidth={2.1} />
-            </span>
-            <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.14em] text-orange">
-              Transparantie
-            </p>
-            <p className="mt-3 text-sm font-semibold leading-7 text-ink">{item.disclosure}</p>
-          </aside>
+          <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-white p-3">
+            <img
+              alt={item.imageAlt}
+              className="h-[30rem] w-full rounded-xl object-cover object-top md:h-[34rem]"
+              height={item.imageHeight}
+              loading="eager"
+              src={item.image}
+              width={item.imageWidth}
+            />
+            <figcaption className="flex items-center justify-between gap-4 px-2 pb-1 pt-4 text-sm text-muted">
+              <span>Homepage ontwerp voor {item.projectName}</span>
+              <Link className="focus-ring shrink-0 font-bold text-orange" href="#volledig-ontwerp">
+                Hele ontwerp
+              </Link>
+            </figcaption>
+          </figure>
         </header>
 
-        <figure className="mt-12 overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white p-3 shadow-card md:p-5">
-          <img
-            alt={item.imageAlt}
-            className="h-auto w-full rounded-[1.35rem]"
-            height={item.imageHeight}
-            loading="eager"
-            src={item.image}
-            width={item.imageWidth}
-          />
-          <figcaption className="px-2 pb-2 pt-5 text-sm leading-6 text-muted md:px-3">
-            Concept homepage voor {item.projectName}. Visual toont ontwerpkeuzes en illustratieve inhoud, geen live website of gemeten klantresultaten.
-          </figcaption>
+        <div className="mt-14 grid gap-10 lg:grid-cols-[0.78fr_1fr]">
+          <section>
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Achtergrond</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-navy">Wat ik wilde neerzetten</h2>
+          </section>
+          <div className="grid gap-5 text-base leading-8 text-muted">
+            {item.story.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <section className="mt-14 grid gap-5 rounded-[1.75rem] border border-line bg-white p-6 md:grid-cols-3 md:p-8">
+          {[
+            { title: "Voor wie", text: item.audience },
+            { title: "Ontwerpvraag", text: item.challenge },
+            { title: "Doel van het ontwerp", text: item.objective }
+          ].map((block) => (
+            <div key={block.title}>
+              <h2 className="text-sm font-extrabold uppercase tracking-[0.12em] text-blue">{block.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-muted">{block.text}</p>
+            </div>
+          ))}
+        </section>
+
+        <section className="mt-14">
+          <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Ontwerpkeuzes</p>
+          <h2 className="mt-3 text-3xl font-extrabold text-navy">Hoe ik de pagina heb opgebouwd</h2>
+          <div className="mt-7 grid gap-4 lg:grid-cols-3">
+            {item.approach.map((decision, decisionIndex) => (
+              <article className="rounded-2xl border border-line bg-white p-6" key={decision.title}>
+                <span className="text-sm font-black text-orange">0{decisionIndex + 1}</span>
+                <h3 className="mt-4 text-lg font-extrabold text-navy">{decision.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{decision.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-14 grid gap-7 lg:grid-cols-2">
+          <div className="rounded-[1.75rem] border border-line bg-white p-7">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Vindbaarheid</p>
+            <h2 className="mt-3 text-2xl font-extrabold text-navy">SEO, AEO en GEO in het ontwerp</h2>
+            <div className="mt-6 grid gap-5">
+              {item.seoDecisions.map((decision) => (
+                <article key={decision.title}>
+                  <h3 className="font-extrabold text-navy">{decision.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-muted">{decision.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-[1.75rem] border border-line bg-white p-7">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Gebruikservaring</p>
+            <h2 className="mt-3 text-2xl font-extrabold text-navy">Interactiekeuzes</h2>
+            <ul className="mt-6 grid gap-4">
+              {item.conversionChoices.map((choice) => (
+                <li className="border-l-2 border-orange-soft pl-4 text-sm leading-7 text-muted" key={choice}>
+                  {choice}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="mt-14 grid gap-8 border-y border-line py-10 lg:grid-cols-[0.52fr_1fr]">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Reflectie</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-navy">Wat ik leerde</h2>
+          </div>
+          <div className="grid gap-5">
+            {item.learnings.map((learning, learningIndex) => (
+              <article className="flex gap-5" key={learning}>
+                <span className="text-sm font-black text-orange">0{learningIndex + 1}</span>
+                <p className="text-base leading-8 text-muted">{learning}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <figure className="mt-14" id="volledig-ontwerp">
+          <div className="mb-6 max-w-2xl">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Volledig ontwerp</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-navy">De uitgewerkte homepage</h2>
+            <p className="mt-4 text-sm leading-7 text-muted">
+              Hieronder staat het volledige webdesign zodat ritme, sectievolgorde en visuele details samen beoordeeld kunnen worden.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-[1.75rem] border border-line bg-white p-3 md:p-5">
+            <img alt={item.imageAlt} className="h-auto w-full rounded-xl" height={item.imageHeight} loading="lazy" src={item.image} width={item.imageWidth} />
+          </div>
         </figure>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_0.4fr]">
-          <div className="grid gap-10">
-            <section className="grid gap-5 rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:grid-cols-3 md:p-9">
-              {[
-                { title: "Voor wie", text: item.audience },
-                { title: "Ontwerpvraag", text: item.challenge },
-                { title: "Doel", text: item.objective }
-              ].map((block) => (
-                <div key={block.title}>
-                  <h2 className="text-sm font-extrabold uppercase tracking-[0.12em] text-blue">{block.title}</h2>
-                  <p className="mt-3 text-sm leading-7 text-muted">{block.text}</p>
-                </div>
-              ))}
-            </section>
-
-            <section>
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-                Designstrategie
-              </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy">
-                Hoe dit websiteconcept is opgebouwd
-              </h2>
-              <div className="mt-7 grid gap-4">
-                {item.approach.map((decision, index) => (
-                  <article className="grid gap-4 rounded-2xl border border-black/[0.05] bg-white p-6 shadow-sm sm:grid-cols-[auto_1fr]" key={decision.title}>
-                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-orange-soft text-sm font-black text-orange">
-                      0{index + 1}
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-extrabold text-navy">{decision.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-muted">{decision.text}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className="rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:p-9">
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-                SEO, AEO en GEO
-              </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy">
-                Vindbaarheid begint in de paginastructuur
-              </h2>
-              <div className="mt-7 grid gap-5 md:grid-cols-2">
-                {item.seoDecisions.map((decision) => (
-                  <article className="rounded-2xl bg-cream/70 p-5" key={decision.title}>
-                    <h3 className="font-extrabold text-navy">{decision.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-muted">{decision.text}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-                Conversie
-              </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy">
-                Keuzes die contact logischer maken
-              </h2>
-              <ul className="mt-6 grid gap-4">
-                {item.conversionChoices.map((choice) => (
-                  <li className="flex gap-3 rounded-2xl border border-black/[0.05] bg-white p-5 text-sm font-semibold leading-7 text-ink shadow-sm" key={choice}>
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-orange" />
-                    {choice}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
-
-          <aside className="h-fit rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm lg:sticky lg:top-28">
-            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-blue">
-              Jouw website
-            </p>
-            <h2 className="mt-4 text-2xl font-extrabold text-navy">
-              Ook een website laten ontwerpen die helder verkoopt?
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-muted">
-              We vertalen je diensten, doelgroep en groeidoel naar een websitebasis voor vertrouwen, vindbaarheid en aanvragen.
-            </p>
-            <Link className="focus-ring mt-7 inline-flex items-center rounded-xl bg-orange px-5 py-3 text-sm font-bold text-white shadow-orange transition hover:bg-orange-dark" href="/contact">
-              Bespreek je website
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </aside>
-        </div>
+        <nav aria-label="Portfolio projecten" className="mt-14 grid gap-4 border-t border-line pt-8 md:grid-cols-2">
+          <Link className="focus-ring group rounded-2xl border border-line bg-white p-5" href={`/cases/${previous.slug}`}>
+            <span className="inline-flex items-center text-xs font-bold uppercase tracking-[0.12em] text-soft">
+              <ChevronLeft className="mr-1 h-4 w-4" />
+              Vorig project
+            </span>
+            <span className="mt-3 block text-lg font-extrabold text-navy group-hover:text-orange">{previous.projectName}</span>
+            <span className="mt-1 block text-sm text-muted">{previous.sector}</span>
+          </Link>
+          <Link className="focus-ring group rounded-2xl border border-line bg-white p-5 text-right" href={`/cases/${next.slug}`}>
+            <span className="inline-flex items-center text-xs font-bold uppercase tracking-[0.12em] text-soft">
+              Volgend project
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </span>
+            <span className="mt-3 block text-lg font-extrabold text-navy group-hover:text-orange">{next.projectName}</span>
+            <span className="mt-1 block text-sm text-muted">{next.sector}</span>
+          </Link>
+        </nav>
       </article>
-      <RelatedLinks links={relatedLinksByPath[`/cases/${item.slug}`] ?? []} title="Diensten voor dit ontwerpdoel" />
     </main>
   );
 }

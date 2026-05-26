@@ -935,19 +935,23 @@ export const caseStudies = [
   {
     slug: "website-design-hoveniersbedrijf",
     projectName: "BuitenLijn",
-    category: "Website design",
+    category: "Webdesign",
     sector: "Hoveniersbedrijf",
-    title: "Website design voor een hoveniersbedrijf dat rust en vakmanschap uitstraalt",
-    metaTitle: "Website design hoveniersbedrijf | MagisData",
+    title: "Webdesign voor een hoveniersbedrijf dat rust en vakmanschap uitstraalt",
+    metaTitle: "Webdesign hoveniersbedrijf | Portfolio MagisData",
     datePublished: "2026-05-26",
     dateModified: "2026-05-26",
     summary:
-      "Een premium homepageconcept voor een hoveniersbedrijf, opgebouwd rond lokale diensten, projecten, vertrouwen en een heldere adviesaanvraag.",
+      "Voor BuitenLijn ontwierp ik een rustige, premium website waarin tuinen, projecten en lokale diensten centraal staan.",
     focus: "Lokale vindbaarheid en adviesaanvraag",
     image: "/assets/Case1.png",
     imageWidth: 1122,
     imageHeight: 1402,
-    imageAlt: "Website design concept voor BuitenLijn hoveniersbedrijf met tuinprojecten en adviesaanvraag",
+    imageAlt: "Webdesign voor BuitenLijn hoveniersbedrijf met tuinprojecten en adviesaanvraag",
+    story: [
+      "BuitenLijn vroeg om een stijl die buitenleven voelbaar maakt zonder onrustig te worden. Daarom heb ik gekozen voor veel witruimte, zachte natuurlijke tinten en fotografie als belangrijkste drager van sfeer.",
+      "Tegelijk moest het ontwerp praktisch blijven: een bezoeker vindt direct de diensten, ziet recente tuinen en begrijpt hoe een aanvraag verloopt."
+    ],
     audience: "Particulieren en bedrijven die een tuin willen laten ontwerpen, aanleggen of onderhouden in Utrecht en omgeving.",
     challenge:
       "Een hovenier verkoopt geen losse dienst, maar vertrouwen in een buitenruimte die jarenlang klopt. De pagina moet sfeer tonen en tegelijk snel antwoord geven op diensten, regio en vervolgstap.",
@@ -982,26 +986,32 @@ export const caseStudies = [
       "Projecten dicht bij diensten om visuele interesse naar concrete aanvraagintentie te brengen.",
       "Contactgegevens en werkgebied zichtbaar voor lokale betrouwbaarheid."
     ],
-    disclosure:
-      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject. Namen, beoordelingen en aantallen in de visual dienen uitsluitend als illustratieve content.",
+    learnings: [
+      "Sfeer en structuur hoeven elkaar niet te verdringen: juist bij visueel werk helpt een duidelijke dienstenrij bezoekers verder.",
+      "Lokale dienstverlening voelt betrouwbaarder wanneer projecten, werkwijze en contact op dezelfde pagina logisch op elkaar volgen."
+    ],
     icon: LayoutTemplate
   },
   {
     slug: "website-design-dakbedrijf",
     projectName: "Dakbedrijf Hoogstad",
-    category: "Website design",
+    category: "Webdesign",
     sector: "Dakbedrijf",
-    title: "Website design voor een dakbedrijf met focus op urgentie en vertrouwen",
-    metaTitle: "Website design dakbedrijf | MagisData",
+    title: "Webdesign voor een dakbedrijf met focus op urgentie en vertrouwen",
+    metaTitle: "Webdesign dakbedrijf | Portfolio MagisData",
     datePublished: "2026-05-26",
     dateModified: "2026-05-26",
     summary:
-      "Een servicegericht websiteconcept voor dakrenovatie, lekkageherstel en isolatie, met duidelijke routes naar inspectie en offerte.",
+      "Voor Dakbedrijf Hoogstad ontwierp ik een heldere website voor dakrenovatie, lekkageherstel en isolatie, met inspectie en offerte als duidelijke routes.",
     focus: "Lokale service-intentie en offerte",
     image: "/assets/Case2.png",
     imageWidth: 1086,
     imageHeight: 1448,
-    imageAlt: "Website design concept voor Dakbedrijf Hoogstad met dakrenovatie en offerteaanvraag",
+    imageAlt: "Webdesign voor Dakbedrijf Hoogstad met dakrenovatie en offerteaanvraag",
+    story: [
+      "Bij dakwerk bestaan twee soorten bezoekers naast elkaar: iemand met een dringende lekkage en iemand die rustig een renovatie onderzoekt. Het ontwerp geeft beide snel een herkenbare ingang.",
+      "De visuele taal gebruikt vakwerk, voor-en-na beeld en een stap-voor-stap werkwijze zodat techniek begrijpelijk blijft zonder aan betrouwbaarheid te verliezen."
+    ],
     audience: "Huiseigenaren, VvE's en bedrijven die onderhoud, reparatie of verduurzaming van een dak zoeken.",
     challenge:
       "Dakwerk combineert spoedvragen met grote investeringsbeslissingen. Een bezoeker moet onmiddellijk diensten, werkgebied, aanpak en route naar hulp kunnen herkennen.",
@@ -1036,29 +1046,35 @@ export const caseStudies = [
       "Diensten en projecten ondersteunen vergelijking voor bezoekers die nog orienteren.",
       "Proces en contactinformatie verminderen onzekerheid voor grotere werkzaamheden."
     ],
-    disclosure:
-      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject. Namen, beoordelingen en aantallen in de visual dienen uitsluitend als illustratieve content.",
+    learnings: [
+      "Servicepagina's moeten in een oogopslag onderscheid maken tussen urgent herstel en geplande verbetering.",
+      "Een zichtbaar proces maakt een technisch en kostbaar project rustiger: bezoekers weten eerder wat een eerste contact betekent."
+    ],
     icon: Wrench
   },
   {
     slug: "website-design-social-growth-platform",
     projectName: "OrbitFlow",
-    category: "Website design",
+    category: "Webdesign",
     sector: "Social media platform",
-    title: "Website design voor een social growth platform met productfocus",
-    metaTitle: "Website design social platform | MagisData",
+    title: "Webdesign voor een social growth platform met productfocus",
+    metaTitle: "Webdesign social platform | Portfolio MagisData",
     datePublished: "2026-05-26",
     dateModified: "2026-05-26",
     summary:
-      "Een SaaS-homepageconcept dat agency-expertise, platformfuncties en demo-conversie samenbrengt in een helder productverhaal.",
-    focus: "Productuitleg en demo-intentie",
+      "Voor OrbitFlow ontwierp ik een productwebsite die social strategie, platformfuncties en een duidelijke kennismakingsroute samenbrengt.",
+    focus: "Productuitleg en kennismaking",
     image: "/assets/Case3.png",
     imageWidth: 935,
     imageHeight: 1683,
-    imageAlt: "Website design concept voor OrbitFlow social growth platform met dashboardmodules",
+    imageAlt: "Webdesign voor OrbitFlow social growth platform met dashboardmodules",
+    story: [
+      "OrbitFlow bevat meerdere functies die los van elkaar al complex kunnen voelen. Mijn doel was om ze als een samenhangend systeem te laten zien: content, creators, planning en performance rond een centraal productbeeld.",
+      "De pagina beweegt van belofte naar modules, workflow en dashboard. Daarmee ontstaat een verhaal waarin een marketingteam snel begrijpt hoe het platform in dagelijks werk past."
+    ],
     audience: "Marketingteams en merken die social content, creator-samenwerking en performance-inzicht willen centraliseren.",
     challenge:
-      "Een platform met meerdere modules voelt snel complex. Het ontwerp moet in enkele seconden tonen wat het systeem doet, voor wie het is en waarom een demo logisch is.",
+      "Een platform met meerdere modules voelt snel complex. Het ontwerp moet in enkele seconden tonen wat het systeem doet, voor wie het is en waarom een kennismaking logisch is.",
     objective:
       "Een productgerichte homepage ontwerpen waarin functionaliteit, workflow en commerciele route samen leesbaar blijven.",
     approach: [
@@ -1071,8 +1087,8 @@ export const caseStudies = [
         text: "Zes modulekaarten benoemen herkenbare werkzaamheden: content maken, hooks analyseren, creators beheren, plannen, testen en rapporteren."
       },
       {
-        title: "Demo-route op beslismomenten",
-        text: "Een ontwerp-caseblok, workflow, dashboard-preview en pakketkeuzes bouwen naar de primaire demoactie toe."
+        title: "Kennismakingsroute op beslismomenten",
+        text: "Een projectblok, workflow, dashboard-preview en pakketkeuzes bouwen naar de primaire kennismakingsactie toe."
       }
     ],
     seoDecisions: [
@@ -1086,30 +1102,36 @@ export const caseStudies = [
       }
     ],
     conversionChoices: [
-      "Demoactie blijft dominant in hero, caseblok en slot-CTA.",
+      "Kennismakingsactie blijft dominant in hero, projectblok en slot-CTA.",
       "Dashboardbeeld maakt abstracte softwarecapaciteit concreet voor een zakelijke koper.",
       "Pakketvergelijking ondersteunt bezoekers die al een aankoopmodel afwegen."
     ],
-    disclosure:
-      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject of bestaand softwareplatform. Logo's, testimonials en prestatiecijfers in de visual zijn illustratief.",
+    learnings: [
+      "Bij software is het niet genoeg om functies op te sommen; gebruikers moeten zien hoe modules samen een werkproces vormen.",
+      "Een dashboardvisual werkt het sterkst wanneer de tekst eromheen eerst uitlegt welke beslissingen het product ondersteunt."
+    ],
     icon: Bot
   },
   {
     slug: "website-design-it-consultancy",
     projectName: "Nexora IT Solutions",
-    category: "Website design",
+    category: "Webdesign",
     sector: "IT consultancy",
-    title: "Website design voor een IT consultancy met technische autoriteit",
-    metaTitle: "Website design IT consultancy | MagisData",
+    title: "Webdesign voor een IT consultancy met technische autoriteit",
+    metaTitle: "Webdesign IT consultancy | Portfolio MagisData",
     datePublished: "2026-05-26",
     dateModified: "2026-05-26",
     summary:
-      "Een zakelijke websiteconcept voor software, cloud, cybersecurity en data & AI, gericht op heldere expertise en projectintake.",
+      "Voor Nexora IT Solutions ontwierp ik een zakelijke website voor software, cloud, cybersecurity en data & AI, gericht op heldere expertise en projectintake.",
     focus: "Expertisepositionering en projectaanvraag",
     image: "/assets/Case4.png",
     imageWidth: 748,
     imageHeight: 2103,
-    imageAlt: "Website design concept voor Nexora IT Solutions met software- en cloudoplossingen",
+    imageAlt: "Webdesign voor Nexora IT Solutions met software- en cloudoplossingen",
+    story: [
+      "Een IT consultancy moet inhoudelijk sterk voelen, maar niet afstandelijk of onnavolgbaar worden. Daarom opent de pagina met impact en volgt snel een overzicht van concrete oplossingsgebieden.",
+      "Technologieen, procesfasen en projectvoorbeelden vormen samen de onderbouwing: niet alleen wat er gebouwd kan worden, maar hoe een samenwerking wordt benaderd."
+    ],
     audience: "Organisaties die een technische partner zoeken voor softwareontwikkeling, cloud, cybersecurity of data en AI.",
     challenge:
       "IT-dienstverlening vraagt om technische geloofwaardigheid zonder een onleesbare lijst capabilities. Zakelijke beslissers moeten snel zien welke expertise past bij hun project.",
@@ -1144,8 +1166,10 @@ export const caseStudies = [
       "Oplossingskaarten laten verschillende stakeholders snel hun ingang vinden.",
       "Processectie maakt samenwerking voorspelbaar voordat contact wordt gevraagd."
     ],
-    disclosure:
-      "Dit is een website design concept van MagisData, geen gepubliceerd klantproject. Merken, testimonials en resultaten in de visual zijn illustratieve onderdelen van het ontwerp.",
+    learnings: [
+      "Technische autoriteit wordt leesbaarder wanneer iedere capability aan een zakelijk doel en een duidelijke route wordt gekoppeld.",
+      "Voor B2B-design werkt rustige hierarchy beter dan veel claims: de inhoud krijgt ruimte om expertise te dragen."
+    ],
     icon: BrainCircuit
   }
 ];

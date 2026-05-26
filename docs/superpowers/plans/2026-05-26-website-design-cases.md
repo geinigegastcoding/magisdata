@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Publish four truthful, search-ready website design concept case pages using supplied screenshots.
+**Goal:** Publish four search-ready webdesign portfolio pages using supplied screenshots.
 
-**Architecture:** Extend existing `caseStudies` content data with portfolio-detail fields and render them through current collection/detail routes. Update metadata, schema, internal links, footer, and homepage showcase so all case references describe design concepts rather than client outcomes.
+**Architecture:** Extend existing `caseStudies` content data with project-story and reflection fields and render them through current collection/detail routes. Update metadata, schema, navigation, and homepage showcase so `/cases` reads as an editorial portfolio with compact image previews and project navigation.
 
 **Tech Stack:** Next.js App Router, React, TypeScript, Tailwind CSS, local JSON-LD helpers.
 
@@ -15,7 +15,7 @@
 **Files:**
 - Modify: `content/pages.ts`
 
-- [ ] Replace generic case records with four `Website design` entries and fields for screenshots, audience, challenge, approach, SEO rationale, conversion decisions, and disclosure.
+- [ ] Replace generic case records with four webdesign entries and fields for screenshots, audience, challenge, approach, SEO rationale, interaction decisions, story, and lessons learned.
 
 ### Task 2: Case Collection And Detail Presentation
 
@@ -23,8 +23,8 @@
 - Modify: `app/cases/page.tsx`
 - Modify: `app/cases/[slug]/page.tsx`
 
-- [ ] Present screenshot-led design cards on the hub and structured concept explanations on each detail page.
-- [ ] Include clear visible disclosure that each design is a portfolio concept and any content inside screenshots is illustrative.
+- [ ] Present screenshot-led project cards on the hub and structured design explanations on each detail page.
+- [ ] Keep long artwork below core explanation and include previous/next project navigation.
 
 ### Task 3: Discoverability And Navigation
 
@@ -35,8 +35,8 @@
 - Modify: `components/site-footer.tsx`
 - Modify: `components/homepage-sections.tsx`
 
-- [ ] Generate unique canonical metadata/social images and schema for each concept.
-- [ ] Replace old case links and unverified homepage case claims with honest website design links and copy.
+- [ ] Generate unique canonical metadata/social images and schema for each portfolio page.
+- [ ] Replace old case links with portfolio links and remove glow styling from site surfaces.
 
 ### Task 4: Verification
 

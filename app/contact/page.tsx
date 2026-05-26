@@ -132,7 +132,7 @@ export default function ContactPage() {
                 Korte vraag
                 <textarea className="focus-ring min-h-36 rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="vraag" required />
               </label>
-              <button className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-extrabold text-white shadow-orange transition hover:bg-orange-dark" type="submit">
+              <button className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-orange-dark" type="submit">
                 Stuur je vraag
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
@@ -220,7 +220,7 @@ export default function ContactPage() {
           <div className="grid gap-4">
             {[
               { href: "/diensten", title: "Nog orienteren?", text: "Bekijk eerst de diensten en kies een logische ingang." },
-              { href: "/cases", title: "Eerst ontwerpen bekijken?", text: "Bekijk transparante websiteconcepten met uitleg over structuur, SEO en conversie." },
+              { href: "/cases", title: "Eerst portfolio bekijken?", text: "Bekijk webdesignprojecten met uitleg over structuur, SEO en ontwerpkeuzes." },
               { href: "/over-ons", title: "Eerst kennismaken?", text: "Lees hoe MagisData denkt over strategie, AI en groei." }
             ].map((link) => (
               <Link className="focus-ring group rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:border-orange-soft hover:bg-peach" href={link.href} key={link.href}>

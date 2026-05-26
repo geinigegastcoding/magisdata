@@ -18,9 +18,9 @@ const columns = [
     ]
   },
   {
-    title: "Bewijs",
+    title: "Portfolio",
     links: [
-      { label: "Website design", href: "/cases" },
+      { label: "Alle projecten", href: "/cases" },
       { label: "Hoveniersbedrijf", href: "/cases/website-design-hoveniersbedrijf" },
       { label: "Dakbedrijf", href: "/cases/website-design-dakbedrijf" },
       { label: "Social platform", href: "/cases/website-design-social-growth-platform" },

@@ -47,8 +47,9 @@ Build and maintain a premium, high-performance marketing website for MagisData f
 - Maintain performance-first behavior (optimized images, clean bundles, minimal client-side JS where possible).
 - Preserve brand tone: calm, strategic, engineered, premium; avoid hypey or playful styling.
 - Use accent color (amber) with restraint, matching design guidance.
-- Treat supplied non-client design examples as `Website design` portfolio concepts, never as live client cases or verified business results.
+- Treat supplied design examples as portfolio webdesign work; describe the design and lessons without inventing client results.
 - Do not publish invented testimonials, client logos, performance metrics, review scores, or outcome claims as fact.
+- Never use glow effects in the website design: no glowing shadows, blurred color orbs, neon halos, or radial glow backgrounds.
 - When a question is necessary, use `ask_user_question` or `AskUserTool` when such a tool is available in the active mode; otherwise ask one short direct question.
 
 ## Out Of Scope
@@ -57,7 +58,7 @@ Do not add/don't:
 - unrelated products, dashboards, auth systems, or APIs
 - generic template pages not tied to MagisData website goals
 - broad refactors not required for current task
--open a dev server (I will do that myself.)
+- open a dev server (I will do that myself.)
 ## Change Checklist (Before Finishing)
 
 1. Run relevant checks (`npm run typecheck` and/or `npm run build` for substantial changes).

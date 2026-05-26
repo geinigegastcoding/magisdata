@@ -62,7 +62,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/webontwikkeling": [
     serviceLinks[1],
     { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Combineer websitebouw met sterke vindbaarheid vanaf de start." },
-    { href: "/cases/website-design-hoveniersbedrijf", label: "Website design voor hoveniers", description: "Bekijk hoe een lokale dienstverlener helder en vindbaar kan worden gepresenteerd." }
+    { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Bekijk hoe diensten, projecten en lokale vindbaarheid in dit webdesign zijn uitgewerkt." }
   ],
   "/website-laten-maken": [
     serviceLinks[0],
@@ -102,11 +102,11 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/strategisch-advies": [
     serviceLinks[0],
     serviceLinks[6],
-    { href: "/cases", label: "Bekijk website designs", description: "Zie hoe strategie, structuur en conversie in ontwerp samenkomen." }
+    { href: "/cases", label: "Bekijk portfolio", description: "Zie hoe strategie, structuur en gebruikservaring in eerder ontwerpwerk samenkomen." }
   ],
   "/over-ons": [
     { href: "/diensten", label: "Bekijk diensten", description: "Ontdek waar MagisData praktisch bij helpt." },
-    { href: "/cases", label: "Bekijk website designs", description: "Bekijk transparante portfolio concepten per branche." },
+    { href: "/cases", label: "Bekijk portfolio", description: "Bekijk eerder webdesignwerk per branche en de keuzes erachter." },
     { href: "/contact", label: "Maak kennis", description: "Plan een rustig eerste gesprek." }
   ],
   "/contact": [
@@ -117,7 +117,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/cases/website-design-hoveniersbedrijf": [
     serviceLinks[0],
     serviceLinks[8],
-    { href: "/website-voor-hoveniers", label: "Website voor hoveniers", description: "Lees welke structuur werkt voor diensten, projecten en lokale aanvragen." }
+    { href: "/website-voor-hoveniers", label: "Website voor hoveniers", description: "Lees welke structuur past bij diensten, projecten en lokale vindbaarheid." }
   ],
   "/cases/website-design-dakbedrijf": [
     serviceLinks[0],
@@ -136,13 +136,13 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   ],
   "/inzichten/website-meer-aanvragen": [
     serviceLinks[0],
-    { href: "/cases/website-design-hoveniersbedrijf", label: "Website design voor hoveniers", description: "Zie hoe diensten, projecten en contact logisch samenkomen." },
+    { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Zie hoe diensten, projecten en contact logisch samenkomen." },
     { href: "/contact", label: "Vraag groeiscan aan", description: "Laat je huidige website praktisch bekijken." }
   ],
   "/inzichten/seo-zonder-jargon": [
     serviceLinks[6],
     serviceLinks[8],
-    { href: "/cases/website-design-dakbedrijf", label: "Website design voor dakbedrijf", description: "Voorbeeld van duidelijke dienst- en lokale SEO-structuur." }
+    { href: "/cases/website-design-dakbedrijf", label: "Portfolio: dakbedrijf", description: "Voorbeeld van duidelijke dienst- en lokale SEO-structuur." }
   ],
   "/inzichten/ai-vindbaarheid": [
     serviceLinks[7],
@@ -197,7 +197,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/conversie-optimalisatie": [
     { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Zie waar conversie vaak stukloopt." },
     serviceLinks[0],
-    { href: "/cases/website-design-dakbedrijf", label: "Website design voor dakbedrijf", description: "Zie hoe offertedoelen zichtbaar in het ontwerp landen." }
+    { href: "/cases/website-design-dakbedrijf", label: "Portfolio: dakbedrijf", description: "Zie hoe duidelijke offertestappen zichtbaar in het ontwerp landen." }
   ],
   "/website-voor-loodgieters": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Word gevonden door klanten in je regio." },
@@ -217,7 +217,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/website-voor-hoveniers": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Word vindbaar op diensten en regio." },
     { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
-    { href: "/cases/website-design-hoveniersbedrijf", label: "Website design voor hoveniers", description: "Bekijk een concept met projecten, diensten en lokale adviesroute." }
+    { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Bekijk webdesign met projecten, diensten en lokale adviesroute." }
   ],
   "/privacybeleid": [
     { href: "/algemene-voorwaarden", label: "Algemene voorwaarden", description: "Lees de praktische samenwerkingsvoorwaarden." },

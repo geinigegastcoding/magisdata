@@ -37,10 +37,7 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 8% 12%, rgba(254, 243, 199, 0.84), transparent 22rem),
-    radial-gradient(circle at 92% 18%, rgba(219, 234, 254, 0.62), transparent 21rem),
-    linear-gradient(180deg, #ffffff 0%, #fffcf7 54%, #ffffff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fffcf7 54%, #ffffff 100%);
   color: var(--text-main);
   font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
@@ -104,17 +101,12 @@ select {
   .photo-scene {
     background:
       linear-gradient(120deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.16) 42%, transparent 43%),
-      radial-gradient(circle at 70% 24%, rgba(254, 243, 199, 0.86), transparent 8rem),
-      radial-gradient(circle at 28% 76%, rgba(219, 234, 254, 0.84), transparent 10rem),
       linear-gradient(135deg, #fff7ed 0%, #eef6ff 48%, #ffe8ca 100%);
   }
 
   .team-scene {
     background:
       linear-gradient(120deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.14) 43%, transparent 44%),
-      radial-gradient(circle at 24% 75%, rgba(219, 234, 254, 0.9), transparent 8rem),
-      radial-gradient(circle at 72% 72%, rgba(255, 228, 230, 0.88), transparent 9rem),
-      radial-gradient(circle at 48% 82%, rgba(220, 252, 231, 0.9), transparent 9rem),
       linear-gradient(135deg, #ffffff 0%, #e8f5ff 52%, #fff3d4 100%);
   }
 
@@ -122,7 +114,6 @@ select {
     background:
       linear-gradient(180deg, rgba(7, 25, 54, 0.98), rgba(19, 44, 86, 0.95)) center 38% / 78% 54% no-repeat,
       linear-gradient(90deg, #dae3ee, #f8fbff, #d9e2ed) center 75% / 88% 9% no-repeat,
-      radial-gradient(circle at 15% 80%, rgba(66, 201, 90, 0.25), transparent 6rem),
       linear-gradient(135deg, #f7fbff 0%, #fff0da 100%);
   }
 
@@ -136,6 +127,7 @@ select {
   }
 
   .focus-ring:focus-visible {
-    box-shadow: 0 0 0 4px rgba(255, 107, 26, 0.24);
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
   }
 }

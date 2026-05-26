@@ -109,7 +109,6 @@ function FriendlyPhoto({ variant = "person", className }: { variant?: StockPhoto
         src={photo.src}
         width="900"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-orange-soft/20" />
     </figure>
   );
 }
@@ -154,7 +153,6 @@ export function Hero() {
 
         <div className="relative rounded-[2rem] pt-2">
           <div className="absolute -right-6 top-9 h-52 w-52 rounded-[4.5rem] bg-yellow-soft lg:-right-2 lg:h-60 lg:w-60" />
-          <div className="absolute bottom-28 left-7 h-36 w-36 rounded-full bg-blue-soft/70 blur-sm" />
           <div className="absolute right-24 top-0 h-24 w-24 rounded-full bg-orange-soft/70" />
           <div className="doodle-loop left-0 top-64 h-28 w-28 lg:-left-4 lg:top-72 lg:h-32 lg:w-32" />
           <FriendlyPhoto className="relative z-10 h-[370px] rounded-[2.75rem] sm:h-[420px] lg:h-[440px] lg:rounded-[3rem]" />
@@ -231,7 +229,7 @@ export function TrustLogos() {
     <section className="pb-16">
       <div className="container">
         <p className="text-center text-sm font-medium text-muted">
-          Website design voor uiteenlopende groeivragen
+          Portfolio voor uiteenlopende groeivragen
         </p>
         <div className="mt-7 grid grid-cols-2 gap-x-8 gap-y-6 text-center text-base font-extrabold tracking-wide text-soft grayscale sm:grid-cols-3 sm:text-xl lg:grid-cols-6">
           {trustLogos.map((logo) => (
@@ -379,7 +377,7 @@ export function Results() {
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <PrimaryButton>Ik wil ook groeien</PrimaryButton>
-                <SecondaryButton href="/cases">Bekijk website designs</SecondaryButton>
+                <SecondaryButton href="/cases">Bekijk portfolio</SecondaryButton>
               </div>
             </div>
             <FriendlyPhoto className="h-64" variant="team" />
@@ -451,13 +449,13 @@ export function CaseStudyInsights() {
         <article className="overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:p-9">
           <div className="grid gap-7 md:grid-cols-[0.96fr_1.04fr] md:items-center">
             <div>
-              <Eyebrow>Praktijkvoorbeeld</Eyebrow>
+              <Eyebrow>Uit het portfolio</Eyebrow>
               <h2 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] text-navy">
-                Website design voor IT consultancy
+                Webdesign voor IT consultancy
               </h2>
               <p className="mt-5 text-[0.95rem] leading-7 text-muted">
-                Conceptontwerp voor Nexora IT Solutions: een heldere authority-site voor software,
-                cloud, cybersecurity en data & AI. Portfolio design, geen live klantproject.
+                Voor Nexora IT Solutions ontwierp ik een heldere website voor software,
+                cloud, cybersecurity en data & AI, met oplossingen en werkwijze direct in beeld.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div>
@@ -471,15 +469,14 @@ export function CaseStudyInsights() {
               </div>
               <div className="mt-7">
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <SecondaryButton href="/cases/website-design-it-consultancy">Bekijk designcase</SecondaryButton>
-                  <TextCta>Vraag groeiplan aan</TextCta>
+                  <SecondaryButton href="/cases/website-design-it-consultancy">Bekijk project</SecondaryButton>
                 </div>
               </div>
             </div>
             <div className="relative min-h-[270px]">
               <figure className="absolute right-0 top-0 h-64 w-full overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-card md:h-72">
                 <img
-                  alt="Website design concept voor Nexora IT Solutions"
+                  alt="Webdesign voor Nexora IT Solutions"
                   className="h-full w-full object-cover object-top"
                   height="2103"
                   loading="lazy"
@@ -488,7 +485,7 @@ export function CaseStudyInsights() {
                 />
               </figure>
               <div className="absolute -bottom-2 left-6 -rotate-3 rounded-2xl bg-green-soft px-5 py-4 text-sm font-bold text-navy shadow-sm">
-                Conceptdesign.
+                Portfolio.
               </div>
             </div>
           </div>

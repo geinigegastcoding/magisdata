@@ -51,8 +51,7 @@ const config: Config = {
       boxShadow: {
         soft: "0 16px 42px rgba(15, 23, 42, 0.055)",
         card: "0 10px 26px rgba(15, 23, 42, 0.045)",
-        float: "0 12px 30px rgba(15, 23, 42, 0.08)",
-        orange: "0 8px 18px rgba(255, 107, 26, 0.14)"
+        float: "0 12px 30px rgba(15, 23, 42, 0.08)"
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui", "sans-serif"]

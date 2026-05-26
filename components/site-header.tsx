@@ -24,7 +24,7 @@ const navigation: NavigationItem[] = [
     ]
   },
   { label: "Over MagisData", href: "/over-ons" },
-  { label: "Website design", href: "/cases" },
+  { label: "Portfolio", href: "/cases" },
   { label: "Inzichten", href: "/inzichten" },
   { label: "Contact", href: "/contact" }
 ];
