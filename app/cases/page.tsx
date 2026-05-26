@@ -129,6 +129,18 @@ export default function PortfolioPage() {
               </article>
             ))}
           </div>
+          <div className="mt-14 flex flex-col justify-between gap-5 border-t border-line pt-8 sm:flex-row sm:items-center">
+            <div>
+              <p className="text-sm font-extrabold text-navy">Iets vergelijkbaars in gedachten?</p>
+              <p className="mt-2 text-sm leading-7 text-muted">
+                Deel je idee of bestaande website; dan kijk ik mee welke ontwerprichting passend is.
+              </p>
+            </div>
+            <Link className="focus-ring inline-flex shrink-0 items-center text-sm font-extrabold text-orange" href="/contact">
+              Bespreek een project
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </main>

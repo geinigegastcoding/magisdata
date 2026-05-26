@@ -184,6 +184,16 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
           </div>
         </section>
 
+        <aside className="mt-10 flex flex-col justify-between gap-5 rounded-2xl border border-line bg-white p-6 sm:flex-row sm:items-center">
+          <p className="max-w-2xl text-sm leading-7 text-muted">
+            Werkt deze aanpak voor jouw branche of idee? Ik denk graag mee over structuur, uitstraling en vindbaarheid van een nieuwe website.
+          </p>
+          <Link className="focus-ring inline-flex shrink-0 items-center text-sm font-extrabold text-orange" href="/contact">
+            Project bespreken
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </aside>
+
         <figure className="mt-14" id="volledig-ontwerp">
           <div className="mb-6 max-w-2xl">
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Volledig ontwerp</p>
