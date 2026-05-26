@@ -103,7 +103,7 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-            <form action="/bedankt" className="mt-8 grid gap-4" method="get">
+            <form action="https://formspree.io/f/mgolbyvp" className="mt-8 grid gap-4" method="post">
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="grid gap-2 text-sm font-bold text-navy">
                   Naam
