@@ -79,25 +79,34 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white shadow-card">
-            <div className="team-scene min-h-[430px] p-7">
-              <div className="max-w-xs rounded-2xl bg-white/86 p-5 shadow-sm backdrop-blur">
+          <div className="relative overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white shadow-card">
+            <div className="absolute inset-x-0 top-0 h-1 bg-orange" />
+            <div className="grid min-h-[390px] gap-8 p-7 sm:p-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+              <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-blue">
                   Waar we in geloven
                 </p>
-                <p className="mt-3 text-2xl font-extrabold tracking-normal text-navy">
+                <p className="mt-4 text-3xl font-extrabold leading-tight tracking-normal text-navy">
                   Goede websites maken keuzes makkelijker.
                 </p>
+                <p className="mt-5 text-sm leading-6 text-muted">
+                  Niet meer lawaai, maar betere volgorde: eerst kiezen, dan bouwen, daarna verbeteren.
+                </p>
               </div>
-              <div className="absolute bottom-7 right-7 grid w-[min(58%,20rem)] gap-4">
+              <div className="self-end border-y border-line">
                 {[
-                  ["Strategie", "Eerst scherpte in aanbod, doelgroep en bewijs."],
-                  ["Structuur", "Daarna pagina's die logisch vindbaar en scanbaar zijn."],
-                  ["Groei", "Tot slot meten, verbeteren en gericht uitbreiden."]
-                ].map(([title, text]) => (
-                  <div className="rounded-2xl border border-black/[0.05] bg-white/88 p-4 shadow-sm backdrop-blur" key={title}>
-                    <p className="text-sm font-extrabold text-navy">{title}</p>
-                    <p className="mt-1 text-xs leading-5 text-muted">{text}</p>
+                  ["01", "Strategie", "Eerst scherpte in aanbod, doelgroep en bewijs."],
+                  ["02", "Structuur", "Daarna pagina's die logisch vindbaar en scanbaar zijn."],
+                  ["03", "Groei", "Tot slot meten, verbeteren en gericht uitbreiden."]
+                ].map(([step, title, text]) => (
+                  <div className="grid grid-cols-[2.7rem_1fr] gap-4 border-b border-line py-5 last:border-b-0" key={title}>
+                    <span className="text-xs font-extrabold tracking-[0.14em] text-orange">
+                      {step}
+                    </span>
+                    <div>
+                      <p className="text-sm font-extrabold text-navy">{title}</p>
+                      <p className="mt-1 text-xs leading-5 text-muted">{text}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -110,13 +119,18 @@ export default function AboutPage() {
         <div className="container grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <figure className="relative overflow-hidden rounded-[2rem] border border-black/[0.05] bg-cream shadow-card">
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-peach to-transparent" />
-            <img
-              alt="Oprichter en CEO van MagisData"
-              className="relative mx-auto h-auto w-full max-w-[22rem] object-cover object-center pt-8"
-              height={420}
-              src="/assets/Founder-removebg.png"
-              width={336}
-            />
+            <picture>
+              <source srcSet="/assets/founder-336.avif 336w, /assets/founder-672.avif 672w" type="image/avif" />
+              <source srcSet="/assets/founder-336.webp 336w, /assets/founder-672.webp 672w" type="image/webp" />
+              <img
+                alt="Oprichter en CEO van MagisData"
+                className="relative mx-auto h-auto w-full max-w-[22rem] object-cover object-center pt-8"
+                height={420}
+                loading="lazy"
+                src="/assets/founder-336.webp"
+                width={336}
+              />
+            </picture>
           </figure>
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">

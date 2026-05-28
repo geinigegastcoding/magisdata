@@ -107,6 +107,15 @@ const coreSeoRoutes: SeoRoute[] = [
     priority: 0.8,
     changeFrequency: "monthly",
     lastModified
+  },
+  {
+    path: "/status",
+    title: "Status en bereikbaarheid | MagisData",
+    description: "Bekijk de actuele bereikbaarheid van MagisData en neem contact op voor een vrijblijvend eerste gesprek.",
+    keywords: ["MagisData status", "MagisData bereikbaar", "contact MagisData"],
+    priority: 0.35,
+    changeFrequency: "monthly",
+    lastModified
   }
 ];
 

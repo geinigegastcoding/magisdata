@@ -73,6 +73,11 @@ export default function PortfolioPage() {
             Een selectie websites voor lokale dienstverlening, software en technologie. Bij ieder project leg ik uit wat ik heb ontworpen, hoe de pagina is opgebouwd en wat ik tijdens het maken heb geleerd.
           </p>
         </div>
+        <div className="container mt-8">
+          <p className="rounded-2xl border border-orange-soft bg-peach px-5 py-4 text-sm font-semibold leading-7 text-muted">
+            Dit is ontwerpportfolio. Projectnamen, beelden en pagina-oplossingen tonen webdesignwerk; ze zijn geen gepubliceerde klantreview of geverifieerd resultaat.
+          </p>
+        </div>
       </section>
 
       <section className="border-y border-line bg-white py-10 md:py-12">
@@ -101,14 +106,18 @@ export default function PortfolioPage() {
             {caseStudies.map((item, index) => (
               <article className="overflow-hidden rounded-[1.75rem] border border-line bg-white" key={item.slug}>
                 <div className="overflow-hidden border-b border-line bg-cream">
-                  <img
-                    alt={item.imageAlt}
-                    className="aspect-[16/10] w-full object-cover object-top"
-                    height={item.imageHeight}
-                    loading={index < 2 ? "eager" : "lazy"}
-                    src={item.image}
-                    width={item.imageWidth}
-                  />
+                  <picture>
+                    <source sizes="(min-width: 768px) 50vw, 100vw" srcSet={item.imageAvifSrcSet} type="image/avif" />
+                    <source sizes="(min-width: 768px) 50vw, 100vw" srcSet={item.imageSrcSet} type="image/webp" />
+                    <img
+                      alt={item.imageAlt}
+                      className="aspect-[16/10] w-full object-cover object-top"
+                      height={item.imageHeight}
+                      loading={index < 2 ? "eager" : "lazy"}
+                      src={item.image}
+                      width={item.imageWidth}
+                    />
+                  </picture>
                 </div>
                 <div className="p-6 md:p-7">
                   <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-blue">
@@ -116,6 +125,7 @@ export default function PortfolioPage() {
                   </p>
                   <h3 className="mt-4 text-2xl font-extrabold leading-tight text-navy">{item.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-muted">{item.summary}</p>
+                  <p className="mt-4 text-xs font-bold text-soft">Ontwerpportfolio; geen resultaatclaim.</p>
                   <div className="mt-6 flex items-center justify-between gap-4 border-t border-line pt-5">
                     <span className="text-xs font-bold uppercase tracking-[0.12em] text-soft">
                       {item.focus}

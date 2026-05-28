@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ContentPage } from "@/components/content-page";
-import { getLandingPage, landingPages } from "@/content/landing-pages";
+import { getLandingPage } from "@/content/landing-pages";
 import { metadataForPath } from "@/content/seo";
 import { pageIcons } from "@/content/pages";
 
-type PageProps = {
-  params: Promise<{ slug: string }>;
+type LandingRoutePageProps = {
+  slug: string;
 };
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return landingPages.map((page) => ({ slug: page.slug }));
-}
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+export function landingRouteMetadata(slug: string): Metadata {
   const page = getLandingPage(slug);
 
   if (!page) {
@@ -26,8 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return metadataForPath(`/${page.slug}`);
 }
 
-export default async function LandingPage({ params }: PageProps) {
-  const { slug } = await params;
+export function LandingRoutePage({ slug }: LandingRoutePageProps) {
   const page = getLandingPage(slug);
 
   if (!page) {
@@ -37,11 +29,9 @@ export default async function LandingPage({ params }: PageProps) {
   const icon =
     page.kind === "location"
       ? pageIcons.globe
-      : page.kind === "legal"
+      : page.kind === "legal" || page.kind === "thanks"
         ? pageIcons.default
-        : page.kind === "thanks"
-          ? pageIcons.default
-          : pageIcons["web-development"];
+        : pageIcons["web-development"];
 
   return (
     <ContentPage

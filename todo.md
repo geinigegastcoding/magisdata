@@ -1,4 +1,22 @@
-- Importeer echte cases.
-- Maak inzichten pagina tot een functionerende blog.
-- Geef feedback op de tekst van de andere pagina's.
-- Verbeter daarna de tekst op de andere pagina's.
+- Voeg echte klantcases toe zodra beschikbaar, met toestemming en alleen controleerbare resultaten, logo's, reviews en projectfoto's.
+- Behoud huidige webdesignprojecten als portfolio/conceptwerk en label ze overal duidelijk als ontwerpwerk, niet als behaalde klantresultaten.
+- Verwijder of vervang onbewezen vertrouwenselementen op de homepage, zoals de foto met alt-tekst `Tevreden klant van MagisData`, sterren/review-indruk en claims die nog niet aantoonbaar zijn.
+- Bevestig of maak waar dat `Binnen 24 uur reactie`, `Meetbaar resultaat`, `Gratis groeiscan` en vergelijkbare beloften operationeel geleverd worden; herschrijf ze anders.
+- Geef alle huidige paginacopy een inhoudelijke review op geloofwaardigheid, helderheid, tone of voice, spelling en aansluiting op echte diensten.
+- Herschrijf daarna de zwakste of te generieke teksten op homepage, diensten, landingspagina's, over-ons, contact en CTA's.
+- Breng visuele stijl dichter bij brand guidance: rustiger, strategischer en premium; minder speelse kleuren/illustraties en consequenter gebruik van restrained amber.
+- Vervang AI-/stockachtige personenbeelden door echte, passende merkbeelden of verwijder ze wanneer geen geloofwaardig beeld beschikbaar is.
+- Optimaliseer zware afbeeldingen voor performance: converteer `Case1.png` t/m `Case4.png` en `Founder-removebg.png` naar WebP/AVIF en lever juiste responsive formaten.
+- Gebruik geoptimaliseerde afbeeldingsweergave voor portfolio- en founderbeelden en controleer mobiel laden, layout shift en social preview-kwaliteit.
+- Maak formulieren consistent en echt werkend: landingspaginaformulier in `components/content-page.tsx` verstuurt nu geen lead maar gaat alleen naar `/bedankt`.
+- Test Formspree-contactformulier end-to-end, inclusief bedankpagina, foutafhandeling, spambeperking en opvolging in inbox.
+- Controleer privacybeleid en voorwaarden op werkelijke bedrijfsgegevens, gebruikte formulierprovider, bewaartermijnen, cookies/analytics en juridische juistheid.
+- Implementeer Google Analytics met passende privacy/cookie-afhandeling of verwijder de huidige analyticsvermelding uit het privacybeleid.
+- Bouw `Inzichten` door tot onderhoudbare blog/contenthub: artikelen uit gedeelde contentdata renderen, categorieen/thema's, gerelateerde artikelen en eenvoudige uitbreiding zonder hardcoded body-map.
+- Schrijf en publiceer extra inhoudelijke artikelen rond belangrijkste diensten, zoekintenties, lokale vragen en SEO/GEO/AEO-thema's.
+- Voeg waar mogelijk echt bewijs toe aan diensten- en landingspagina's: procesvoorbeelden, deliverables, eigen expertise en later geverifieerde projecten.
+- Doe complete interne-linkcontrole na copy/content-uitbreiding en controleer routes, canonicals, sitemap, schema, metadata en `llms.txt`.
+- Doe SEO/AEO/GEO kwaliteitscheck op indexeerbare pagina's: unieke zoekintentie, kopstructuur, FAQ's, entities, lokale claims en dunne/overlappende pagina's.
+- Controleer toegankelijkheid en responsive afwerking voor homepage, contact, portfolio en artikelen: toetsenbordfocus, alt-teksten, contrast, formulieren en mobiele layout.
+- Meet performance na assetoptimalisatie en UI-updates en los grootste Lighthouse/Core Web Vitals knelpunten op.
+- Run voor iedere grotere wijziging `npm run typecheck` en `npm run build`, en controleer daarna belangrijke routes handmatig.

@@ -70,6 +70,29 @@ const services = [
   }
 ];
 
+const supportingServices = [
+  {
+    href: "/website-onderhoud",
+    title: "Website onderhoud",
+    text: "Updates, backups, monitoring, veiligheid en support na livegang."
+  },
+  {
+    href: "/online-marketing-bureau",
+    title: "Google Ads",
+    text: "Zoekcampagnes met passende landingspagina's en conversiemeting."
+  },
+  {
+    href: "/lokale-seo",
+    title: "Lokale SEO",
+    text: "Servicegebieden, lokale zoekvragen en consistente bedrijfsinformatie."
+  },
+  {
+    href: "/ai-vindbaarheid",
+    title: "AI-vindbaarheid",
+    text: "Brede route voor zichtbaarheid in AI-antwoorden, met GEO en AEO als specialisaties."
+  }
+];
+
 const routes = [
   {
     title: "Je website voelt te klein voor je bedrijf",
@@ -103,7 +126,7 @@ export default function ServicesPage() {
       path: "/diensten",
       name: "Diensten van MagisData",
       description: metadata.description ?? "",
-      items: services.map((service) => ({ name: service.title, path: service.href }))
+      items: [...services, ...supportingServices].map((service) => ({ name: service.title, path: service.href }))
     })
   ]);
 
@@ -196,6 +219,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="border-y border-line bg-cream/40 py-12 md:py-16">
+        <div className="container">
+          <div className="max-w-3xl">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+              Ondersteunende diensten
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold text-navy">
+              Specifieke routes voor beheer, lokaal bereik, advertenties en AI-zichtbaarheid
+            </h2>
+          </div>
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {supportingServices.map((service) => (
+              <Link className="focus-ring rounded-2xl border border-line bg-white p-5 shadow-sm transition hover:border-orange-soft hover:bg-peach" href={service.href} key={service.href}>
+                <h3 className="font-extrabold text-navy">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted">{service.text}</p>
+                <span className="mt-5 inline-flex items-center text-sm font-bold text-orange">
+                  Bekijk dienst <ArrowRight className="ml-2 h-4 w-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-14 md:py-20">
         <div className="container grid gap-8 lg:grid-cols-[0.38fr_0.62fr]">
           <div>
@@ -261,7 +308,7 @@ export default function ServicesPage() {
               Samenhang
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy md:text-4xl">
-              Het meeste resultaat ontstaat wanneer strategie, content en techniek dezelfde kant op wijzen.
+              De sterkste digitale basis ontstaat wanneer strategie, content en techniek dezelfde kant op wijzen.
             </h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">

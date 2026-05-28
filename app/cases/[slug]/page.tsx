@@ -70,6 +70,9 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
               {item.title}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">{item.summary}</p>
+            <p className="mt-5 max-w-2xl rounded-xl border border-orange-soft bg-peach px-4 py-3 text-sm font-semibold leading-6 text-muted">
+              Ontwerpportfolio; dit project toont de ontworpen pagina en keuzes, geen geverifieerde klantresultaten of review.
+            </p>
             <dl className="mt-9 grid max-w-2xl gap-5 border-y border-line py-6 sm:grid-cols-3">
               <div>
                 <dt className="text-xs font-bold uppercase tracking-[0.12em] text-soft">Project</dt>
@@ -87,14 +90,18 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
           </div>
 
           <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-white p-3">
-            <img
-              alt={item.imageAlt}
-              className="h-[30rem] w-full rounded-xl object-cover object-top md:h-[34rem]"
-              height={item.imageHeight}
-              loading="eager"
-              src={item.image}
-              width={item.imageWidth}
-            />
+            <picture>
+              <source sizes="(min-width: 1024px) 40vw, 100vw" srcSet={item.imageAvifSrcSet} type="image/avif" />
+              <source sizes="(min-width: 1024px) 40vw, 100vw" srcSet={item.imageSrcSet} type="image/webp" />
+              <img
+                alt={item.imageAlt}
+                className="h-[30rem] w-full rounded-xl object-cover object-top md:h-[34rem]"
+                height={item.imageHeight}
+                loading="eager"
+                src={item.image}
+                width={item.imageWidth}
+              />
+            </picture>
             <figcaption className="flex items-center justify-between gap-4 px-2 pb-1 pt-4 text-sm text-muted">
               <span>Homepage ontwerp voor {item.projectName}</span>
               <Link className="focus-ring shrink-0 font-bold text-orange" href="#volledig-ontwerp">
@@ -203,7 +210,11 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
             </p>
           </div>
           <div className="overflow-hidden rounded-[1.75rem] border border-line bg-white p-3 md:p-5">
-            <img alt={item.imageAlt} className="h-auto w-full rounded-xl" height={item.imageHeight} loading="lazy" src={item.image} width={item.imageWidth} />
+            <picture>
+              <source sizes="100vw" srcSet={item.imageAvifSrcSet} type="image/avif" />
+              <source sizes="100vw" srcSet={item.imageSrcSet} type="image/webp" />
+              <img alt={item.imageAlt} className="h-auto w-full rounded-xl" height={item.imageHeight} loading="lazy" src={item.image} width={item.imageWidth} />
+            </picture>
           </div>
         </figure>
 

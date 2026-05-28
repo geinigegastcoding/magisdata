@@ -1,0 +1,48 @@
+# Updates
+
+- Added 301 redirects for retired intent pages:
+  - `/website-laten-maken` -> `/webontwikkeling`
+  - `/seo-website-laten-maken` -> `/webontwikkeling`
+  - `/seo-bureau` -> `/seo-diensten`
+  - `/ai-seo-bureau` -> `/ai-vindbaarheid`
+  - old case routes -> `/cases`
+- Added `/status` page with manual availability status.
+- Added status content model with `available | working | unavailable`.
+- Added cookie consent banner with accept/refuse controls.
+- Added footer cookie settings trigger.
+- Replaced automatic GA4 loading with consent-gated GA4 loading.
+- Added analytics consent helper for `unset | denied | analytics_granted`.
+- Added consent-aware tracking for:
+  - `generate_lead`
+  - `cta_click`
+  - `contact_click`
+  - `scroll_depth`
+- Reworked contact form to submit through Formspree with client-side loading, success, and error states.
+- Updated privacy policy copy for Formspree, GA4 consent, cookie preferences, and retention.
+- Rewrote `/website-onderhoud` around updates, backups, monitoring, uptime, security, vulnerabilities, rollback, and support.
+- Added direct-answer, deliverables, audience-fit, comparison, objections, and proof-disclosure content blocks to service content.
+- Added direct answer and stronger service structure to key service pages.
+- Clarified SEO, AEO, GEO, and AI-vindbaarheid positioning.
+- Removed retired pages from generated landing pages.
+- Updated internal links to primary canonical routes.
+- Updated services hub with supporting services:
+  - Website onderhoud
+  - Google Ads
+  - Lokale SEO
+  - AI-vindbaarheid
+- Updated footer service links and added `/status`.
+- Updated header active service paths.
+- Removed homepage fake review/photo/star proof.
+- Removed pseudo-logo proof section.
+- Removed old result-style homepage visuals and replaced with factual portfolio/service messaging.
+- Added visible portfolio disclaimers to case pages.
+- Updated case schema from general portfolio wording to design-portfolio wording.
+- Converted case images and founder image to responsive WebP/AVIF variants.
+- Added reproducible asset conversion script: `npm run convert:assets`.
+- Added `sharp` as asset conversion dependency.
+- Updated case and founder image rendering to use responsive `<picture>` sources.
+- Added Cloudflare Pages security headers in `public/_headers`.
+- Updated `llms.txt` to reflect primary service architecture.
+- Added `/status` to SEO route metadata and sitemap output.
+- Added regression tests for redirects, consent, status/privacy, proof cleanup, assets, and headers.
+- Verified typecheck and production build after changes.

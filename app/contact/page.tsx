@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Mail, MapPin, MessageSquareText, Phone, Search, Sparkles, Target } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ContactForm } from "@/components/contact-form";
 import { JsonLd } from "@/components/json-ld";
 import { metadataForPath } from "@/content/seo";
 import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
@@ -78,13 +79,18 @@ export default function ContactPage() {
                     Suze Groenewegerf 25, Voorschoten
                   </p>
                 </div>
-                <img
-                  alt="Oprichter en CEO van MagisData"
-                  className="absolute bottom-0 right-4 h-auto w-[min(46%,13rem)]"
-                  height={400}
-                  src="/assets/Founder-removebg.png"
-                  width={336}
-                />
+                <picture>
+                  <source srcSet="/assets/founder-336.avif 336w, /assets/founder-672.avif 672w" type="image/avif" />
+                  <source srcSet="/assets/founder-336.webp 336w, /assets/founder-672.webp 672w" type="image/webp" />
+                  <img
+                    alt="Oprichter en CEO van MagisData"
+                    className="absolute bottom-0 right-4 h-auto w-[min(46%,13rem)]"
+                    height={400}
+                    loading="lazy"
+                    src="/assets/founder-336.webp"
+                    width={336}
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -103,40 +109,7 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-            <form action="https://formspree.io/f/mgolbyvp" className="mt-8 grid gap-4" method="post">
-              <div className="grid gap-4 md:grid-cols-2">
-                <label className="grid gap-2 text-sm font-bold text-navy">
-                  Naam
-                  <input className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="naam" required type="text" />
-                </label>
-                <label className="grid gap-2 text-sm font-bold text-navy">
-                  E-mail
-                  <input className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="email" required type="email" />
-                </label>
-              </div>
-              <label className="grid gap-2 text-sm font-bold text-navy">
-                Website of bedrijfsnaam
-                <input className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="website" type="text" />
-              </label>
-              <label className="grid gap-2 text-sm font-bold text-navy">
-                Waar wil je vooral beweging in?
-                <select className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="onderwerp">
-                  <option>Nieuwe website of herbouw</option>
-                  <option>SEO, GEO of AEO vindbaarheid</option>
-                  <option>Conversie en meer aanvragen</option>
-                  <option>AI en automatisering</option>
-                  <option>Strategische richting</option>
-                </select>
-              </label>
-              <label className="grid gap-2 text-sm font-bold text-navy">
-                Korte vraag
-                <textarea className="focus-ring min-h-36 rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="vraag" required />
-              </label>
-              <button className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-orange-dark" type="submit">
-                Stuur je vraag
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </form>
+            <ContactForm />
           </section>
         </div>
       </section>

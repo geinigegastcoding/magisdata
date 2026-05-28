@@ -36,13 +36,13 @@ const serviceLinks: InternalLink[] = [
     description: "Kies de juiste volgorde voor online groei."
   },
   {
-    href: "/seo-bureau",
-    label: "SEO bureau",
+    href: "/seo-diensten",
+    label: "SEO aanpak",
     description: "Vindbaarheid verbeteren met content, techniek en structuur."
   },
   {
-    href: "/ai-seo-bureau",
-    label: "AI SEO bureau",
+    href: "/ai-vindbaarheid",
+    label: "AI vindbaarheid",
     description: "Optimaliseer voor Google, AI Overviews en AI-antwoorden."
   },
   {
@@ -61,23 +61,13 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/diensten": serviceLinks,
   "/webontwikkeling": [
     serviceLinks[1],
-    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Combineer websitebouw met sterke vindbaarheid vanaf de start." },
+    { href: "/website-onderhoud", label: "Website onderhoud", description: "Houd een bestaande website veilig, actueel en controleerbaar." },
     { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Bekijk hoe diensten, projecten en lokale vindbaarheid in dit webdesign zijn uitgewerkt." }
-  ],
-  "/website-laten-maken": [
-    serviceLinks[0],
-    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Start met een website die ook vindbaar is." },
-    { href: "/inzichten/website-meer-aanvragen", label: "Meer aanvragen uit je website", description: "Lees waarom mooie websites soms weinig opleveren." }
   ],
   "/website-onderhoud": [
     serviceLinks[0],
     serviceLinks[1],
     { href: "/contact", label: "Onderhoud bespreken", description: "Bekijk welke technische en contentchecks logisch zijn." }
-  ],
-  "/seo-website-laten-maken": [
-    serviceLinks[0],
-    serviceLinks[1],
-    { href: "/seo-bureau", label: "SEO bureau", description: "Bouw verder aan vindbaarheid na livegang." }
   ],
   "/seo-diensten": [
     serviceLinks[6],
@@ -149,11 +139,6 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
     { href: "/ai-vindbaarheid", label: "AI vindbaarheid verbeteren", description: "Maak je bedrijf beter citeerbaar in AI-antwoorden." },
     { href: "/diensten", label: "Bekijk AI-vriendelijke diensten", description: "Zie hoe SEO, AEO en GEO elkaar versterken." }
   ],
-  "/seo-bureau": [
-    serviceLinks[1],
-    serviceLinks[8],
-    { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Lokale SEO voor Leiden en omgeving." }
-  ],
   "/lokale-seo": [
     { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Lokale vindbaarheid rond Leiden verbeteren." },
     { href: "/website-laten-maken-leiden", label: "Website laten maken Leiden", description: "Lokale website met SEO-basis." },
@@ -167,22 +152,17 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/website-laten-maken-leiden": [
     { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Versterk lokale vindbaarheid rond Leiden." },
     serviceLinks[8],
-    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Combineer websitebouw met zoekmachinebasis." }
+    { href: "/webontwikkeling", label: "Webontwikkeling", description: "Combineer websitebouw met een technische SEO-basis." }
   ],
   "/website-laten-maken-den-haag": [
     serviceLinks[8],
-    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
-    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Maak lokale vindbaarheid onderdeel van de bouw." }
+    { href: "/webontwikkeling", label: "Webontwikkeling", description: "Bekijk de algemene website-aanpak." },
+    { href: "/seo-diensten", label: "SEO diensten", description: "Maak regionale vindbaarheid onderdeel van de structuur." }
   ],
   "/website-laten-maken-rotterdam": [
     serviceLinks[8],
-    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
-    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Maak lokale vindbaarheid onderdeel van de bouw." }
-  ],
-  "/ai-seo-bureau": [
-    { href: "/ai-vindbaarheid", label: "AI vindbaarheid", description: "Verbeter zichtbaarheid in ChatGPT, Perplexity en Google." },
-    serviceLinks[3],
-    serviceLinks[2]
+    { href: "/webontwikkeling", label: "Webontwikkeling", description: "Bekijk de algemene website-aanpak." },
+    { href: "/seo-diensten", label: "SEO diensten", description: "Maak regionale vindbaarheid onderdeel van de structuur." }
   ],
   "/ai-vindbaarheid": [
     serviceLinks[7],
@@ -201,22 +181,22 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   ],
   "/website-voor-loodgieters": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Word gevonden door klanten in je regio." },
-    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/webontwikkeling", label: "Webontwikkeling", description: "Bekijk de algemene website-aanpak." },
     { href: "/conversie-optimalisatie", label: "Conversie optimalisatie", description: "Maak bellen en aanvragen makkelijker." }
   ],
   "/website-voor-elektriciens": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Versterk regionale vindbaarheid voor spoed en projecten." },
-    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
-    { href: "/seo-website-laten-maken", label: "SEO website laten maken", description: "Leg meteen een vindbare basis." }
+    { href: "/webontwikkeling", label: "Webontwikkeling", description: "Bekijk de algemene website-aanpak." },
+    { href: "/seo-diensten", label: "SEO diensten", description: "Leg een vindbare basis rond je diensten." }
   ],
   "/website-voor-kappers": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Help klanten in de buurt je salon vinden." },
-    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/webontwikkeling", label: "Webontwikkeling", description: "Bekijk de algemene website-aanpak." },
     { href: "/conversie-optimalisatie", label: "Conversie optimalisatie", description: "Maak boeken en contact opnemen eenvoudiger." }
   ],
   "/website-voor-hoveniers": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Word vindbaar op diensten en regio." },
-    { href: "/website-laten-maken", label: "Website laten maken", description: "Bekijk de algemene website-aanpak." },
+    { href: "/webontwikkeling", label: "Webontwikkeling", description: "Bekijk de algemene website-aanpak." },
     { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Bekijk webdesign met projecten, diensten en lokale adviesroute." }
   ],
   "/privacybeleid": [

@@ -17,6 +17,18 @@ export type PageContent = {
   eyebrow: string;
   title: string;
   description: string;
+  directAnswer?: {
+    title: string;
+    text: string;
+  };
+  deliverables?: { title: string; text: string }[];
+  audienceFit?: {
+    for: string[];
+    notFor: string[];
+  };
+  objections?: { question: string; answer: string }[];
+  comparison?: { title: string; text: string }[];
+  proofDisclosure?: string;
   primaryCta?: string;
   secondaryCta?: string;
   heroPoints: string[];
@@ -38,7 +50,7 @@ export type PageContent = {
 export const servicePages = {
   services: {
     eyebrow: "Diensten",
-    title: "Alles wat je website nodig heeft om meer klanten op te leveren",
+    title: "Alles wat je website nodig heeft om helder contact mogelijk te maken",
     description:
       "MagisData helpt ondernemers met websites, vindbaarheid, advertenties en slimme verbeteringen. We houden het duidelijk: wat werkt, wat mist, en welke stap nu het meeste oplevert.",
     primaryCta: "Vraag gratis advies aan",
@@ -148,6 +160,22 @@ export const servicePages = {
     title: "Een professionele website die klanten laat kiezen voor jou",
     description:
       "We bouwen snelle, overzichtelijke websites voor ondernemers die betrouwbaar willen overkomen en meer aanvragen willen krijgen zonder technische rompslomp.",
+    directAnswer: {
+      title: "Wat levert webontwikkeling door MagisData op?",
+      text:
+        "Een snelle website met een duidelijke dienststructuur, mobiele contactroute en technische SEO-basis. We bouwen de pagina's die je aanbod uitleggen en later uitbreidbaar blijven."
+    },
+    deliverables: [
+      { title: "Pagina-architectuur", text: "Home, diensten, bewijs, over en contact met een duidelijke taak per pagina." },
+      { title: "Responsive realisatie", text: "Snelle, toegankelijke pagina's die op mobiel en desktop bruikbaar blijven." },
+      { title: "SEO-basis", text: "Metadata, interne links, schema en technische controle voor livegang." }
+    ],
+    audienceFit: {
+      for: ["Bedrijven die een nieuwe of duidelijkere site nodig hebben.", "Dienstverleners die hun aanbod beter willen uitleggen."],
+      notFor: ["Los design zonder inhoud of conversiedoel.", "Beloftes over gegarandeerde rankings of aantallen leads."]
+    },
+    proofDisclosure:
+      "Bekijk in het portfolio uitgewerkte webdesignprojecten en de ontwerpkeuzes erachter. We publiceren geen klantresultaten zonder verificatie.",
     primaryCta: "Bespreek mijn website",
     secondaryCta: "Bekijk alle diensten",
     heroPoints: [
@@ -255,6 +283,24 @@ export const servicePages = {
     title: "Beter gevonden worden door klanten die al zoeken naar wat jij aanbiedt",
     description:
       "SEO helpt je website zichtbaar worden in Google. Wij maken dit praktisch: heldere pagina's, goede structuur en content die antwoord geeft op echte klantvragen.",
+    directAnswer: {
+      title: "Wat zijn SEO diensten?",
+      text:
+        "SEO diensten verbeteren hoe relevante klanten je website vinden in Google. MagisData richt zich op zoekintentie, servicepagina's, techniek, interne links en content die een vraag volledig beantwoordt."
+    },
+    deliverables: [
+      { title: "Intentiekaart", text: "Een primaire pagina per belangrijke zoekvraag, zodat pagina's niet tegen elkaar concurreren." },
+      { title: "On-page verbeteringen", text: "Titels, koppen, beschrijvingen, links en antwoordblokken per prioriteitspagina." },
+      { title: "Technische check", text: "Canonicals, sitemap, robots, schema en indexatiepunten controleren." }
+    ],
+    audienceFit: {
+      for: ["Bedrijven met duidelijke diensten en organische groeivraag.", "Lokale bedrijven die op dienst plus regio gevonden willen worden."],
+      notFor: ["Keywordpagina's zonder unieke waarde.", "Gegarandeerde rankingclaims."]
+    },
+    comparison: [
+      { title: "SEO", text: "Vindbaarheid in klassieke zoekresultaten rond duidelijke zoekintenties." },
+      { title: "AEO en GEO", text: "Aanvullende structuur voor antwoorden en AI-systemen; geen vervanging van SEO." }
+    ],
     primaryCta: "Laat mijn SEO checken",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
@@ -362,6 +408,20 @@ export const servicePages = {
     title: "Zorg dat AI-zoekmachines je bedrijf goed kunnen begrijpen",
     description:
       "Mensen zoeken steeds vaker via AI-antwoorden in plaats van alleen via klassieke zoekresultaten. Wij maken je website duidelijker, beter gestructureerd en makkelijker te citeren.",
+    directAnswer: {
+      title: "Wat is GEO optimalisatie?",
+      text:
+        "GEO maakt je bedrijf en expertise duidelijker voor generatieve zoek- en antwoordsystemen. We structureren entiteiten, feiten, bewijsplaatsen en interne verbanden zodat je aanbod correcter kan worden begrepen."
+    },
+    deliverables: [
+      { title: "Entity-overzicht", text: "Consistente bedrijfsnaam, diensten, locatie, doelgroep en contactgegevens." },
+      { title: "Citeerbare inhoud", text: "Zelfstandige feiten- en antwoordblokken met controleerbare formuleringen." },
+      { title: "Structuursignalen", text: "Schema, breadcrumbs, interne links en duidelijke pagina-eigenaarschap." }
+    ],
+    comparison: [
+      { title: "GEO", text: "Gaat over begrip, entiteiten en citeren in generatieve antwoorden." },
+      { title: "AEO", text: "Gaat over vraag-antwoordformaten en snelle extractie van antwoorden." }
+    ],
     primaryCta: "Maak mijn site AI-klaar",
     secondaryCta: "Bekijk SEO aanpak",
     heroPoints: [
@@ -469,6 +529,20 @@ export const servicePages = {
     title: "Geef duidelijke antwoorden op de vragen die klanten echt stellen",
     description:
       "AEO helpt je website beter antwoord geven. Dat is goed voor bezoekers, Google, AI-assistenten en iedereen die snel wil weten of jij de juiste partij bent.",
+    directAnswer: {
+      title: "Wat is AEO optimalisatie?",
+      text:
+        "AEO ordent content rond echte vragen en korte, bruikbare antwoorden. MagisData maakt servicepagina's makkelijker scanbaar met definities, FAQ's, vergelijkingen en concrete vervolgstappen."
+    },
+    deliverables: [
+      { title: "Vraaginventaris", text: "Vragen uit koopintentie, bezwaren, proces en geschiktheid per dienst." },
+      { title: "Antwoordblokken", text: "Korte zichtbare antwoorden in hoofd-HTML, niet verstopt achter scripts." },
+      { title: "FAQ-structuur", text: "Zichtbare FAQ's met passende JSON-LD waar vragen echt op de pagina staan." }
+    ],
+    comparison: [
+      { title: "AEO", text: "Optimaliseert hoe een specifieke vraag direct beantwoord wordt." },
+      { title: "GEO", text: "Optimaliseert hoe AI-systemen het merk en aanbod als geheel begrijpen." }
+    ],
     primaryCta: "Verbeter mijn antwoorden",
     secondaryCta: "Bekijk alle diensten",
     heroPoints: [
@@ -576,6 +650,20 @@ export const servicePages = {
     title: "Slimme digitale hulp die je werk makkelijker maakt",
     description:
       "We zetten AI en automatisering alleen in waar het echt waarde toevoegt: sneller reageren, minder handwerk en betere opvolging van leads.",
+    directAnswer: {
+      title: "Wat levert AI en automatisering concreet op?",
+      text:
+        "MagisData onderzoekt terugkerend handwerk en bouwt alleen een beheersbare automatisering wanneer die intake, opvolging of interne overdracht eenvoudiger maakt."
+    },
+    deliverables: [
+      { title: "Procesinventarisatie", text: "Welke terugkerende stap kost tijd of veroorzaakt vertraging?" },
+      { title: "Kleine workflow", text: "Een passende automatisering met duidelijke menselijke controle." },
+      { title: "Beheerafspraken", text: "Uitleg over werking, privacy en momenten waarop je controleert." }
+    ],
+    audienceFit: {
+      for: ["Bedrijven met repeterende intake- of opvolgstappen.", "Teams die klein en beheersbaar willen starten."],
+      notFor: ["Automatisering zonder duidelijk probleem.", "Besluiten die zonder menselijke controle hoog risico dragen."]
+    },
     primaryCta: "Bespreek automatisering",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
@@ -683,6 +771,20 @@ export const servicePages = {
     title: "Maak betere keuzes voor je website, vindbaarheid en online groei",
     description:
       "We helpen je bepalen wat nu echt belangrijk is. Geen lange theorie, maar scherpe keuzes die passen bij je bedrijf, klanten en budget.",
+    directAnswer: {
+      title: "Wat krijg je bij strategisch online advies?",
+      text:
+        "Je krijgt een onderbouwde prioriteitenvolgorde voor website, vindbaarheid en contactroute, zodat duidelijk is wat eerst moet worden verbeterd en waarom."
+    },
+    deliverables: [
+      { title: "Analyse", text: "Een nuchtere blik op aanbod, pagina's, vindbaarheid en aanvraagroute." },
+      { title: "Prioriteiten", text: "Concrete verbeterpunten in uitvoerbare volgorde." },
+      { title: "Volgende stap", text: "Advies over zelf uitvoeren, verbeteren of gericht bouwen." }
+    ],
+    audienceFit: {
+      for: ["Bedrijven die keuzes willen maken voor zij investeren.", "Ondernemers met meerdere online vraagstukken tegelijk."],
+      notFor: ["Wie alleen losse beloften of snelle trucs zoekt.", "Wie geen ruimte wil maken voor duidelijke keuzes."]
+    },
     primaryCta: "Plan een vrijblijvend gesprek",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
@@ -879,7 +981,7 @@ export const contactPage = {
   secondaryCta: "Bekijk diensten",
   heroPoints: [
     "Gratis eerste gesprek",
-    "Binnen 24 uur reactie",
+    "Reactie binnen een werkdag",
     "Geen technische voorbereiding nodig"
   ],
   sections: [
@@ -944,7 +1046,10 @@ export const caseStudies = [
     summary:
       "Voor BuitenLijn ontwierp ik een rustige, premium website waarin tuinen, projecten en lokale diensten centraal staan.",
     focus: "Lokale vindbaarheid en adviesaanvraag",
-    image: "/assets/Case1.png",
+    image: "/assets/case1-1122.webp",
+    imageAvif: "/assets/case1-1122.avif",
+    imageSrcSet: "/assets/case1-640.webp 640w, /assets/case1-1122.webp 1122w",
+    imageAvifSrcSet: "/assets/case1-640.avif 640w, /assets/case1-1122.avif 1122w",
     imageWidth: 1122,
     imageHeight: 1402,
     imageAlt: "Webdesign voor BuitenLijn hoveniersbedrijf met tuinprojecten en adviesaanvraag",
@@ -1004,7 +1109,10 @@ export const caseStudies = [
     summary:
       "Voor Dakbedrijf Hoogstad ontwierp ik een heldere website voor dakrenovatie, lekkageherstel en isolatie, met inspectie en offerte als duidelijke routes.",
     focus: "Lokale service-intentie en offerte",
-    image: "/assets/Case2.png",
+    image: "/assets/case2-1086.webp",
+    imageAvif: "/assets/case2-1086.avif",
+    imageSrcSet: "/assets/case2-640.webp 640w, /assets/case2-1086.webp 1086w",
+    imageAvifSrcSet: "/assets/case2-640.avif 640w, /assets/case2-1086.avif 1086w",
     imageWidth: 1086,
     imageHeight: 1448,
     imageAlt: "Webdesign voor Dakbedrijf Hoogstad met dakrenovatie en offerteaanvraag",
@@ -1064,7 +1172,10 @@ export const caseStudies = [
     summary:
       "Voor OrbitFlow ontwierp ik een productwebsite die social strategie, platformfuncties en een duidelijke kennismakingsroute samenbrengt.",
     focus: "Productuitleg en kennismaking",
-    image: "/assets/Case3.png",
+    image: "/assets/case3-935.webp",
+    imageAvif: "/assets/case3-935.avif",
+    imageSrcSet: "/assets/case3-480.webp 480w, /assets/case3-935.webp 935w",
+    imageAvifSrcSet: "/assets/case3-480.avif 480w, /assets/case3-935.avif 935w",
     imageWidth: 935,
     imageHeight: 1683,
     imageAlt: "Webdesign voor OrbitFlow social growth platform met dashboardmodules",
@@ -1124,7 +1235,10 @@ export const caseStudies = [
     summary:
       "Voor Nexora IT Solutions ontwierp ik een zakelijke website voor software, cloud, cybersecurity en data & AI, gericht op heldere expertise en projectintake.",
     focus: "Expertisepositionering en projectaanvraag",
-    image: "/assets/Case4.png",
+    image: "/assets/case4-748.webp",
+    imageAvif: "/assets/case4-748.avif",
+    imageSrcSet: "/assets/case4-480.webp 480w, /assets/case4-748.webp 748w",
+    imageAvifSrcSet: "/assets/case4-480.avif 480w, /assets/case4-748.avif 748w",
     imageWidth: 748,
     imageHeight: 2103,
     imageAlt: "Webdesign voor Nexora IT Solutions met software- en cloudoplossingen",

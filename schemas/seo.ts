@@ -217,8 +217,8 @@ export function caseStudySchema(caseStudy: {
     datePublished: caseStudy.datePublished,
     dateModified: caseStudy.dateModified,
     inLanguage: "nl-NL",
-    articleSection: "Portfolio",
-    genre: "Webdesign project",
+    articleSection: "Ontwerpportfolio",
+    genre: "Webdesign ontwerp",
     about: [
       {
         "@type": "Thing",

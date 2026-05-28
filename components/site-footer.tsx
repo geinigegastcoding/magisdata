@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
 
 const columns = [
@@ -7,10 +7,11 @@ const columns = [
     title: "Diensten",
     links: [
       { label: "SEO", href: "/seo-diensten" },
-      { label: "Websites", href: "/webontwikkeling" },
-      { label: "Website laten maken", href: "/website-laten-maken" },
+      { label: "Webontwikkeling", href: "/webontwikkeling" },
       { label: "Website onderhoud", href: "/website-onderhoud" },
-      { label: "SEO website laten maken", href: "/seo-website-laten-maken" },
+      { label: "Google Ads", href: "/online-marketing-bureau" },
+      { label: "Lokale SEO", href: "/lokale-seo" },
+      { label: "AI vindbaarheid", href: "/ai-vindbaarheid" },
       { label: "GEO optimalisatie", href: "/geo-optimalisatie" },
       { label: "AEO optimalisatie", href: "/aeo-optimalisatie" },
       { label: "AI en automatisering", href: "/ai-infrastructuur" },
@@ -53,16 +54,11 @@ const columns = [
       { label: "AI-vindbaarheid", href: "/inzichten/ai-vindbaarheid" },
       { label: "Over MagisData", href: "/over-ons" },
       { label: "Contact", href: "/contact" },
+      { label: "Status", href: "/status" },
       { label: "Privacybeleid", href: "/privacybeleid" },
       { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }
     ]
   }
-];
-
-const socialLinks = [
-  { label: "LinkedIn", icon: Linkedin },
-  { label: "YouTube", icon: Youtube },
-  { label: "Instagram", icon: Instagram }
 ];
 
 export function SiteFooter() {
@@ -74,18 +70,9 @@ export function SiteFooter() {
           <p className="mt-5 max-w-xs text-sm font-medium text-muted">
             Digitale groei voor ambitieuze bedrijven
           </p>
-          <div className="mt-6 flex gap-3 text-soft">
-            {socialLinks.map(({ label, icon: Icon }) => (
-              <Link
-                aria-label={label}
-                className="focus-ring grid h-9 w-9 place-items-center rounded-full border border-line transition hover:border-orange hover:text-orange"
-                href="/contact"
-                key={label}
-              >
-                <Icon className="h-4 w-4" strokeWidth={2} />
-              </Link>
-            ))}
-          </div>
+          <Link className="focus-ring mt-6 inline-flex rounded-full text-sm font-bold text-orange hover:text-orange-dark" href="/status">
+            Beschikbaar voor gesprek
+          </Link>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -124,6 +111,9 @@ export function SiteFooter() {
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
               Suze Groenewegerf 25, Voorschoten
             </span>
+            <button className="focus-ring w-fit rounded-full text-left hover:text-orange" data-consent-open type="button">
+              Cookie-instellingen
+            </button>
           </div>
         </div>
       </div>

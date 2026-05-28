@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedLinks } from "@/components/related-links";
@@ -13,7 +13,6 @@ import { breadcrumbSchema, faqSchema, graphSchema, howToSchema, serviceSchema, w
 type ContentPageProps = {
   content: PageContent;
   icon?: LucideIcon;
-  contactMode?: boolean;
   pathname?: string;
   schemaKind?: "service" | "page";
   primaryHref?: string;
@@ -46,7 +45,6 @@ function SecondaryLink({ children, href }: { children: ReactNode; href: string }
 export function ContentPage({
   content,
   icon: Icon,
-  contactMode = false,
   pathname,
   schemaKind = "page",
   primaryHref,
@@ -66,7 +64,7 @@ export function ContentPage({
           description: content.description
         }),
         breadcrumbSchema(breadcrumbItems),
-        faqSchema(content.faqs, pathname),
+        faqSchema([...content.faqs, ...(content.objections ?? [])], pathname),
         howToSchema(content, pathname),
         ...(schemaKind === "service" ? [serviceSchema(content, pathname)] : [])
       ])
@@ -89,7 +87,7 @@ export function ContentPage({
               {content.description}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <PrimaryLink href={primaryHref ?? (contactMode ? "mailto:contact%40magisdata.nl" : "/contact")}>
+              <PrimaryLink href={primaryHref ?? "/contact"}>
                 {content.primaryCta ?? "Plan een gratis gesprek"}
               </PrimaryLink>
               <SecondaryLink href={secondaryHref}>
@@ -118,36 +116,101 @@ export function ContentPage({
                 </li>
               ))}
             </ul>
-            {contactMode ? (
-              <div className="mt-7 grid gap-4">
-                <div className="grid gap-3 rounded-2xl bg-peach p-4 text-sm font-semibold text-ink">
-                  <Link className="focus-ring flex items-center gap-3 hover:text-orange" href="mailto:contact%40magisdata.nl">
-                    <Mail className="h-4 w-4 text-orange" />
-                    contact [at] magisdata.nl
-                  </Link>
-                </div>
-                <form action="/bedankt" className="grid gap-3 rounded-2xl border border-line bg-white p-4" method="get">
-                  <label className="grid gap-1 text-sm font-bold text-navy">
-                    Naam
-                    <input className="focus-ring rounded-xl border border-line px-3 py-2 text-sm font-medium text-ink" name="naam" required type="text" />
-                  </label>
-                  <label className="grid gap-1 text-sm font-bold text-navy">
-                    E-mail
-                    <input className="focus-ring rounded-xl border border-line px-3 py-2 text-sm font-medium text-ink" name="email" required type="email" />
-                  </label>
-                  <label className="grid gap-1 text-sm font-bold text-navy">
-                    Vraag
-                    <textarea className="focus-ring min-h-24 rounded-xl border border-line px-3 py-2 text-sm font-medium text-ink" name="vraag" required />
-                  </label>
-                  <button className="focus-ring rounded-xl bg-orange px-4 py-3 text-sm font-extrabold text-white transition hover:bg-orange-dark" type="submit">
-                    Verstuur aanvraag
-                  </button>
-                </form>
-              </div>
-            ) : null}
           </aside>
         </div>
       </section>
+
+      {content.directAnswer ? (
+        <section className="pb-8 md:pb-12">
+          <div className="container">
+            <article className="rounded-[2rem] border border-orange-soft bg-white p-7 shadow-sm md:p-9">
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
+                Direct antwoord
+              </p>
+              <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                {content.directAnswer.title}
+              </h2>
+              <p className="mt-4 max-w-4xl text-base leading-8 text-muted">
+                {content.directAnswer.text}
+              </p>
+              {content.proofDisclosure ? (
+                <p className="mt-6 rounded-2xl bg-peach p-4 text-sm font-semibold leading-6 text-ink">
+                  {content.proofDisclosure}
+                </p>
+              ) : null}
+            </article>
+          </div>
+        </section>
+      ) : null}
+
+      {content.deliverables?.length ? (
+        <section className="bg-white py-8 md:py-12">
+          <div className="container grid gap-8 lg:grid-cols-[0.35fr_0.65fr]">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+                Oplevering
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                Wat je concreet krijgt
+              </h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {content.deliverables.map((item) => (
+                <article className="rounded-2xl border border-line bg-cream/50 p-5" key={item.title}>
+                  <h3 className="font-extrabold text-navy">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {content.comparison?.length ? (
+        <section className="py-8 md:py-12">
+          <div className="container grid gap-8 lg:grid-cols-[0.35fr_0.65fr]">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+                Afbakening
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                Wat is het verschil?
+              </h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {content.comparison.map((item) => (
+                <article className="rounded-2xl border border-line bg-white p-5 shadow-sm" key={item.title}>
+                  <h3 className="font-extrabold text-navy">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {content.audienceFit ? (
+        <section className="py-8 md:py-12">
+          <div className="container grid gap-4 md:grid-cols-2">
+            {[
+              { title: "Voor wie dit past", items: content.audienceFit.for },
+              { title: "Wanneer dit niet past", items: content.audienceFit.notFor }
+            ].map((group) => (
+              <article className="rounded-[2rem] border border-line bg-white p-7" key={group.title}>
+                <h2 className="text-2xl font-extrabold text-navy">{group.title}</h2>
+                <ul className="mt-5 grid gap-3">
+                  {group.items.map((item) => (
+                    <li className="flex gap-3 text-sm leading-6 text-muted" key={item}>
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="py-8 md:py-12">
         <div className="container grid gap-6">
@@ -252,7 +315,7 @@ export function ContentPage({
             </h2>
           </div>
           <div className="grid gap-4">
-            {content.faqs.map((faq) => (
+            {[...content.faqs, ...(content.objections ?? [])].map((faq) => (
               <details className="group rounded-2xl border border-black/[0.05] bg-white p-5 shadow-sm" key={faq.question}>
                 <summary className="cursor-pointer list-none text-base font-extrabold text-navy">
                   {faq.question}

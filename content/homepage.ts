@@ -15,14 +15,12 @@ import {
   TrendingUp
 } from "lucide-react";
 
-export const trustLogos = ["Hoveniers", "Dakbedrijven", "SaaS", "IT consultancy", "Advies", "Lokale diensten"];
-
 export const services = [
   {
     title: "Vindbaarheid in Google",
     description:
       "We zorgen dat klanten je bedrijf sneller vinden wanneer ze zoeken naar jouw dienst.",
-    href: "/seo-bureau",
+    href: "/seo-diensten",
     icon: Search,
     color: "text-blue bg-blue-soft"
   },
@@ -45,7 +43,7 @@ export const services = [
   {
     title: "Meer aanvragen",
     description:
-      "We verbeteren je pagina's, teksten en knoppen zodat meer bezoekers klant worden.",
+      "We verbeteren pagina's, teksten en knoppen zodat de stap naar contact duidelijker wordt.",
     href: "/conversie-optimalisatie",
     icon: ChartBarIncreasing,
     color: "text-purple bg-purple-soft"
@@ -69,7 +67,7 @@ export const processSteps = [
   },
   {
     title: "Plan maken",
-    text: "We bepalen wat het meeste resultaat kan opleveren.",
+    text: "We bepalen welke verbetering als eerste logisch is.",
     icon: Target,
     color: "text-green bg-green-soft"
   },
@@ -96,8 +94,8 @@ export const processSteps = [
 export const metrics = [
   { value: "1", label: "Vast aanspreekpunt", icon: BadgeCheck, color: "text-blue bg-blue-soft" },
   { value: "5", label: "Heldere stappen", icon: Smile, color: "text-green bg-green-soft" },
-  { value: "24u", label: "Reactie op werkdagen", icon: Building2, color: "text-blue bg-blue-soft" },
-  { value: "Geen", label: "Vage beloftes", icon: TrendingUp, color: "text-yellow bg-yellow-soft" }
+  { value: "1 werkdag", label: "Reactietermijn", icon: Building2, color: "text-blue bg-blue-soft" },
+  { value: "Eerlijk", label: "Over bewijs", icon: TrendingUp, color: "text-yellow bg-yellow-soft" }
 ];
 
 export const insights = [
@@ -118,13 +116,7 @@ export const insights = [
 export const heroTrust = [
   "Persoonlijk & betrokken",
   "Heldere aanpak",
-  "Meetbaar resultaat"
-];
-
-export const heroStats = [
-  { label: "Meer klanten", value: "Stap voor stap", note: "" },
-  { label: "Beter gevonden", value: "", note: "Duidelijk plan, geen omweg" },
-  { label: "Eerste gesprek", value: "Gratis", note: "Rustig verkennen" }
+  "Reactie binnen 1 werkdag"
 ];
 
 export const AdviceIcon = Lightbulb;

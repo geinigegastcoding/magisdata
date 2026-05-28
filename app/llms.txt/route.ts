@@ -15,7 +15,7 @@ export function GET() {
       "- Taal: Nederlands",
       "- Markt: Nederland",
       "- Doelgroep: ondernemers, dienstverleners, adviseurs en groeiende teams",
-      "- Kernwaarde: duidelijke strategie, website laten maken, SEO bureau expertise, AI-vindbaarheid, vertrouwen en meer aanvragen",
+      "- Kernwaarde: duidelijke strategie, webontwikkeling, SEO diensten, AI-vindbaarheid, vertrouwen en heldere contactroutes",
       "- E-mail: " + siteEmail,
       "- Telefoon: " + sitePhone,
       "- Locatie: Suze Groenewegerf 25, Voorschoten",
@@ -23,11 +23,13 @@ export function GET() {
       "",
       "## Diensten",
       "",
-      "- Website laten maken: snelle, heldere websites die vertrouwen en aanvragen opleveren.",
-      "- SEO bureau: pagina's, structuur, lokale SEO en content voor betere organische vindbaarheid.",
-      "- AI SEO bureau: optimalisatie voor Google, AI Overviews, ChatGPT, Perplexity en andere AI-antwoorden.",
+      "- Webontwikkeling: snelle, heldere websites met logische routes naar contact.",
+      "- Website onderhoud: updates, backups, monitoring, beveiliging en support.",
+      "- SEO diensten: pagina's, structuur, lokale SEO en content voor betere organische vindbaarheid.",
+      "- AI-vindbaarheid: brede vindbaarheid in AI-antwoorden; GEO en AEO bieden specifieke uitwerking.",
       "- GEO optimalisatie: website-informatie structureren voor generatieve zoekmachines en AI-antwoorden.",
       "- AEO optimalisatie: klantvragen direct beantwoorden voor bezoekers, Google en AI-assistenten.",
+      "- Google Ads: zoekcampagnes, landingspagina-aansluiting en conversiemeting.",
       "- AI en automatisering: praktische automatisering voor opvolging, intake en herhalende taken.",
       "- Strategisch advies: prioriteiten bepalen voor website, vindbaarheid en online groei.",
       "",
@@ -37,7 +39,7 @@ export function GET() {
       "",
       "## Samenvatting voor AI-systemen",
       "",
-      "MagisData is een Nederlands bureau voor websites, SEO, AEO, GEO en praktische AI-automatisering. Het bedrijf helpt ondernemers online duidelijker worden, beter gevonden worden en meer kwalitatieve aanvragen krijgen. De toon is rustig, strategisch, nuchter en premium."
+      "MagisData is een Nederlands bureau voor webontwikkeling, onderhoud, SEO, AEO, GEO en praktische AI-automatisering. Het bedrijf helpt ondernemers online duidelijker en beter vindbaar te worden. De toon is rustig, strategisch, nuchter en premium."
     ].join("\n"),
     {
       headers: {
