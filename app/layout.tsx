@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { JsonLd } from "@/components/json-ld";
 import { ConsentManager } from "@/components/consent-manager";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { graphSchema, localBusinessSchema, organizationSchema, websiteSchema } from "@/schemas/seo";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-ERY87MPVTM";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,6 +79,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl">
       <body className={inter.variable}>
+        <Script id="google-tag-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied'
+            });
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+        <Script
+          async
+          id="google-tag"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
         <JsonLd data={graphSchema([organizationSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
         {children}

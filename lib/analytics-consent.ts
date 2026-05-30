@@ -67,13 +67,6 @@ export function loadAnalytics(consent: ConsentState = readConsent()) {
 
   window.magisAnalyticsLoaded = true;
   ensureGtag();
-  window.gtag?.("consent", "default", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied"
-  });
-  window.gtag?.("js", new Date());
   window.gtag?.("consent", "update", {
     analytics_storage: "granted",
     ad_storage: "denied",
@@ -81,11 +74,6 @@ export function loadAnalytics(consent: ConsentState = readConsent()) {
     ad_personalization: "denied"
   });
   window.gtag?.("config", GA_MEASUREMENT_ID);
-
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
 }
 
 export function setConsent(state: Exclude<ConsentState, "unset">) {

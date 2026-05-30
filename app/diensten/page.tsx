@@ -154,7 +154,7 @@ export default function ServicesPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
-                Plan een vrijblijvend gesprek
+                Vraag gratis websiteplan aan
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link className="focus-ring inline-flex items-center justify-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-bold text-navy shadow-sm transition hover:border-orange-soft hover:bg-peach hover:text-orange" href="/cases">
@@ -338,7 +338,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <Link className="focus-ring inline-flex shrink-0 items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
-            Vraag je groeiroute aan
+            Vraag gratis groeiplan aan
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>

@@ -54,7 +54,7 @@ function makeWebsitePage({
       : undefined,
     deliverables,
     audienceFit,
-    primaryCta: "Vraag gratis advies aan",
+    primaryCta: "Vraag gratis websiteplan aan",
     secondaryCta: "Bekijk SEO aanpak",
     heroPoints: [
       "Snelle website met duidelijke boodschap",
@@ -204,7 +204,7 @@ function makeGrowthPage({
     deliverables,
     comparison,
     audienceFit,
-    primaryCta: "Vraag gratis advies aan",
+    primaryCta: "Vraag gratis groeiplan aan",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
       `Gericht op ${primaryKeyword}`,

@@ -85,7 +85,7 @@ export function Hero() {
             betrouwbaar willen overkomen en beter gevonden willen worden.
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <PrimaryButton>Plan een gratis gesprek</PrimaryButton>
+            <PrimaryButton>Vraag gratis websiteplan aan</PrimaryButton>
             <SecondaryButton>Bekijk onze diensten</SecondaryButton>
           </div>
           <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4">
@@ -130,9 +130,9 @@ export function Hero() {
               <p className="mt-3 text-xs leading-5 text-muted">Inhoud die zoekvragen concreet beantwoordt.</p>
             </div>
             <div className="soft-card rounded-[1.35rem] p-4">
-              <p className="text-xs font-extrabold text-soft">Kennismaking</p>
-              <p className="mt-2 text-lg font-extrabold leading-tight text-navy">Gratis gesprek</p>
-              <p className="mt-3 text-xs leading-5 text-muted">Reactie binnen een werkdag.</p>
+              <p className="text-xs font-extrabold text-soft">Websiteplan</p>
+              <p className="mt-2 text-lg font-extrabold leading-tight text-navy">Gratis start</p>
+              <p className="mt-3 text-xs leading-5 text-muted">Voor nieuwe sites en herbouw.</p>
             </div>
           </div>
         </div>
@@ -178,7 +178,7 @@ export function Services() {
           <p className="max-w-xl text-sm font-semibold leading-6 text-muted">
             Niet zeker welke dienst past? We kiezen samen de kortste route naar meer aanvragen.
           </p>
-          <TextCta>Bespreek je situatie</TextCta>
+          <TextCta>Laat je website meekijken</TextCta>
         </div>
       </div>
     </section>
@@ -227,7 +227,7 @@ export function Process() {
               className="focus-ring inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-extrabold text-orange shadow-sm transition hover:bg-orange-soft hover:text-orange-dark"
               href="/contact"
             >
-              Plan gratis gesprek
+              Vraag websiteplan aan
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
@@ -266,7 +266,7 @@ export function Results() {
                 })}
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <PrimaryButton>Ik wil ook groeien</PrimaryButton>
+                <PrimaryButton>Vraag gratis websiteplan aan</PrimaryButton>
                 <SecondaryButton href="/cases">Bekijk portfolio</SecondaryButton>
               </div>
             </div>
@@ -436,10 +436,10 @@ export function FinalCta() {
             <div>
               <h2 className="text-4xl font-extrabold tracking-[-0.035em] text-navy">Klaar om samen te groeien?</h2>
               <p className="mt-4 leading-7 text-muted">
-                Plan een gratis gesprek en ontdek wat wij voor jouw bedrijf kunnen betekenen.
+                Vraag een gratis websiteplan aan voor een nieuwe site, herbouw of slimme verbetering.
               </p>
               <div className="mt-7 flex flex-col gap-3 pb-8 sm:flex-row md:pb-10">
-                <PrimaryButton>Plan een gratis gesprek</PrimaryButton>
+                <PrimaryButton>Start gratis websiteplan</PrimaryButton>
                 <SecondaryButton>Bekijk onze diensten</SecondaryButton>
               </div>
             </div>

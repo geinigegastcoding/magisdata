@@ -215,7 +215,7 @@ export default function InsightsPage() {
           <div className="grid gap-4 md:grid-cols-2">
             {[
               { href: "/diensten", title: "Bekijk alle diensten", text: "Maak van losse verbeterpunten een samenhangend plan." },
-              { href: "/contact", title: "Plan een vrijblijvend gesprek", text: "Bespreek welke inzichten voor jouw bedrijf prioriteit hebben." }
+              { href: "/contact", title: "Vraag gratis websiteplan aan", text: "Krijg richting voor een nieuwe website, herbouw of gerichte verbetering." }
             ].map((link) => (
               <Link className="focus-ring group rounded-2xl bg-white/72 p-6 shadow-sm ring-1 ring-orange-soft/70 transition hover:bg-white" href={link.href} key={link.href}>
                 <Sparkles className="h-5 w-5 text-orange" />

@@ -53,7 +53,7 @@ export const servicePages = {
     title: "Alles wat je website nodig heeft om helder contact mogelijk te maken",
     description:
       "MagisData helpt ondernemers met websites, vindbaarheid, advertenties en slimme verbeteringen. We houden het duidelijk: wat werkt, wat mist, en welke stap nu het meeste oplevert.",
-    primaryCta: "Vraag gratis advies aan",
+    primaryCta: "Vraag gratis websiteplan aan",
     secondaryCta: "Bekijk werkwijze",
     heroPoints: [
       "Heldere uitleg zonder technisch gedoe",
@@ -176,7 +176,7 @@ export const servicePages = {
     },
     proofDisclosure:
       "Bekijk in het portfolio uitgewerkte webdesignprojecten en de ontwerpkeuzes erachter. We publiceren geen klantresultaten zonder verificatie.",
-    primaryCta: "Bespreek mijn website",
+    primaryCta: "Plan mijn website",
     secondaryCta: "Bekijk alle diensten",
     heroPoints: [
       "Duidelijke teksten en logische pagina's",
@@ -301,7 +301,7 @@ export const servicePages = {
       { title: "SEO", text: "Vindbaarheid in klassieke zoekresultaten rond duidelijke zoekintenties." },
       { title: "AEO en GEO", text: "Aanvullende structuur voor antwoorden en AI-systemen; geen vervanging van SEO." }
     ],
-    primaryCta: "Laat mijn SEO checken",
+    primaryCta: "Vraag SEO-scan aan",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
       "Meer zichtbaarheid zonder elke klik te betalen",
@@ -422,7 +422,7 @@ export const servicePages = {
       { title: "GEO", text: "Gaat over begrip, entiteiten en citeren in generatieve antwoorden." },
       { title: "AEO", text: "Gaat over vraag-antwoordformaten en snelle extractie van antwoorden." }
     ],
-    primaryCta: "Maak mijn site AI-klaar",
+    primaryCta: "Check mijn AI-vindbaarheid",
     secondaryCta: "Bekijk SEO aanpak",
     heroPoints: [
       "Duidelijke uitleg van diensten en expertise",
@@ -543,7 +543,7 @@ export const servicePages = {
       { title: "AEO", text: "Optimaliseert hoe een specifieke vraag direct beantwoord wordt." },
       { title: "GEO", text: "Optimaliseert hoe AI-systemen het merk en aanbod als geheel begrijpen." }
     ],
-    primaryCta: "Verbeter mijn antwoorden",
+    primaryCta: "Check mijn antwoordpagina's",
     secondaryCta: "Bekijk alle diensten",
     heroPoints: [
       "Veelgestelde vragen helder uitgelegd",
@@ -664,7 +664,7 @@ export const servicePages = {
       for: ["Bedrijven met repeterende intake- of opvolgstappen.", "Teams die klein en beheersbaar willen starten."],
       notFor: ["Automatisering zonder duidelijk probleem.", "Besluiten die zonder menselijke controle hoog risico dragen."]
     },
-    primaryCta: "Bespreek automatisering",
+    primaryCta: "Bespreek mijn automatisering",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
       "Praktische AI zonder hype",
@@ -785,7 +785,7 @@ export const servicePages = {
       for: ["Bedrijven die keuzes willen maken voor zij investeren.", "Ondernemers met meerdere online vraagstukken tegelijk."],
       notFor: ["Wie alleen losse beloften of snelle trucs zoekt.", "Wie geen ruimte wil maken voor duidelijke keuzes."]
     },
-    primaryCta: "Plan een vrijblijvend gesprek",
+    primaryCta: "Vraag gratis groeiplan aan",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
       "Duidelijke prioriteiten",
@@ -894,7 +894,7 @@ export const aboutPage = {
   title: "Digitale groei begrijpelijk maken voor ondernemers",
   description:
     "MagisData bouwt websites en groeisystemen voor bedrijven die online sterker willen staan, zonder verdwalen in technische taal.",
-  primaryCta: "Maak kennis",
+  primaryCta: "Vraag gratis websiteplan aan",
   secondaryCta: "Bekijk diensten",
   heroPoints: [
     "Rustige strategie",
@@ -977,10 +977,10 @@ export const contactPage = {
   title: "Vertel kort waar je vastloopt, dan denken we mee",
   description:
     "Wil je meer aanvragen, een betere website of duidelijkheid over SEO en AI-vindbaarheid? Plan een gesprek. We houden het praktisch en begrijpelijk.",
-  primaryCta: "Mail MagisData",
+  primaryCta: "Vraag gratis websiteplan aan",
   secondaryCta: "Bekijk diensten",
   heroPoints: [
-    "Gratis eerste gesprek",
+    "Gratis websiteplan",
     "Reactie binnen een werkdag",
     "Geen technische voorbereiding nodig"
   ],

@@ -127,7 +127,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/inzichten/website-meer-aanvragen": [
     serviceLinks[0],
     { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Zie hoe diensten, projecten en contact logisch samenkomen." },
-    { href: "/contact", label: "Vraag groeiscan aan", description: "Laat je huidige website praktisch bekijken." }
+    { href: "/contact", label: "Vraag websiteplan aan", description: "Krijg richting voor een nieuwe site of verbetering." }
   ],
   "/inzichten/seo-zonder-jargon": [
     serviceLinks[6],

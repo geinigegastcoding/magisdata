@@ -196,7 +196,7 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
             Werkt deze aanpak voor jouw branche of idee? Ik denk graag mee over structuur, uitstraling en vindbaarheid van een nieuwe website.
           </p>
           <Link className="focus-ring inline-flex shrink-0 items-center text-sm font-extrabold text-orange" href="/contact">
-            Project bespreken
+            Vraag gratis websiteplan aan
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </aside>

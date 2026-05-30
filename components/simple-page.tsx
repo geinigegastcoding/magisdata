@@ -25,7 +25,7 @@ export function SimplePage({ eyebrow, title, description }: SimplePageProps) {
             className="focus-ring mt-8 inline-flex items-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-orange-dark"
             href="/contact"
           >
-            Plan een gratis gesprek <ArrowRight className="ml-2 h-4 w-4" />
+            Vraag gratis websiteplan aan <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>
       </section>

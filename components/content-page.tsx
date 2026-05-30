@@ -88,7 +88,7 @@ export function ContentPage({
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <PrimaryLink href={primaryHref ?? "/contact"}>
-                {content.primaryCta ?? "Plan een gratis gesprek"}
+                {content.primaryCta ?? "Vraag gratis websiteplan aan"}
               </PrimaryLink>
               <SecondaryLink href={secondaryHref}>
                 {content.secondaryCta ?? "Bekijk diensten"}
@@ -340,7 +340,7 @@ export function ContentPage({
                 We kijken mee en geven je een praktische eerste richting. Geen vaktaal, geen verplichting.
               </p>
             </div>
-            <PrimaryLink href="/contact">Plan een gratis gesprek</PrimaryLink>
+            <PrimaryLink href="/contact">Vraag gratis websiteplan aan</PrimaryLink>
           </div>
         </div>
       </section>

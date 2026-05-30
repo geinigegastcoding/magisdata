@@ -48,11 +48,11 @@ export default function ContactPage() {
               Vertel ons waar je website naartoe moet
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-              Een eerste gesprek is bedoeld om rust en richting te geven. Je hoeft geen technisch plan te hebben; een korte schets van je situatie is genoeg.
+              Het gratis websiteplan is bedoeld om snel te bepalen wat je nodig hebt: een eerste website, een herbouw of gerichte verbetering van je huidige site.
             </p>
             <div className="mt-8 grid gap-4">
               {[
-                "Gratis eerste richting, zonder verplichting.",
+                "Gratis websiteplan, zonder verplichting.",
                 "Reactie binnen een werkdag.",
                 "Heldere vervolgstap als we kunnen helpen."
               ].map((item) => (
@@ -102,7 +102,7 @@ export default function ContactPage() {
               </span>
               <div>
                 <h2 id="contact-form-title" className="text-2xl font-extrabold tracking-normal text-navy">
-                  Vraag een website-analyse aan
+                  Vraag gratis websiteplan aan
                 </h2>
                 <p className="mt-1 text-sm leading-6 text-muted">
                   Kort is goed. We vullen de rest samen aan.
@@ -179,7 +179,7 @@ export default function ContactPage() {
               {[
                 ["1", "We lezen je vraag en bekijken de context."],
                 ["2", "Je krijgt een praktische reactie met mogelijke richting."],
-                ["3", "Als het zinvol is plannen we een korte kennismaking."]
+                ["3", "Als het zinvol is plannen we een korte vervolgstap."]
               ].map(([number, text]) => (
                 <div className="flex gap-4" key={number}>
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-orange text-sm font-black text-white">

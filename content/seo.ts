@@ -101,9 +101,9 @@ const coreSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/contact",
-    title: "Contact met MagisData | Vraag een website-analyse aan",
+    title: "Contact met MagisData | Vraag gratis websiteplan aan",
     description: "Neem contact op met MagisData voor een gratis eerste richting over je website, SEO, GEO, AEO, AI-vindbaarheid of online groei.",
-    keywords: ["contact MagisData", "website analyse", "gratis website advies", "SEO gesprek", "website scan"],
+    keywords: ["contact MagisData", "website plan", "gratis website advies", "website laten maken", "website scan"],
     priority: 0.8,
     changeFrequency: "monthly",
     lastModified

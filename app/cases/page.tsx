@@ -147,7 +147,7 @@ export default function PortfolioPage() {
               </p>
             </div>
             <Link className="focus-ring inline-flex shrink-0 items-center text-sm font-extrabold text-orange" href="/contact">
-              Bespreek een project
+              Vraag gratis websiteplan aan
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
