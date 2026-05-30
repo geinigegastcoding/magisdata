@@ -1,7 +1,7 @@
 export type ConsentState = "unset" | "denied" | "analytics_granted";
 
 export const CONSENT_STORAGE_KEY = "magisdata-consent";
-export const GA_MEASUREMENT_ID = "G-ERY87MPVTM";
+export const GA_MEASUREMENT_ID = "G-H6G8TMGDWY";
 
 declare global {
   interface Window {

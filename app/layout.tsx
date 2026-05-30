@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/site-header";
 import { graphSchema, localBusinessSchema, organizationSchema, websiteSchema } from "@/schemas/seo";
 import "./globals.css";
 
-const GA_MEASUREMENT_ID = "G-ERY87MPVTM";
+const GA_MEASUREMENT_ID = "G-H6G8TMGDWY";
 
 const inter = Inter({
   subsets: ["latin"],
