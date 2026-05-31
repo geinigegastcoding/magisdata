@@ -113,10 +113,4 @@ export const insights = [
   }
 ];
 
-export const heroTrust = [
-  "Persoonlijk & betrokken",
-  "Heldere aanpak",
-  "Reactie binnen 1 werkdag"
-];
-
 export const AdviceIcon = Lightbulb;

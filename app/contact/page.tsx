@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ContactForm } from "@/components/contact-form";
 import { JsonLd } from "@/components/json-ld";
 import { metadataForPath } from "@/content/seo";
-import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
+import { breadcrumbSchema, graphSchema, sitePhone, sitePhoneHref, webPageSchema } from "@/schemas/seo";
 
 export const metadata: Metadata = metadataForPath("/contact");
 
@@ -70,9 +70,9 @@ export default function ContactPage() {
                     <Mail className="h-4 w-4" />
                     contact [at] magisdata.nl
                   </Link>
-                  <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-bold text-navy hover:text-orange" href="tel:+31642280029">
+                  <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-bold text-navy hover:text-orange" href={sitePhoneHref}>
                     <Phone className="h-4 w-4" />
-                    +31 6 42280029
+                    {sitePhone}
                   </Link>
                   <p className="mt-3 flex items-start gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-semibold leading-6 text-ink">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange" />
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   <source srcSet="/assets/founder-336.avif 336w, /assets/founder-672.avif 672w" type="image/avif" />
                   <source srcSet="/assets/founder-336.webp 336w, /assets/founder-672.webp 672w" type="image/webp" />
                   <img
-                    alt="Oprichter en CEO van MagisData"
+                    alt="Oprichter van MagisData"
                     className="absolute bottom-0 right-4 h-auto w-[min(46%,13rem)]"
                     height={400}
                     loading="lazy"

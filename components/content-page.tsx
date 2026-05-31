@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { RelatedLinks } from "@/components/related-links";
+import { TrustProofRow } from "@/components/trust-proof-row";
 import { relatedLinksByPath } from "@/content/internal-links";
 import type { PageContent } from "@/content/pages";
 import { cn } from "@/lib/utils";
@@ -94,6 +95,7 @@ export function ContentPage({
                 {content.secondaryCta ?? "Bekijk diensten"}
               </SecondaryLink>
             </div>
+            <TrustProofRow className="mt-5" compact />
           </div>
 
           <aside className="rounded-[2rem] border border-black/[0.06] bg-white p-7 shadow-card md:p-8">
@@ -340,7 +342,10 @@ export function ContentPage({
                 We kijken mee en geven je een praktische eerste richting. Geen vaktaal, geen verplichting.
               </p>
             </div>
-            <PrimaryLink href="/contact">Vraag gratis websiteplan aan</PrimaryLink>
+            <div className="grid gap-4">
+              <PrimaryLink href="/contact">Vraag gratis websiteplan aan</PrimaryLink>
+              <TrustProofRow compact />
+            </div>
           </div>
         </div>
       </section>

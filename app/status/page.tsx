@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { metadataForPath } from "@/content/seo";
 import { currentStatus } from "@/content/status";
-import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
+import { breadcrumbSchema, graphSchema, sitePhone, sitePhoneHref, webPageSchema } from "@/schemas/seo";
 
 export const metadata: Metadata = metadataForPath("/status");
 
@@ -49,9 +49,9 @@ export default function StatusPage() {
                 Stuur een aanvraag
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <Link className="focus-ring inline-flex items-center justify-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-bold text-navy hover:border-orange-soft hover:text-orange" href="tel:+31642280029">
+              <Link className="focus-ring inline-flex items-center justify-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-bold text-navy hover:border-orange-soft hover:text-orange" href={sitePhoneHref}>
                 <Phone className="mr-2 h-4 w-4" />
-                +31 6 42280029
+                {sitePhone}
               </Link>
             </div>
           </div>

@@ -4,6 +4,7 @@ export const siteUrl = "https://magisdata.nl";
 export const siteName = "MagisData";
 export const siteEmail = "contact@magisdata.nl";
 export const sitePhone = "+31 6 42280029";
+export const sitePhoneHref = "tel:+31642280029";
 export const defaultImage = `${siteUrl}/assets/og-image.png`;
 export const lastModified = "2026-05-16";
 

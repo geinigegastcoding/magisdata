@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { sitePhone, sitePhoneHref } from "@/schemas/seo";
 
 const columns = [
   {
@@ -103,9 +104,9 @@ export function SiteFooter() {
               <Mail className="h-4 w-4" />
               contact [at] magisdata.nl
             </Link>
-            <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href="tel:+31642280029">
+            <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href={sitePhoneHref}>
               <Phone className="h-4 w-4" />
-              +31 6 42280029
+              {sitePhone}
             </Link>
             <span className="inline-flex items-start gap-2 leading-6">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />

@@ -2,14 +2,13 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   ArrowRight,
-  CheckCircle2,
   ChevronRight,
   HelpCircle,
   Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TrustProofRow } from "@/components/trust-proof-row";
 import {
-  heroTrust,
   insights,
   metrics,
   processSteps,
@@ -88,14 +87,7 @@ export function Hero() {
             <PrimaryButton>Vraag gratis websiteplan aan</PrimaryButton>
             <SecondaryButton>Bekijk onze diensten</SecondaryButton>
           </div>
-          <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4">
-            {heroTrust.map((item) => (
-              <span className="inline-flex items-center gap-2.5 text-[0.95rem] font-semibold text-muted" key={item}>
-                <CheckCircle2 className="h-[1.05rem] w-[1.05rem] text-orange" strokeWidth={2.4} />
-                {item}
-              </span>
-            ))}
-          </div>
+          <TrustProofRow className="mt-6" />
         </div>
 
         <div className="relative rounded-[2rem] pt-2">
@@ -269,6 +261,7 @@ export function Results() {
                 <PrimaryButton>Vraag gratis websiteplan aan</PrimaryButton>
                 <SecondaryButton href="/cases">Bekijk portfolio</SecondaryButton>
               </div>
+              <TrustProofRow className="mt-5" compact />
             </div>
             <div className="rounded-[2rem] border border-line bg-white p-7 shadow-sm">
               <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Geloofwaardig werken</p>
@@ -438,10 +431,11 @@ export function FinalCta() {
               <p className="mt-4 leading-7 text-muted">
                 Vraag een gratis websiteplan aan voor een nieuwe site, herbouw of slimme verbetering.
               </p>
-              <div className="mt-7 flex flex-col gap-3 pb-8 sm:flex-row md:pb-10">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <PrimaryButton>Start gratis websiteplan</PrimaryButton>
                 <SecondaryButton>Bekijk onze diensten</SecondaryButton>
               </div>
+              <TrustProofRow className="pb-8 md:pb-10" compact />
             </div>
             <div className="hidden self-center pb-8 md:block">
               <svg aria-hidden className="h-[4.5rem] w-32 text-navy" fill="none" viewBox="0 0 160 88">

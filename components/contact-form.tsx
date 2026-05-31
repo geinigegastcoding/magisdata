@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { TrustProofRow } from "@/components/trust-proof-row";
 import { trackEvent } from "@/lib/analytics-consent";
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
@@ -85,6 +86,7 @@ export function ContactForm() {
         {state === "submitting" ? "Bezig met versturen..." : "Vraag websiteplan aan"}
         {state !== "submitting" ? <ArrowRight className="ml-2 h-4 w-4" /> : null}
       </button>
+      <TrustProofRow compact />
     </form>
   );
 }

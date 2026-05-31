@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
+import { TrustProofRow } from "@/components/trust-proof-row";
 import { metadataForPath } from "@/content/seo";
 import { breadcrumbSchema, collectionPageSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
@@ -161,6 +162,7 @@ export default function ServicesPage() {
                 Bekijk portfolio
               </Link>
             </div>
+            <TrustProofRow className="mt-5" compact />
           </div>
 
           <div className="grid gap-4 rounded-[2rem] border border-black/[0.05] bg-white p-5 shadow-card md:p-7">
@@ -337,10 +339,13 @@ export default function ServicesPage() {
               We bekijken je huidige website, je doelen en de snelste route naar meer vertrouwen, zichtbaarheid en aanvragen.
             </p>
           </div>
-          <Link className="focus-ring inline-flex shrink-0 items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
-            Vraag gratis groeiplan aan
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+          <div className="grid gap-4">
+            <Link className="focus-ring inline-flex shrink-0 items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
+              Vraag gratis groeiplan aan
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            <TrustProofRow compact />
+          </div>
         </div>
       </section>
     </main>

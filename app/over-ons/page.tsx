@@ -123,7 +123,7 @@ export default function AboutPage() {
               <source srcSet="/assets/founder-336.avif 336w, /assets/founder-672.avif 672w" type="image/avif" />
               <source srcSet="/assets/founder-336.webp 336w, /assets/founder-672.webp 672w" type="image/webp" />
               <img
-                alt="Oprichter en CEO van MagisData"
+                alt="Oprichter van MagisData"
                 className="relative mx-auto h-auto w-full max-w-[22rem] object-cover object-center pt-8"
                 height={420}
                 loading="lazy"
@@ -131,20 +131,24 @@ export default function AboutPage() {
                 width={336}
               />
             </picture>
+            <figcaption className="relative border-t border-black/[0.05] bg-white/80 px-6 py-5 text-center">
+              <p className="text-lg font-extrabold tracking-normal text-navy">Daniël Magis</p>
+              <p className="mt-1 text-sm font-bold text-muted">Oprichter van MagisData</p>
+            </figcaption>
           </figure>
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-              Founder
+              Oprichter
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy md:text-4xl">
-              Gebouwd door een founder die strategie en techniek bij elkaar houdt.
+              Gebouwd door Daniël Magis, oprichter van MagisData.
             </h2>
             <div className="mt-5 grid gap-4 text-base leading-8 text-muted">
               <p>
                 MagisData is opgericht vanuit een eenvoudige overtuiging: een website moet niet alleen mooi zijn, maar ook helder uitleggen waarom iemand voor je bedrijf zou kiezen.
               </p>
               <p>
-                Als founder en CEO kijk ik daarom naar het hele systeem achter online groei: positionering, zoekintentie, AI-vindbaarheid, techniek, content en de route naar een aanvraag.
+                Als oprichter kijkt Daniël Magis naar het hele systeem achter online groei: positionering, zoekintentie, AI-vindbaarheid, techniek, content en de route naar een aanvraag.
               </p>
             </div>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
