@@ -13,6 +13,7 @@ test("retired intent and legacy case URLs redirect to canonical pages", () => {
     "/website-laten-maken /webontwikkeling 301",
     "/seo-website-laten-maken /webontwikkeling 301",
     "/seo-bureau /seo-diensten 301",
+    "/seo-services /seo-diensten 301!",
     "/ai-seo-bureau /ai-vindbaarheid 301",
     "/cases/lokale-dienstverlener /cases 301",
     "/cases/adviesbureau /cases 301",
@@ -20,9 +21,20 @@ test("retired intent and legacy case URLs redirect to canonical pages", () => {
   ].forEach((rule) => assert.match(redirects, new RegExp(rule.replaceAll("/", "\\/"))));
 
   const landingPages = read("content/landing-pages.ts");
-  ["website-laten-maken", "seo-website-laten-maken", "seo-bureau", "ai-seo-bureau"].forEach(
+  ["website-laten-maken", "seo-website-laten-maken", "seo-bureau", "seo-services", "ai-seo-bureau"].forEach(
     (slug) => assert.doesNotMatch(landingPages, new RegExp(`slug: "${slug}"`))
   );
+});
+
+test("legacy English SEO slug is not exposed as an indexable route", () => {
+  const seo = read("content/seo.ts");
+  assert.doesNotMatch(seo, /path: "\/seo-services"/);
+
+  const sitemap = read("app/sitemap.ts");
+  assert.match(sitemap, /sitemapRoutes/);
+
+  const redirects = read("public/_redirects");
+  assert.match(redirects, /\/seo-services \/seo-diensten 301!/);
 });
 
 test("analytics is gated by consent and has no automatic layout loader", async () => {
@@ -71,4 +83,23 @@ test("top-level landing pages are concrete static routes for export-safe 404s", 
   slugs.forEach((slug) => {
     assert.ok(existsSync(new URL(`../app/${slug}/page.tsx`, import.meta.url)), `${slug} has static route`);
   });
+});
+
+test("pricing page is discoverable and lists core package groups", () => {
+  assert.ok(existsSync(new URL("../app/prijzen/page.tsx", import.meta.url)));
+
+  const seo = read("content/seo.ts");
+  assert.match(seo, /path: "\/prijzen"/);
+  assert.match(seo, /Prijzen voor websites, SEO en AI-automatisering/);
+
+  const header = read("components/site-header.tsx");
+  assert.match(header, /href: "\/prijzen"/);
+  assert.match(header, /label: "Prijzen"/);
+
+  const pricingPage = read("app/prijzen/page.tsx");
+  ["Websites", "SEO, AEO en GEO", "AI automatisering", "Groeigesprek"].forEach((group) => {
+    assert.match(pricingPage, new RegExp(group));
+  });
+  assert.match(pricingPage, /Gratis scan vooraf/);
+  assert.match(pricingPage, /Eerste groeigesprek gratis/);
 });

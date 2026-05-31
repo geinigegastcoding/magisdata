@@ -16,7 +16,8 @@ const columns = [
       { label: "GEO optimalisatie", href: "/geo-optimalisatie" },
       { label: "AEO optimalisatie", href: "/aeo-optimalisatie" },
       { label: "AI en automatisering", href: "/ai-infrastructuur" },
-      { label: "Strategisch advies", href: "/strategisch-advies" }
+      { label: "Strategisch advies", href: "/strategisch-advies" },
+      { label: "Prijzen", href: "/prijzen" }
     ]
   },
   {
@@ -55,6 +56,7 @@ const columns = [
       { label: "AI-vindbaarheid", href: "/inzichten/ai-vindbaarheid" },
       { label: "Over MagisData", href: "/over-ons" },
       { label: "Contact", href: "/contact" },
+      { label: "Prijzen", href: "/prijzen" },
       { label: "Status", href: "/status" },
       { label: "Privacybeleid", href: "/privacybeleid" },
       { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }

@@ -30,6 +30,7 @@ const navigation: NavigationItem[] = [
   { label: "Over MagisData", href: "/over-ons" },
   { label: "Portfolio", href: "/cases" },
   { label: "Inzichten", href: "/inzichten" },
+  { label: "Prijzen", href: "/prijzen" },
   { label: "Contact", href: "/contact" }
 ];
 
@@ -42,7 +43,7 @@ export function SiteHeader() {
       >
         <Logo className="shrink-0" />
 
-        <div className="hidden items-center gap-9 lg:flex">
+        <div className="hidden items-center gap-9 xl:flex">
           {navigation.map((item) => (
             <Link
               className="focus-ring rounded-full px-1 py-2 text-[0.95rem] font-semibold text-ink transition hover:text-orange"
@@ -56,7 +57,7 @@ export function SiteHeader() {
 
         <Link
           data-track-cta="header"
-          className="focus-ring hidden items-center rounded-xl bg-orange px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-dark lg:inline-flex"
+          className="focus-ring hidden items-center rounded-xl bg-orange px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-dark xl:inline-flex"
           href="/contact"
         >
           Vraag gratis websiteplan aan
@@ -65,7 +66,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <details className="group relative lg:hidden">
+        <details className="group relative xl:hidden">
           <summary className="focus-ring grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line bg-white text-navy shadow-card [&::-webkit-details-marker]:hidden">
             <span className="sr-only">Navigatie openen</span>
             <Menu className="h-5 w-5" />

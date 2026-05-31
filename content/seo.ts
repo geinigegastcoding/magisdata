@@ -37,6 +37,15 @@ const coreSeoRoutes: SeoRoute[] = [
     lastModified
   },
   {
+    path: "/prijzen",
+    title: "Prijzen voor websites, SEO en AI-automatisering | MagisData",
+    description: "Bekijk de prijzen van MagisData voor websites, SEO, AEO, GEO, AI automatisering en groeigesprekken met duidelijke pakketten.",
+    keywords: ["MagisData prijzen", "website prijs", "SEO pakket prijs", "AI automatisering prijs", "groeigesprek"],
+    priority: 0.82,
+    changeFrequency: "monthly",
+    lastModified
+  },
+  {
     path: "/webontwikkeling",
     title: "Website laten maken voor SEO, vertrouwen en meer aanvragen",
     description: "Laat een snelle, professionele website maken die je aanbod duidelijk uitlegt, vertrouwen opbouwt en bezoekers omzet in aanvragen.",
