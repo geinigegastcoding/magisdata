@@ -153,7 +153,7 @@ export function Services() {
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <article className="group flex min-h-[380px] flex-col rounded-[1.75rem] border border-black/[0.05] bg-white p-8 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card" key={service.title}>
+              <article className="group flex min-h-[380px] flex-col rounded-[1.75rem] border border-line bg-white p-8 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card" key={service.title}>
                 <div className={cn("grid h-[4.5rem] w-[4.5rem] place-items-center rounded-[1.25rem] transition group-hover:scale-105", service.color)}>
                   <Icon className="h-9 w-9" strokeWidth={2} />
                 </div>
@@ -181,7 +181,7 @@ export function Process() {
   return (
     <section className="relative bg-cream py-8 md:py-12">
       <div className="container">
-        <div className="relative overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white/86 p-8 shadow-sm md:p-12">
+        <div className="relative overflow-hidden rounded-[2rem] border border-line bg-white/86 p-8 shadow-sm md:p-12">
           <SmallDoodle className="bottom-8 left-10 hidden h-12 w-32 -rotate-6 lg:block" />
           <div className="relative grid gap-14 lg:grid-cols-[0.42fr_1.58fr] lg:items-center">
             <div>
@@ -311,7 +311,7 @@ export function CustomerQuestions() {
           </div>
           <div className="grid gap-4">
             {questions.map((question) => (
-              <article className="rounded-[2rem] border border-black/[0.05] bg-cream/50 p-6 shadow-sm" key={question.title}>
+              <article className="rounded-[2rem] border border-line bg-cream/50 p-6 shadow-sm" key={question.title}>
                 <div className="flex gap-4">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-orange-soft text-orange">
                     <HelpCircle className="h-5 w-5" />
@@ -335,7 +335,7 @@ export function CaseStudyInsights() {
     <section className="relative bg-cream py-8 md:py-12">
       <SmallDoodle className="right-14 top-4 hidden h-14 w-36 rotate-3 text-orange/20 lg:block" />
       <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <article className="overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:p-9">
+        <article className="overflow-hidden rounded-[2rem] border border-line bg-white p-7 shadow-sm md:p-9">
           <div className="grid gap-7 md:grid-cols-[0.96fr_1.04fr] md:items-center">
             <div>
               <Eyebrow>Uit het portfolio</Eyebrow>
@@ -386,7 +386,7 @@ export function CaseStudyInsights() {
           </div>
         </article>
 
-        <article className="rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:p-9">
+        <article className="rounded-[2rem] border border-line bg-white p-7 shadow-sm md:p-9">
           <Eyebrow>Laatste inzichten</Eyebrow>
           <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.03em] text-navy">Tips, trends en inspiratie</h2>
           <div className="mt-7 grid gap-5 md:grid-cols-3">

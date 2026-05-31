@@ -59,6 +59,7 @@ Do not add/don't:
 - generic template pages not tied to MagisData website goals
 - broad refactors not required for current task
 - open a dev server (I will do that myself.)
+- dark colors
 ## Change Checklist (Before Finishing)
 
 1. Run relevant checks (`npm run typecheck` and/or `npm run build` for substantial changes).

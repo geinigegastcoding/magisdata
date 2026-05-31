@@ -79,7 +79,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white shadow-card">
+          <div className="relative overflow-hidden rounded-[2rem] border border-line bg-white shadow-card">
             <div className="absolute inset-x-0 top-0 h-1 bg-orange" />
             <div className="grid min-h-[390px] gap-8 p-7 sm:p-9 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
               <div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
       <section className="bg-white py-14 md:py-20">
         <div className="container grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-          <figure className="relative overflow-hidden rounded-[2rem] border border-black/[0.05] bg-cream shadow-card">
+          <figure className="relative overflow-hidden rounded-[2rem] border border-line bg-cream shadow-card">
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-peach to-transparent" />
             <picture>
               <source srcSet="/assets/founder-336.avif 336w, /assets/founder-672.avif 672w" type="image/avif" />
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 width={336}
               />
             </picture>
-            <figcaption className="relative border-t border-black/[0.05] bg-white/80 px-6 py-5 text-center">
+            <figcaption className="relative border-t border-line bg-white/80 px-6 py-5 text-center">
               <p className="text-lg font-extrabold tracking-normal text-navy">Daniël Magis</p>
               <p className="mt-1 text-sm font-bold text-muted">Oprichter van MagisData</p>
             </figcaption>
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 ["Precisie", "Pagina's die klanten, Google en AI-systemen begrijpen."],
                 ["Eigenaarschap", "Strategie en uitvoering blijven dicht bij elkaar."]
               ].map(([title, text]) => (
-                <div className="rounded-2xl border border-black/[0.05] bg-cream/50 p-5 shadow-sm" key={title}>
+                <div className="rounded-2xl border border-line bg-cream/50 p-5 shadow-sm" key={title}>
                   <SearchCheck className="h-5 w-5 text-orange" />
                   <h3 className="mt-4 font-extrabold text-navy">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted">{text}</p>
@@ -183,7 +183,7 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {principles.map(({ icon: Icon, ...principle }) => (
-              <article className="rounded-[2rem] border border-black/[0.05] bg-cream/50 p-6 shadow-sm" key={principle.title}>
+              <article className="rounded-[2rem] border border-line bg-cream/50 p-6 shadow-sm" key={principle.title}>
                 <span className="grid h-12 w-12 place-items-center rounded-2xl bg-orange-soft text-orange">
                   <Icon className="h-6 w-6" />
                 </span>
@@ -208,7 +208,7 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-4">
             {workingStyle.map((item) => (
-              <div className="flex gap-3 rounded-2xl border border-black/[0.05] bg-white p-5 shadow-sm" key={item}>
+              <div className="flex gap-3 rounded-2xl border border-line bg-white p-5 shadow-sm" key={item}>
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange" />
                 <p className="text-sm font-semibold leading-6 text-ink">{item}</p>
               </div>
@@ -237,7 +237,7 @@ export default function AboutPage() {
               ["Voor AI-systemen", "Diensten, doelgroep, bewijs en contactgegevens moeten consistent genoeg zijn om goed samengevat te worden."],
               ["Voor je team", "De structuur moet begrijpelijk blijven, zodat nieuwe content en verbeteringen later makkelijk toegevoegd kunnen worden."]
             ].map(([title, text]) => (
-              <article className="rounded-2xl border border-black/[0.05] bg-cream/50 p-5 shadow-sm" key={title}>
+              <article className="rounded-2xl border border-line bg-cream/50 p-5 shadow-sm" key={title}>
                 <h3 className="font-extrabold text-navy">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{text}</p>
               </article>
@@ -262,7 +262,7 @@ export default function AboutPage() {
               { href: "/cases", title: "Bekijk portfolio", text: "Ontdek hoe duidelijke structuur en positionering in eerder werk samenkomen." },
               { href: "/contact", title: "Maak kennis zonder druk", text: "Leg je situatie kort voor en krijg een eerlijke eerste richting." }
             ].map((link) => (
-              <Link className="focus-ring group rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft" href={link.href} key={link.href}>
+              <Link className="focus-ring group rounded-[2rem] border border-line bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft" href={link.href} key={link.href}>
                 <h3 className="text-xl font-extrabold text-navy group-hover:text-orange">{link.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{link.text}</p>
                 <span className="mt-6 inline-flex items-center text-sm font-extrabold text-orange">

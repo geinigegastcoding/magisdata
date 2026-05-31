@@ -103,7 +103,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
           Terug naar inzichten
         </Link>
 
-        <div className="mt-8 rounded-[2rem] border border-black/[0.05] bg-white p-7 shadow-sm md:p-10">
+        <div className="mt-8 rounded-[2rem] border border-line bg-white p-7 shadow-sm md:p-10">
           <span className="grid h-14 w-14 place-items-center rounded-2xl bg-blue-soft text-blue">
             <Icon className="h-7 w-7" strokeWidth={2.1} />
           </span>
@@ -149,7 +149,7 @@ export default async function InsightDetailPage({ params }: PageProps) {
             </h2>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {(applicationSteps[item.slug] ?? []).map((step) => (
-                <div className="rounded-2xl border border-black/[0.05] bg-cream/60 p-5 shadow-sm" key={step.title}>
+                <div className="rounded-2xl border border-line bg-cream/60 p-5 shadow-sm" key={step.title}>
                   <h3 className="font-extrabold text-navy">{step.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted">{step.text}</p>
                 </div>

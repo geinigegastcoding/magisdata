@@ -194,7 +194,7 @@ function PlanGrid({
           className={`relative flex min-h-[430px] flex-col rounded-[2rem] border p-6 shadow-sm ${
             plan.recommended
               ? "border-orange bg-white ring-2 ring-orange-soft"
-              : "border-black/[0.06] bg-white"
+              : "border-line bg-white"
           }`}
           key={plan.name}
         >
@@ -292,7 +292,7 @@ export default function PricingPage() {
             <TrustProofRow className="mt-5" compact />
           </div>
 
-          <aside className="rounded-[2rem] border border-black/[0.06] bg-white p-7 shadow-card md:p-8">
+          <aside className="rounded-[2rem] border border-line bg-white p-7 shadow-card md:p-8">
             <div className="flex items-center gap-4">
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-orange-soft text-orange">
                 <ClipboardCheck className="h-7 w-7" />
@@ -401,7 +401,7 @@ export default function PricingPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {advicePlans.map((plan) => (
-              <article className="rounded-[2rem] border border-black/[0.06] bg-white p-7 shadow-sm" key={plan.name}>
+              <article className="rounded-[2rem] border border-line bg-white p-7 shadow-sm" key={plan.name}>
                 <MessageCircle className="h-6 w-6 text-orange" />
                 <h3 className="mt-5 text-2xl font-extrabold tracking-normal text-navy">{plan.name}</h3>
                 <p className="mt-3 text-2xl font-black text-ink">{plan.price}</p>
@@ -440,7 +440,7 @@ export default function PricingPage() {
                 text: "Start met AI automatisering wanneer intake, opvolging of interne taken blijven terugkomen."
               }
             ].map(({ icon: Icon, ...item }) => (
-              <article className="rounded-2xl border border-black/[0.06] bg-cream/50 p-5 shadow-sm" key={item.title}>
+              <article className="rounded-2xl border border-line bg-cream/50 p-5 shadow-sm" key={item.title}>
                 <Icon className="h-5 w-5 text-orange" />
                 <h3 className="mt-4 font-extrabold text-navy">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{item.text}</p>
@@ -462,7 +462,7 @@ export default function PricingPage() {
           </div>
           <div className="grid gap-4">
             {faqs.map((faq) => (
-              <details className="group rounded-2xl border border-black/[0.05] bg-white p-5 shadow-sm" key={faq.question}>
+              <details className="group rounded-2xl border border-line bg-white p-5 shadow-sm" key={faq.question}>
                 <summary className="cursor-pointer list-none text-base font-extrabold text-navy">
                   {faq.question}
                 </summary>

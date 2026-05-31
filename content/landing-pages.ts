@@ -171,7 +171,15 @@ function makeGrowthPage({
   directAnswer,
   deliverables,
   comparison,
-  audienceFit
+  audienceFit,
+  presentation,
+  heroPoints,
+  sections,
+  detailSections,
+  steps,
+  faqs,
+  primaryCta,
+  secondaryCta
 }: {
   slug: string;
   eyebrow: string;
@@ -185,6 +193,14 @@ function makeGrowthPage({
   deliverables?: { title: string; text: string }[];
   comparison?: { title: string; text: string }[];
   audienceFit?: PageContent["audienceFit"];
+  presentation?: PageContent["presentation"];
+  heroPoints?: string[];
+  sections?: PageContent["sections"];
+  detailSections?: PageContent["detailSections"];
+  steps?: PageContent["steps"];
+  faqs?: PageContent["faqs"];
+  primaryCta?: string;
+  secondaryCta?: string;
 }): LandingPage {
   return {
     slug,
@@ -204,14 +220,15 @@ function makeGrowthPage({
     deliverables,
     comparison,
     audienceFit,
-    primaryCta: "Vraag gratis groeiplan aan",
-    secondaryCta: "Bekijk diensten",
-    heroPoints: [
+    presentation,
+    primaryCta: primaryCta ?? "Vraag gratis groeiplan aan",
+    secondaryCta: secondaryCta ?? "Bekijk diensten",
+    heroPoints: heroPoints ?? [
       `Gericht op ${primaryKeyword}`,
       "Sterke pagina's, metadata en interne links",
       "Rustige strategie voor betere vindbaarheid en aanvragen"
     ],
-    sections: [
+    sections: sections ?? [
       {
         title: `Waarom ${primaryKeyword} belangrijk is`,
         text:
@@ -256,7 +273,7 @@ function makeGrowthPage({
         ]
       }
     ],
-    detailSections: [
+    detailSections: detailSections ?? [
       {
         eyebrow: "Verdieping",
         title: `Hoe je ${primaryKeyword} sterker maakt dan een standaard landingspagina`,
@@ -281,13 +298,13 @@ function makeGrowthPage({
         ]
       }
     ],
-    steps: [
+    steps: steps ?? [
       { title: "Kansen kiezen", text: "We bepalen welke zoektermen en pagina's het meeste kunnen opleveren." },
       { title: "Pagina bouwen", text: "We maken duidelijke content rond zoekintentie, bewijs en conversie." },
       { title: "Techniek goedzetten", text: "We zetten metadata, schema, sitemap en interne links strak neer." },
       { title: "Doorbouwen", text: "We vullen aan met content die autoriteit en vindbaarheid versterkt." }
     ],
-    faqs: [
+    faqs: faqs ?? [
       {
         question: `Voor wie is ${primaryKeyword} geschikt?`,
         answer:
@@ -393,10 +410,72 @@ export const landingPages: LandingPage[] = [
       "We richten je website op de diensten, plaatsen en klantvragen die lokaal tellen, zonder dunne of spammy plaatsnaampagina's.",
     directAnswer:
       "Lokale SEO maakt je diensten zichtbaar voor mensen die in jouw werkgebied zoeken. We verbinden diensten, servicegebieden, consistente contactgegevens en nuttige lokale antwoorden.",
+    presentation: {
+      variant: "local",
+      heroTitle: "Regio, dienst, bewijs",
+      heroCaption: "Lokale vindbaarheid werkt pas wanneer werkgebied en aanbod feitelijk kloppen.",
+      sectionEyebrow: "Lokale laag",
+      processEyebrow: "Regioroute",
+      processTitle: "Zo bouwen we lokale dekking zonder plaatsnaamvulling",
+      faqTitle: "Lokale SEO scherp",
+      ctaTitle: "Wil je weten welke regio-pagina zin heeft?",
+      ctaText: "We kiezen alleen pagina's waar dienst, gebied en zoekintentie genoeg eigen inhoud hebben."
+    },
+    heroPoints: [
+      "Werkgebied en diensten helder gekoppeld",
+      "Geen gekopieerde plaatsnaampagina's",
+      "Contactgegevens consistent en vindbaar"
+    ],
     deliverables: [
       { title: "Servicegebied", text: "Werkgebied en diensten helder benoemen zonder gekopieerde plaatsnaampagina's." },
       { title: "Lokale pagina's", text: "Unieke inhoud per gekozen doelmarkt met passende vragen en links." },
       { title: "NAP-controle", text: "Bedrijfsnaam, adres en telefoon consistent op website en profielbasis." }
+    ],
+    sections: [
+      {
+        title: "Lokale intentie is concreet",
+        text:
+          "Iemand zoekt niet alleen een vakgebied. Die zoekt hulp in een bereikbaar gebied, met een dienst die nu past.",
+        items: [
+          { title: "Dienst plus plaats", text: "Elke pagina koppelt een echte dienst aan een echt werkgebied." },
+          { title: "Praktische signalen", text: "Adres, telefoon, opening, route en servicegebied blijven consistent." },
+          { title: "Lokale vragen", text: "We beantwoorden vragen die bij regio, planning en bereikbaarheid horen." }
+        ]
+      },
+      {
+        title: "Wat we juist niet bouwen",
+        text:
+          "Lokale SEO wordt zwak wanneer elke plaats dezelfde tekst krijgt met een andere stadsnaam.",
+        items: [
+          { title: "Geen kopiepagina's", text: "Alleen lokale pagina's met eigen aanleiding, diensten of werkgebiedcontext." },
+          { title: "Geen lege claims", text: "We vermijden beloftes over dekking of resultaten die niet onderbouwd zijn." },
+          { title: "Geen zoekwoordstapeling", text: "Plaatsnamen ondersteunen de inhoud; ze vervangen de inhoud niet." }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Lokale betrouwbaarheid",
+        title: "Wat een lokale bezoeker eerst wil controleren",
+        text:
+          "Lokale bezoekers scannen op nabijheid, beschikbaarheid, herkenbare diensten en een simpele route naar contact. De pagina moet die check snel mogelijk maken.",
+        items: [
+          { title: "Werkgebied", text: "Waar help je wel, waar niet en welke diensten horen daarbij?" },
+          { title: "Bereikbaarheid", text: "Telefoon, formulier en vervolgstap moeten vooral mobiel meteen duidelijk zijn." },
+          { title: "Herkenning", text: "Voorbeelden, vragen en servicecontext moeten bij de regio passen." }
+        ]
+      }
+    ],
+    steps: [
+      { title: "Gebied kiezen", text: "We bepalen welke plaatsen en diensten echt prioriteit hebben." },
+      { title: "Pagina scheiden", text: "We voorkomen dat lokale pagina's elkaar of hoofdservices kannibaliseren." },
+      { title: "Signalen zetten", text: "NAP, interne links, schema en contactroutes worden consistent." },
+      { title: "Uitbreiden", text: "Nieuwe regio's komen pas erbij wanneer er genoeg eigen context is." }
+    ],
+    faqs: [
+      { question: "Moet ik voor elke plaats een pagina maken?", answer: "Nee. Alleen waar je genoeg eigen context, zoekvraag en servicewaarde hebt." },
+      { question: "Is lokale SEO alleen Google Business Profile?", answer: "Nee. Je profiel helpt, maar je website moet diensten, gebied en contact net zo duidelijk dragen." },
+      { question: "Kan dit zonder kantoor in elke stad?", answer: "Ja, zolang je feitelijk beschrijft waar je werkt en geen locaties claimt die niet bestaan." }
     ]
   }),
   makeGrowthPage({
@@ -426,6 +505,22 @@ export const landingPages: LandingPage[] = [
       "We ordenen je diensten, expertise, bewijs en antwoorden zodat AI-systemen minder hoeven te gokken en je bedrijf consistenter kunnen beschrijven.",
     directAnswer:
       "AI-vindbaarheid is de overkoepelende aanpak om je merk, diensten en expertise begrijpelijk te maken voor AI-gestuurde zoekervaringen. SEO blijft de basis; GEO en AEO voegen entiteit- en antwoordstructuur toe.",
+    presentation: {
+      variant: "ai",
+      heroTitle: "Model context",
+      heroCaption: "AI-systemen hebben vaste termen, duidelijke feiten en controleerbare bronnen nodig.",
+      sectionEyebrow: "AI-leesbaarheid",
+      processEyebrow: "Contextbouw",
+      processTitle: "Van rommelige website naar bruikbare context",
+      faqTitle: "AI-vindbaarheid eerlijk",
+      ctaTitle: "Wil je weten waar AI nu moet gokken?",
+      ctaText: "We zoeken inconsistenties in diensten, definities, bewijs en contactinformatie."
+    },
+    heroPoints: [
+      "Consistente termen voor diensten en expertise",
+      "Antwoorden die zelfstandig te begrijpen zijn",
+      "Bewijs en contactgegevens niet verstopt"
+    ],
     deliverables: [
       { title: "Terminologie", text: "Vaste namen en definities voor diensten, doelgroep en expertise." },
       { title: "Antwoorden", text: "Korte, zichtbare passages die zelfstandig begrijpelijk en citeerbaar zijn." },
@@ -434,6 +529,52 @@ export const landingPages: LandingPage[] = [
     comparison: [
       { title: "GEO", text: "Structuur voor entitybegrip en generatieve ontdekking." },
       { title: "AEO", text: "Vraag-antwoordopbouw voor extracteerbare antwoorden." }
+    ],
+    sections: [
+      {
+        title: "AI-vindbaarheid begint bij minder dubbelzinnigheid",
+        text:
+          "AI-systemen vatten samen wat je website duidelijk genoeg maakt. Vage diensten, wisselende termen en losse claims maken die samenvatting zwakker.",
+        items: [
+          { title: "Vaste woorden", text: "Dezelfde dienst heet niet op vijf pagina's net anders." },
+          { title: "Afgebakende expertise", text: "Je website maakt duidelijk wat je wel doet, niet doet en voor wie." },
+          { title: "Controleerbare context", text: "Bewijs, cases, voorwaarden en contactinformatie staan dicht bij claims." }
+        ]
+      },
+      {
+        title: "Wat AI nodig heeft om je bedrijf correct te noemen",
+        text:
+          "Niet meer tekst, maar betere informatie-eenheden: definities, antwoorden, verbanden en bronachtige passages.",
+        items: [
+          { title: "Definities", text: "Korte uitleg van diensten en begrippen die zonder omliggende alinea werken." },
+          { title: "Relaties", text: "Interne links laten zien welke diensten, branches, cases en inzichten bij elkaar horen." },
+          { title: "Herhaling met reden", text: "Belangrijke feiten komen terug op logische plekken, niet als keywordvulling." }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "AI-context",
+        title: "Het verschil tussen vindbaar zijn en begrijpbaar zijn",
+        text:
+          "Een pagina kan geindexeerd zijn en toch weinig bruikbare context geven. AI-vindbaarheid vraagt om passages die een systeem veilig kan samenvatten zonder aannames.",
+        items: [
+          { title: "Wie", text: "Bedrijf, locatie, doelgroep en rol zijn consistent." },
+          { title: "Wat", text: "Diensten worden concreet beschreven met grenzen en voorbeelden." },
+          { title: "Waarom vertrouwen", text: "Bewijs en procesinformatie ondersteunen claims zonder harde resultaatbeloftes." }
+        ]
+      }
+    ],
+    steps: [
+      { title: "Context audit", text: "We zoeken dubbelzinnige termen, gaten en losse claims." },
+      { title: "Entiteiten ordenen", text: "Bedrijf, diensten, doelgroep en bewijs krijgen vaste plekken." },
+      { title: "Antwoorden schrijven", text: "Belangrijke vragen krijgen korte, zichtbare antwoorden." },
+      { title: "Verbanden leggen", text: "Interne links en schema maken relaties leesbaar." }
+    ],
+    faqs: [
+      { question: "Kun je garanderen dat ChatGPT ons noemt?", answer: "Nee. Dat kan niemand eerlijk garanderen. We kunnen wel zorgen dat je website minder vaag en beter bruikbaar wordt." },
+      { question: "Is AI-vindbaarheid hetzelfde als GEO?", answer: "Nee. AI-vindbaarheid is breder. GEO en AEO zijn onderdelen van die bredere structuur." },
+      { question: "Moet ik nieuwe pagina's maken?", answer: "Soms. Vaak begint het met bestaande pagina's scherper maken voordat er nieuwe content nodig is." }
     ]
   }),
   makeGrowthPage({
@@ -446,18 +587,80 @@ export const landingPages: LandingPage[] = [
     secondaryKeywords: ["digitaal bureau Nederland", "website en SEO bureau", "online groei bureau", "digital growth agency"],
     audience: "MKB-bedrijven en professionele dienstverleners",
     promise:
-      "We zetten Google Ads in wanneer zoekadvertenties aansluiten op een concrete dienst, passende landingspagina en meetbare contactactie.",
+      "We kiezen pas kanalen nadat website, boodschap, meetbaarheid en contactroute logisch staan. Daardoor blijft online marketing een systeem in plaats van losse acties.",
     directAnswer:
-      "Google Ads brengt je zichtbaar bij mensen die actief zoeken naar je dienst. MagisData richt zich op zoekcampagnes, passende landingspagina's, conversiemeting en gerichte optimalisatie.",
+      "Een online marketing bureau helpt bij zichtbaarheid, vertrouwen en aanvragen over meerdere kanalen. MagisData begint bij website, SEO, AI-vindbaarheid, conversie en meting, en voegt campagnes pas toe wanneer de basis klopt.",
+    presentation: {
+      variant: "growth",
+      heroTitle: "Groei-architectuur",
+      heroCaption: "Kanaalkeuzes volgen uit positionering, pagina's, meting en opvolging.",
+      sectionEyebrow: "Groeisysteem",
+      processEyebrow: "Volgorde",
+      processTitle: "Eerst fundament, dan verkeer opschalen",
+      faqTitle: "Marketing zonder losse trucs",
+      ctaTitle: "Wil je weten welke marketinglaag ontbreekt?",
+      ctaText: "We kijken naar website, vindbaarheid, conversie, meting en opvolging als een geheel."
+    },
+    heroPoints: [
+      "Website, SEO, AI en CRO in samenhang",
+      "Kanaalkeuze op basis van je aanbod",
+      "Geen campagnes zonder meetbare contactroute"
+    ],
     deliverables: [
-      { title: "Zoekcampagnes", text: "Advertentiegroepen en zoektermen gericht op relevante commerciële vragen." },
-      { title: "Landingspagina-match", text: "Advertentie en pagina sluiten aan op dezelfde dienst en vervolgstap." },
-      { title: "Conversiemeting", text: "Contactacties meten na toestemming, zodat optimalisatie op echte signalen rust." }
+      { title: "Groeidiagnose", text: "Bepalen of het grootste lek in zichtbaarheid, boodschap, conversie of meting zit." },
+      { title: "Kanaalplan", text: "SEO, AI-vindbaarheid, content of campagnes kiezen op basis van koopintentie." },
+      { title: "Meetbasis", text: "Contactacties meten na toestemming, zodat optimalisatie op echte signalen rust." }
     ],
     audienceFit: {
-      for: ["Bedrijven met concreet aanbod en budget voor actieve zoekvraag.", "Diensten met duidelijke contact- of offerteactie."],
-      notFor: ["Social-advertentiecampagnes of onbewezen groeibeloften.", "Campagnes zonder werkende landingspagina of meetbare contactroute."]
-    }
+      for: ["Bedrijven met concreet aanbod en ambitie om structureel meer aanvragen te krijgen.", "Dienstverleners die website, vindbaarheid en conversie samen willen verbeteren."],
+      notFor: ["Losse social posts of campagnes zonder websitebasis.", "Groeibeloftes zonder meetbare contactroute of realistische scope."]
+    },
+    sections: [
+      {
+        title: "Online marketing faalt vaak door verkeerde volgorde",
+        text:
+          "Meer verkeer helpt weinig wanneer bezoekers op een vage pagina landen of contact niet wordt gemeten.",
+        items: [
+          { title: "Positionering", text: "Eerst moet duidelijk zijn waarom iemand voor jou kiest." },
+          { title: "Pagina's", text: "Diensten, bewijs en contactroute moeten de zoekvraag dragen." },
+          { title: "Kanalen", text: "SEO, AI-vindbaarheid, content of ads krijgen pas prioriteit na diagnose." }
+        ]
+      },
+      {
+        title: "Wat we koppelen",
+        text:
+          "MagisData behandelt marketing als infrastructuur: elk onderdeel moet het volgende onderdeel sterker maken.",
+        items: [
+          { title: "Vindbaarheid", text: "SEO, AEO en GEO maken expertise beter vindbaar en begrijpbaar." },
+          { title: "Conversie", text: "CTA's, bewijs en formulieren maken verkeer waardevoller." },
+          { title: "Meting", text: "Zonder meetbasis weet je niet welke verbetering echt telt." }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Strategie",
+        title: "Wanneer campagnes wel zinvol worden",
+        text:
+          "Campagnes kunnen werken zodra de landingspagina klopt, de zoekvraag commercieel genoeg is en de contactactie meetbaar is. Anders koop je vooral onzekerheid.",
+        items: [
+          { title: "Vraag", text: "Is er actieve behoefte naar deze dienst of moet de markt eerst worden opgevoed?" },
+          { title: "Pagina", text: "Sluit de pagina precies aan op de belofte van het kanaal?" },
+          { title: "Opvolging", text: "Worden aanvragen snel en consistent opgevolgd?" }
+        ]
+      }
+    ],
+    steps: [
+      { title: "Diagnose", text: "We bepalen welk deel van het groeisysteem het meeste remt." },
+      { title: "Basis herstellen", text: "Website, boodschap, contactroute en meting krijgen prioriteit." },
+      { title: "Kanaal kiezen", text: "We kiezen SEO, AI, content of campagnes op basis van intentie." },
+      { title: "Verbeteren", text: "We scherpen aan op signalen uit bezoekers en aanvragen." }
+    ],
+    faqs: [
+      { question: "Doen jullie ook advertenties?", answer: "Alleen wanneer de pagina, zoekvraag en meetbasis er klaar voor zijn. Anders is SEO, CRO of content vaak logischer." },
+      { question: "Is online marketing hetzelfde als SEO?", answer: "Nee. SEO is een onderdeel. Online marketing omvat ook conversie, meting, content, AI-vindbaarheid en soms campagnes." },
+      { question: "Waar begin je mee?", answer: "Met diagnose. Vaak is de eerste winst niet meer verkeer, maar duidelijkere pagina's en betere contactroutes." }
+    ]
   }),
   makeGrowthPage({
     slug: "conversie-optimalisatie",
@@ -469,7 +672,80 @@ export const landingPages: LandingPage[] = [
     secondaryKeywords: ["website conversie verbeteren", "meer leads uit website", "CRO bureau", "website optimalisatie"],
     audience: "bedrijven met websiteverkeer dat te weinig aanvragen oplevert",
     promise:
-      "We verbeteren boodschap, pagina-opbouw, CTA's, formulieren, bewijs en mobiele ervaring zodat bezoekers sneller begrijpen en handelen."
+      "We verbeteren boodschap, pagina-opbouw, CTA's, formulieren, bewijs en mobiele ervaring zodat bezoekers sneller begrijpen en handelen.",
+    directAnswer:
+      "Conversie optimalisatie verbetert wat bezoekers doen nadat ze op je website landen. MagisData kijkt naar duidelijkheid, bewijs, CTA's, formulieren, mobiel gebruik en meetbare contactacties.",
+    presentation: {
+      variant: "conversion",
+      heroTitle: "Frictie audit",
+      heroCaption: "Meer aanvragen begint vaak met minder twijfel, minder zoeken en minder formulierfrictie.",
+      sectionEyebrow: "Beslispad",
+      processEyebrow: "CRO-werkbank",
+      processTitle: "Van twijfelpunt naar betere contactroute",
+      faqTitle: "CRO praktisch",
+      ctaTitle: "Wil je weten waar bezoekers afhaken?",
+      ctaText: "We bekijken boodschap, bewijs, CTA's, formulieren en mobiel gedrag."
+    },
+    heroPoints: [
+      "Pagina's scherper op beslismomenten",
+      "CTA's en formulieren korter en duidelijker",
+      "Bewijs dichter bij twijfelpunten"
+    ],
+    deliverables: [
+      { title: "Frictiepunten", text: "Waar bezoekers moeten zoeken, twijfelen of opnieuw lezen." },
+      { title: "CTA-route", text: "Primaire en secundaire acties per pagina helder maken." },
+      { title: "Formuliercheck", text: "Velden, foutmeldingen en mobiele bruikbaarheid aanscherpen." }
+    ],
+    audienceFit: {
+      for: ["Websites met bezoekers maar te weinig aanvragen.", "Bedrijven die eerst meer uit bestaand verkeer willen halen."],
+      notFor: ["A/B-testclaims zonder genoeg verkeer.", "Meer conversie beloven zonder meetbare basis of aanbodfit."]
+    },
+    sections: [
+      {
+        title: "CRO kijkt naar beslissingen, niet alleen knoppen",
+        text:
+          "Een bezoeker neemt kleine beslissingen: snap ik dit, vertrouw ik dit, past dit bij mij, kan ik makkelijk contact opnemen?",
+        items: [
+          { title: "Duidelijkheid", text: "De eerste alinea moet de dienst, doelgroep en uitkomst concreet maken." },
+          { title: "Bewijs", text: "Voorbeelden, proces en voorwaarden horen vlak bij twijfelmomenten." },
+          { title: "Actie", text: "De volgende stap moet herkenbaar blijven zonder agressief te worden." }
+        ]
+      },
+      {
+        title: "Wat we meestal vinden",
+        text:
+          "Veel websites verliezen aanvragen door kleine obstakels die samen groot worden.",
+        items: [
+          { title: "Te veel keuzes", text: "Meerdere CTA's met dezelfde status maken de route onduidelijk." },
+          { title: "Te laat bewijs", text: "Vertrouwen komt pas onderaan, terwijl twijfel al bovenaan ontstaat." },
+          { title: "Te zwaar formulier", text: "Een eerste gesprek vraagt vaak minder velden dan een offerte-intake." }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Beslismomenten",
+        title: "Waar conversie meestal breekt",
+        text:
+          "CRO is geen truc om bezoekers te duwen. Het haalt ruis weg uit het pad tussen behoefte en contact.",
+        items: [
+          { title: "Boven de vouw", text: "Is direct duidelijk wat je doet en voor wie?" },
+          { title: "Middenpagina", text: "Worden bezwaren beantwoord voordat de CTA terugkomt?" },
+          { title: "Contact", text: "Vraagt de contactroute alleen wat nodig is voor een eerste reactie?" }
+        ]
+      }
+    ],
+    steps: [
+      { title: "Pagina lezen", text: "We volgen de route alsof we een kritische bezoeker zijn." },
+      { title: "Frictie markeren", text: "We noteren twijfel, onduidelijke keuzes en contactobstakels." },
+      { title: "Aanpassen", text: "We verbeteren copy, volgorde, CTA's, bewijs en formulieren." },
+      { title: "Meten", text: "We kijken of contactacties beter zichtbaar en meetbaar worden." }
+    ],
+    faqs: [
+      { question: "Heb ik veel verkeer nodig voor CRO?", answer: "Voor harde A/B-tests wel. Voor een kwalitatieve frictie-audit niet; die kan ook met minder verkeer waarde geven." },
+      { question: "Gaat CRO alleen over knoppen?", answer: "Nee. Knoppen zijn laat in het proces. Meestal zitten de problemen in boodschap, bewijs, volgorde of formulierfrictie." },
+      { question: "Kunnen jullie conversiestijging garanderen?", answer: "Nee. We verbeteren de voorwaarden voor meer aanvragen, maar garanderen geen percentages zonder betrouwbare testbasis." }
+    ]
   }),
   makeWebsitePage({
     slug: "website-voor-loodgieters",

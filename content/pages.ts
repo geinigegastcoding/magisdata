@@ -17,6 +17,17 @@ export type PageContent = {
   eyebrow: string;
   title: string;
   description: string;
+  presentation?: {
+    variant?: "default" | "search" | "local" | "ai" | "entity" | "conversion" | "growth";
+    heroTitle?: string;
+    heroCaption?: string;
+    sectionEyebrow?: string;
+    processEyebrow?: string;
+    processTitle?: string;
+    faqTitle?: string;
+    ctaTitle?: string;
+    ctaText?: string;
+  };
   directAnswer?: {
     title: string;
     text: string;
@@ -283,6 +294,17 @@ export const servicePages = {
     title: "Beter gevonden worden door klanten die al zoeken naar wat jij aanbiedt",
     description:
       "SEO helpt je website zichtbaar worden in Google. Wij maken dit praktisch: heldere pagina's, goede structuur en content die antwoord geeft op echte klantvragen.",
+    presentation: {
+      variant: "search",
+      heroTitle: "Zoekvraag naar pagina",
+      heroCaption: "Geen losse keywords, maar een route van intentie naar bewijs.",
+      sectionEyebrow: "Zoeksysteem",
+      processEyebrow: "SEO-ritme",
+      processTitle: "Van zoekvraag naar betere pagina",
+      faqTitle: "SEO zonder ruis",
+      ctaTitle: "Wil je weten welke SEO-kans eerst komt?",
+      ctaText: "We kijken naar zoekintentie, bestaande pagina's en de route naar contact."
+    },
     directAnswer: {
       title: "Wat zijn SEO diensten?",
       text:
@@ -408,6 +430,17 @@ export const servicePages = {
     title: "Zorg dat AI-zoekmachines je bedrijf goed kunnen begrijpen",
     description:
       "Mensen zoeken steeds vaker via AI-antwoorden in plaats van alleen via klassieke zoekresultaten. Wij maken je website duidelijker, beter gestructureerd en makkelijker te citeren.",
+    presentation: {
+      variant: "entity",
+      heroTitle: "Entity map",
+      heroCaption: "Bedrijf, diensten, bewijs en context moeten hetzelfde verhaal dragen.",
+      sectionEyebrow: "Begripslaag",
+      processEyebrow: "Entity-opbouw",
+      processTitle: "Zo maken we je informatie citeerbaar",
+      faqTitle: "GEO scherp afgebakend",
+      ctaTitle: "Wil je weten hoe AI je bedrijf nu kan lezen?",
+      ctaText: "We beoordelen structuur, entiteiten, bewijsplaatsen en interne verbanden."
+    },
     directAnswer: {
       title: "Wat is GEO optimalisatie?",
       text:

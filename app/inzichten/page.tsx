@@ -91,7 +91,7 @@ export default function InsightsPage() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-card">
+          <div className="rounded-[2rem] border border-line bg-white p-6 shadow-card">
             <div className="flex items-center gap-4">
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-blue-soft text-blue">
                 <FileText className="h-7 w-7" />
@@ -129,7 +129,7 @@ export default function InsightsPage() {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {insights.map(({ icon: Icon, ...item }) => (
-              <article className="flex min-h-[360px] flex-col rounded-[2rem] border border-black/[0.05] bg-cream/50 p-7 shadow-sm" key={item.slug}>
+              <article className="flex min-h-[360px] flex-col rounded-[2rem] border border-line bg-cream/50 p-7 shadow-sm" key={item.slug}>
                 <span className="grid h-14 w-14 place-items-center rounded-2xl bg-blue-soft text-blue">
                   <Icon className="h-7 w-7" strokeWidth={2.1} />
                 </span>
@@ -159,7 +159,7 @@ export default function InsightsPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {clusters.map(({ icon: Icon, ...cluster }) => (
-              <Link className="focus-ring group rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft hover:bg-peach" href={cluster.href} key={cluster.href}>
+              <Link className="focus-ring group rounded-[2rem] border border-line bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft hover:bg-peach" href={cluster.href} key={cluster.href}>
                 <span className="grid h-12 w-12 place-items-center rounded-2xl bg-orange-soft text-orange">
                   <Icon className="h-6 w-6" />
                 </span>
@@ -193,7 +193,7 @@ export default function InsightsPage() {
               ["Vul ontbrekende vragen aan", "Maak van terugkerende klantvragen korte antwoordblokken. Dat helpt bezoekers, Google en AI-systemen tegelijk."],
               ["Koppel kennis aan bewijs", "Link relevante inzichten naar cases, diensten en contactmomenten zodat lezers logisch verder kunnen."]
             ].map(([title, text]) => (
-              <article className="rounded-2xl border border-black/[0.05] bg-cream/50 p-5 shadow-sm" key={title}>
+              <article className="rounded-2xl border border-line bg-cream/50 p-5 shadow-sm" key={title}>
                 <h3 className="font-extrabold text-navy">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{text}</p>
               </article>

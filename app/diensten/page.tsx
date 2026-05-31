@@ -165,7 +165,7 @@ export default function ServicesPage() {
             <TrustProofRow className="mt-5" compact />
           </div>
 
-          <div className="grid gap-4 rounded-[2rem] border border-black/[0.05] bg-white p-5 shadow-card md:p-7">
+          <div className="grid gap-4 rounded-[2rem] border border-line bg-white p-5 shadow-card md:p-7">
             <div className="flex items-start gap-4 rounded-2xl border border-orange-soft bg-gradient-to-br from-peach via-yellow-soft to-green-soft/70 p-5 shadow-sm">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-orange shadow-sm ring-1 ring-orange-soft">
                 <Compass className="h-6 w-6" />
@@ -201,7 +201,7 @@ export default function ServicesPage() {
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {services.map(({ icon: Icon, ...service }) => (
-              <Link className="focus-ring group flex min-h-[260px] flex-col rounded-[2rem] border border-black/[0.05] bg-cream/50 p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft hover:bg-peach" href={service.href} key={service.href}>
+              <Link className="focus-ring group flex min-h-[260px] flex-col rounded-[2rem] border border-line bg-cream/50 p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-soft hover:bg-peach" href={service.href} key={service.href}>
                 <span className={`grid h-14 w-14 place-items-center rounded-2xl ${service.color}`}>
                   <Icon className="h-6 w-6" />
                 </span>
@@ -260,7 +260,7 @@ export default function ServicesPage() {
           </div>
           <div className="grid gap-4">
             {routes.map((route, index) => (
-              <Link className="focus-ring grid gap-4 rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:border-orange-soft hover:bg-peach md:grid-cols-[auto_1fr_auto] md:items-center" href={route.href} key={route.title}>
+              <Link className="focus-ring grid gap-4 rounded-[2rem] border border-line bg-white p-6 shadow-sm transition hover:border-orange-soft hover:bg-peach md:grid-cols-[auto_1fr_auto] md:items-center" href={route.href} key={route.title}>
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-orange text-sm font-black text-white">
                   {index + 1}
                 </span>
@@ -294,7 +294,7 @@ export default function ServicesPage() {
               ["Te weinig bezoekers", "Versterk SEO, AEO en GEO met pagina's die echte zoekvragen beantwoorden."],
               ["Te veel handwerk", "Maak intake, opvolging en terugkerende communicatie slimmer met praktische automatisering."]
             ].map(([title, text]) => (
-              <article className="rounded-2xl border border-black/[0.05] bg-cream/50 p-5 shadow-sm" key={title}>
+              <article className="rounded-2xl border border-line bg-cream/50 p-5 shadow-sm" key={title}>
                 <h3 className="font-extrabold text-navy">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{text}</p>
               </article>

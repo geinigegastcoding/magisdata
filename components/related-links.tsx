@@ -27,7 +27,7 @@ export function RelatedLinks({ links, title = "Ook relevant" }: RelatedLinksProp
           <div className="grid gap-4 md:grid-cols-3">
             {links.map((link) => (
               <Link
-                className="focus-ring group rounded-2xl border border-black/[0.05] bg-cream/50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-orange-soft hover:bg-peach"
+                className="focus-ring group rounded-2xl border border-line bg-cream/50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-orange-soft hover:bg-peach"
                 href={link.href}
                 key={link.href}
               >

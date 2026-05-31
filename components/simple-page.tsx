@@ -11,7 +11,7 @@ export function SimplePage({ eyebrow, title, description }: SimplePageProps) {
   return (
     <main className="bg-cream/40 py-20">
       <section className="container">
-        <div className="mx-auto max-w-3xl rounded-[2.25rem] border border-black/[0.06] bg-white p-8 text-center shadow-card md:p-12">
+        <div className="mx-auto max-w-3xl rounded-[2.25rem] border border-line bg-white p-8 text-center shadow-card md:p-12">
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
             {eyebrow}
           </p>

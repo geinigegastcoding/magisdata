@@ -62,7 +62,7 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 overflow-hidden rounded-[2rem] border border-black/[0.05] bg-white shadow-card">
+            <div className="mt-8 overflow-hidden rounded-[2rem] border border-line bg-white shadow-card">
               <div className="photo-scene relative min-h-[260px] p-6">
                 <div className="max-w-xs rounded-2xl bg-white/86 p-5 shadow-sm backdrop-blur">
                   <p className="text-sm font-extrabold text-navy">Liever direct contact?</p>
@@ -95,7 +95,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <section className="rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-card md:p-8" aria-labelledby="contact-form-title">
+          <section className="rounded-[2rem] border border-line bg-white p-6 shadow-card md:p-8" aria-labelledby="contact-form-title">
             <div className="flex items-center gap-4">
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-orange-soft text-orange">
                 <MessageSquareText className="h-7 w-7" />
@@ -126,7 +126,7 @@ export default function ContactPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {reasons.map(({ icon: Icon, ...reason }) => (
-              <article className="rounded-[2rem] border border-black/[0.05] bg-cream/50 p-6 shadow-sm" key={reason.title}>
+              <article className="rounded-[2rem] border border-line bg-cream/50 p-6 shadow-sm" key={reason.title}>
                 <span className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-soft text-blue">
                   <Icon className="h-6 w-6" />
                 </span>
@@ -157,7 +157,7 @@ export default function ContactPage() {
               ["Je groeidoel", "Vertel of je vooral meer vertrouwen, meer bezoekers, betere leads of minder handwerk wilt."],
               ["Je twijfels", "Noem gerust wat je lastig vindt: kosten, planning, techniek, content of de juiste volgorde."]
             ].map(([title, text]) => (
-              <article className="rounded-2xl border border-black/[0.05] bg-white p-5 shadow-sm" key={title}>
+              <article className="rounded-2xl border border-line bg-white p-5 shadow-sm" key={title}>
                 <h3 className="font-extrabold text-navy">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{text}</p>
               </article>
@@ -196,7 +196,7 @@ export default function ContactPage() {
               { href: "/cases", title: "Eerst portfolio bekijken?", text: "Bekijk webdesignprojecten met uitleg over structuur, SEO en ontwerpkeuzes." },
               { href: "/over-ons", title: "Eerst kennismaken?", text: "Lees hoe MagisData denkt over strategie, AI en groei." }
             ].map((link) => (
-              <Link className="focus-ring group rounded-[2rem] border border-black/[0.05] bg-white p-6 shadow-sm transition hover:border-orange-soft hover:bg-peach" href={link.href} key={link.href}>
+              <Link className="focus-ring group rounded-[2rem] border border-line bg-white p-6 shadow-sm transition hover:border-orange-soft hover:bg-peach" href={link.href} key={link.href}>
                 <h3 className="text-xl font-extrabold text-navy group-hover:text-orange">{link.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted">{link.text}</p>
                 <span className="mt-5 inline-flex items-center text-sm font-extrabold text-orange">
