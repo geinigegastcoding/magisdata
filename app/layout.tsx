@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     "SEO bureau",
     "online groei",
     "conversie optimalisatie",
-    "SEA campagnes"
+    "online marketing bureau"
   ],
   openGraph: {
     type: "website",

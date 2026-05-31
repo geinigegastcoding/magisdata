@@ -580,86 +580,115 @@ export const landingPages: LandingPage[] = [
   makeGrowthPage({
     slug: "online-marketing-bureau",
     eyebrow: "Online marketing bureau",
-    title: "Online marketing bureau voor websites, SEO en meetbare groei",
+    title: "Online marketing bureau voor vindbare websites die aanvragen opleveren",
     description:
-      "MagisData helpt ondernemers met website, SEO, AEO, GEO, conversie en praktische automatisering vanuit een heldere groeistrategie.",
+      "MagisData helpt ondernemers hun website, vindbaarheid, conversieroute en meetbasis in de juiste volgorde verbeteren.",
     primaryKeyword: "online marketing bureau",
-    secondaryKeywords: ["digitaal bureau Nederland", "website en SEO bureau", "online groei bureau", "digital growth agency"],
+    secondaryKeywords: ["online marketing bureau Nederland", "website en SEO bureau", "online marketing voor MKB", "groeimarketing voor dienstverleners"],
     audience: "MKB-bedrijven en professionele dienstverleners",
     promise:
-      "We kiezen pas kanalen nadat website, boodschap, meetbaarheid en contactroute logisch staan. Daardoor blijft online marketing een systeem in plaats van losse acties.",
+      "We bepalen eerst welke laag ontbreekt: een scherpe websitebasis, betere vindbaarheid, meer vertrouwen op de pagina of betere meting. Pas daarna heeft extra verkeer zin.",
     directAnswer:
-      "Een online marketing bureau helpt bij zichtbaarheid, vertrouwen en aanvragen over meerdere kanalen. MagisData begint bij website, SEO, AI-vindbaarheid, conversie en meting, en voegt campagnes pas toe wanneer de basis klopt.",
+      "MagisData is geen klassiek socialmedia- of advertentiebureau. We bouwen en verbeteren de websitebasis, SEO-structuur, AI-vindbaarheid, conversieroutes en meetpunten die nodig zijn om relevante aanvragen te krijgen.",
     presentation: {
       variant: "growth",
-      heroTitle: "Groei-architectuur",
-      heroCaption: "Kanaalkeuzes volgen uit positionering, pagina's, meting en opvolging.",
-      sectionEyebrow: "Groeisysteem",
+      heroTitle: "Website -> vindbaarheid -> aanvragen",
+      heroCaption: "Kanaalkeuzes volgen uit aanbod, pagina's, zoekintentie, bewijs en contactroute.",
+      sectionEyebrow: "Marketinglagen",
       processEyebrow: "Volgorde",
-      processTitle: "Eerst fundament, dan verkeer opschalen",
-      faqTitle: "Marketing zonder losse trucs",
-      ctaTitle: "Wil je weten welke marketinglaag ontbreekt?",
-      ctaText: "We kijken naar website, vindbaarheid, conversie, meting en opvolging als een geheel."
+      processTitle: "Eerst de rem vinden, dan gericht verbeteren",
+      faqTitle: "Online marketing scherp afgebakend",
+      ctaTitle: "Wil je weten welke marketinglaag eerst aandacht vraagt?",
+      ctaText: "We kijken naar je aanbod, pagina's, vindbaarheid, contactroute en meetbasis als een geheel."
     },
     heroPoints: [
-      "Website, SEO, AI en CRO in samenhang",
-      "Kanaalkeuze op basis van je aanbod",
-      "Geen campagnes zonder meetbare contactroute"
+      "Aanbod en landingspagina eerst scherp",
+      "Daarna SEO, AI-vindbaarheid of CRO kiezen",
+      "Extra verkeer pas na duidelijke contactroute"
     ],
     deliverables: [
-      { title: "Groeidiagnose", text: "Bepalen of het grootste lek in zichtbaarheid, boodschap, conversie of meting zit." },
-      { title: "Kanaalplan", text: "SEO, AI-vindbaarheid, content of campagnes kiezen op basis van koopintentie." },
-      { title: "Meetbasis", text: "Contactacties meten na toestemming, zodat optimalisatie op echte signalen rust." }
+      { title: "Marketingdiagnose", text: "Bepalen of het grootste lek in aanbod, pagina, vindbaarheid, vertrouwen of contact zit." },
+      { title: "Uitvoeringsroute", text: "Kiezen welke pagina's, SEO-verbeteringen, AI-context of CRO-aanpassingen eerst nodig zijn." },
+      { title: "Meet- en contactbasis", text: "Contactacties en belangrijke routes zichtbaar maken, zodat verbetering op echte signalen rust." }
+    ],
+    comparison: [
+      {
+        title: "Geen generiek advertentiebureau",
+        text: "We starten niet met losse campagnes, social posts of kanaaldruk wanneer de websitebasis nog onduidelijk is."
+      },
+      {
+        title: "Wel website-geleide groei",
+        text: "We verbeteren pagina's, zoekstructuur, bewijs, contactroutes en meetpunten die online marketing betrouwbaar maken."
+      },
+      {
+        title: "Geen losse optimalisaties",
+        text: "Een SEO-tekst, formulierwijziging of advertentie is zwak wanneer die niet past bij aanbod en intentie."
+      },
+      {
+        title: "Wel duidelijke volgorde",
+        text: "We leggen vast welke laag eerst moet worden opgelost en welke vervolgstap daarna logisch is."
+      }
     ],
     audienceFit: {
-      for: ["Bedrijven met concreet aanbod en ambitie om structureel meer aanvragen te krijgen.", "Dienstverleners die website, vindbaarheid en conversie samen willen verbeteren."],
-      notFor: ["Losse social posts of campagnes zonder websitebasis.", "Groeibeloftes zonder meetbare contactroute of realistische scope."]
+      for: ["Bedrijven met concreet aanbod die meer relevante aanvragen uit hun website willen halen.", "Dienstverleners die website, SEO, AI-vindbaarheid en conversie in samenhang willen verbeteren."],
+      notFor: ["Losse social posts, losse advertentiecampagnes of kanaalbeheer zonder websitebasis.", "Groeibeloftes zonder meetbare contactroute, realistische scope of duidelijke aanbodfit."]
     },
     sections: [
       {
-        title: "Online marketing faalt vaak door verkeerde volgorde",
+        title: "Welke laag mist nu?",
         text:
-          "Meer verkeer helpt weinig wanneer bezoekers op een vage pagina landen of contact niet wordt gemeten.",
+          "Online marketing wordt pas helder wanneer je ziet waar groei nu vastloopt. Soms is dat vindbaarheid, maar vaak zit het probleem eerder in de pagina of later in de contactroute.",
         items: [
-          { title: "Positionering", text: "Eerst moet duidelijk zijn waarom iemand voor jou kiest." },
-          { title: "Pagina's", text: "Diensten, bewijs en contactroute moeten de zoekvraag dragen." },
-          { title: "Kanalen", text: "SEO, AI-vindbaarheid, content of ads krijgen pas prioriteit na diagnose." }
+          { title: "Websitebasis", text: "Aanbod, doelgroep, bewijs en contactstap moeten binnen enkele seconden duidelijk zijn." },
+          { title: "Vindbaarheid", text: "SEO en AI-vindbaarheid werken beter wanneer diensten, vragen en interne links logisch geordend zijn." },
+          { title: "Conversie", text: "CTA's, formulieren en bewijs moeten twijfels wegnemen voordat bezoekers afhaken." }
         ]
       },
       {
-        title: "Wat we koppelen",
+        title: "Wat we wel en niet doen",
         text:
-          "MagisData behandelt marketing als infrastructuur: elk onderdeel moet het volgende onderdeel sterker maken.",
+          "MagisData behandelt online marketing als infrastructuur. Elk onderdeel moet de pagina, vindbaarheid of aanvraagroute sterker maken.",
         items: [
-          { title: "Vindbaarheid", text: "SEO, AEO en GEO maken expertise beter vindbaar en begrijpbaar." },
-          { title: "Conversie", text: "CTA's, bewijs en formulieren maken verkeer waardevoller." },
-          { title: "Meting", text: "Zonder meetbasis weet je niet welke verbetering echt telt." }
+          { title: "Wel bouwen en verbeteren", text: "We maken pagina's scherper, structureren content en verbeteren routes naar contact." },
+          { title: "Wel verbinden", text: "SEO, AI-vindbaarheid, CRO en meting krijgen een plek in een begrijpelijke volgorde." },
+          { title: "Niet los inkopen", text: "We verkopen geen losse kanaaltrucs wanneer aanbod, landingspagina of opvolging nog niet klopt." }
+        ]
+      },
+      {
+        title: "Kanaalkeuze volgt uit intentie",
+        text:
+          "Niet elk bedrijf heeft hetzelfde kanaal nodig. De juiste keuze hangt af van vraag, concurrentie, paginafit en bewijs.",
+        items: [
+          { title: "SEO", text: "Logisch wanneer mensen actief zoeken naar je dienst en je pagina's de zoekvraag kunnen beantwoorden." },
+          { title: "AI-vindbaarheid", text: "Logisch wanneer je expertise, diensten en antwoorden duidelijker als context moeten worden herkend." },
+          { title: "Campagnes", text: "Alleen zinvol wanneer landingspagina, aanbod, meting en opvolging klaar zijn voor extra verkeer." }
         ]
       }
     ],
     detailSections: [
       {
-        eyebrow: "Strategie",
-        title: "Wanneer campagnes wel zinvol worden",
+        eyebrow: "Afbakening",
+        title: "Wanneer extra verkeer wel zinvol wordt",
         text:
-          "Campagnes kunnen werken zodra de landingspagina klopt, de zoekvraag commercieel genoeg is en de contactactie meetbaar is. Anders koop je vooral onzekerheid.",
+          "Meer bezoekers helpen pas wanneer de pagina aansluit op de behoefte en de contactactie duidelijk genoeg is. Anders versterkt verkeer vooral bestaande ruis.",
         items: [
-          { title: "Vraag", text: "Is er actieve behoefte naar deze dienst of moet de markt eerst worden opgevoed?" },
-          { title: "Pagina", text: "Sluit de pagina precies aan op de belofte van het kanaal?" },
-          { title: "Opvolging", text: "Worden aanvragen snel en consistent opgevolgd?" }
+          { title: "Vraag", text: "Zoeken mensen actief naar deze dienst of moet eerst uitleg en vertrouwen worden opgebouwd?" },
+          { title: "Pagina", text: "Sluit de pagina aan op de belofte waarmee iemand binnenkomt?" },
+          { title: "Meting", text: "Zijn contactacties en belangrijke keuzes zichtbaar genoeg om verbetering te beoordelen?" }
         ]
       }
     ],
     steps: [
-      { title: "Diagnose", text: "We bepalen welk deel van het groeisysteem het meeste remt." },
-      { title: "Basis herstellen", text: "Website, boodschap, contactroute en meting krijgen prioriteit." },
-      { title: "Kanaal kiezen", text: "We kiezen SEO, AI, content of campagnes op basis van intentie." },
-      { title: "Verbeteren", text: "We scherpen aan op signalen uit bezoekers en aanvragen." }
+      { title: "Audit", text: "We bekijken aanbod, pagina's, zoekintentie, bewijs en contactroute." },
+      { title: "Prioriteit", text: "We kiezen de laag die nu het meeste remt." },
+      { title: "Uitvoering", text: "We verbeteren pagina's, contentstructuur, vindbaarheid of conversie gericht." },
+      { title: "Ritme", text: "We blijven aanscherpen op basis van zichtbare signalen en aanvragen." }
     ],
     faqs: [
-      { question: "Doen jullie ook advertenties?", answer: "Alleen wanneer de pagina, zoekvraag en meetbasis er klaar voor zijn. Anders is SEO, CRO of content vaak logischer." },
-      { question: "Is online marketing hetzelfde als SEO?", answer: "Nee. SEO is een onderdeel. Online marketing omvat ook conversie, meting, content, AI-vindbaarheid en soms campagnes." },
-      { question: "Waar begin je mee?", answer: "Met diagnose. Vaak is de eerste winst niet meer verkeer, maar duidelijkere pagina's en betere contactroutes." }
+      { question: "Doen jullie Google Ads?", answer: "Niet als los startpunt. Advertenties zijn pas logisch wanneer aanbod, landingspagina, meting en opvolging klaar zijn voor extra verkeer." },
+      { question: "Zijn jullie een full-service marketingbureau?", answer: "Nee. We focussen op website-geleide groei: webontwikkeling, SEO, AI-vindbaarheid, conversie en meetbare contactroutes." },
+      { question: "Wanneer kies ik SEO, CRO of een nieuwe website?", answer: "SEO past bij ontbrekende vindbaarheid, CRO bij bezoekers die niet aanvragen en een nieuwe website bij een zwakke basis of verouderde structuur." },
+      { question: "Waar begin je mee?", answer: "Met diagnose. Vaak is de eerste winst niet meer verkeer, maar duidelijkere pagina's, betere bewijsvoering en kortere contactroutes." }
     ]
   }),
   makeGrowthPage({

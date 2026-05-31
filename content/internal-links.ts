@@ -170,9 +170,10 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
     { href: "/inzichten/ai-vindbaarheid", label: "Uitleg over AI-vindbaarheid", description: "Lees waarom duidelijke content belangrijker wordt." }
   ],
   "/online-marketing-bureau": [
-    serviceLinks[6],
+    serviceLinks[1],
+    serviceLinks[7],
     serviceLinks[9],
-    serviceLinks[0]
+    serviceLinks[5]
   ],
   "/conversie-optimalisatie": [
     { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Zie waar conversie vaak stukloopt." },

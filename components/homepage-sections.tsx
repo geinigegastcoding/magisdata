@@ -144,7 +144,7 @@ export function Services() {
             Alles geregeld om online beter gevonden te worden
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted">
-            We helpen met je website, Google, advertenties en duidelijke
+            We helpen met je website, Google, online marketing en duidelijke
             aanvraagformulieren. Zo kunnen klanten je makkelijker vinden en
             sneller contact opnemen.
           </p>

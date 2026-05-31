@@ -79,8 +79,8 @@ const supportingServices = [
   },
   {
     href: "/online-marketing-bureau",
-    title: "Google Ads",
-    text: "Zoekcampagnes met passende landingspagina's en conversiemeting."
+    title: "Online marketing",
+    text: "Website, vindbaarheid, conversie en meetbasis in de juiste volgorde."
   },
   {
     href: "/lokale-seo",
@@ -228,7 +228,7 @@ export default function ServicesPage() {
               Ondersteunende diensten
             </p>
             <h2 className="mt-3 text-3xl font-extrabold text-navy">
-              Specifieke routes voor beheer, lokaal bereik, advertenties en AI-zichtbaarheid
+              Specifieke routes voor beheer, lokaal bereik, online marketing en AI-zichtbaarheid
             </h2>
           </div>
           <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">

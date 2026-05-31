@@ -68,7 +68,7 @@ export function ContactForm() {
           <option>Nieuwe website of herbouw</option>
           <option>Website onderhoud</option>
           <option>SEO, GEO of AEO vindbaarheid</option>
-          <option>Google Ads en conversiemeting</option>
+          <option>Online marketing en meetbasis</option>
           <option>AI en automatisering</option>
           <option>Strategische richting</option>
         </select>

@@ -29,7 +29,7 @@ export function GET() {
       "- AI-vindbaarheid: brede vindbaarheid in AI-antwoorden; GEO en AEO bieden specifieke uitwerking.",
       "- GEO optimalisatie: website-informatie structureren voor generatieve zoekmachines en AI-antwoorden.",
       "- AEO optimalisatie: klantvragen direct beantwoorden voor bezoekers, Google en AI-assistenten.",
-      "- Google Ads: zoekcampagnes, landingspagina-aansluiting en conversiemeting.",
+      "- Online marketing: websitebasis, vindbaarheid, conversieroutes en meetpunten in een duidelijke volgorde.",
       "- AI en automatisering: praktische automatisering voor opvolging, intake en herhalende taken.",
       "- Strategisch advies: prioriteiten bepalen voor website, vindbaarheid en online groei.",
       "",

@@ -10,7 +10,7 @@ const columns = [
       { label: "SEO", href: "/seo-diensten" },
       { label: "Webontwikkeling", href: "/webontwikkeling" },
       { label: "Website onderhoud", href: "/website-onderhoud" },
-      { label: "Google Ads", href: "/online-marketing-bureau" },
+      { label: "Online marketing", href: "/online-marketing-bureau" },
       { label: "Lokale SEO", href: "/lokale-seo" },
       { label: "AI vindbaarheid", href: "/ai-vindbaarheid" },
       { label: "GEO optimalisatie", href: "/geo-optimalisatie" },

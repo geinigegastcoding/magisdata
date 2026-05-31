@@ -63,7 +63,7 @@ export const servicePages = {
     eyebrow: "Diensten",
     title: "Alles wat je website nodig heeft om helder contact mogelijk te maken",
     description:
-      "MagisData helpt ondernemers met websites, vindbaarheid, advertenties en slimme verbeteringen. We houden het duidelijk: wat werkt, wat mist, en welke stap nu het meeste oplevert.",
+      "MagisData helpt ondernemers met websites, vindbaarheid, online marketing en slimme verbeteringen. We houden het duidelijk: wat werkt, wat mist, en welke stap nu het meeste oplevert.",
     primaryCta: "Vraag gratis websiteplan aan",
     secondaryCta: "Bekijk werkwijze",
     heroPoints: [

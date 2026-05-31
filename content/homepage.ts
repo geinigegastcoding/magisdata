@@ -33,9 +33,9 @@ export const services = [
     color: "text-green bg-green-soft"
   },
   {
-    title: "Google Ads",
+    title: "Online marketing",
     description:
-      "Gerichte advertenties voor mensen die nu zoeken naar wat jij aanbiedt.",
+      "Een heldere volgorde voor website, vindbaarheid, conversie en meetbare groei.",
     href: "/online-marketing-bureau",
     icon: Megaphone,
     color: "text-yellow bg-yellow-soft"
@@ -51,7 +51,7 @@ export const services = [
   {
     title: "Online advies",
     description:
-      "Een duidelijk plan voor je website, Google en advertenties.",
+      "Een duidelijk plan voor je website, Google en online groei.",
     href: "/strategisch-advies",
     icon: HeartHandshake,
     color: "text-pink bg-pink-soft"
@@ -73,7 +73,7 @@ export const processSteps = [
   },
   {
     title: "Bouwen",
-    text: "We maken de website, content en campagnes klaar.",
+    text: "We maken de website, content en meetpunten klaar.",
     icon: PenTool,
     color: "text-yellow bg-yellow-soft"
   },
