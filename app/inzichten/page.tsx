@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Bot, FileText, Gauge, LayoutTemplate, Search, Sparkles } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CtaProof } from "@/components/cta-proof";
 import { JsonLd } from "@/components/json-ld";
 import { insights } from "@/content/pages";
 import { metadataForPath } from "@/content/seo";
@@ -89,6 +90,7 @@ export default function InsightsPage() {
                 Bekijk portfolio
               </Link>
             </div>
+            <CtaProof className="mt-5" />
           </div>
 
           <div className="rounded-[2rem] border border-line bg-white p-6 shadow-card">

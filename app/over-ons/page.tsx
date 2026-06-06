@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Layers3, Radar, SearchCheck, Sparkles, Telescope } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CtaProof } from "@/components/cta-proof";
 import { JsonLd } from "@/components/json-ld";
 import { metadataForPath } from "@/content/seo";
 import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
@@ -77,6 +78,7 @@ export default function AboutPage() {
                 Lees onze inzichten
               </Link>
             </div>
+            <CtaProof className="mt-5">Strategie eerst, uitvoering daarna</CtaProof>
           </div>
 
           <div className="relative overflow-hidden rounded-[2rem] border border-line bg-white shadow-card">

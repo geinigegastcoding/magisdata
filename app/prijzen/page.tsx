@@ -12,6 +12,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CtaProof } from "@/components/cta-proof";
 import { JsonLd } from "@/components/json-ld";
 import { TrustProofRow } from "@/components/trust-proof-row";
 import { metadataForPath } from "@/content/seo";
@@ -488,6 +489,7 @@ export default function PricingPage() {
               Vraag pakketadvies
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
+            <CtaProof className="md:self-center" />
           </div>
         </div>
       </section>

@@ -1325,6 +1325,7 @@ export const insights = [
   {
     slug: "website-meer-aanvragen",
     title: "Waarom je website weinig aanvragen krijgt, ook als hij er mooi uitziet",
+    metaTitle: "Waarom je website te weinig aanvragen krijgt",
     summary:
       "Een mooie website werkt pas goed als bezoekers snel begrijpen wat je doet, waarom ze jou kunnen vertrouwen en welke stap ze moeten zetten.",
     datePublished: "2026-05-16",

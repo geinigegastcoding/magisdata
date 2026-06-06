@@ -20,7 +20,7 @@ export type SeoRoute = {
 const coreSeoRoutes: SeoRoute[] = [
   {
     path: "/",
-    title: "Website laten maken, SEO bureau en AI-vindbaarheid | MagisData",
+    title: "Website laten maken voor SEO en AI-vindbaarheid",
     description: "MagisData bouwt snelle websites en helpt als SEO bureau met lokale SEO, AEO, GEO, AI-vindbaarheid en conversie in Nederland.",
     keywords: ["website laten maken", "SEO bureau", "AI vindbaarheid", "AEO optimalisatie", "GEO optimalisatie", "conversie optimalisatie"],
     priority: 1,
@@ -164,7 +164,7 @@ const insightSeoRoutes: SeoRoute[] = [
   },
   ...insights.map((insight) => ({
     path: `/inzichten/${insight.slug}`,
-    title: insight.title,
+    title: insight.metaTitle ?? insight.title,
     description: insight.summary,
     keywords: [insight.title, "SEO inzicht", "website tips", "AI vindbaarheid", "MagisData"],
     priority: 0.65,

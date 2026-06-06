@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { CtaProof } from "@/components/cta-proof";
 import { Logo } from "@/components/logo";
 
 type NavigationItem = {
@@ -55,16 +56,19 @@ export function SiteHeader() {
           ))}
         </div>
 
-        <Link
-          data-track-cta="header"
-          className="focus-ring hidden items-center rounded-xl bg-orange px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-dark xl:inline-flex"
-          href="/contact"
-        >
-          Vraag gratis websiteplan aan
-          <span aria-hidden className="ml-2">
-            -&gt;
-          </span>
-        </Link>
+        <div className="hidden items-center gap-3 xl:flex">
+          <Link
+            data-track-cta="header"
+            className="focus-ring inline-flex items-center rounded-xl bg-orange px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-dark"
+            href="/contact"
+          >
+            Vraag gratis websiteplan aan
+            <span aria-hidden className="ml-2">
+              -&gt;
+            </span>
+          </Link>
+          <CtaProof className="max-w-28" />
+        </div>
 
         <details className="group relative xl:hidden">
           <summary className="focus-ring grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line bg-white text-navy shadow-card [&::-webkit-details-marker]:hidden">
@@ -89,6 +93,7 @@ export function SiteHeader() {
               >
                 Gratis websiteplan
               </Link>
+              <CtaProof className="px-1 pt-1" />
             </div>
           </div>
         </details>

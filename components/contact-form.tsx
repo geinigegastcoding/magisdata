@@ -47,24 +47,24 @@ export function ContactForm() {
   }
 
   return (
-    <form className="mt-8 grid gap-4" onSubmit={handleSubmit}>
+    <form aria-labelledby="contact-form-title" className="mt-8 grid gap-4" onSubmit={handleSubmit}>
       <div className="grid gap-4 md:grid-cols-2">
-        <label className="grid gap-2 text-sm font-bold text-navy">
+        <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-name">
           Naam
-          <input autoComplete="name" className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="naam" required type="text" />
+          <input autoComplete="name" className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-name" name="naam" required type="text" />
         </label>
-        <label className="grid gap-2 text-sm font-bold text-navy">
+        <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-email">
           E-mail
-          <input autoComplete="email" className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="email" required type="email" />
+          <input autoComplete="email" className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-email" name="email" required type="email" />
         </label>
       </div>
-      <label className="grid gap-2 text-sm font-bold text-navy">
+      <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-website">
         Website of bedrijfsnaam
-        <input className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="website" type="text" />
+        <input className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-website" name="website" type="text" />
       </label>
-      <label className="grid gap-2 text-sm font-bold text-navy">
+      <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-subject">
         Waar wil je vooral beweging in?
-        <select className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="onderwerp">
+        <select className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-subject" name="onderwerp">
           <option>Nieuwe website of herbouw</option>
           <option>Website onderhoud</option>
           <option>SEO, GEO of AEO vindbaarheid</option>
@@ -73,9 +73,9 @@ export function ContactForm() {
           <option>Strategische richting</option>
         </select>
       </label>
-      <label className="grid gap-2 text-sm font-bold text-navy">
+      <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-question">
         Korte vraag
-        <textarea className="focus-ring min-h-36 rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" name="vraag" required />
+        <textarea className="focus-ring min-h-36 rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-question" name="vraag" required />
       </label>
       {state === "error" ? (
         <p aria-live="assertive" className="rounded-xl bg-peach px-4 py-3 text-sm font-semibold text-navy" role="alert">

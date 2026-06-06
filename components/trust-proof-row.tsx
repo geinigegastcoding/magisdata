@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils";
 
 const trustProofItems = [
   "Gratis demo vooraf",
-  "Geen verplichting",
+  "Geen verplichting, wel richting",
   "Direct contact met Daniël",
-  "Portfolio beschikbaar"
+  "Portfolio met ontwerpkeuzes"
 ];
 
 type TrustProofRowProps = {

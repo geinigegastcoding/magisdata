@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { CtaProof } from "@/components/cta-proof";
 
 type SimplePageProps = {
   eyebrow: string;
@@ -27,6 +28,9 @@ export function SimplePage({ eyebrow, title, description }: SimplePageProps) {
           >
             Vraag gratis websiteplan aan <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
+          <div className="mt-4">
+            <CtaProof />
+          </div>
         </div>
       </section>
     </main>

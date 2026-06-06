@@ -12,6 +12,7 @@ function makeWebsitePage({
   slug,
   eyebrow,
   title,
+  metaTitle,
   description,
   kind,
   audience,
@@ -25,6 +26,7 @@ function makeWebsitePage({
   slug: string;
   eyebrow: string;
   title: string;
+  metaTitle?: string;
   description: string;
   kind: LandingPage["kind"];
   audience: string;
@@ -43,7 +45,7 @@ function makeWebsitePage({
     eyebrow,
     title,
     description,
-    metaTitle: title,
+    metaTitle: metaTitle ?? title,
     metaDescription: description,
     keywords: [title, `website laten maken${place}`, audience, "MagisData"],
     directAnswer: answer
@@ -163,6 +165,7 @@ function makeGrowthPage({
   slug,
   eyebrow,
   title,
+  metaTitle,
   description,
   primaryKeyword,
   secondaryKeywords,
@@ -184,6 +187,7 @@ function makeGrowthPage({
   slug: string;
   eyebrow: string;
   title: string;
+  metaTitle?: string;
   description: string;
   primaryKeyword: string;
   secondaryKeywords: string[];
@@ -208,7 +212,7 @@ function makeGrowthPage({
     eyebrow,
     title,
     description,
-    metaTitle: title,
+    metaTitle: metaTitle ?? title,
     metaDescription: description,
     keywords: [primaryKeyword, ...secondaryKeywords, "MagisData"],
     directAnswer: directAnswer
@@ -401,6 +405,7 @@ export const landingPages: LandingPage[] = [
     slug: "lokale-seo",
     eyebrow: "Lokale SEO",
     title: "Lokale SEO voor bedrijven die in hun regio gevonden willen worden",
+    metaTitle: "Lokale SEO voor betere vindbaarheid in je regio",
     description:
       "Verbeter je lokale vindbaarheid met sterke servicepagina's, regio-content, Google-profiel signalen en duidelijke contactinformatie.",
     primaryKeyword: "lokale SEO",
@@ -496,6 +501,7 @@ export const landingPages: LandingPage[] = [
     slug: "ai-vindbaarheid",
     eyebrow: "AI vindbaarheid",
     title: "AI vindbaarheid verbeteren voor ChatGPT, Perplexity en Google",
+    metaTitle: "AI-vindbaarheid verbeteren voor moderne zoekers",
     description:
       "Maak je bedrijf beter begrijpbaar, citeerbaar en vindbaar in AI-antwoorden met duidelijke content en sterke structuur.",
     primaryKeyword: "AI vindbaarheid",
@@ -581,6 +587,7 @@ export const landingPages: LandingPage[] = [
     slug: "online-marketing-bureau",
     eyebrow: "Online marketing bureau",
     title: "Online marketing bureau voor vindbare websites die aanvragen opleveren",
+    metaTitle: "Online marketing bureau voor vindbare websites",
     description:
       "MagisData helpt ondernemers hun website, vindbaarheid, conversieroute en meetbasis in de juiste volgorde verbeteren.",
     primaryKeyword: "online marketing bureau",
@@ -867,6 +874,7 @@ export const landingPages: LandingPage[] = [
     slug: "website-laten-maken-leiden",
     eyebrow: "Lokale website",
     title: "Website laten maken Leiden",
+    metaTitle: "Website laten maken Leiden voor lokale groei",
     description:
       "Laat in Leiden een professionele website maken die jouw bedrijf duidelijk positioneert en lokale aanvragen stimuleert.",
     kind: "location",
@@ -892,6 +900,7 @@ export const landingPages: LandingPage[] = [
     slug: "website-laten-maken-den-haag",
     eyebrow: "Lokale website",
     title: "Website laten maken Den Haag",
+    metaTitle: "Website laten maken Den Haag met lokale SEO",
     description:
       "Laat in Den Haag een snelle, duidelijke website maken met sterke lokale SEO en een heldere contactroute.",
     kind: "location",
@@ -914,6 +923,7 @@ export const landingPages: LandingPage[] = [
     slug: "website-laten-maken-rotterdam",
     eyebrow: "Lokale website",
     title: "Website laten maken Rotterdam",
+    metaTitle: "Website laten maken Rotterdam voor meer aanvragen",
     description:
       "Laat in Rotterdam een professionele website maken die vertrouwen opbouwt en meer relevante aanvragen oplevert.",
     kind: "location",
@@ -939,7 +949,7 @@ export const landingPages: LandingPage[] = [
     title: "Privacybeleid",
     description:
       "In dit privacybeleid lees je hoe MagisData zorgvuldig omgaat met contactgegevens en websitegegevens.",
-    metaTitle: "Privacybeleid",
+    metaTitle: "Privacybeleid van MagisData voor bezoekers",
     metaDescription:
       "Lees hoe MagisData omgaat met persoonsgegevens, contactaanvragen, analytics en privacy op de website.",
     keywords: ["privacybeleid MagisData", "privacy website", "persoonsgegevens"],
@@ -993,7 +1003,7 @@ export const landingPages: LandingPage[] = [
     title: "Algemene voorwaarden",
     description:
       "Deze algemene voorwaarden beschrijven hoe MagisData samenwerkt rond websites, SEO en online groeiprojecten.",
-    metaTitle: "Algemene voorwaarden",
+    metaTitle: "Algemene voorwaarden voor MagisData projecten",
     metaDescription:
       "Lees de algemene voorwaarden voor samenwerking met MagisData rond websites, SEO, AEO, GEO en online groei.",
     keywords: ["algemene voorwaarden MagisData", "voorwaarden website bureau"],
@@ -1031,7 +1041,7 @@ export const landingPages: LandingPage[] = [
     title: "Bedankt voor je bericht",
     description:
       "Je aanvraag is ontvangen. MagisData reageert meestal binnen een werkdag met een praktische vervolgstap.",
-    metaTitle: "Bedankt voor je bericht",
+    metaTitle: "Bedankt voor je bericht aan MagisData",
     metaDescription:
       "Bedankt voor je bericht aan MagisData. We reageren meestal binnen een werkdag.",
     keywords: ["bedankt MagisData", "contact ontvangen"],

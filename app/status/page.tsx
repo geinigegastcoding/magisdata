@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CircleCheck, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CtaProof } from "@/components/cta-proof";
 import { JsonLd } from "@/components/json-ld";
 import { metadataForPath } from "@/content/seo";
 import { currentStatus } from "@/content/status";
@@ -54,6 +55,7 @@ export default function StatusPage() {
                 {sitePhone}
               </Link>
             </div>
+            <CtaProof className="mt-4" />
           </div>
         </div>
       </section>
