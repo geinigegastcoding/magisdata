@@ -949,7 +949,7 @@ export const landingPages: LandingPage[] = [
     title: "Privacybeleid",
     description:
       "In dit privacybeleid lees je hoe MagisData zorgvuldig omgaat met contactgegevens en websitegegevens.",
-    metaTitle: "Privacybeleid van MagisData voor bezoekers",
+    metaTitle: "Privacybeleid MagisData: persoonsgegevens en cookies",
     metaDescription:
       "Lees hoe MagisData omgaat met persoonsgegevens, contactaanvragen, analytics en privacy op de website.",
     keywords: ["privacybeleid MagisData", "privacy website", "persoonsgegevens"],

@@ -102,10 +102,10 @@ export function SiteFooter() {
             Contact
           </h2>
           <div className="mt-4 grid gap-3 text-sm text-muted">
-            <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href="mailto:contact%40magisdata.nl">
+            <span className="inline-flex items-center gap-2 rounded-full">
               <Mail className="h-4 w-4" />
               contact [at] magisdata.nl
-            </Link>
+            </span>
             <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href={sitePhoneHref}>
               <Phone className="h-4 w-4" />
               {sitePhone}

@@ -66,10 +66,10 @@ export default function ContactPage() {
               <div className="photo-scene relative min-h-[260px] p-6">
                 <div className="max-w-xs rounded-2xl bg-white/86 p-5 shadow-sm backdrop-blur">
                   <p className="text-sm font-extrabold text-navy">Liever direct contact?</p>
-                  <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-peach px-4 py-3 text-sm font-bold text-orange hover:text-orange-dark" href="mailto:contact%40magisdata.nl">
+                  <span className="mt-3 inline-flex items-center gap-3 rounded-xl bg-peach px-4 py-3 text-sm font-bold text-orange">
                     <Mail className="h-4 w-4" />
                     contact [at] magisdata.nl
-                  </Link>
+                  </span>
                   <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-bold text-navy hover:text-orange" href={sitePhoneHref}>
                     <Phone className="h-4 w-4" />
                     {sitePhone}

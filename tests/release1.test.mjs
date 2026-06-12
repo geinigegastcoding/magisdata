@@ -74,6 +74,11 @@ test("optimized assets and security headers are shipped", () => {
   assert.match(headers, /Content-Security-Policy/);
 });
 
+test("email contact UI avoids Cloudflare email-protection crawl links", () => {
+  assert.doesNotMatch(read("components/site-footer.tsx"), /mailto:/);
+  assert.doesNotMatch(read("app/contact/page.tsx"), /mailto:/);
+});
+
 test("top-level landing pages are concrete static routes for export-safe 404s", () => {
   assert.equal(existsSync(new URL("../app/[slug]/page.tsx", import.meta.url)), false);
 

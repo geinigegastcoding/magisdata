@@ -207,6 +207,8 @@ export function metadataForPath(path: string): Metadata {
     };
   }
 
+  const routeUrl = absoluteUrl(route.path);
+
   return {
     title: {
       absolute: route.title
@@ -214,7 +216,11 @@ export function metadataForPath(path: string): Metadata {
     description: route.description,
     keywords: route.keywords,
     alternates: {
-      canonical: route.path
+      canonical: route.path,
+      languages: {
+        nl: routeUrl,
+        "x-default": routeUrl
+      }
     },
     robots: {
       index: route.indexable !== false,
