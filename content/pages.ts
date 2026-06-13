@@ -17,6 +17,7 @@ export type PageContent = {
   eyebrow: string;
   title: string;
   description: string;
+  serviceArea?: string;
   presentation?: {
     variant?: "default" | "search" | "local" | "ai" | "entity" | "conversion" | "growth";
     heroTitle?: string;
@@ -1080,9 +1081,7 @@ export const caseStudies = [
       "Voor BuitenLijn ontwierp ik een rustige, premium website waarin tuinen, projecten en lokale diensten centraal staan.",
     focus: "Lokale vindbaarheid en adviesaanvraag",
     image: "/assets/case1-1122.webp",
-    imageAvif: "/assets/case1-1122.avif",
     imageSrcSet: "/assets/case1-640.webp 640w, /assets/case1-1122.webp 1122w",
-    imageAvifSrcSet: "/assets/case1-640.avif 640w, /assets/case1-1122.avif 1122w",
     imageWidth: 1122,
     imageHeight: 1402,
     imageAlt: "Webdesign voor BuitenLijn hoveniersbedrijf met tuinprojecten en adviesaanvraag",
@@ -1143,9 +1142,7 @@ export const caseStudies = [
       "Voor Dakbedrijf Hoogstad ontwierp ik een heldere website voor dakrenovatie, lekkageherstel en isolatie, met inspectie en offerte als duidelijke routes.",
     focus: "Lokale service-intentie en offerte",
     image: "/assets/case2-1086.webp",
-    imageAvif: "/assets/case2-1086.avif",
     imageSrcSet: "/assets/case2-640.webp 640w, /assets/case2-1086.webp 1086w",
-    imageAvifSrcSet: "/assets/case2-640.avif 640w, /assets/case2-1086.avif 1086w",
     imageWidth: 1086,
     imageHeight: 1448,
     imageAlt: "Webdesign voor Dakbedrijf Hoogstad met dakrenovatie en offerteaanvraag",
@@ -1206,9 +1203,7 @@ export const caseStudies = [
       "Voor OrbitFlow ontwierp ik een productwebsite die social strategie, platformfuncties en een duidelijke kennismakingsroute samenbrengt.",
     focus: "Productuitleg en kennismaking",
     image: "/assets/case3-935.webp",
-    imageAvif: "/assets/case3-935.avif",
     imageSrcSet: "/assets/case3-480.webp 480w, /assets/case3-935.webp 935w",
-    imageAvifSrcSet: "/assets/case3-480.avif 480w, /assets/case3-935.avif 935w",
     imageWidth: 935,
     imageHeight: 1683,
     imageAlt: "Webdesign voor OrbitFlow social growth platform met dashboardmodules",
@@ -1269,9 +1264,7 @@ export const caseStudies = [
       "Voor Nexora IT Solutions ontwierp ik een zakelijke website voor software, cloud, cybersecurity en data & AI, gericht op heldere expertise en projectintake.",
     focus: "Expertisepositionering en projectaanvraag",
     image: "/assets/case4-748.webp",
-    imageAvif: "/assets/case4-748.avif",
     imageSrcSet: "/assets/case4-480.webp 480w, /assets/case4-748.webp 748w",
-    imageAvifSrcSet: "/assets/case4-480.avif 480w, /assets/case4-748.avif 748w",
     imageWidth: 748,
     imageHeight: 2103,
     imageAlt: "Webdesign voor Nexora IT Solutions met software- en cloudoplossingen",

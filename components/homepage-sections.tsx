@@ -96,7 +96,6 @@ export function Hero() {
           <div className="doodle-loop left-0 top-64 h-28 w-28 lg:-left-4 lg:top-72 lg:h-32 lg:w-32" />
           <figure className="relative z-10 h-[370px] overflow-hidden rounded-[2.75rem] border border-line bg-white p-3 shadow-card sm:h-[420px] lg:h-[440px] lg:rounded-[3rem]">
             <picture>
-              <source sizes="(min-width: 1024px) 52vw, 100vw" srcSet="/assets/case1-640.avif 640w, /assets/case1-1122.avif 1122w" type="image/avif" />
               <source sizes="(min-width: 1024px) 52vw, 100vw" srcSet="/assets/case1-640.webp 640w, /assets/case1-1122.webp 1122w" type="image/webp" />
               <img
                 alt="Website-ontwerp voor een hoveniersbedrijf uit het MagisData portfolio"
@@ -371,7 +370,7 @@ export function CaseStudyInsights() {
             <div className="relative min-h-[270px]">
               <figure className="absolute right-0 top-0 h-64 w-full overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-card md:h-72">
                 <picture>
-                  <source srcSet="/assets/case4-748.avif" type="image/avif" />
+                  <source srcSet="/assets/case4-748.webp" type="image/webp" />
                   <img
                     alt="Webdesign voor Nexora IT Solutions"
                     className="h-full w-full object-cover object-top"

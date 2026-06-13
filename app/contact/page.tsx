@@ -76,11 +76,10 @@ export default function ContactPage() {
                   </Link>
                   <p className="mt-3 flex items-start gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-semibold leading-6 text-ink">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange" />
-                    Suze Groenewegerf 25, Voorschoten
+                    Voorschoten, nabij Leiden
                   </p>
                 </div>
                 <picture>
-                  <source srcSet="/assets/founder-336.avif 336w, /assets/founder-672.avif 672w" type="image/avif" />
                   <source srcSet="/assets/founder-336.webp 336w, /assets/founder-672.webp 672w" type="image/webp" />
                   <img
                     alt="Oprichter van MagisData"

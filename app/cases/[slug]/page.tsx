@@ -91,7 +91,6 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
 
           <figure className="overflow-hidden rounded-[1.5rem] border border-line bg-white p-3">
             <picture>
-              <source sizes="(min-width: 1024px) 40vw, 100vw" srcSet={item.imageAvifSrcSet} type="image/avif" />
               <source sizes="(min-width: 1024px) 40vw, 100vw" srcSet={item.imageSrcSet} type="image/webp" />
               <img
                 alt={item.imageAlt}
@@ -211,7 +210,6 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
           </div>
           <div className="overflow-hidden rounded-[1.75rem] border border-line bg-white p-3 md:p-5">
             <picture>
-              <source sizes="100vw" srcSet={item.imageAvifSrcSet} type="image/avif" />
               <source sizes="100vw" srcSet={item.imageSrcSet} type="image/webp" />
               <img alt={item.imageAlt} className="h-auto w-full rounded-xl" height={item.imageHeight} loading="lazy" src={item.image} width={item.imageWidth} />
             </picture>

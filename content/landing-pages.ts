@@ -56,6 +56,7 @@ function makeWebsitePage({
     metaDescription: description,
     keywords: [title, `website laten maken${place}`, audience, "MagisData"],
     dateModified,
+    serviceArea: location,
     directAnswer: answer
       ? {
           title: `Wat betekent dit voor ${audience}${place}?`,
@@ -191,7 +192,8 @@ function makeGrowthPage({
   faqs,
   primaryCta,
   secondaryCta,
-  dateModified
+  dateModified,
+  serviceArea
 }: {
   slug: string;
   eyebrow: string;
@@ -215,6 +217,7 @@ function makeGrowthPage({
   primaryCta?: string;
   secondaryCta?: string;
   dateModified?: string;
+  serviceArea?: string;
 }): LandingPage {
   return {
     slug,
@@ -226,6 +229,7 @@ function makeGrowthPage({
     metaDescription: description,
     keywords: [primaryKeyword, ...secondaryKeywords, "MagisData"],
     dateModified,
+    serviceArea,
     directAnswer: directAnswer
       ? {
           title: `Wat is ${primaryKeyword}?`,
@@ -323,7 +327,7 @@ function makeGrowthPage({
       {
         question: `Voor wie is ${primaryKeyword} geschikt?`,
         answer:
-          `Voor ${audience} die online beter gevonden willen worden en meer relevante aanvragen willen krijgen.`
+          `Voor ${audience} die online beter gevonden willen worden en de stap naar contact duidelijker willen maken.`
       },
       {
         question: "Is dit alleen SEO of ook AI-vindbaarheid?",
@@ -515,6 +519,7 @@ export const landingPages: LandingPage[] = [
     description:
       "MagisData helpt bedrijven rond Leiden beter gevonden worden met lokale SEO, sterke servicepagina's en technische optimalisatie.",
     dateModified: "2026-06-13",
+    serviceArea: "Leiden",
     primaryKeyword: "SEO bureau Leiden",
     secondaryKeywords: ["SEO Leiden", "lokale SEO Leiden", "zoekmachine optimalisatie Leiden", "SEO specialist Leiden"],
     audience: "bedrijven in Leiden en omgeving",
@@ -545,7 +550,7 @@ export const landingPages: LandingPage[] = [
     ],
     audienceFit: {
       for: [
-        "Lokale dienstverleners die rond Leiden meer relevante aanvragen willen.",
+        "Lokale dienstverleners die rond Leiden duidelijkere contactroutes willen.",
         "Bedrijven met bestaande diensten maar te weinig heldere SEO-pagina's."
       ],
       notFor: [
@@ -756,7 +761,7 @@ export const landingPages: LandingPage[] = [
       }
     ],
     audienceFit: {
-      for: ["Bedrijven met concreet aanbod die meer relevante aanvragen uit hun website willen halen.", "Dienstverleners die website, SEO, AI-vindbaarheid en conversie in samenhang willen verbeteren."],
+      for: ["Bedrijven met concreet aanbod die hun website beter op contactmomenten willen laten aansluiten.", "Dienstverleners die website, SEO, AI-vindbaarheid en conversie in samenhang willen verbeteren."],
       notFor: ["Losse social posts, losse advertentiecampagnes of kanaalbeheer zonder websitebasis.", "Groeibeloftes zonder meetbare contactroute, realistische scope of duidelijke aanbodfit."]
     },
     sections: [
@@ -1064,7 +1069,7 @@ export const landingPages: LandingPage[] = [
       ]
     },
     extraFaqs: [
-      { question: "Waar is MagisData gevestigd ten opzichte van Leiden?", answer: "MagisData vermeldt als adres Suze Groenewegerf 25 in Voorschoten, nabij Leiden." },
+      { question: "Waar is MagisData gevestigd ten opzichte van Leiden?", answer: "MagisData werkt vanuit Voorschoten, nabij Leiden. Een klantbezoeklocatie wordt alleen als zodanig gebruikt wanneer dat feitelijk klopt." },
       { question: "Is een website laten maken in Leiden ook geschikt voor SEO?", answer: "Ja, als de website vanaf het begin duidelijke servicepagina's, metadata, interne links, schema en snelle contactroutes krijgt." },
       { question: "Moet mijn bedrijf in Leiden gevestigd zijn?", answer: "Niet altijd. De pagina moet wel feitelijk kloppen: je moet Leiden of omgeving echt bedienen en geen locatie claimen die niet bestaat." },
       { question: "Hoe snel kan een lokale website live?", answer: "Dat hangt af van pagina-aantal, inhoud, feedback en koppelingen. Voor start maken we scope en planning concreet." },
@@ -1078,6 +1083,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Website laten maken Den Haag met lokale SEO",
     description:
       "Laat in Den Haag een snelle, duidelijke website maken met sterke lokale SEO en een heldere contactroute.",
+    dateModified: "2026-06-13",
     kind: "location",
     audience: "ondernemers",
     location: "Den Haag",
@@ -1100,7 +1106,8 @@ export const landingPages: LandingPage[] = [
     title: "Website laten maken Rotterdam",
     metaTitle: "Website laten maken Rotterdam voor meer aanvragen",
     description:
-      "Laat in Rotterdam een professionele website maken die vertrouwen opbouwt en meer relevante aanvragen oplevert.",
+      "Laat in Rotterdam een professionele website maken die vertrouwen opbouwt en bezoekers helpt de stap naar een aanvraag te zetten.",
+    dateModified: "2026-06-13",
     kind: "location",
     audience: "ondernemers",
     location: "Rotterdam",

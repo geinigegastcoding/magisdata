@@ -21,7 +21,7 @@ export function GET() {
       "- Kernservices: webontwikkeling, SEO-diensten, lokale SEO, AI-vindbaarheid, AEO, GEO, conversie-optimalisatie, AI-automatisering en strategisch advies",
       "- E-mail: " + siteEmail,
       "- Telefoon: " + sitePhone,
-      "- Locatie: Suze Groenewegerf 25, Voorschoten",
+      "- Locatie: Voorschoten, nabij Leiden",
       "- Laatst bijgewerkt: " + lastModified,
       "",
       "## Citation-safe summary",

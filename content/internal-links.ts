@@ -53,7 +53,7 @@ const serviceLinks: InternalLink[] = [
   {
     href: "/conversie-optimalisatie",
     label: "Conversie optimalisatie",
-    description: "Haal meer aanvragen uit bestaande bezoekers."
+    description: "Help bezoekers makkelijker de stap naar een aanvraag zetten."
   }
 ];
 

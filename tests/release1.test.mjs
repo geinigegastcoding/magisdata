@@ -1,9 +1,17 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { extname } from "node:path";
 import test from "node:test";
 
 function read(path) {
   return readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
+}
+
+function listFiles(url) {
+  return readdirSync(url, { withFileTypes: true }).flatMap((entry) => {
+    const childUrl = new URL(entry.name + (entry.isDirectory() ? "/" : ""), url);
+    return entry.isDirectory() ? listFiles(childUrl) : [childUrl];
+  });
 }
 
 test("retired intent and legacy case URLs redirect to canonical pages", () => {
@@ -13,7 +21,7 @@ test("retired intent and legacy case URLs redirect to canonical pages", () => {
     "/website-laten-maken /webontwikkeling 301",
     "/seo-website-laten-maken /webontwikkeling 301",
     "/seo-bureau /seo-diensten 301",
-    "/seo-services /seo-diensten 301!",
+    "/seo-services /seo-diensten 301",
     "/ai-seo-bureau /ai-vindbaarheid 301",
     "/cases/lokale-dienstverlener /cases 301",
     "/cases/adviesbureau /cases 301",
@@ -34,7 +42,7 @@ test("legacy English SEO slug is not exposed as an indexable route", () => {
   assert.match(sitemap, /sitemapRoutes/);
 
   const redirects = read("public/_redirects");
-  assert.match(redirects, /\/seo-services \/seo-diensten 301!/);
+  assert.match(redirects, /\/seo-services \/seo-diensten 301/);
 });
 
 test("analytics is gated by consent and has no automatic layout loader", async () => {
@@ -74,6 +82,22 @@ test("optimized assets and security headers are shipped", () => {
   assert.match(headers, /Content-Security-Policy/);
 });
 
+test("source image assets stay out of public while required compatibility images remain", () => {
+  const nonWebpImages = listFiles(new URL("../public/assets/", import.meta.url))
+    .filter((fileUrl) => [".avif", ".gif", ".jpg", ".jpeg", ".png", ".svg"].includes(extname(fileUrl.pathname).toLowerCase()))
+    .map((fileUrl) => decodeURIComponent(fileUrl.pathname).replace(/^.*\/public\//, "public/"));
+
+  assert.deepEqual(nonWebpImages.sort(), [
+    "public/assets/logo-icon.png",
+    "public/assets/logo.png",
+    "public/assets/og-image.png"
+  ]);
+
+  ["009d08e1cbbf429993a8afa653e35164", "795d6da37449446c99c964505aee53e6"].forEach((key) => {
+    assert.equal(read(`public/${key}.txt`).trim(), key);
+  });
+});
+
 test("email contact UI avoids Cloudflare email-protection crawl links", () => {
   assert.doesNotMatch(read("components/site-footer.tsx"), /mailto:/);
   assert.doesNotMatch(read("app/contact/page.tsx"), /mailto:/);
@@ -106,5 +130,6 @@ test("pricing page is discoverable and lists core package groups", () => {
     assert.match(pricingPage, new RegExp(group));
   });
   assert.match(pricingPage, /Gratis scan vooraf/);
-  assert.match(pricingPage, /Eerste groeigesprek gratis/);
+  assert.match(pricingPage, /name: "Eerste groeigesprek"/);
+  assert.match(pricingPage, /price: "Gratis"/);
 });

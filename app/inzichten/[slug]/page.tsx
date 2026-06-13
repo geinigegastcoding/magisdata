@@ -56,6 +56,29 @@ const articleContent: Record<string, ArticleContent> = {
           "Veel aanvragen starten mobiel. Controleer daarom of telefoon, e-mail, formulier en belangrijkste CTA zichtbaar en makkelijk te gebruiken zijn. Een formulier met te veel velden kan goede bezoekers verliezen voordat er contact is.",
           "Leg ook uit wat er na verzending gebeurt. Een simpele zin zoals 'Je krijgt meestal binnen een werkdag een praktische reactie' verlaagt onzekerheid. Conversie-optimalisatie is vaak geen truc, maar het weghalen van onnodige twijfel."
         ]
+      },
+      {
+        title: "Voorbeeld: lokale dienstverlener",
+        paragraphs: [
+          "Stel dat een installateur een pagina heeft voor onderhoud. De pagina zegt dat het bedrijf betrouwbaar is, maar noemt niet welke installaties worden onderhouden, in welke regio het bedrijf werkt, wat een eerste afspraak inhoudt of welke informatie nodig is voor een offerte. Dan blijft de bezoeker zelf puzzelen.",
+          "De betere versie opent met de dienst, het werkgebied en de meest voorkomende situaties. Daarna volgen processtappen, bewijs of projectvoorbeelden, prijs- of scope-uitleg en een korte contactactie. Zo hoeft de bezoeker minder te gokken en kan de aanvraag gerichter worden."
+        ]
+      },
+      {
+        title: "Wanneer je niet direct een redesign nodig hebt",
+        paragraphs: [
+          "Soms is de website visueel goed genoeg, maar staat informatie in de verkeerde volgorde. Dan is een herbouw niet de eerste stap. Begin met de pagina die het dichtst bij omzet of aanvragen staat: meestal een dienstpagina, lokale pagina, prijsblok of contactroute.",
+          "Kleine aanpassingen kunnen al veel ruis weghalen: een helderdere H1, een direct antwoord, betere tussenkoppen, bewijs dichter bij het aanbod, minder formulierfrictie en een duidelijkere zin over wat er na contact gebeurt. Pas als structuur of techniek echt remt, wordt een redesign logisch."
+        ]
+      },
+      {
+        title: "Welke metingen helpen zonder groot dashboard",
+        paragraphs: [
+          "Je hoeft niet direct een complex analytics-dashboard te bouwen. Begin met simpele signalen: welke pagina's worden bezocht, waar komen bezoekers binnen, welke CTA wordt gebruikt, hoe vaak wordt het formulier gestart en hoe vaak komt er een echte reactie uit voort.",
+          "Combineer cijfers met handmatige controle. Open je belangrijkste pagina op mobiel, lees hem hardop en volg zelf de route naar contact. Als je moet zoeken naar prijsrichting, werkgebied, planning of bewijs, dan moet een klant dat waarschijnlijk ook.",
+          "Gebruik metingen vooral om prioriteit te kiezen. Een pagina met veel bezoek maar weinig contact verdient eerder aandacht dan een verborgen pagina zonder verkeer. Een formulier met veel starts maar weinig verzendingen wijst op frictie. Een dienstpagina met korte leestijd kan te weinig antwoord geven.",
+          "Leg per maand kort vast wat is aangepast en welk signaal je daarna ziet. Zo voorkom je losse meningen over kleur of knoppen en bouw je een kleine, bruikbare geschiedenis op van wat bezoekers duidelijker maakt."
+        ]
       }
     ],
     checklist: [
@@ -107,6 +130,31 @@ const articleContent: Record<string, ArticleContent> = {
           "Snelheid, metadata, canonicals, sitemap, schema en mobiel gebruik zijn belangrijk. Ze zorgen dat een goede pagina gevonden, begrepen en gebruikt kan worden. Maar techniek kan dunne inhoud niet redden.",
           "De beste SEO voelt voor klanten als betere uitleg. Je noemt zoekwoorden natuurlijk, beantwoordt bezwaren, toont bewijs waar dat eerlijk kan en maakt contact makkelijk. Daarmee verbeter je vindbaarheid en de kans dat bezoek nuttig wordt."
         ]
+      },
+      {
+        title: "Voorbeeld van een servicepagina",
+        paragraphs: [
+          "Een sterke servicepagina begint met een concrete zoekvraag. Voor 'website laten maken Leiden' betekent dat: uitleg over websitebouw, lokale context, doelgroep, wat inbegrepen is, welke SEO-basis wordt meegenomen, wat de planning ongeveer bepaalt en hoe het eerste gesprek werkt.",
+          "Daarna linkt de pagina door naar ondersteunende informatie. Denk aan lokale SEO, prijzen, portfolio en contact. Die links zijn niet willekeurig; ze beantwoorden logische vervolgvraagstukken. Zo ontstaat een cluster waarin elke pagina een eigen taak heeft."
+        ]
+      },
+      {
+        title: "Wat je beter niet doet",
+        paragraphs: [
+          "Maak geen reeks bijna identieke stadspagina's met alleen een andere plaatsnaam. Dat voelt voor bezoekers dun en geeft zoekmachines weinig reden om de pagina serieus te nemen. Gebruik lokale pagina's alleen wanneer dienst, werkgebied en zoekvraag eigen context hebben.",
+          "Vul teksten ook niet met herhaalde zoekwoorden. Een pagina die onnatuurlijk leest, verliest vertrouwen. Beter is om klantvragen volledig te beantwoorden: kosten, aanpak, voorbereiding, risico's, bewijs, onderhoud, eigendom en vervolgstap."
+        ]
+      },
+      {
+        title: "Hoe je SEO-prioriteiten kiest",
+        paragraphs: [
+          "Begin niet met de breedste zoekwoorden. Die zijn vaak concurrerend en te vaag. Kies eerst pagina's waar zoekintentie, aanbod en commerciele waarde bij elkaar komen. Voor een lokale dienstverlener zijn dat meestal servicepagina's, lokale pagina's en enkele artikelen die veelgestelde koopvragen beantwoorden.",
+          "Kijk daarna naar ontbrekende schakels. Als je wel een algemene SEO-pagina hebt maar geen lokale uitleg, mist de route naar zoekvragen met plaatsnaam. Als je wel een portfolio hebt maar geen uitleg over aanpak, mist bewijscontext. Als je wel prijzen noemt maar geen scope, blijft de keuze onzeker.",
+          "Een goede volgorde is meestal: technische indexatie op orde, belangrijkste servicepagina's verdiepen, lokale context toevoegen waar die feitelijk klopt, interne links versterken, en daarna pas ondersteunende artikelen schrijven. Zo groeit het cluster vanuit pagina's die direct bij koopintentie passen.",
+          "Meet per pagina wat de taak is. Een servicepagina moet contact of offertegesprek makkelijker maken. Een inzichtartikel moet uitleg geven en doorverwijzen. Een casepagina moet ontwerpkeuzes of bewijscontext laten zien. Als elke pagina dezelfde CTA en dezelfde tekst heeft, wordt het geheel zwakker.",
+          "Gebruik Search Console als controle, niet als enige kompas. Een pagina kan veel impressies krijgen op termen die niet passen bij je aanbod. Dan is meer verkeer niet automatisch beter. De beste kansen zitten waar zoekvraag, inhoud, regio en vervolgstap bij elkaar passen.",
+          "Herhaal dit per kwartaal. Zoekgedrag, concurrentie en je eigen aanbod veranderen. Een korte prioriteitenronde voorkomt dat oude pagina's blijven hangen terwijl nieuwe diensten of betere klantvragen al belangrijker zijn geworden."
+        ]
       }
     ],
     checklist: [
@@ -157,6 +205,31 @@ const articleContent: Record<string, ArticleContent> = {
         paragraphs: [
           "Niemand kan garanderen dat ChatGPT, Perplexity, Gemini of Google AI Overviews je bedrijf noemen. Die systemen gebruiken eigen indexen, rankings, bronnen en timing. Je kunt wel de voorwaarden verbeteren: heldere inhoud, actuele data, consistente schema en echte externe signalen.",
           "Daarom moet machine-readable informatie altijd dezelfde waarheid dragen als zichtbare pagina's. Een llms.txt kan helpen, maar mag geen claims bevatten die bezoekers niet op de site kunnen controleren."
+        ]
+      },
+      {
+        title: "Voorbeelden van bruikbare antwoordblokken",
+        paragraphs: [
+          "Een goed antwoordblok begint met de kern. Bijvoorbeeld: 'AEO-optimalisatie maakt klantvragen directer beantwoordbaar met korte definities, FAQ's en gestructureerde secties.' Daarna kun je uitleggen wanneer het nuttig is en welke pagina's eerst aandacht verdienen.",
+          "Voor GEO werkt een ander type blok: 'GEO-optimalisatie maakt bedrijfsinformatie consistenter voor generatieve zoekmachines door entiteiten, diensten, bewijs, auteurssignalen en interne verbanden duidelijk te maken.' Beide passages zijn kort genoeg om te citeren en specifiek genoeg om waarde te geven."
+        ]
+      },
+      {
+        title: "Gebruik machine-readable files voorzichtig",
+        paragraphs: [
+          "Bestanden zoals llms.txt, services.md of pricing.md kunnen AI-systemen helpen om informatie snel te vinden. Ze zijn vooral nuttig wanneer ze verwijzen naar zichtbare, actuele pagina's. Ze zijn niet bedoeld om verborgen claims toe te voegen die niet op de site staan.",
+          "Daarom hoort een AI-bestand ook grenzen te noemen. Voor MagisData betekent dat: geen rankinggaranties, geen verzonnen testimonials, geen niet-goedgekeurde klantresultaten en geen onduidelijkheid over het verschil tussen ontwerpportfolio en bewezen klantcase."
+        ]
+      },
+      {
+        title: "Waarom externe signalen blijven meetellen",
+        paragraphs: [
+          "AI-vindbaarheid ontstaat niet alleen op je eigen website. Externe bronnen helpen systemen controleren of je bedrijf echt bestaat en hoe het moet worden geplaatst. Denk aan Google Business Profile, LinkedIn, lokale vermeldingen, partnerpagina's, openbare profielen en echte reviews.",
+          "Die bronnen moeten dezelfde basis vertellen. Als je site zegt dat je een website- en SEO-bureau bent, maar externe profielen vooral losse automatisering of een oude bedrijfsnaam tonen, ontstaat ruis. Consistentie maakt het makkelijker om MagisData correct te koppelen aan diensten, regio en founder.",
+          "Gebruik externe signalen niet als truc. Een paar sterke, echte vermeldingen zijn waardevoller dan tientallen lage kwaliteit directories. Voor lokale bedrijven telt vooral of naam, contactgegevens, werkgebied, categorie en dienstverlening kloppen met wat bezoekers op de site zien.",
+          "Controleer AI-antwoorden daarom periodiek. Vraag hoe het systeem je bedrijf beschrijft, welke bronnen het noemt en welke feiten ontbreken. Als antwoorden verkeerde claims maken, los je dat meestal op door zichtbare pagina's, schema, llms.txt en externe profielen consequenter te maken.",
+          "Let ook op wat AI-systemen niet noemen. Soms ontbreekt niet je bedrijfsnaam, maar juist je specialisatie, werkgebied of onderscheid tussen SEO, AEO en GEO. Dat is nuttige feedback: het wijst naar content die scherper, zichtbaarder of consequenter verbonden moet worden.",
+          "Maak van die controle geen dagtaak. Een maandelijkse steekproef met vaste vragen is genoeg om patronen te zien en om foute, ontbrekende of verouderde informatie gericht te verbeteren."
         ]
       }
     ],
@@ -285,49 +358,55 @@ export default async function InsightDetailPage({ params }: PageProps) {
             </Link>
           </section>
 
-          <section className="mt-10 rounded-2xl bg-peach p-6">
-            <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-navy">
-              Simpele checklist
-            </h2>
-            <ul className="mt-5 grid gap-3">
-              {content.checklist.map((item) => (
-                <li className="flex gap-3 text-sm font-semibold leading-6 text-ink" key={item}>
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
+          {content.checklist.length ? (
+            <section className="mt-10 rounded-2xl bg-peach p-6">
+              <h2 className="text-2xl font-extrabold tracking-[-0.03em] text-navy">
+                Simpele checklist
+              </h2>
+              <ul className="mt-5 grid gap-3">
+                {content.checklist.map((item) => (
+                  <li className="flex gap-3 text-sm font-semibold leading-6 text-ink" key={item}>
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
 
-          <section className="mt-10">
-            <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-navy">
-              Zo pas je dit toe op je eigen website
-            </h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {content.applicationSteps.map((step) => (
-                <div className="rounded-2xl border border-line bg-cream/60 p-5 shadow-sm" key={step.title}>
-                  <h3 className="font-extrabold text-navy">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted">{step.text}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          {content.applicationSteps.length ? (
+            <section className="mt-10">
+              <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                Zo pas je dit toe op je eigen website
+              </h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-3">
+                {content.applicationSteps.map((step) => (
+                  <div className="rounded-2xl border border-line bg-cream/60 p-5 shadow-sm" key={step.title}>
+                    <h3 className="font-extrabold text-navy">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted">{step.text}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
-          <section className="mt-10">
-            <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-navy">
-              Veelgestelde vragen
-            </h2>
-            <div className="mt-6 grid gap-4">
-              {content.faqs.map((faq) => (
-                <details className="group rounded-2xl border border-line bg-cream/60 p-5 shadow-sm" key={faq.question}>
-                  <summary className="cursor-pointer list-none text-base font-extrabold text-navy">
-                    {faq.question}
-                  </summary>
-                  <p className="mt-3 text-sm leading-6 text-muted">{faq.answer}</p>
-                </details>
-              ))}
-            </div>
-          </section>
+          {content.faqs.length ? (
+            <section className="mt-10">
+              <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-navy">
+                Veelgestelde vragen
+              </h2>
+              <div className="mt-6 grid gap-4">
+                {content.faqs.map((faq) => (
+                  <details className="group rounded-2xl border border-line bg-cream/60 p-5 shadow-sm" key={faq.question}>
+                    <summary className="cursor-pointer list-none text-base font-extrabold text-navy">
+                      {faq.question}
+                    </summary>
+                    <p className="mt-3 text-sm leading-6 text-muted">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ) : null}
         </div>
       </article>
       <RelatedLinks links={relatedLinksByPath[`/inzichten/${item.slug}`] ?? []} />

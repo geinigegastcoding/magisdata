@@ -16,7 +16,7 @@ import { CtaProof } from "@/components/cta-proof";
 import { JsonLd } from "@/components/json-ld";
 import { TrustProofRow } from "@/components/trust-proof-row";
 import { metadataForPath } from "@/content/seo";
-import { breadcrumbSchema, collectionPageSchema, faqSchema, graphSchema, webPageSchema } from "@/schemas/seo";
+import { breadcrumbSchema, faqSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
 export const metadata: Metadata = metadataForPath("/prijzen");
 
@@ -255,17 +255,6 @@ export default function PricingPage() {
       { name: "Home", path: "/" },
       { name: "Prijzen", path: "/prijzen" }
     ]),
-    collectionPageSchema({
-      path: "/prijzen",
-      name: "Prijzen en pakketten van MagisData",
-      description: metadata.description ?? "",
-      items: [
-        ...websitePlans,
-        ...visibilityPlans,
-        ...automationPlans,
-        ...advicePlans
-      ].map((plan) => ({ name: plan.name, path: "/prijzen" }))
-    }),
     faqSchema(faqs, "/prijzen")
   ]);
 

@@ -107,7 +107,6 @@ export default function PortfolioPage() {
               <article className="overflow-hidden rounded-[1.75rem] border border-line bg-white" key={item.slug}>
                 <div className="overflow-hidden border-b border-line bg-cream">
                   <picture>
-                    <source sizes="(min-width: 768px) 50vw, 100vw" srcSet={item.imageAvifSrcSet} type="image/avif" />
                     <source sizes="(min-width: 768px) 50vw, 100vw" srcSet={item.imageSrcSet} type="image/webp" />
                     <img
                       alt={item.imageAlt}

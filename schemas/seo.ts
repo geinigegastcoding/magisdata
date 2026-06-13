@@ -6,7 +6,7 @@ export const siteEmail = "contact@magisdata.nl";
 export const sitePhone = "+31 6 42280029";
 export const sitePhoneHref = "tel:+31642280029";
 export const defaultImage = `${siteUrl}/assets/og-image.png`;
-export const lastModified = "2026-06-12";
+export const lastModified = "2026-06-13";
 export const founderName = "Daniel Magis";
 export const founderLinkedIn = "https://www.linkedin.com/in/daniel-magis-4088262bb";
 
@@ -77,7 +77,6 @@ export function localBusinessSchema() {
     email: siteEmail,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Suze Groenewegerf 25",
       addressLocality: "Voorschoten",
       addressCountry: "NL"
     },
@@ -159,13 +158,14 @@ export function faqSchema(faqs: PageContent["faqs"], path: string) {
 }
 
 export function serviceSchema(content: PageContent, path: string) {
-  const localArea =
-    path.includes("leiden") || content.title.toLowerCase().includes("leiden")
+  const cityServiceAreas = new Set(["Leiden", "Voorschoten", "Den Haag", "Rotterdam"]);
+  const areaServed =
+    content.serviceArea && cityServiceAreas.has(content.serviceArea)
       ? {
           "@type": "City",
-          name: "Leiden"
+          name: content.serviceArea
         }
-      : "Nederland";
+      : content.serviceArea ?? "Nederland";
 
   return {
     "@type": "Service",
@@ -173,7 +173,7 @@ export function serviceSchema(content: PageContent, path: string) {
     name: content.title,
     description: content.description,
     serviceType: content.eyebrow,
-    areaServed: localArea,
+    areaServed,
     provider: {
       "@id": `${siteUrl}/#organization`
     },

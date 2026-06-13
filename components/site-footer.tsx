@@ -113,7 +113,7 @@ export function SiteFooter() {
             </Link>
             <span className="inline-flex items-start gap-2 leading-6">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-              Suze Groenewegerf 25, Voorschoten
+              Voorschoten, nabij Leiden
             </span>
             <button className="focus-ring w-fit rounded-full text-left hover:text-orange" data-consent-open type="button">
               Cookie-instellingen
