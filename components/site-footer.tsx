@@ -42,6 +42,7 @@ const columns = [
   {
     title: "Regio",
     links: [
+      { label: "SEO bureau Leiden", href: "/seo-bureau-leiden" },
       { label: "Website laten maken Leiden", href: "/website-laten-maken-leiden" },
       { label: "Website laten maken Den Haag", href: "/website-laten-maken-den-haag" },
       { label: "Website laten maken Rotterdam", href: "/website-laten-maken-rotterdam" }

@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route.priority,
     alternates: {
       languages: {
-        nl: absoluteUrl(route.path),
+        "nl-NL": absoluteUrl(route.path),
         "x-default": absoluteUrl(route.path)
       }
     }

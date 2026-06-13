@@ -7,7 +7,9 @@ https://www.magisdata.nl/* https://magisdata.nl/:splat 301
 /cases/adviesbureau /cases 301
 /cases/groeiende-webshop /cases 301
 /services /diensten 301
-/seo-services /seo-diensten 301!
+/seo-services /seo-diensten 301
+/seo-leiden /seo-bureau-leiden 301
+/zoekmachine-optimalisatie-leiden /seo-bureau-leiden 301
 /case-studies /cases 301
 /case-studies/* /cases/:splat 301
 /insights /inzichten 301

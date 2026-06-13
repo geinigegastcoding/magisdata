@@ -36,7 +36,7 @@ const websitePlans = [
   },
   {
     name: "Groei",
-    label: "Meest gekozen",
+    label: "Aanbevolen startpunt",
     price: "EUR 500 / jaar",
     monthly: "of EUR 50 p/m",
     text: "Voor bedrijven die meer diensten, vertrouwen en uitleg nodig hebben dan alleen een online visitekaart.",
@@ -152,6 +152,11 @@ const advicePlans = [
 
 const faqs = [
   {
+    question: "Zijn de prijzen inclusief of exclusief btw?",
+    answer:
+      "De bedragen zijn richtprijzen exclusief btw, tenzij in een voorstel anders staat. Voor start bespreken we scope, betaalwijze en eventuele maandelijkse kosten helder."
+  },
+  {
     question: "Zit SEO bij een websitepakket inbegrepen?",
     answer:
       "Ja, elke website krijgt basis SEO zoals nette metadata, structuur, mobiele bruikbaarheid en technische controle. Uitgebreide SEO, AEO en GEO zijn aparte pakketten als vindbaarheid echt actief moet groeien."
@@ -170,6 +175,11 @@ const faqs = [
     question: "Zijn de prijzen vaste eindprijzen?",
     answer:
       "De pakketten geven een duidelijke basis. Als scope, koppelingen of aantal pagina's groter wordt dan normaal, bespreken we dat vooraf."
+  },
+  {
+    question: "Wat gebeurt er na het eerste jaar?",
+    answer:
+      "Dat spreken we vooraf af. Denk aan verlengen, onderhoud, uitbreiden of afronden met duidelijke overdracht. Hosting, domein, support en eigendom horen expliciet in het voorstel te staan."
   }
 ];
 
@@ -306,9 +316,10 @@ export default function PricingPage() {
             <ul className="mt-7 grid gap-4">
               {[
                 "Websitepakketten bevatten basis SEO.",
+                "Bedragen zijn richtprijzen exclusief btw.",
                 "SEO, AEO en GEO zijn apart als vindbaarheid hoofddoel is.",
                 "AI automatisering is eenmalig, met optionele maandcheck.",
-                "Eerste groeigesprek gratis; daarna optioneel maandelijks."
+                "Hosting, domein, eigendom en support worden per voorstel vastgelegd."
               ].map((point) => (
                 <li className="flex gap-3 text-sm font-semibold leading-6 text-ink" key={point}>
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange" />

@@ -57,10 +57,17 @@ const serviceLinks: InternalLink[] = [
   }
 ];
 
+const pricingLink: InternalLink = {
+  href: "/prijzen",
+  label: "Prijzen",
+  description: "Bekijk startpunten voor websites, SEO, AI en advies."
+};
+
 export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/diensten": serviceLinks,
   "/webontwikkeling": [
     serviceLinks[1],
+    pricingLink,
     { href: "/website-onderhoud", label: "Website onderhoud", description: "Houd een bestaande website veilig, actueel en controleerbaar." },
     { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Bekijk hoe diensten, projecten en lokale vindbaarheid in dit webdesign zijn uitgewerkt." }
   ],
@@ -72,6 +79,8 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/seo-diensten": [
     serviceLinks[6],
     serviceLinks[8],
+    pricingLink,
+    { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Lokale vindbaarheid voor servicebedrijven rond Leiden." },
     { href: "/inzichten/seo-zonder-jargon", label: "SEO zonder jargon", description: "Lees wat ondernemers echt moeten weten over SEO." }
   ],
   "/geo-optimalisatie": [
@@ -101,8 +110,14 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   ],
   "/contact": [
     { href: "/diensten", label: "Alle diensten", description: "Bekijk eerst welke hulp past bij je vraag." },
+    pricingLink,
     serviceLinks[5],
     { href: "/inzichten", label: "Lees inzichten", description: "Praktische uitleg over websites, SEO en AI-vindbaarheid." }
+  ],
+  "/prijzen": [
+    serviceLinks[0],
+    serviceLinks[1],
+    { href: "/contact", label: "Vraag pakketadvies", description: "Laat meekijken welk startpunt past bij je vraag." }
   ],
   "/cases/website-design-hoveniersbedrijf": [
     serviceLinks[0],
@@ -147,11 +162,13 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/seo-bureau-leiden": [
     serviceLinks[8],
     { href: "/website-laten-maken-leiden", label: "Website laten maken Leiden", description: "Website en SEO-basis voor lokale aanvragen." },
+    pricingLink,
     serviceLinks[0]
   ],
   "/website-laten-maken-leiden": [
     { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Versterk lokale vindbaarheid rond Leiden." },
     serviceLinks[8],
+    pricingLink,
     { href: "/webontwikkeling", label: "Webontwikkeling", description: "Combineer websitebouw met een technische SEO-basis." }
   ],
   "/website-laten-maken-den-haag": [
@@ -167,6 +184,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/ai-vindbaarheid": [
     serviceLinks[7],
     serviceLinks[3],
+    pricingLink,
     { href: "/inzichten/ai-vindbaarheid", label: "Uitleg over AI-vindbaarheid", description: "Lees waarom duidelijke content belangrijker wordt." }
   ],
   "/online-marketing-bureau": [
@@ -178,6 +196,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/conversie-optimalisatie": [
     { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Zie waar conversie vaak stukloopt." },
     serviceLinks[0],
+    pricingLink,
     { href: "/cases/website-design-dakbedrijf", label: "Portfolio: dakbedrijf", description: "Zie hoe duidelijke offertestappen zichtbaar in het ontwerp landen." }
   ],
   "/website-voor-loodgieters": [
@@ -197,6 +216,7 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   ],
   "/website-voor-hoveniers": [
     { href: "/lokale-seo", label: "Lokale SEO", description: "Word vindbaar op diensten en regio." },
+    { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Verbind hoveniersdiensten met lokale zoekvraag rond Leiden." },
     { href: "/webontwikkeling", label: "Webontwikkeling", description: "Bekijk de algemene website-aanpak." },
     { href: "/cases/website-design-hoveniersbedrijf", label: "Portfolio: hoveniersbedrijf", description: "Bekijk webdesign met projecten, diensten en lokale adviesroute." }
   ],

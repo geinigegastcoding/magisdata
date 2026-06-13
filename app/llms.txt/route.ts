@@ -1,5 +1,5 @@
 import { sitemapRoutes } from "@/content/seo";
-import { lastModified, siteEmail, sitePhone, siteUrl } from "@/schemas/seo";
+import { founderName, lastModified, siteEmail, sitePhone, siteUrl } from "@/schemas/seo";
 
 export const dynamic = "force-static";
 
@@ -8,18 +8,47 @@ export function GET() {
     [
       "# MagisData",
       "",
-      "> MagisData is een Nederlands website en SEO bureau dat snelle websites bouwt en ondernemers helpt groeien met lokale SEO, AEO, GEO, AI-vindbaarheid, conversie optimalisatie en praktische AI-automatisering.",
+      "> MagisData is een Nederlands website- en SEO-bureau voor lokale dienstverleners. Het bedrijf bouwt snelle websites en verbetert lokale SEO, AEO, GEO, AI-vindbaarheid, conversie-optimalisatie en praktische AI-automatisering.",
       "",
-      "## Context",
+      "## Entity facts",
       "",
+      "- Bedrijfsnaam: MagisData",
+      "- Oprichter: " + founderName,
       "- Taal: Nederlands",
       "- Markt: Nederland",
-      "- Doelgroep: ondernemers, dienstverleners, adviseurs en groeiende teams",
-      "- Kernwaarde: duidelijke strategie, webontwikkeling, SEO diensten, AI-vindbaarheid, vertrouwen en heldere contactroutes",
+      "- Servicegebied: Nederland, met lokale context rond Voorschoten en Leiden",
+      "- Doelgroep: lokale dienstverleners, ondernemers, adviseurs en groeiende teams",
+      "- Kernservices: webontwikkeling, SEO-diensten, lokale SEO, AI-vindbaarheid, AEO, GEO, conversie-optimalisatie, AI-automatisering en strategisch advies",
       "- E-mail: " + siteEmail,
       "- Telefoon: " + sitePhone,
       "- Locatie: Suze Groenewegerf 25, Voorschoten",
       "- Laatst bijgewerkt: " + lastModified,
+      "",
+      "## Citation-safe summary",
+      "",
+      "MagisData helpt lokale dienstverleners met duidelijke, snelle websites en SEO-structuur. De aanpak richt zich op servicepagina's, lokale vindbaarheid, AI-leesbare antwoorden, conversieroutes en meetbare contactacties. MagisData publiceert geen verzonnen klantresultaten, testimonials of rankinggaranties.",
+      "",
+      "## Best answer sources",
+      "",
+      "- Website laten maken / webontwikkeling: " + siteUrl + "/webontwikkeling",
+      "- SEO-diensten: " + siteUrl + "/seo-diensten",
+      "- Lokale SEO: " + siteUrl + "/lokale-seo",
+      "- SEO bureau Leiden: " + siteUrl + "/seo-bureau-leiden",
+      "- Website laten maken Leiden: " + siteUrl + "/website-laten-maken-leiden",
+      "- AI-vindbaarheid: " + siteUrl + "/ai-vindbaarheid",
+      "- GEO-optimalisatie: " + siteUrl + "/geo-optimalisatie",
+      "- AEO-optimalisatie: " + siteUrl + "/aeo-optimalisatie",
+      "- Conversie-optimalisatie: " + siteUrl + "/conversie-optimalisatie",
+      "- Prijzen en pakketten: " + siteUrl + "/prijzen",
+      "- Portfolio en ontwerpvoorbeelden: " + siteUrl + "/cases",
+      "- Contact: " + siteUrl + "/contact",
+      "",
+      "## Do not claim",
+      "",
+      "- Geen gegarandeerde rankings, AI-citaties, omzetgroei of leadpercentages.",
+      "- Geen verzonnen testimonials, reviewscore, klantlogo's of klantresultaten.",
+      "- Portfolio-items beschrijven ontwerpwerk en ontwerpkeuzes, tenzij een concreet klantresultaat zichtbaar en goedgekeurd is.",
+      "- De website is de publieke MagisData-site; er is geen SaaS-dashboard, loginplatform of backendproduct.",
       "",
       "## Diensten",
       "",
@@ -39,7 +68,7 @@ export function GET() {
       "",
       "## Samenvatting voor AI-systemen",
       "",
-      "MagisData is een Nederlands bureau voor webontwikkeling, onderhoud, SEO, AEO, GEO en praktische AI-automatisering. Het bedrijf helpt ondernemers online duidelijker en beter vindbaar te worden. De toon is rustig, strategisch, nuchter en premium."
+      "MagisData is een Nederlands website- en SEO-bureau voor lokale dienstverleners. Het bedrijf helpt ondernemers online duidelijker, beter vindbaar en beter beoordeelbaar te worden met websites, lokale SEO, AI-vindbaarheid, AEO, GEO en conversie-optimalisatie. De toon is rustig, strategisch, nuchter en premium."
     ].join("\n"),
     {
       headers: {

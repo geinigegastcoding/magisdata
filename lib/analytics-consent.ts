@@ -8,6 +8,7 @@ declare global {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
     magisAnalyticsLoaded?: boolean;
+    magisAnalyticsConfigured?: boolean;
   }
 }
 
@@ -61,19 +62,33 @@ export function clearAnalyticsCookies() {
 }
 
 export function loadAnalytics(consent: ConsentState = readConsent()) {
-  if (typeof window === "undefined" || window.magisAnalyticsLoaded || !mayTrack(consent)) {
+  if (typeof window === "undefined" || !mayTrack(consent)) {
     return;
   }
 
-  window.magisAnalyticsLoaded = true;
   ensureGtag();
+
+  if (typeof document !== "undefined" && !window.magisAnalyticsLoaded) {
+    window.magisAnalyticsLoaded = true;
+    const script = document.createElement("script");
+    script.async = true;
+    script.id = "google-tag";
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+  }
+
   window.gtag?.("consent", "update", {
     analytics_storage: "granted",
     ad_storage: "denied",
     ad_user_data: "denied",
     ad_personalization: "denied"
   });
-  window.gtag?.("config", GA_MEASUREMENT_ID);
+
+  if (!window.magisAnalyticsConfigured) {
+    window.magisAnalyticsConfigured = true;
+    window.gtag?.("js", new Date());
+    window.gtag?.("config", GA_MEASUREMENT_ID);
+  }
 }
 
 export function setConsent(state: Exclude<ConsentState, "unset">) {
@@ -95,6 +110,7 @@ export function setConsent(state: Exclude<ConsentState, "unset">) {
       });
     }
     clearAnalyticsCookies();
+    window.magisAnalyticsConfigured = false;
   }
 
   window.dispatchEvent(new CustomEvent("magisdata:consent", { detail: state }));

@@ -19,7 +19,7 @@ export const services = [
   {
     title: "Vindbaarheid in Google",
     description:
-      "We zorgen dat klanten je bedrijf sneller vinden wanneer ze zoeken naar jouw dienst.",
+      "We verbeteren de basis waardoor klanten je bedrijf makkelijker kunnen vinden wanneer ze zoeken naar jouw dienst.",
     href: "/seo-diensten",
     icon: Search,
     color: "text-blue bg-blue-soft"
@@ -35,7 +35,7 @@ export const services = [
   {
     title: "Online marketing",
     description:
-      "Een heldere volgorde voor website, vindbaarheid, conversie en meetbare groei.",
+      "Een heldere volgorde voor website, vindbaarheid, conversie en meetbare contactacties.",
     href: "/online-marketing-bureau",
     icon: Megaphone,
     color: "text-yellow bg-yellow-soft"

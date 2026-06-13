@@ -96,12 +96,15 @@ export function Hero() {
           <div className="doodle-loop left-0 top-64 h-28 w-28 lg:-left-4 lg:top-72 lg:h-32 lg:w-32" />
           <figure className="relative z-10 h-[370px] overflow-hidden rounded-[2.75rem] border border-line bg-white p-3 shadow-card sm:h-[420px] lg:h-[440px] lg:rounded-[3rem]">
             <picture>
-              <source srcSet="/assets/case1-1122.avif" type="image/avif" />
+              <source sizes="(min-width: 1024px) 52vw, 100vw" srcSet="/assets/case1-640.avif 640w, /assets/case1-1122.avif 1122w" type="image/avif" />
+              <source sizes="(min-width: 1024px) 52vw, 100vw" srcSet="/assets/case1-640.webp 640w, /assets/case1-1122.webp 1122w" type="image/webp" />
               <img
                 alt="Website-ontwerp voor een hoveniersbedrijf uit het MagisData portfolio"
                 className="h-full w-full rounded-[2.1rem] object-cover object-top"
+                fetchPriority="high"
                 height="1402"
                 loading="eager"
+                sizes="(min-width: 1024px) 52vw, 100vw"
                 src="/assets/case1-1122.webp"
                 width="1122"
               />
@@ -170,7 +173,7 @@ export function Services() {
           <p className="max-w-xl text-sm font-semibold leading-6 text-muted">
             Niet zeker welke dienst past? We kiezen samen de kortste route naar meer aanvragen.
           </p>
-          <TextCta>Laat je website meekijken</TextCta>
+          <TextCta>Vraag gratis websiteplan aan</TextCta>
         </div>
       </div>
     </section>
@@ -422,6 +425,7 @@ export function FinalCta() {
                 alt="Vriendelijke medewerker van MagisData"
                 className="absolute bottom-0 left-0 h-[255px] w-auto object-contain md:h-[285px]"
                 height="285"
+                loading="lazy"
                 src="/assets/girl.webp"
                 width="285"
               />
@@ -432,7 +436,7 @@ export function FinalCta() {
                 Vraag een gratis websiteplan aan voor een nieuwe site, herbouw of slimme verbetering.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <PrimaryButton>Start gratis websiteplan</PrimaryButton>
+                <PrimaryButton>Vraag gratis websiteplan aan</PrimaryButton>
                 <SecondaryButton>Bekijk onze diensten</SecondaryButton>
               </div>
               <TrustProofRow className="pb-8 md:pb-10" compact />

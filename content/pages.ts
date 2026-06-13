@@ -818,7 +818,7 @@ export const servicePages = {
       for: ["Bedrijven die keuzes willen maken voor zij investeren.", "Ondernemers met meerdere online vraagstukken tegelijk."],
       notFor: ["Wie alleen losse beloften of snelle trucs zoekt.", "Wie geen ruimte wil maken voor duidelijke keuzes."]
     },
-    primaryCta: "Vraag gratis groeiplan aan",
+    primaryCta: "Vraag gratis websiteplan aan",
     secondaryCta: "Bekijk diensten",
     heroPoints: [
       "Duidelijke prioriteiten",
@@ -1329,7 +1329,7 @@ export const insights = [
     summary:
       "Een mooie website werkt pas goed als bezoekers snel begrijpen wat je doet, waarom ze jou kunnen vertrouwen en welke stap ze moeten zetten.",
     datePublished: "2026-05-16",
-    dateModified: "2026-05-16",
+    dateModified: "2026-06-13",
     icon: LayoutTemplate
   },
   {
@@ -1338,7 +1338,7 @@ export const insights = [
     summary:
       "SEO draait niet om trucjes. Het gaat om duidelijke pagina's, echte klantvragen en een website die zoekmachines goed kunnen lezen.",
     datePublished: "2026-05-16",
-    dateModified: "2026-05-16",
+    dateModified: "2026-06-13",
     icon: Search
   },
   {
@@ -1347,7 +1347,7 @@ export const insights = [
     summary:
       "AI-systemen begrijpen bedrijven beter wanneer websites concreet, consistent en goed gestructureerd zijn.",
     datePublished: "2026-05-16",
-    dateModified: "2026-05-16",
+    dateModified: "2026-06-13",
     icon: Bot
   }
 ];

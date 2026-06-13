@@ -9,7 +9,7 @@ import { TrustProofRow } from "@/components/trust-proof-row";
 import { relatedLinksByPath } from "@/content/internal-links";
 import type { PageContent } from "@/content/pages";
 import { cn } from "@/lib/utils";
-import { breadcrumbSchema, faqSchema, graphSchema, howToSchema, serviceSchema, webPageSchema } from "@/schemas/seo";
+import { breadcrumbSchema, faqSchema, graphSchema, serviceSchema, webPageSchema } from "@/schemas/seo";
 
 type ContentPageProps = {
   content: PageContent;
@@ -373,18 +373,21 @@ export function ContentPage({
         { name: content.eyebrow, path: pathname }
       ]
     : [];
-  const schema = pathname
-    ? graphSchema([
+  const visibleFaqs = [...content.faqs, ...(content.objections ?? [])];
+  const schemaNodes = pathname
+    ? [
         webPageSchema({
           path: pathname,
           name: content.title,
           description: content.description
         }),
         breadcrumbSchema(breadcrumbItems),
-        faqSchema([...content.faqs, ...(content.objections ?? [])], pathname),
-        howToSchema(content, pathname),
+        ...(schemaKind === "service" && visibleFaqs.length >= 2 ? [faqSchema(visibleFaqs, pathname)] : []),
         ...(schemaKind === "service" ? [serviceSchema(content, pathname)] : [])
-      ])
+      ]
+    : null;
+  const schema = schemaNodes
+    ? graphSchema(schemaNodes)
     : null;
 
   return (
@@ -628,7 +631,7 @@ export function ContentPage({
             </h2>
           </div>
           <div className="grid gap-4">
-            {[...content.faqs, ...(content.objections ?? [])].map((faq) => (
+            {visibleFaqs.map((faq) => (
               <details className="group rounded-2xl border border-line bg-white p-5 shadow-sm" key={faq.question}>
                 <summary className="cursor-pointer list-none text-base font-extrabold text-navy">
                   {faq.question}

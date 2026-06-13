@@ -6,6 +6,7 @@ export type LandingPage = PageContent & {
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
+  dateModified?: string;
 };
 
 function makeWebsitePage({
@@ -21,7 +22,10 @@ function makeWebsitePage({
   deliverables,
   audienceFit,
   serviceItems,
-  extraFaqs = []
+  detailSections,
+  steps,
+  extraFaqs = [],
+  dateModified
 }: {
   slug: string;
   eyebrow: string;
@@ -35,7 +39,10 @@ function makeWebsitePage({
   deliverables?: { title: string; text: string }[];
   audienceFit?: PageContent["audienceFit"];
   serviceItems?: { title: string; text: string }[];
+  detailSections?: PageContent["detailSections"];
+  steps?: PageContent["steps"];
   extraFaqs?: { question: string; answer: string }[];
+  dateModified?: string;
 }): LandingPage {
   const place = location ? ` in ${location}` : "";
 
@@ -48,6 +55,7 @@ function makeWebsitePage({
     metaTitle: metaTitle ?? title,
     metaDescription: description,
     keywords: [title, `website laten maken${place}`, audience, "MagisData"],
+    dateModified,
     directAnswer: answer
       ? {
           title: `Wat betekent dit voor ${audience}${place}?`,
@@ -182,7 +190,8 @@ function makeGrowthPage({
   steps,
   faqs,
   primaryCta,
-  secondaryCta
+  secondaryCta,
+  dateModified
 }: {
   slug: string;
   eyebrow: string;
@@ -205,6 +214,7 @@ function makeGrowthPage({
   faqs?: PageContent["faqs"];
   primaryCta?: string;
   secondaryCta?: string;
+  dateModified?: string;
 }): LandingPage {
   return {
     slug,
@@ -215,6 +225,7 @@ function makeGrowthPage({
     metaTitle: metaTitle ?? title,
     metaDescription: description,
     keywords: [primaryKeyword, ...secondaryKeywords, "MagisData"],
+    dateModified,
     directAnswer: directAnswer
       ? {
           title: `Wat is ${primaryKeyword}?`,
@@ -225,7 +236,7 @@ function makeGrowthPage({
     comparison,
     audienceFit,
     presentation,
-    primaryCta: primaryCta ?? "Vraag gratis groeiplan aan",
+    primaryCta: primaryCta ?? "Vraag gratis websiteplan aan",
     secondaryCta: secondaryCta ?? "Bekijk diensten",
     heroPoints: heroPoints ?? [
       `Gericht op ${primaryKeyword}`,
@@ -408,6 +419,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Lokale SEO voor betere vindbaarheid in je regio",
     description:
       "Verbeter je lokale vindbaarheid met sterke servicepagina's, regio-content, Google-profiel signalen en duidelijke contactinformatie.",
+    dateModified: "2026-06-13",
     primaryKeyword: "lokale SEO",
     secondaryKeywords: ["lokale SEO specialist", "Google vindbaarheid verbeteren", "SEO voor lokale bedrijven", "regionale SEO"],
     audience: "lokale dienstverleners en MKB-bedrijven",
@@ -469,6 +481,17 @@ export const landingPages: LandingPage[] = [
           { title: "Bereikbaarheid", text: "Telefoon, formulier en vervolgstap moeten vooral mobiel meteen duidelijk zijn." },
           { title: "Herkenning", text: "Voorbeelden, vragen en servicecontext moeten bij de regio passen." }
         ]
+      },
+      {
+        eyebrow: "GBP en vermeldingen",
+        title: "Website, Google-profiel en vermeldingen moeten hetzelfde zeggen",
+        text:
+          "Lokale SEO wordt sterker wanneer je website, Google Business Profile, reviews en externe vermeldingen dezelfde naam, diensten, telefoon en werkgebied tonen.",
+        items: [
+          { title: "GBP-model", text: "Kies alleen een zichtbaar adres als klanten daar echt kunnen langskomen; anders past een service-area profiel beter." },
+          { title: "Reviewroute", text: "Vraag echte klanten om specifieke reviews over dienst, proces en duidelijkheid zonder uitkomstclaims te sturen." },
+          { title: "Citaties", text: "Controleer lokale vermeldingen op consistente naam, adres, telefoon, website en servicegebied." }
+        ]
       }
     ],
     steps: [
@@ -480,22 +503,114 @@ export const landingPages: LandingPage[] = [
     faqs: [
       { question: "Moet ik voor elke plaats een pagina maken?", answer: "Nee. Alleen waar je genoeg eigen context, zoekvraag en servicewaarde hebt." },
       { question: "Is lokale SEO alleen Google Business Profile?", answer: "Nee. Je profiel helpt, maar je website moet diensten, gebied en contact net zo duidelijk dragen." },
-      { question: "Kan dit zonder kantoor in elke stad?", answer: "Ja, zolang je feitelijk beschrijft waar je werkt en geen locaties claimt die niet bestaan." }
+      { question: "Kan dit zonder kantoor in elke stad?", answer: "Ja, zolang je feitelijk beschrijft waar je werkt en geen locaties claimt die niet bestaan." },
+      { question: "Welke reviewvraag werkt goed?", answer: "Vraag klanten om te beschrijven welke dienst ze zochten, hoe het proces verliep en wat duidelijker werd. Stuur nooit op verzonnen resultaten of trefwoorden." }
     ]
   }),
   makeGrowthPage({
     slug: "seo-bureau-leiden",
     eyebrow: "SEO bureau Leiden",
-    title: "SEO bureau Leiden voor lokale vindbaarheid en groei",
+    title: "SEO bureau Leiden voor lokale dienstverleners",
+    metaTitle: "SEO bureau Leiden voor lokale bedrijven | MagisData",
     description:
-      "MagisData helpt bedrijven in Leiden beter gevonden worden met lokale SEO, duidelijke pagina's en technische optimalisatie.",
+      "MagisData helpt bedrijven rond Leiden beter gevonden worden met lokale SEO, sterke servicepagina's en technische optimalisatie.",
+    dateModified: "2026-06-13",
     primaryKeyword: "SEO bureau Leiden",
     secondaryKeywords: ["SEO Leiden", "lokale SEO Leiden", "zoekmachine optimalisatie Leiden", "SEO specialist Leiden"],
     audience: "bedrijven in Leiden en omgeving",
     promise:
       "We combineren lokale zoekintentie, servicepagina's, interne links en technische SEO zodat klanten in Leiden je bedrijf makkelijker vinden en vertrouwen.",
     directAnswer:
-      "SEO in Leiden richt je website op diensten die je werkelijk in Leiden en omgeving levert. MagisData koppelt lokale zoekvragen aan heldere pagina's, NAP-signalen en contactroutes."
+      "SEO in Leiden richt je website op diensten die je werkelijk in Leiden en omgeving levert. MagisData koppelt lokale zoekvragen aan heldere pagina's, NAP-signalen en contactroutes.",
+    presentation: {
+      variant: "local",
+      heroTitle: "Leiden + dienst + bewijs",
+      heroCaption: "Lokale SEO werkt beter wanneer dienstpagina's, werkgebied en contactgegevens feitelijk kloppen.",
+      sectionEyebrow: "Leiden SEO",
+      processEyebrow: "Lokale route",
+      processTitle: "Van zoekvraag naar vindbare servicepagina",
+      faqTitle: "SEO bureau Leiden helder",
+      ctaTitle: "Wil je weten welke SEO-kans rond Leiden eerst telt?",
+      ctaText: "We bekijken je diensten, regio, pagina's en vindbaarheid en geven een praktische eerste richting."
+    },
+    heroPoints: [
+      "Gericht op SEO Leiden en lokale zoekintentie",
+      "Servicepagina's met duidelijke interne links",
+      "Techniek, content en contactroutes samen"
+    ],
+    deliverables: [
+      { title: "Lokale zoekanalyse", text: "We kiezen zoekvragen rond Leiden die passen bij echte diensten en koopintentie." },
+      { title: "Pagina-structuur", text: "Servicepagina's, plaatscontext, FAQ's en interne links krijgen een logische volgorde." },
+      { title: "Technische basis", text: "Metadata, canonicals, sitemap, schema en mobiele scanbaarheid worden gecontroleerd." }
+    ],
+    audienceFit: {
+      for: [
+        "Lokale dienstverleners die rond Leiden meer relevante aanvragen willen.",
+        "Bedrijven met bestaande diensten maar te weinig heldere SEO-pagina's."
+      ],
+      notFor: [
+        "Bedrijven die snelle rankinggaranties of gekochte links zoeken.",
+        "Plaatsnaampagina's zonder echte servicewaarde of werkgebied."
+      ]
+    },
+    sections: [
+      {
+        title: "Waarom SEO in Leiden meer vraagt dan een zoekwoord",
+        text:
+          "Lokale zoekers vergelijken dienst, afstand, vertrouwen en contactgemak tegelijk. Een pagina moet daarom meer doen dan 'SEO Leiden' noemen.",
+        items: [
+          { title: "Dienst scherp", text: "Elke belangrijke dienst krijgt eigen uitleg, bezwaarafhandeling en vervolgstap." },
+          { title: "Regio feitelijk", text: "Leiden en omliggende plaatsen worden alleen genoemd waar ze echt bij je werkgebied horen." },
+          { title: "Bewijs dichtbij", text: "Cases, procesuitleg, prijzen of reviews horen op de plekken waar bezoekers twijfelen." }
+        ]
+      },
+      {
+        title: "Wat MagisData concreet verbetert",
+        text:
+          "We starten met de pagina's die de meeste kans hebben op vindbaarheid en aanvragen. Daarna bouwen we pas verder.",
+        items: [
+          { title: "Titels en koppen", text: "Title tags, H1's en tussenkoppen sluiten beter aan op zoekintentie zonder keyword stuffing." },
+          { title: "Interne links", text: "SEO, lokale SEO, websitebouw, cases en inzichten versterken elkaar met duidelijke ankers." },
+          { title: "Meetbare basis", text: "Search Console, indexatie en contactroutes worden praktisch controleerbaar gemaakt." }
+        ]
+      }
+    ],
+    detailSections: [
+      {
+        eyebrow: "Lokale autoriteit",
+        title: "Waar lokale SEO meestal wint of verliest",
+        text:
+          "Een lokale SEO-pagina wordt sterker wanneer website, Google-profiel, reviews en externe vermeldingen hetzelfde verhaal vertellen.",
+        items: [
+          { title: "Relevantie", text: "Je pagina maakt duidelijk welke dienst je levert en voor wie in de regio." },
+          { title: "Prominentie", text: "Reviews, lokale vermeldingen en echte cases ondersteunen wat je website zegt." },
+          { title: "Consistentie", text: "Naam, adres, telefoon, servicegebied en expertise blijven overal gelijk." }
+        ]
+      },
+      {
+        eyebrow: "Servicegebied",
+        title: "Leiden, Voorschoten en Zuid-Holland feitelijk gebruiken",
+        text:
+          "MagisData werkt vanuit Voorschoten nabij Leiden. Lokale pagina's gebruiken die nabijheid alleen als servicegebied en context feitelijk kloppen.",
+        items: [
+          { title: "Voorschoten", text: "Bedrijfsbasis en nabijheid geven context, maar vervangen geen inhoud over diensten." },
+          { title: "Leiden", text: "Leiden-termen horen bij pagina's waar lokale zoekvraag, servicepagina en contactroute samenkomen." },
+          { title: "Zuid-Holland", text: "Breder servicegebied komt pas terug wanneer de pagina genoeg eigen context heeft." }
+        ]
+      }
+    ],
+    steps: [
+      { title: "Kansen kiezen", text: "We bepalen welke diensten en Leiden-termen eerst prioriteit hebben." },
+      { title: "Pagina's aanscherpen", text: "We verbeteren content, metadata, FAQ's en interne links." },
+      { title: "Techniek controleren", text: "We checken indexatie, canonicals, schema, sitemap en mobiel gebruik." },
+      { title: "Doorbouwen", text: "We voegen bewijs, reviews, cases en ondersteunende content toe wanneer die er zijn." }
+    ],
+    faqs: [
+      { question: "Helpt een SEO bureau Leiden-pagina echt?", answer: "Ja, als de pagina echte lokale waarde heeft: diensten, werkgebied, contactroutes, bewijs en duidelijke interne links. Alleen een plaatsnaam toevoegen is niet genoeg." },
+      { question: "Kunnen jullie rankings garanderen?", answer: "Nee. We kunnen wel de technische basis, contentkwaliteit, interne links en lokale signalen verbeteren zodat de kans op vindbaarheid groter wordt." },
+      { question: "Is Google Business Profile ook nodig?", answer: "Voor lokale zichtbaarheid meestal wel. Websitepagina's en Google-profiel moeten elkaar versterken met consistente gegevens, diensten en reviews." },
+      { question: "Wat kost lokale SEO rond Leiden?", answer: "Dat hangt af van bestaande pagina's, concurrentie, techniek en hoeveel diensten of gebieden prioriteit hebben. De prijzenpagina geeft startpunten; scope leggen we vooraf vast." }
+    ]
   }),
   makeGrowthPage({
     slug: "ai-vindbaarheid",
@@ -504,6 +619,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "AI-vindbaarheid verbeteren voor moderne zoekers",
     description:
       "Maak je bedrijf beter begrijpbaar, citeerbaar en vindbaar in AI-antwoorden met duidelijke content en sterke structuur.",
+    dateModified: "2026-06-13",
     primaryKeyword: "AI vindbaarheid",
     secondaryKeywords: ["vindbaar in ChatGPT", "vindbaar in Perplexity", "AI Overviews optimalisatie", "GEO optimalisatie"],
     audience: "ondernemers, adviseurs en B2B-dienstverleners",
@@ -533,8 +649,10 @@ export const landingPages: LandingPage[] = [
       { title: "Signalen", text: "Schema, interne links, auteurschap en contactinformatie consistent houden." }
     ],
     comparison: [
-      { title: "GEO", text: "Structuur voor entitybegrip en generatieve ontdekking." },
-      { title: "AEO", text: "Vraag-antwoordopbouw voor extracteerbare antwoorden." }
+      { title: "SEO", text: "Zorgt dat pagina's vindbaar en indexeerbaar zijn voor klassieke zoekvragen." },
+      { title: "AEO", text: "Maakt korte antwoorden, FAQ's en definities makkelijk extraheerbaar." },
+      { title: "GEO", text: "Versterkt entiteiten, context en citeerbaarheid voor generatieve antwoorden." },
+      { title: "AI-vindbaarheid", text: "Verbindt SEO, AEO en GEO tot een consistente AI-leesbare websitebasis." }
     ],
     sections: [
       {
@@ -590,6 +708,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Online marketing bureau voor vindbare websites",
     description:
       "MagisData helpt ondernemers hun website, vindbaarheid, conversieroute en meetbasis in de juiste volgorde verbeteren.",
+    dateModified: "2026-06-13",
     primaryKeyword: "online marketing bureau",
     secondaryKeywords: ["online marketing bureau Nederland", "website en SEO bureau", "online marketing voor MKB", "groeimarketing voor dienstverleners"],
     audience: "MKB-bedrijven en professionele dienstverleners",
@@ -704,6 +823,7 @@ export const landingPages: LandingPage[] = [
     title: "Conversie optimalisatie voor meer aanvragen uit je website",
     description:
       "Haal meer resultaat uit bestaande bezoekers met duidelijkere pagina's, betere CTA's, vertrouwenstekens en kortere contactroutes.",
+    dateModified: "2026-06-13",
     primaryKeyword: "conversie optimalisatie",
     secondaryKeywords: ["website conversie verbeteren", "meer leads uit website", "CRO bureau", "website optimalisatie"],
     audience: "bedrijven met websiteverkeer dat te weinig aanvragen oplevert",
@@ -853,8 +973,10 @@ export const landingPages: LandingPage[] = [
     slug: "website-voor-hoveniers",
     eyebrow: "Website voor hoveniers",
     title: "Website voor hoveniers met sterke lokale vindbaarheid",
+    metaTitle: "Website voor hoveniers met lokale SEO | MagisData",
     description:
       "Een professionele website voor hoveniers met duidelijke diensten, projectbewijs en SEO voor lokale aanvragen.",
+    dateModified: "2026-06-13",
     kind: "industry",
     audience: "hoveniers",
     answer:
@@ -868,15 +990,30 @@ export const landingPages: LandingPage[] = [
       { title: "Projecttype", text: "Maak onderscheid tussen ontwerp, aanleg en terugkerend onderhoud." },
       { title: "Visuele onderbouwing", text: "Portfolio-ontwerp laat zien waar later eigen projectbewijs past." },
       { title: "Regio en afspraak", text: "Beschrijf werkgebied en proces concreet voor lokale zoekers." }
+    ],
+    audienceFit: {
+      for: [
+        "Hoveniers die tuinontwerp, aanleg en onderhoud duidelijk willen scheiden.",
+        "Lokale bedrijven die projectfoto's, werkgebied en aanvraagroute beter willen gebruiken."
+      ],
+      notFor: [
+        "Rankinggaranties op alle plaatsen tegelijk.",
+        "Een portfolio zonder echte projectinformatie of duidelijke diensten."
+      ]
+    },
+    extraFaqs: [
+      { question: "Welke pagina's heeft een hovenierswebsite meestal nodig?", answer: "Meestal minimaal pagina's voor tuinontwerp, tuinaanleg, tuinonderhoud, werkgebied, projecten en contact. Pas uitbreiden wanneer er genoeg eigen project- of regiocontext is." },
+      { question: "Kan het portfolio helpen met SEO?", answer: "Ja, wanneer projectpagina's feitelijk uitleggen wat er is gedaan, waar het project plaatsvond en welke dienst erbij hoort. Alleen mooie foto's zijn minder sterk." }
     ]
   }),
   makeWebsitePage({
     slug: "website-laten-maken-leiden",
     eyebrow: "Lokale website",
-    title: "Website laten maken Leiden",
-    metaTitle: "Website laten maken Leiden voor lokale groei",
+    title: "Website laten maken Leiden voor meer lokale aanvragen",
+    metaTitle: "Website laten maken Leiden + SEO | MagisData",
     description:
-      "Laat in Leiden een professionele website maken die jouw bedrijf duidelijk positioneert en lokale aanvragen stimuleert.",
+      "Laat rond Leiden een professionele website maken met duidelijke diensten, lokale SEO en een korte route naar contact.",
+    dateModified: "2026-06-13",
     kind: "location",
     audience: "ondernemers",
     location: "Leiden",
@@ -892,8 +1029,46 @@ export const landingPages: LandingPage[] = [
       { title: "Lokale diensten", text: "Pagina's koppelen aanbod aan vragen van bedrijven in Leiden." },
       { title: "Geen plaatsnaamvulling", text: "Elke lokale pagina geeft eigen context en praktische informatie." }
     ],
+    detailSections: [
+      {
+        eyebrow: "Pagina-opbouw",
+        title: "Voorbeeldstructuur voor een Leidse dienstverlener",
+        text:
+          "Een lokale website werkt beter wanneer de belangrijkste dienst, regio, bewijs en contactroute elk een eigen plek krijgen.",
+        items: [
+          { title: "Startpagina", text: "Heldere belofte, doelgroep, werkgebied en primaire aanvraagroute bovenaan." },
+          { title: "Servicepagina's", text: "Per dienst uitleg over probleem, aanpak, prijsindicatie, bewijs en veelgestelde vragen." },
+          { title: "Lokaal bewijs", text: "Werkgebied, reviews, projecten of procesbewijs dichtbij de plekken waar bezoekers twijfelen." }
+        ]
+      },
+      {
+        eyebrow: "Eigendom en vervolg",
+        title: "Wat vooraf duidelijk moet zijn",
+        text:
+          "Voor start hoort duidelijk te zijn wat inbegrepen is, wat na oplevering gebeurt en wie verantwoordelijk is voor hosting, domein, onderhoud en content.",
+        items: [
+          { title: "Scope", text: "Aantal pagina's, copy, formulieren, SEO-basis en revisies vastleggen voordat er gebouwd wordt." },
+          { title: "Timing", text: "Planning hangt af van inhoud, feedback en technische koppelingen; snelle oplevering mag niet ten koste gaan van inhoud." },
+          { title: "Eigendom", text: "Afspraken over domein, hosting, bronbestanden, onderhoud en verlenging horen in het voorstel." }
+        ]
+      }
+    ],
+    audienceFit: {
+      for: [
+        "Leidse en regionale dienstverleners die hun aanbod duidelijker willen uitleggen.",
+        "Bedrijven die websitebouw meteen willen combineren met SEO-basis en contactstructuur."
+      ],
+      notFor: [
+        "Een lokale pagina zonder echt werkgebied rond Leiden.",
+        "Een snelle template zonder inhoud, bewijs of technische SEO-controle."
+      ]
+    },
     extraFaqs: [
-      { question: "Waar is MagisData gevestigd ten opzichte van Leiden?", answer: "MagisData vermeldt als adres Suze Groenewegerf 25 in Voorschoten, nabij Leiden." }
+      { question: "Waar is MagisData gevestigd ten opzichte van Leiden?", answer: "MagisData vermeldt als adres Suze Groenewegerf 25 in Voorschoten, nabij Leiden." },
+      { question: "Is een website laten maken in Leiden ook geschikt voor SEO?", answer: "Ja, als de website vanaf het begin duidelijke servicepagina's, metadata, interne links, schema en snelle contactroutes krijgt." },
+      { question: "Moet mijn bedrijf in Leiden gevestigd zijn?", answer: "Niet altijd. De pagina moet wel feitelijk kloppen: je moet Leiden of omgeving echt bedienen en geen locatie claimen die niet bestaat." },
+      { question: "Hoe snel kan een lokale website live?", answer: "Dat hangt af van pagina-aantal, inhoud, feedback en koppelingen. Voor start maken we scope en planning concreet." },
+      { question: "Wie beheert domein, hosting en onderhoud?", answer: "Dat leggen we vooraf vast. De prijzenpagina geeft startpunten, maar eigendom, support en verlenging horen duidelijk in het voorstel." }
     ]
   }),
   makeWebsitePage({

@@ -20,7 +20,7 @@ const clusters = [
   {
     title: "AI-vindbaarheid",
     text: "Waarom GEO en AEO belangrijk worden voor bedrijven die correct genoemd willen worden.",
-    href: "/geo-optimalisatie",
+    href: "/ai-vindbaarheid",
     icon: Bot
   },
   {
@@ -83,7 +83,7 @@ export default function InsightsPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
-                Vertaal dit naar je website
+                Vraag gratis websiteplan aan
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link className="focus-ring inline-flex items-center justify-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-bold text-navy shadow-sm transition hover:border-orange-soft hover:bg-peach hover:text-orange" href="/cases">

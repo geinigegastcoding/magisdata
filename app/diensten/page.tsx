@@ -341,7 +341,7 @@ export default function ServicesPage() {
           </div>
           <div className="grid gap-4">
             <Link className="focus-ring inline-flex shrink-0 items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
-              Vraag gratis groeiplan aan
+              Vraag gratis websiteplan aan
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <TrustProofRow compact />

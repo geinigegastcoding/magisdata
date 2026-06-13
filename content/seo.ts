@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { landingPages } from "@/content/landing-pages";
 import { caseStudies, insights } from "@/content/pages";
+import { currentStatus } from "@/content/status";
 import { absoluteUrl, defaultImage, lastModified, siteName } from "@/schemas/seo";
 
 export type SeoRoute = {
@@ -20,9 +21,9 @@ export type SeoRoute = {
 const coreSeoRoutes: SeoRoute[] = [
   {
     path: "/",
-    title: "Website laten maken voor SEO en AI-vindbaarheid",
-    description: "MagisData bouwt snelle websites en helpt als SEO bureau met lokale SEO, AEO, GEO, AI-vindbaarheid en conversie in Nederland.",
-    keywords: ["website laten maken", "SEO bureau", "AI vindbaarheid", "AEO optimalisatie", "GEO optimalisatie", "conversie optimalisatie"],
+    title: "Websites en SEO voor lokale dienstverleners | MagisData",
+    description: "MagisData bouwt snelle websites en SEO-structuur voor lokale dienstverleners die beter gevonden willen worden en meer aanvragen willen krijgen.",
+    keywords: ["website laten maken", "SEO bureau", "lokale SEO", "dienstverleners", "AI vindbaarheid", "AEO optimalisatie", "GEO optimalisatie"],
     priority: 1,
     changeFrequency: "weekly",
     lastModified
@@ -48,7 +49,7 @@ const coreSeoRoutes: SeoRoute[] = [
   {
     path: "/webontwikkeling",
     title: "Website laten maken voor SEO, vertrouwen en meer aanvragen",
-    description: "Laat een snelle, professionele website maken die je aanbod duidelijk uitlegt, vertrouwen opbouwt en bezoekers omzet in aanvragen.",
+    description: "Laat een snelle, professionele website maken die je aanbod duidelijk uitlegt, vertrouwen opbouwt en bezoekers helpt de stap naar een aanvraag te zetten.",
     keywords: ["website laten maken", "professionele website laten maken", "webbureau Nederland", "SEO website laten maken", "website voor ondernemers"],
     priority: 0.85,
     changeFrequency: "monthly",
@@ -124,7 +125,7 @@ const coreSeoRoutes: SeoRoute[] = [
     keywords: ["MagisData status", "MagisData bereikbaar", "contact MagisData"],
     priority: 0.35,
     changeFrequency: "monthly",
-    lastModified
+    lastModified: currentStatus.updatedAt
   }
 ];
 
@@ -184,7 +185,7 @@ export const seoRoutes: SeoRoute[] = [
     keywords: page.keywords,
     priority: page.kind === "legal" || page.kind === "thanks" ? 0.35 : page.kind === "location" ? 0.72 : 0.78,
     changeFrequency: "monthly" as const,
-    lastModified,
+    lastModified: page.dateModified ?? lastModified,
     indexable: page.kind !== "thanks"
   }))
 ];
@@ -218,7 +219,7 @@ export function metadataForPath(path: string): Metadata {
     alternates: {
       canonical: route.path,
       languages: {
-        nl: routeUrl,
+        "nl-NL": routeUrl,
         "x-default": routeUrl
       }
     },

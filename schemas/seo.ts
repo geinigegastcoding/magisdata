@@ -6,7 +6,9 @@ export const siteEmail = "contact@magisdata.nl";
 export const sitePhone = "+31 6 42280029";
 export const sitePhoneHref = "tel:+31642280029";
 export const defaultImage = `${siteUrl}/assets/og-image.png`;
-export const lastModified = "2026-05-16";
+export const lastModified = "2026-06-12";
+export const founderName = "Daniel Magis";
+export const founderLinkedIn = "https://www.linkedin.com/in/daniel-magis-4088262bb";
 
 export function absoluteUrl(path: string) {
   if (path.startsWith("http")) {
@@ -25,14 +27,40 @@ export function organizationSchema() {
     logo: `${siteUrl}/assets/logo.png`,
     telephone: sitePhone,
     email: siteEmail,
+    founder: {
+      "@id": `${siteUrl}/#founder`
+    },
     areaServed: "NL",
     knowsAbout: [
       "web development",
       "SEO",
+      "local SEO",
       "Generative Engine Optimization",
       "Answer Engine Optimization",
       "conversion optimization",
       "AI automation"
+    ]
+  };
+}
+
+export function personSchema() {
+  return {
+    "@type": "Person",
+    "@id": `${siteUrl}/#founder`,
+    name: founderName,
+    url: `${siteUrl}/over-ons`,
+    jobTitle: "Oprichter van MagisData",
+    worksFor: {
+      "@id": `${siteUrl}/#organization`
+    },
+    sameAs: [founderLinkedIn],
+    knowsAbout: [
+      "SEO",
+      "local SEO",
+      "web development",
+      "Answer Engine Optimization",
+      "Generative Engine Optimization",
+      "conversion optimization"
     ]
   };
 }
@@ -56,11 +84,11 @@ export function localBusinessSchema() {
     areaServed: [
       "Nederland",
       "Leiden",
+      "Voorschoten",
       "Den Haag",
       "Rotterdam"
     ],
-    priceRange: "$$",
-    sameAs: []
+    priceRange: "$$"
   };
 }
 
@@ -130,42 +158,26 @@ export function faqSchema(faqs: PageContent["faqs"], path: string) {
   };
 }
 
-export function howToSchema(content: PageContent, path: string) {
-  return {
-    "@type": "HowTo",
-    "@id": `${absoluteUrl(path)}#howto`,
-    name: `Hoe MagisData helpt met ${content.eyebrow.toLowerCase()}`,
-    description: content.description,
-    step: content.steps.map((step, index) => ({
-      "@type": "HowToStep",
-      position: index + 1,
-      name: step.title,
-      text: step.text
-    }))
-  };
-}
-
 export function serviceSchema(content: PageContent, path: string) {
+  const localArea =
+    path.includes("leiden") || content.title.toLowerCase().includes("leiden")
+      ? {
+          "@type": "City",
+          name: "Leiden"
+        }
+      : "Nederland";
+
   return {
     "@type": "Service",
     "@id": `${absoluteUrl(path)}#service`,
     name: content.title,
     description: content.description,
     serviceType: content.eyebrow,
-    areaServed: "Nederland",
+    areaServed: localArea,
     provider: {
       "@id": `${siteUrl}/#organization`
     },
-    url: absoluteUrl(path),
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "EUR",
-        description: "Maatwerk op basis van scope, doelen en gewenste snelheid."
-      }
-    }
+    url: absoluteUrl(path)
   };
 }
 
@@ -188,7 +200,7 @@ export function articleSchema(article: {
     dateModified: article.dateModified,
     inLanguage: "nl-NL",
     author: {
-      "@id": `${siteUrl}/#organization`
+      "@id": `${siteUrl}/#founder`
     },
     publisher: {
       "@id": `${siteUrl}/#organization`
@@ -231,7 +243,7 @@ export function caseStudySchema(caseStudy: {
       }
     ],
     author: {
-      "@id": `${siteUrl}/#organization`
+      "@id": `${siteUrl}/#founder`
     },
     publisher: {
       "@id": `${siteUrl}/#organization`
