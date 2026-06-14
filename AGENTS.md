@@ -40,7 +40,7 @@ Build and maintain a premium, high-performance marketing website for MagisData f
 - `scripts/`: asset/download/transform scripts
 
 ## Working Rules
-
+- Always make sure you use the correct font inter.
 - Keep changes scoped and minimal. Preserve existing structure and patterns.
 - Prefer updating content/data files before hardcoding text in components.
 - Keep semantic HTML and metadata quality high for SEO/AEO/GEO.
@@ -51,7 +51,7 @@ Build and maintain a premium, high-performance marketing website for MagisData f
 - Do not publish invented testimonials, client logos, performance metrics, review scores, or outcome claims as fact.
 - Never use glow effects in the website design: no glowing shadows, blurred color orbs, neon halos, or radial glow backgrounds.
 - When a question is necessary, use `ask_user_question` or `AskUserTool` when such a tool is available in the active mode; otherwise ask one short direct question.
-
+- If you find something wrong fix it or find something that shouldn't be there like dark colors a different font or the ugly blue color change or remove it.
 ## Out Of Scope
 
 Do not add/don't:
@@ -60,6 +60,8 @@ Do not add/don't:
 - broad refactors not required for current task
 - open a dev server (I will do that myself.)
 - dark colors
+- The ugly dark blue color like this (39, 76, 126) or something similar.
+
 ## Change Checklist (Before Finishing)
 
 1. Run relevant checks (`npm run typecheck` and/or `npm run build` for substantial changes).

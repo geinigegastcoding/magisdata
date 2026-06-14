@@ -1,0 +1,9 @@
+import { KeywordDraftPage, keywordPageMetadata } from "@/Keywoard-pages/_shared/keyword-draft-page";
+
+const slug = "google-business-profile-optimaliseren-leiden";
+
+export const metadata = keywordPageMetadata(slug);
+
+export default function Page() {
+  return <KeywordDraftPage slug={slug} />;
+}
