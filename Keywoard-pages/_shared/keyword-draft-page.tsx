@@ -6,8 +6,6 @@ import {
   BarChart3,
   CheckCircle2,
   FileText,
-  MapPin,
-  Search,
   Sparkles
 } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
@@ -30,6 +28,10 @@ export function keywordPageMetadata(slug: string): Metadata {
     };
   }
 
+  return keywordPageMetadataFromContent(page);
+}
+
+export function keywordPageMetadataFromContent(page: KeywordDraftPageContent): Metadata {
   return {
     title: {
       absolute: page.metaTitle
@@ -161,21 +163,21 @@ function fullValueSections(page: KeywordDraftPageContent) {
   if (page.template === "branch-location") {
     return [
       {
-        title: "Voor wie deze pagina bedoeld is",
+        title: "Een website die klanten helpt kiezen",
         paragraphs: [
-          `${page.title} is bedoeld voor een lokale dienstverlener die niet alleen een mooi ontwerp wil, maar een pagina die bezoekers helpt kiezen. De bezoeker moet snel zien wat het bedrijf doet, in welke regio het werkt, waarom het betrouwbaar is en welke vervolgstap logisch is.`,
-          `Deze pagina werkt alleen als de inhoud feitelijk blijft. Geen verzonnen vestiging, geen nepresultaten en geen algemene plaatsnaampagina. De lokale context moet aantoonbaar passen bij werkgebied, doelgroep en dienstverlening. Daardoor blijft de pagina nuttig voor mensen en veiliger voor SEO.`
+          `${page.title} draait niet om een losse homepage, maar om een duidelijke beslisroute. De bezoeker moet direct zien wat het bedrijf doet, in welke regio het werkt, waarom het betrouwbaar voelt en welke vervolgstap logisch is.`,
+          `De inhoud blijft feitelijk: geen verzonnen vestiging, geen nepresultaten en geen algemene plaatsnaampagina. Lokale context hoort alleen op de pagina wanneer die past bij werkgebied, doelgroep en dienstverlening. Zo blijft de pagina nuttig voor mensen en sterker voor SEO.`
         ]
       },
       {
-        title: "Concrete pagina-inhoud die ranking en aanvragen ondersteunt",
+        title: "Wat bezoekers bovenaan moeten begrijpen",
         paragraphs: [
-          `De eerste schermhoogte moet zoekintentie beantwoorden: ${page.directAnswer} Daarna volgt bewijs dichtbij twijfelpunten, niet pas onderaan. Denk aan echte projectfoto's, procesuitleg, duidelijke diensten, scopefactoren, werkgebied en veelgestelde vragen.`,
-          `Ondersteunende secties horen elkaar niet te herhalen. Een dienstblok legt uit wanneer de dienst relevant is. Een lokaal blok legt uit voor wie het werkgebied klopt. Een FAQ neemt praktische twijfel weg over kosten, planning, voorbereiding en contact. Interne links sturen door naar ${links}.`
+          `De eerste schermhoogte moet de zoekvraag beantwoorden: ${page.directAnswer} Daarna volgt bewijs dichtbij twijfelpunten, niet pas onderaan. Denk aan echte projectfoto's, procesuitleg, duidelijke diensten, scopefactoren, werkgebied en veelgestelde vragen.`,
+          `Elke sectie heeft een eigen taak. Een dienstblok legt uit wanneer de dienst relevant is. Een lokaal blok maakt duidelijk voor wie het werkgebied klopt. Een FAQ neemt praktische twijfel weg over kosten, planning, voorbereiding en contact. Relevante vervolgstappen zijn onder meer ${links}.`
         ]
       },
       {
-        title: "Voorbeeld van betere informatievolgorde",
+        title: "De volgorde die beter werkt",
         paragraphs: [
           `Zwak: openen met een algemene slogan, daarna een lange tekst over kwaliteit, en pas onderaan contactgegevens. Sterk: openen met dienst, doelgroep, plaats en actie. Daarna drie herkenbare diensten, proces, bewijs, prijs- of scope-uitleg, FAQ en een korte contactroute.`,
           `Deze volgorde helpt ook zoekmachines. Koppen, antwoorden en interne links maken duidelijk welke zoekvraag de pagina beantwoordt. De pagina hoeft het keyword niet te herhalen; de inhoud moet bewijzen dat het onderwerp volledig en lokaal relevant behandeld wordt.`
@@ -187,17 +189,17 @@ function fullValueSections(page: KeywordDraftPageContent) {
   if (page.template === "local-seo" || page.template === "google-business-profile") {
     return [
       {
-        title: "Wat bezoeker direct kan toepassen",
+        title: "Wat je direct kunt controleren",
         paragraphs: [
           `Begin met controleerbare basis: bedrijfsnaam, diensten, werkgebied, contactgegevens, openingstijden en belangrijkste servicepagina's. Als deze signalen niet hetzelfde verhaal vertellen, wordt lokale vindbaarheid onnodig zwak.`,
           `De grootste winst zit vaak niet in meer plaatsnamen, maar in betere samenhang. Een Google-profiel dat diensten noemt moet linken naar pagina's die die diensten uitleggen. Een lokale SEO-pagina moet duidelijk maken waarom die plaats relevant is.`
         ]
       },
       {
-        title: "Wat deze pagina anders maakt dan een dunne lokale pagina",
+        title: "Waarom dit geen dunne lokale pagina is",
         paragraphs: [
-          `De pagina geeft praktische controles, noemt beperkingen en vermijdt rankinggaranties. Daardoor helpt de inhoud ook wanneer de bezoeker geen klant wordt. Dat is belangrijk voor kwaliteit: een pagina moet zelfstandig waarde geven, niet alleen contact proberen af te dwingen.`,
-          `Gebruik deze pagina als hub of ondersteunende gids. Link naar relevante diensten, prijzen, contact en de juiste lokale of branchepagina. Publiceer pas wanneer de pagina ook vanaf ten minste een logische hub bereikbaar is.`
+          `De pagina geeft praktische controles, noemt beperkingen en vermijdt rankinggaranties. Daardoor helpt de inhoud ook wanneer de bezoeker geen klant wordt. Dat is belangrijk: een pagina moet zelfstandig waarde geven, niet alleen contact proberen af te dwingen.`,
+          `De beste lokale pagina sluit aan op bestaande diensten, prijzen, contact en de juiste lokale of branchepagina. Zo ontstaat samenhang in plaats van een losse plaatsnaamtekst.`
         ]
       },
       {
@@ -230,7 +232,7 @@ function fullValueSections(page: KeywordDraftPageContent) {
         title: "SEO-waarde van prijs- en keuzecontent",
         paragraphs: [
           `Prijszoekwoorden hebben hoge intentie. De pagina moet daarom snel antwoord geven en daarna nuance bieden. Een tabel, checklist en FAQ maken de pagina scanbaar en helpen AI-systemen de keuzecriteria samenvatten.`,
-          `Interne links naar prijzen, webontwikkeling, lokale SEO en contact maken de route compleet. Voeg de pagina pas aan de sitemap toe wanneer de bijbehorende hub ook teruglinkt, anders ontstaat snel een orphan page.`
+          `Links naar prijzen, webontwikkeling, lokale SEO en contact maken de route compleet. De bezoeker kan eerst vergelijken, daarna pas pakketadvies vragen wanneer de scope duidelijker is.`
         ]
       }
     ];
@@ -256,7 +258,7 @@ function fullValueSections(page: KeywordDraftPageContent) {
         title: "Hoe dit aansluit op SEO, GEO en AEO",
         paragraphs: [
           `SEO zorgt dat de pagina vindbaar en crawlbaar is. AEO maakt vragen direct beantwoordbaar. GEO maakt bedrijfsinformatie, diensten en bewijs beter te begrijpen als samenhangend geheel. AI-vindbaarheid gebruikt alle drie.`,
-          `De technische basis bestaat uit unieke title en description, canonical, FAQPage, BreadcrumbList, Service of Article schema, interne links en duidelijke datum. Voor productie hoort robots op index te staan; in deze draft blijft noindex bewust actief tot publicatie.`
+          `De technische basis bestaat uit unieke title en description, canonical, FAQPage, BreadcrumbList, Service of Article schema, interne links en een duidelijke datum. Zichtbare inhoud blijft leidend: schema ondersteunt de pagina, maar vervangt de tekst niet.`
         ]
       }
     ];
@@ -290,7 +292,7 @@ function fullValueSections(page: KeywordDraftPageContent) {
 function PrimaryLink({ children }: { children: React.ReactNode }) {
   return (
     <Link
-      className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-orange-dark"
+      className="focus-ring inline-flex items-center justify-center rounded-lg bg-orange px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-orange-dark"
       href="/contact"
     >
       {children}
@@ -302,7 +304,7 @@ function PrimaryLink({ children }: { children: React.ReactNode }) {
 function SecondaryLink({ children, href }: { children: React.ReactNode; href: string }) {
   return (
     <Link
-      className="focus-ring inline-flex items-center justify-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-bold text-navy shadow-sm transition hover:border-orange-soft hover:bg-peach hover:text-orange"
+      className="focus-ring inline-flex items-center justify-center rounded-lg border border-line bg-white px-6 py-3.5 text-sm font-bold text-ink shadow-sm transition hover:border-orange-soft hover:bg-peach hover:text-orange"
       href={href}
     >
       {children}
@@ -312,25 +314,25 @@ function SecondaryLink({ children, href }: { children: React.ReactNode; href: st
 
 function VisualPanel({ page }: { page: KeywordDraftPageContent }) {
   return (
-    <aside className="rounded-[1.5rem] border border-line bg-white p-6 shadow-card md:p-8">
+    <aside className="rounded-lg border border-line bg-white p-6 shadow-card md:p-8">
       <div className="flex items-start justify-between gap-5">
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+          <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
             {page.visual.label}
           </p>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-normal text-navy">
+          <h2 className="mt-3 text-2xl font-extrabold tracking-normal text-ink">
             {page.visual.title}
           </h2>
         </div>
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-blue-soft text-blue">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-orange-soft text-orange">
           {page.pageKind === "guide" ? <FileText className="h-6 w-6" /> : <Sparkles className="h-6 w-6" />}
         </span>
       </div>
       <p className="mt-4 text-sm leading-6 text-muted">{page.visual.text}</p>
       <div className="mt-7 grid gap-3">
         {page.visual.items.map((item, index) => (
-          <div className="grid grid-cols-[2.75rem_1fr] items-center gap-3 rounded-2xl border border-line bg-cream/50 p-3" key={item}>
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-orange text-xs font-black text-white">
+          <div className="grid grid-cols-[2.75rem_1fr] items-center gap-3 rounded-lg border border-line bg-cream/50 p-3" key={item}>
+            <span className="grid h-9 w-9 place-items-center rounded-lg bg-orange text-xs font-black text-white">
               {index + 1}
             </span>
             <p className="text-sm font-bold leading-6 text-ink">{item}</p>
@@ -346,9 +348,9 @@ function HighlightRail({ page }: { page: KeywordDraftPageContent }) {
     <section className="border-y border-line bg-white/78 py-8">
       <div className="container grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {page.highlights.map((item) => (
-          <article className="min-h-36 rounded-2xl border border-line bg-white p-5 shadow-sm" key={item.title}>
-            <BarChart3 className="h-5 w-5 text-blue" />
-            <h3 className="mt-4 font-extrabold text-navy">{item.title}</h3>
+          <article className="min-h-36 rounded-lg border border-line bg-white p-5 shadow-sm" key={item.title}>
+            <BarChart3 className="h-5 w-5 text-orange" />
+            <h3 className="mt-4 font-extrabold text-ink">{item.title}</h3>
             <p className="mt-2 text-sm leading-6 text-muted">{item.text}</p>
           </article>
         ))}
@@ -362,19 +364,19 @@ function Checklist({ page }: { page: KeywordDraftPageContent }) {
     <section className="py-8 md:py-12">
       <div className="container grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+          <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
             Checklist
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
             {page.checklistTitle}
           </h2>
           <p className="mt-4 leading-7 text-muted">
-            Gebruik dit als kwaliteitscheck voordat de pagina live gaat of aan de sitemap wordt toegevoegd.
+            Gebruik deze punten om te bepalen of de pagina helder genoeg is voor echte bezoekers.
           </p>
         </div>
         <div className="grid gap-3">
           {page.checklist.map((item) => (
-            <div className="flex gap-3 rounded-2xl border border-line bg-white p-4 shadow-sm" key={item}>
+            <div className="flex gap-3 rounded-lg border border-line bg-white p-4 shadow-sm" key={item}>
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange" />
               <p className="text-sm font-semibold leading-6 text-ink">{item}</p>
             </div>
@@ -393,20 +395,20 @@ function Comparison({ page }: { page: KeywordDraftPageContent }) {
   return (
     <section className="bg-white/72 py-8 md:py-12">
       <div className="container">
-        <div className="rounded-[1.5rem] border border-line bg-white p-6 shadow-sm md:p-8">
+        <div className="rounded-lg border border-line bg-white p-6 shadow-sm md:p-8">
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
             Vergelijking
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
             {page.comparison.title}
           </h2>
-          <div className="mt-7 overflow-hidden rounded-2xl border border-line">
-            <table className="w-full border-collapse text-left text-sm">
+          <div className="mt-7 overflow-x-auto rounded-lg border border-line">
+            <table className="min-w-[680px] w-full border-collapse text-left text-sm">
               <thead className="bg-cream">
                 <tr>
-                  <th className="border-b border-line p-4 font-extrabold text-navy">Onderdeel</th>
-                  <th className="border-b border-line p-4 font-extrabold text-navy">{page.comparison.leftLabel}</th>
-                  <th className="border-b border-line p-4 font-extrabold text-navy">{page.comparison.rightLabel}</th>
+                  <th className="border-b border-line p-4 font-extrabold text-ink">Onderdeel</th>
+                  <th className="border-b border-line p-4 font-extrabold text-ink">{page.comparison.leftLabel}</th>
+                  <th className="border-b border-line p-4 font-extrabold text-ink">{page.comparison.rightLabel}</th>
                 </tr>
               </thead>
               <tbody>
@@ -426,27 +428,197 @@ function Comparison({ page }: { page: KeywordDraftPageContent }) {
   );
 }
 
-function TechnicalSeo({ page }: { page: KeywordDraftPageContent }) {
+function practicalAssets(page: KeywordDraftPageContent) {
+  switch (page.template) {
+    case "branch-location":
+      return [
+        {
+          title: "Zoekintentie",
+          text: "De bezoeker zoekt een concrete websitepartner voor branche en plaats, niet een algemene uitleg over webdesign.",
+          items: [page.sourceKeyword, "dienst + plaats + bewijs", "contactroute zichtbaar"]
+        },
+        {
+          title: "Aanvraagkwaliteit",
+          text: "De pagina moet bezoekers helpen betere informatie mee te sturen voordat ze contact opnemen.",
+          items: page.checklist.slice(2, 5)
+        },
+        {
+          title: "Kwaliteitsgrens",
+          text: "Lokale relevantie blijft feitelijk en controleerbaar.",
+          items: ["geen verzonnen vestiging", "geen fake reviews", "geen rankinggarantie"]
+        }
+      ];
+    case "branch-problem":
+      return [
+        {
+          title: "Diagnose",
+          text: "Deze pagina helpt eerst begrijpen waarom aanvragen uitblijven.",
+          items: page.visual.items.slice(0, 4)
+        },
+        {
+          title: "Eerste fix",
+          text: "Begin met zichtbare frictie voordat je een volledig redesign plant.",
+          items: page.steps.slice(0, 3).map((step) => step.title)
+        },
+        {
+          title: "Wanneer hulp",
+          text: "Hulp is logisch als aanbod, bewijs, techniek en contactroute elkaar tegelijk raken.",
+          items: page.sections[2]?.items.map((item) => item.title) ?? page.checklist.slice(0, 3)
+        }
+      ];
+    case "branch-checklist":
+      return [
+        {
+          title: "Paginaonderdelen",
+          text: "De checklist vertaalt branchekennis naar concrete blokken op de website.",
+          items: page.visual.items.slice(0, 5)
+        },
+        {
+          title: "Bewijs dichtbij",
+          text: "Bewijs hoort bij het moment waarop een bezoeker twijfelt.",
+          items: page.highlights.map((item) => item.title)
+        },
+        {
+          title: "SEO zonder vulling",
+          text: "Maak alleen vervolgpagina's wanneer ze echte klantvragen beantwoorden.",
+          items: ["unieke title", "eigen FAQ", "interne links"]
+        }
+      ];
+    case "local-seo":
+    case "google-business-profile":
+      return [
+        {
+          title: "Controleerbaar",
+          text: "Lokale vindbaarheid begint met signalen die website en profiel hetzelfde laten vertellen.",
+          items: page.visual.items.slice(0, 5)
+        },
+        {
+          title: "Niet doen",
+          text: "Deze pagina vermijdt de fouten die lokale SEO vaak dun of ongeloofwaardig maken.",
+          items: ["geen fake adres", "geen kopiepagina", "geen rankinggarantie"]
+        },
+        {
+          title: "Meten",
+          text: "Verbeteringen worden beoordeeld op indexatie, impressies, clicks en aanvragen.",
+          items: ["Search Console", "contactroute", "query's per pagina"]
+        }
+      ];
+    case "pricing":
+    case "package-choice":
+      return [
+        {
+          title: "Keuzecriterium",
+          text: "De pagina helpt kiezen op scope, fase en ambitie in plaats van op een nep gemiddelde prijs.",
+          items: page.visual.items.slice(0, 5)
+        },
+        {
+          title: "Wanneer kleiner genoeg is",
+          text: "Niet elke ondernemer heeft meteen een groot pakket nodig.",
+          items: page.sections[1]?.items.map((item) => item.title) ?? page.checklist.slice(0, 3)
+        },
+        {
+          title: "Wat prijs bepaalt",
+          text: "Kosten worden gekoppeld aan werkelijke onderdelen.",
+          items: page.checklist.slice(0, 4)
+        }
+      ];
+    case "ai-visibility":
+      return [
+        {
+          title: "Entity map",
+          text: "AI-systemen hebben duidelijke entiteiten, diensten, regio en bewijs nodig.",
+          items: page.visual.items.slice(0, 5)
+        },
+        {
+          title: "Antwoordblokken",
+          text: "Elke belangrijke vraag moet zelfstandig te begrijpen zijn.",
+          items: page.sections[2]?.items.map((item) => item.title) ?? page.faqs.map((faq) => faq.question)
+        },
+        {
+          title: "Geen belofte",
+          text: "De pagina verbetert begrijpbaarheid, maar belooft geen AI-vermelding.",
+          items: ["zichtbare inhoud eerst", "schema ondersteunt", "periodiek controleren"]
+        }
+      ];
+    case "technical-guide":
+      return [
+        {
+          title: "Zelf controleren",
+          text: "De gids begint met controles die je direct kunt uitvoeren.",
+          items: page.visual.items.slice(0, 5)
+        },
+        {
+          title: "Prioriteit",
+          text: "Los eerst onderdelen op die aanvragen, vertrouwen of indexatie raken.",
+          items: page.steps.map((step) => step.title)
+        },
+        {
+          title: "Niet groter maken",
+          text: "Een gids moet helpen voordat hij verkoopt.",
+          items: ["klein testen", "effect noteren", "pas hulp bij risico"]
+        }
+      ];
+  }
+}
+
+function PracticalAssetGrid({ page }: { page: KeywordDraftPageContent }) {
+  const assets = practicalAssets(page);
+
+  return (
+    <section className="pb-8 md:pb-12">
+      <div className="container grid gap-4 lg:grid-cols-3">
+        {assets.map((asset, index) => (
+          <article className="rounded-lg border border-line bg-white p-5 shadow-sm" key={asset.title}>
+            <div className="flex items-start gap-3">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-orange-soft text-sm font-black text-orange">
+                {index + 1}
+              </span>
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
+                  Praktisch blok
+                </p>
+                <h2 className="mt-2 text-xl font-extrabold tracking-normal text-ink">
+                  {asset.title}
+                </h2>
+              </div>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-muted">{asset.text}</p>
+            <ul className="mt-5 grid gap-2">
+              {asset.items.slice(0, 5).map((item) => (
+                <li className="flex gap-2 text-sm font-semibold leading-6 text-ink" key={item}>
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-orange" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PageInfrastructure({ page }: { page: KeywordDraftPageContent }) {
   const technicalItems = [
     {
-      title: "Unieke metadata",
-      text: `Title: ${page.metaTitle}. Description: ${page.metaDescription}`
+      title: "Heldere metadata",
+      text: `De pagina krijgt een eigen title en description rond: ${page.metaTitle}.`
     },
     {
-      title: "Heldere canonical",
-      text: `Bedoelde productie-URL: ${page.productionPath}. Gebruik self-canonical zodra de pagina live staat.`
+      title: "Logische URL",
+      text: `De bedoelde URL is ${page.productionPath}, zodat onderwerp en intentie ook in de route herkenbaar zijn.`
     },
     {
       title: "Schema",
       text: `${page.schemaType}, BreadcrumbList en FAQPage sluiten aan op zichtbare inhoud. Geen review- of rating-schema zonder echte bron.`
     },
     {
-      title: "Interne links",
+      title: "Vervolgroutes",
       text: `Link vanuit en naar relevante hubs: ${page.internalLinks.slice(0, 5).map((link) => link.label).join(", ")}.`
     },
     {
-      title: "Indexatie",
-      text: "Pas opnemen in sitemap nadat de pagina intern gelinkt is en de inhoud handmatig is gecontroleerd."
+      title: "Meetbare basis",
+      text: "De pagina is zo opgebouwd dat inhoud, CTA's, FAQ's en interne links later gericht verbeterd kunnen worden."
     },
     {
       title: "AI en AEO",
@@ -457,23 +629,23 @@ function TechnicalSeo({ page }: { page: KeywordDraftPageContent }) {
   return (
     <section className="py-8 md:py-12">
       <div className="container">
-        <div className="rounded-[1.5rem] border border-line bg-white p-7 shadow-sm md:p-9">
+        <div className="rounded-lg border border-line bg-white p-7 shadow-sm md:p-9">
           <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
             <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-                Technische SEO
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
+                SEO-structuur
               </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
-                Klaar voor gecontroleerde publicatie
+              <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
+                Gebouwd voor vindbaarheid en begrip
               </h2>
               <p className="mt-4 leading-7 text-muted">
-                Deze onderdelen zorgen dat de pagina bij livegang begrijpelijk, meetbaar en netjes gekoppeld is.
+                Deze onderdelen maken de pagina beter scanbaar voor bezoekers, zoekmachines en AI-systemen.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {technicalItems.map((item) => (
-                <article className="rounded-2xl border border-line bg-cream/50 p-5" key={item.title}>
-                  <h3 className="font-extrabold text-navy">{item.title}</h3>
+                <article className="rounded-lg border border-line bg-cream/50 p-5" key={item.title}>
+                  <h3 className="font-extrabold text-ink">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted">{item.text}</p>
                 </article>
               ))}
@@ -485,34 +657,28 @@ function TechnicalSeo({ page }: { page: KeywordDraftPageContent }) {
   );
 }
 
-export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
-  const page = getDraftKeywordPage(slug);
-
-  if (!page) {
-    notFound();
-  }
-
-  const valueSections = fullValueSections(page);
+export function KeywordDraftPageContentView({ page }: { page: KeywordDraftPageContent }) {
+  const valueSections = page.valueSections ?? fullValueSections(page);
 
   return (
     <main className="bg-cream/40">
       <JsonLd data={pageSchema(page)} />
 
-      <section className="py-14 md:py-22">
+      <section className="border-b border-line bg-white py-14 md:py-22">
         <div className="container grid gap-9 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div>
             <div className="flex flex-wrap gap-2">
-              <span className="rounded-full border border-blue-soft bg-white px-3 py-1 text-xs font-extrabold text-blue">
+              <span className="rounded-full border border-orange-soft bg-peach px-3 py-1 text-xs font-extrabold text-orange">
                 {page.eyebrow}
               </span>
               <span className="rounded-full border border-line bg-white px-3 py-1 text-xs font-bold text-soft">
-                {page.pageKind === "guide" ? "Insight/blog guide" : "Actual page"}
+                {page.pageKind === "guide" ? "Praktische gids" : "Servicepagina"}
               </span>
               <span className="rounded-full border border-line bg-white px-3 py-1 text-xs font-bold text-soft">
                 Bijgewerkt {page.dateModified}
               </span>
             </div>
-            <h1 className="mt-5 max-w-4xl text-balance text-4xl font-extrabold leading-tight tracking-normal text-navy md:text-6xl">
+            <h1 className="mt-5 max-w-4xl text-balance text-4xl font-extrabold leading-tight tracking-normal text-ink md:text-6xl">
               {page.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
@@ -524,13 +690,11 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
                 {page.secondaryCta}
               </SecondaryLink>
             </div>
-            <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold text-muted">
-              <span className="inline-flex items-center gap-2">
-                <Search className="h-4 w-4 text-blue" />
+            <div className="mt-6 grid gap-3 text-sm font-semibold text-muted sm:grid-cols-2">
+              <span className="rounded-lg border border-line bg-cream/60 p-3">
                 {page.sourceKeyword}
               </span>
-              <span className="inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-blue" />
+              <span className="rounded-lg border border-line bg-cream/60 p-3">
                 {intentText(page)}
               </span>
             </div>
@@ -543,11 +707,11 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
 
       <section className="py-8 md:py-12">
         <div className="container">
-          <article className="rounded-[1.5rem] border border-orange-soft bg-white p-7 shadow-sm md:p-9">
+          <article className="rounded-lg border border-orange-soft bg-white p-7 shadow-sm md:p-9">
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
               Direct antwoord
             </p>
-            <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-normal text-navy">
+            <h2 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-normal text-ink">
               Wat moet de bezoeker meteen weten?
             </h2>
             <p className="mt-4 max-w-4xl text-base leading-8 text-muted">
@@ -557,15 +721,17 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
         </div>
       </section>
 
+      <PracticalAssetGrid page={page} />
+
       <section className="bg-white/72 py-8 md:py-12">
         <div className="container grid gap-8">
           {valueSections.map((section, index) => (
-            <article className="grid gap-8 rounded-[1.5rem] border border-line bg-white p-7 shadow-sm md:p-9 lg:grid-cols-[0.34fr_0.66fr]" key={section.title}>
+            <article className="grid gap-8 rounded-lg border border-line bg-white p-7 shadow-sm md:p-9 lg:grid-cols-[0.34fr_0.66fr]" key={section.title}>
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
-                  Verdieping {index + 1}
+                  Onderdeel {index + 1}
                 </p>
-                <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
+                <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
                   {section.title}
                 </h2>
               </div>
@@ -582,21 +748,21 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
       <section className="py-8 md:py-12">
         <div className="container grid gap-7">
           {page.sections.map((section, index) => (
-            <article className="rounded-[1.5rem] border border-line bg-white p-7 shadow-sm md:p-9" key={section.title}>
+            <article className="rounded-lg border border-line bg-white p-7 shadow-sm md:p-9" key={section.title}>
               <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr]">
                 <div>
-                  <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-                    Sectie {index + 1}
+                  <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
+                    Focus {index + 1}
                   </p>
-                  <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
+                  <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
                     {section.title}
                   </h2>
                   <p className="mt-4 leading-7 text-muted">{section.text}</p>
                 </div>
                 <div className="grid gap-4 md:grid-cols-3">
                   {section.items.map((item) => (
-                    <div className="rounded-2xl border border-line bg-cream/50 p-5" key={item.title}>
-                      <h3 className="font-extrabold text-navy">{item.title}</h3>
+                    <div className="rounded-lg border border-line bg-cream/50 p-5" key={item.title}>
+                      <h3 className="font-extrabold text-ink">{item.title}</h3>
                       <p className="mt-3 text-sm leading-6 text-muted">{item.text}</p>
                     </div>
                   ))}
@@ -609,24 +775,24 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
 
       <Checklist page={page} />
       <Comparison page={page} />
-      <TechnicalSeo page={page} />
+      <PageInfrastructure page={page} />
 
       <section className="py-8 md:py-12">
         <div className="container">
-          <div className="rounded-[1.5rem] border border-line bg-white p-7 shadow-sm md:p-9">
-            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-              Aanpak
+          <div className="rounded-lg border border-line bg-white p-7 shadow-sm md:p-9">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
+              Werkwijze
             </p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
-              Van draft naar bruikbare pagina
+            <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
+              Van vraag naar duidelijke websitepagina
             </h2>
             <div className="mt-7 grid gap-4 md:grid-cols-4">
               {page.steps.map((step, index) => (
-                <div className="rounded-2xl border border-line bg-cream/50 p-5" key={step.title}>
+                <div className="rounded-lg border border-line bg-cream/50 p-5" key={step.title}>
                   <span className="grid h-9 w-9 place-items-center rounded-full bg-orange text-sm font-black text-white">
                     {index + 1}
                   </span>
-                  <h3 className="mt-4 font-extrabold text-navy">{step.title}</h3>
+                  <h3 className="mt-4 font-extrabold text-ink">{step.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted">{step.text}</p>
                 </div>
               ))}
@@ -638,17 +804,17 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
       <section className="py-8 md:py-12">
         <div className="container grid gap-8 lg:grid-cols-[0.36fr_0.64fr]">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
               FAQ
             </p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
+            <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
               Vragen voor deze pagina
             </h2>
           </div>
           <div className="grid gap-4">
             {page.faqs.map((faq) => (
-              <details className="group rounded-2xl border border-line bg-white p-5 shadow-sm" key={faq.question}>
-                <summary className="cursor-pointer list-none text-base font-extrabold text-navy">
+              <details className="group rounded-lg border border-line bg-white p-5 shadow-sm" key={faq.question}>
+                <summary className="cursor-pointer list-none text-base font-extrabold text-ink">
                   {faq.question}
                 </summary>
                 <p className="mt-3 text-sm leading-6 text-muted">{faq.answer}</p>
@@ -661,16 +827,16 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
       <section className="bg-white/72 py-8 md:py-12">
         <div className="container grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-              Interne links
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">
+              Verder lezen
             </p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy">
-              Linkroute bij publicatie
+            <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-ink">
+              Logische vervolgstappen
             </h2>
           </div>
           <div className="grid gap-3 md:grid-cols-2">
             {page.internalLinks.map((link) => (
-              <Link className="focus-ring rounded-2xl border border-line bg-white p-4 text-sm font-extrabold text-navy shadow-sm transition hover:border-orange-soft hover:bg-peach hover:text-orange" href={link.href} key={`${link.href}-${link.label}`}>
+              <Link className="focus-ring rounded-lg border border-line bg-white p-4 text-sm font-extrabold text-ink shadow-sm transition hover:border-orange-soft hover:bg-peach hover:text-orange" href={link.href} key={`${link.href}-${link.label}`}>
                 {link.label}
               </Link>
             ))}
@@ -680,9 +846,9 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
 
       <section className="bg-white py-10 md:py-14">
         <div className="container">
-          <div className="flex flex-col items-start justify-between gap-5 rounded-[1.5rem] bg-peach p-7 shadow-sm md:flex-row md:items-center md:p-9">
+          <div className="flex flex-col items-start justify-between gap-5 rounded-lg bg-peach p-7 shadow-sm md:flex-row md:items-center md:p-9">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-normal text-navy">
+              <h2 className="text-3xl font-extrabold tracking-normal text-ink">
                 Wil je weten welke stap voor jouw website logisch is?
               </h2>
               <p className="mt-3 max-w-2xl leading-7 text-muted">
@@ -695,4 +861,14 @@ export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
       </section>
     </main>
   );
+}
+
+export function KeywordDraftPage({ slug }: KeywordDraftPageProps) {
+  const page = getDraftKeywordPage(slug);
+
+  if (!page) {
+    notFound();
+  }
+
+  return <KeywordDraftPageContentView page={page} />;
 }

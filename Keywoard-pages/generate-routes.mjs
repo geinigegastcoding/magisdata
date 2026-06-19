@@ -137,8 +137,14 @@ async function main() {
 
   for (const entry of entries) {
     const dir = new URL(`${entry.slug}/`, routesDir);
+    const pageFile = new URL("page.tsx", dir);
     await fs.mkdir(dir, { recursive: true });
-    await fs.writeFile(new URL("page.tsx", dir), pageSource(entry.slug), "utf8");
+
+    try {
+      await fs.access(pageFile);
+    } catch {
+      await fs.writeFile(pageFile, pageSource(entry.slug), "utf8");
+    }
   }
 
   const manifest = [
@@ -157,7 +163,7 @@ async function main() {
     throw new Error(`Expected 250 routes, generated ${entries.length}`);
   }
 
-  console.log(`Generated ${entries.length} keyword page draft routes in ${path.resolve("Keywoard-pages/routes")}`);
+  console.log(`Checked ${entries.length} keyword page draft routes in ${path.resolve("Keywoard-pages/routes")}`);
 }
 
 main().catch((error) => {

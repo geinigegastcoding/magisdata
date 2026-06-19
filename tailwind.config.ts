@@ -5,6 +5,7 @@ const config: Config = {
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./content/**/*.{ts,tsx}",
+    "./Keywoard-pages/**/*.{ts,tsx}",
     "./lib/**/*.{ts,tsx}"
   ],
   theme: {
@@ -21,16 +22,16 @@ const config: Config = {
     },
     extend: {
       colors: {
-        navy: "#274C7E",
-        ink: "#365374",
-        cloud: "#F7FBFF",
+        navy: "#3F3A32",
+        ink: "#4A4037",
+        cloud: "#FFFDF8",
         cream: "#FFFCF7",
         peach: "#FFF7ED",
         orange: "#FF6B1A",
         "orange-dark": "#C95A16",
         "orange-soft": "#FFEDD5",
-        blue: "#2563EB",
-        "blue-soft": "#DBEAFE",
+        blue: "#B45309",
+        "blue-soft": "#FEF3C7",
         green: "#16A34A",
         "green-soft": "#DCFCE7",
         yellow: "#D97706",
@@ -39,7 +40,7 @@ const config: Config = {
         "pink-soft": "#FFE4E6",
         purple: "#9333EA",
         "purple-soft": "#F3E8FF",
-        mist: "#EEF6FF",
+        mist: "#FFF7ED",
         muted: "#536179",
         soft: "#7A8499",
         line: "#EAECEF"

@@ -42,6 +42,7 @@ export type KeywordDraftPageContent = {
     text: string;
     items: { title: string; text: string }[];
   }[];
+  valueSections?: { title: string; paragraphs: string[] }[];
   checklistTitle: string;
   checklist: string[];
   comparison?: {
@@ -80,6 +81,17 @@ type Place = {
   context: string;
   buyerContext: string;
   localExample: string;
+};
+
+type BranchDepth = {
+  visitorSituation: string;
+  contentAngle: string;
+  example: string;
+  intakeFields: string[];
+  seoExpansion: string[];
+  avoid: string;
+  proofUse: string;
+  aiAnswer: string;
 };
 
 const dateModified = "2026-06-14";
@@ -499,6 +511,213 @@ const branches: Branch[] = [
   }
 ];
 
+const branchDepthBySlug: Record<string, BranchDepth> = {
+  kappers: {
+    visitorSituation: "Een bezoeker vergelijkt behandeling, sfeer, prijsrichting en beschikbare afspraakmomenten voordat hij boekt.",
+    contentAngle: "Behandelpagina's moeten uitleggen wanneer knippen, kleuren, highlights of styling past en wat iemand vooraf moet weten.",
+    example: "Een kleurblok kan uitleggen dat lengte, uitgroei, toner en gewenste techniek de afspraak en prijsindicatie bepalen.",
+    intakeFields: ["gewenste behandeling", "huidige haarlengte", "kleurhistorie", "voorkeursmoment", "foto of inspiratiebeeld"],
+    seoExpansion: ["haarkleuring", "highlights", "krullen knippen", "bruidskapsel", "herenkapper"],
+    avoid: "Gebruik geen stockfoto's als bewijs voor salonstijl en noem geen vanaf-prijzen die in de praktijk niet haalbaar zijn.",
+    proofUse: "Echte sfeerfoto's, behandelmenu en recente praktische informatie werken sterker dan brede woorden over kwaliteit.",
+    aiAnswer: "AI moet kunnen herkennen welke behandelingen de salon aanbiedt, hoe klanten boeken, welke prijsfactoren gelden en waar de salon bereikbaar is."
+  },
+  loodgieters: {
+    visitorSituation: "Een bezoeker heeft vaak stress door lekkage, verstopping of waterschade en wil meteen weten of bellen logisch is.",
+    contentAngle: "Probleemroutes werken beter dan algemene dienstlijsten: spoed, lekkage, verstopping, sanitair en leidingwerk vragen andere opvolging.",
+    example: "Een lekkageblok kan vragen om foto's, locatie van het lek, of de hoofdkraan dicht is en wanneer het probleem begon.",
+    intakeFields: ["probleemtype", "urgentie", "plaats in huis", "foto's", "bereikbaarheid"],
+    seoExpansion: ["lekkage opsporen", "afvoer verstopt", "wc verstopping", "kraan vervangen", "leidingwerk"],
+    avoid: "Claim geen 24/7 spoed, garanties of lokale vestiging tenzij dit aantoonbaar klopt.",
+    proofUse: "Werkgebied, probleemcategorieen, werkwijze bij spoed en duidelijke bereikbaarheid nemen de meeste twijfel weg.",
+    aiAnswer: "AI moet kunnen samenvatten welke loodgietersproblemen worden opgepakt, wat spoed is en welke contactroute hoort bij elk probleem."
+  },
+  elektriciens: {
+    visitorSituation: "Een bezoeker wil eerst weten of de situatie veilig is en daarna pas of het een storing, inspectie of project is.",
+    contentAngle: "Splits storingen van projecten zoals groepenkast vervangen, laadpunt plaatsen, verlichting en uitbreiding.",
+    example: "Een storingsblok kan uitleggen welke signalen direct contact vragen, zonder gevaarlijk doe-het-zelfadvies te geven.",
+    intakeFields: ["storing of project", "groepenkastfoto", "risicosignalen", "woningtype", "gewenste planning"],
+    seoExpansion: ["groepenkast vervangen", "laadpunt installeren", "kortsluiting oplossen", "elektra inspectie", "verlichting plaatsen"],
+    avoid: "Noem certificaten, keurmerken of veiligheidsgaranties alleen wanneer ze echt bestaan en zichtbaar onderbouwd kunnen worden.",
+    proofUse: "Procesuitleg, voorbereiding en duidelijke veiligheidsgrenzen bouwen vertrouwen zonder onbewezen claims.",
+    aiAnswer: "AI moet onderscheid kunnen maken tussen elektrische storing, inspectie en installatiewerk, inclusief veilige vervolgstap."
+  },
+  hoveniers: {
+    visitorSituation: "Een bezoeker zoekt vaak inspiratie maar wil ook weten of ontwerp, aanleg, onderhoud of renovatie bij de hovenier past.",
+    contentAngle: "Projectgerichte content met foto's, stijl, seizoen, materiaalkeuze en aanvraagvoorbereiding helpt beter dan een algemene dienstenlijst.",
+    example: "Een tuinaanlegblok kan laten zien welke foto's, afmetingen, stijlwensen en planning nuttig zijn voor een eerste gesprek.",
+    intakeFields: ["foto's van tuin", "globale afmetingen", "wens of probleem", "seizoen", "budgetrichting"],
+    seoExpansion: ["tuinontwerp", "tuinaanleg", "tuinonderhoud", "tuinrenovatie", "seizoensonderhoud"],
+    avoid: "Gebruik geen projectresultaten of voor-na claims als die niet uit eigen werk komen.",
+    proofUse: "Projectfoto's met korte context, werkwijze en materiaalkeuzes helpen bezoekers inschatten of de stijl past.",
+    aiAnswer: "AI moet kunnen herkennen welke tuinwerkzaamheden worden gedaan, welke projectinformatie nodig is en in welk werkgebied de hovenier actief is."
+  },
+  dakdekkers: {
+    visitorSituation: "Een bezoeker wil weten of daklekkage direct actie vraagt of dat inspectie, onderhoud of renovatie volstaat.",
+    contentAngle: "Daktype, urgentie, inspectiestappen en onderhoud bepalen de pagina-opbouw.",
+    example: "Een inspectieblok kan uitleggen welke daktypes worden beoordeeld en welke foto's of signalen vooraf nuttig zijn.",
+    intakeFields: ["daktype", "lekkageplek", "foto's", "urgentie", "bouwjaar of onderhoudshistorie"],
+    seoExpansion: ["daklekkage", "dakinspectie", "plat dak renovatie", "dakonderhoud", "dakgoot reparatie"],
+    avoid: "Beloof geen levensduur, garantie of spoedservice zonder feitelijke onderbouwing.",
+    proofUse: "Daktype-uitleg, inspectieproces en onderhoudsadvies geven vertrouwen zonder nepresultaten.",
+    aiAnswer: "AI moet kunnen zien welk dakprobleem wordt opgelost, wanneer inspectie nodig is en welke informatie voor een offerte telt."
+  },
+  schilders: {
+    visitorSituation: "Een bezoeker vergelijkt binnenwerk, buitenwerk, planning en prijsfactoren voordat hij een offerte vraagt.",
+    contentAngle: "Maak onderscheid tussen binnenschilderwerk, buitenschilderwerk, onderhoud en materiaalkeuze.",
+    example: "Een buitenwerkblok kan uitleggen hoe seizoen, ondergrond, houtrot en bereikbaarheid planning en prijs beinvloeden.",
+    intakeFields: ["binnen of buiten", "oppervlak", "staat van ondergrond", "foto's", "gewenste periode"],
+    seoExpansion: ["binnenschilder", "buitenschilder", "houtrot herstel", "onderhoudsschilder", "schilderofferte"],
+    avoid: "Gebruik geen garantie- of onderhoudsclaims zonder voorwaarden en bron.",
+    proofUse: "Voorbeelden, materiaalkeuze en onderhoudsadvies maken het verschil tussen prijsvergelijking en vertrouwen.",
+    aiAnswer: "AI moet kunnen herkennen welke schilderwerken worden uitgevoerd, wat prijs en planning beinvloedt en hoe offerteaanvraag loopt."
+  },
+  stukadoors: {
+    visitorSituation: "Een bezoeker wil weten welke afwerking past en welke m2, ondergrond en voorbereiding nodig zijn voor een offerte.",
+    contentAngle: "Afwerkingstypes, ondergrond, m2 en planning horen vroeg op de pagina.",
+    example: "Een glad-stucwerkblok kan uitleggen wanneer sausklaar of behangklaar logisch is en welke voorbereiding nodig is.",
+    intakeFields: ["m2", "ruimte", "ondergrond", "gewenste afwerking", "foto's"],
+    seoExpansion: ["glad stucwerk", "sausklaar stucen", "plafond stucen", "stucwerk prijs per m2", "wand afwerken"],
+    avoid: "Noem geen vaste m2-prijzen zonder uit te leggen welke factoren de prijs veranderen.",
+    proofUse: "Afwerkingsvoorbeelden, m2-uitleg en voorbereiding maken aanvragen concreter.",
+    aiAnswer: "AI moet kunnen samenvatten welke stucafwerkingen er zijn, welke informatie nodig is en wat de offerte beinvloedt."
+  },
+  schoonheidssalons: {
+    visitorSituation: "Een bezoeker wil behandeling, huidtype, hygiene, sfeer en boekroute rustig kunnen beoordelen.",
+    contentAngle: "Behandelmenu, indicaties, voorbereiding en specialisaties moeten dichter bij elkaar staan.",
+    example: "Een huidverbeteringsblok kan uitleggen wanneer intake nodig is en welke contra-indicaties eerst besproken moeten worden.",
+    intakeFields: ["gewenste behandeling", "huidtype of doel", "eerdere behandeling", "voorkeursmoment", "allergie of gevoeligheid"],
+    seoExpansion: ["gezichtsbehandeling", "huidverbetering", "wenkbrauwen", "acnebehandeling", "salon afspraak"],
+    avoid: "Doe geen medische of resultaatclaims die niet aantoonbaar en verantwoord zijn.",
+    proofUse: "Behandelmenu, hygiene-uitleg, sfeer en specialisaties geven betrouwbaarheid.",
+    aiAnswer: "AI moet kunnen herkennen welke behandelingen bestaan, voor wie ze bedoeld zijn en hoe iemand veilig boekt."
+  },
+  fysiotherapeuten: {
+    visitorSituation: "Een bezoeker zoekt geruststelling rond klachten, verwijzing, behandelvorm en eerste afspraak.",
+    contentAngle: "Klachtgebieden, behandelproces en verwijzingsinformatie moeten medisch zorgvuldig en niet overdreven worden geschreven.",
+    example: "Een rugklachtenblok kan uitleggen wat iemand kan verwachten bij de eerste afspraak zonder diagnose online te beloven.",
+    intakeFields: ["klachtgebied", "duur van klacht", "verwijzing ja/nee", "beschikbaarheid", "verzekeringsvraag"],
+    seoExpansion: ["rugklachten", "nekklachten", "sportblessure", "revalidatie", "fysiotherapie afspraak"],
+    avoid: "Beloof geen genezing, diagnose of medisch resultaat via marketingtekst.",
+    proofUse: "Teamprofielen, klachtgebieden, behandelproces en praktische afspraakinfo bouwen vertrouwen.",
+    aiAnswer: "AI moet klachten, behandelvormen, afspraakroute en verwijzingsvragen correct kunnen onderscheiden."
+  },
+  rijscholen: {
+    visitorSituation: "Een bezoeker wil weten of de rijschool bij budget, regio, instructeur en examendoel past.",
+    contentAngle: "Proefles, lespakket, lesgebied en instructeurvertrouwen verdienen eigen blokken.",
+    example: "Een proeflesblok kan uitleggen wat wordt beoordeeld en hoe pakketadvies daarna ontstaat.",
+    intakeFields: ["ervaring", "beschikbaarheid", "lesgebied", "doel of examenplanning", "voorkeur instructeur"],
+    seoExpansion: ["proefles", "rijlespakket", "automaat rijles", "examentraining", "rijschool regio"],
+    avoid: "Claim geen slagingspercentages of CBR-resultaten zonder actuele bron.",
+    proofUse: "Pakketuitleg, instructeurprofiel en duidelijke regio-informatie maken kiezen makkelijker.",
+    aiAnswer: "AI moet proefles, lespakketten, lesgebied, instructeur en kostenfactoren duidelijk kunnen terugvinden."
+  },
+  restaurants: {
+    visitorSituation: "Een bezoeker wil menu, sfeer, opening, reserveren en bereikbaarheid direct kunnen checken.",
+    contentAngle: "Menu, reserveringsroute, groepen, dieetwensen en sfeerbeeld moeten sneller werken dan decoratieve tekst.",
+    example: "Een menublok kan gerechten, keukenstijl, allergenenroute en reserveringsinformatie samenbrengen.",
+    intakeFields: ["datum", "aantal personen", "dieetwensen", "gelegenheid", "voorkeurstijd"],
+    seoExpansion: ["menu", "reserveren", "lunch", "diner", "groepen"],
+    avoid: "Gebruik geen reviewscore, sterren of populaire claims zonder echte bron.",
+    proofUse: "Menukaart, sfeerfoto's, openingstijden en locatiegegevens geven directe keuze-informatie.",
+    aiAnswer: "AI moet keuken, menu, openingstijden, reserveren en locatie correct kunnen samenvatten."
+  },
+  tandartspraktijken: {
+    visitorSituation: "Een bezoeker wil zonder stress weten of inschrijven, controle, behandeling of spoedcontact mogelijk is.",
+    contentAngle: "Behandelingen, inschrijven, spoedroute, team en eerste afspraak vragen rustige uitleg.",
+    example: "Een inschrijfblok kan uitleggen of nieuwe patienten welkom zijn en wat iemand voor de eerste afspraak meeneemt.",
+    intakeFields: ["nieuwe patient ja/nee", "klacht of controle", "spoedvraag", "beschikbaarheid", "verzekeringsinformatie"],
+    seoExpansion: ["tandarts inschrijven", "spoed tandarts", "controle", "cosmetische tandheelkunde", "mondhygiene"],
+    avoid: "Maak geen medische uitkomstclaims en wees voorzichtig met spoedbeschikbaarheid.",
+    proofUse: "Team, behandelingen, praktijkinformatie en heldere voorbereiding nemen spanning weg.",
+    aiAnswer: "AI moet behandelingen, inschrijven, spoed en afspraakroute zonder verwarring kunnen onderscheiden."
+  },
+  makelaars: {
+    visitorSituation: "Een bezoeker wil weten of de makelaar lokale marktkennis heeft en hoe waardebepaling of verkoopgesprek loopt.",
+    contentAngle: "Waardebepaling, verkoopproces, woningpresentatie en lokale context horen in een beslisroute.",
+    example: "Een waardebepalingsblok kan uitleggen welke woninggegevens en verkoopdoelen nodig zijn voor een eerste inschatting.",
+    intakeFields: ["woningtype", "plaats of wijk", "verkoopdoel", "planning", "contactvoorkeur"],
+    seoExpansion: ["waardebepaling", "huis verkopen", "aankoopbegeleiding", "woningpresentatie", "verkoopmakelaar"],
+    avoid: "Claim geen verkoopresultaten, marktposities of gemiddelde verkooptijd zonder bewijs.",
+    proofUse: "Procesuitleg, woningpresentatie en lokale kennis zijn nuttiger dan algemene succesclaims.",
+    aiAnswer: "AI moet waardebepaling, verkoopbegeleiding, aankoopbegeleiding en lokale context correct kunnen koppelen."
+  },
+  boekhouders: {
+    visitorSituation: "Een bezoeker wil weten of de boekhouder past bij zzp, mkb, branche, aanlevering en tariefstructuur.",
+    contentAngle: "Doelgroep, diensten, tarieven, aanleverproces en intake moeten duidelijker zijn dan algemene betrouwbaarheid.",
+    example: "Een zzp-blok kan uitleggen wat maandelijks wordt aangeleverd en wanneer btw-aangifte of jaarwerk speelt.",
+    intakeFields: ["zzp of mkb", "aantal facturen", "boekhoudsoftware", "btw-periode", "adviesvraag"],
+    seoExpansion: ["boekhouding zzp", "btw aangifte", "jaarrekening", "administratie uitbesteden", "boekhoudpakket"],
+    avoid: "Noem geen vaste tarieven zonder scope en geen fiscale beloftes zonder nuance.",
+    proofUse: "Pakketten, werkwijze, vaste contactafspraken en aanleveruitleg maken de keuze concreet.",
+    aiAnswer: "AI moet doelgroep, administratie, belastingaangifte, tarieven en intakeproces kunnen samenvatten."
+  },
+  coaches: {
+    visitorSituation: "Een bezoeker zoekt een veilige match en wil methode, doelgroep, sessievorm en grenzen begrijpen.",
+    contentAngle: "Doelgroep, methode, trajectopbouw en kennismaking moeten concreet zonder vage transformatieclaims.",
+    example: "Een intakeblok kan uitleggen wanneer er een klikgesprek is en wanneer doorverwijzen eerlijker is.",
+    intakeFields: ["hulpvraag", "doelgroep", "vorm online/offline", "beschikbaarheid", "verwachting"],
+    seoExpansion: ["loopbaancoaching", "burn-out coaching", "teamcoaching", "coach traject", "kennismaking"],
+    avoid: "Beloof geen persoonlijke doorbraak, herstel of resultaat dat niet te garanderen is.",
+    proofUse: "Methode, trajectopbouw, doelgroep en grenzen maken coaching minder vaag.",
+    aiAnswer: "AI moet kunnen herkennen voor wie de coach werkt, welke methode wordt gebruikt en hoe kennismaking loopt."
+  },
+  "personal-trainers": {
+    visitorSituation: "Een bezoeker wil weten waar training plaatsvindt, welk programma past en hoe intake en begeleiding werken.",
+    contentAngle: "Programma, locatie, intake, niveau en begeleiding moeten concreet zijn zonder fitnessresultaten te beloven.",
+    example: "Een intakeblok kan vragen naar doel, blessurehistorie, ervaring, beschikbare dagen en trainingslocatie.",
+    intakeFields: ["doel", "ervaring", "blessures", "locatie", "beschikbaarheid"],
+    seoExpansion: ["krachttraining", "afvallen begeleiding", "personal training intake", "duo training", "voedingsbegeleiding"],
+    avoid: "Claim geen gegarandeerd gewichtsverlies, transformaties of medische effecten.",
+    proofUse: "Programma-uitleg, locatie, begeleiding en intakeproces bouwen vertrouwen.",
+    aiAnswer: "AI moet programma's, locatie, intake, begeleiding en contactroute kunnen herkennen."
+  },
+  klusbedrijven: {
+    visitorSituation: "Een bezoeker wil snel weten of de klus binnen scope valt en welke foto's of maten nodig zijn.",
+    contentAngle: "Klussoorten, beschikbaarheid, materiaal, regio en offerteproces moeten afgebakend worden.",
+    example: "Een montageblok kan uitleggen welke maten, foto's en materiaalinformatie nodig zijn voor een eerste inschatting.",
+    intakeFields: ["klussoort", "foto's", "maatvoering", "materiaal aanwezig", "gewenste planning"],
+    seoExpansion: ["montagewerk", "kleine verbouwing", "reparatie", "onderhoud", "klus offerte"],
+    avoid: "Doe niet alsof elk type bouw- of installatiewerk binnen scope valt.",
+    proofUse: "Heldere klussoorten, voorbereidingslijst en werkgebied voorkomen verkeerde aanvragen.",
+    aiAnswer: "AI moet kunnen zien welke klussen worden aangenomen, welke voorbereiding nodig is en waar het bedrijf werkt."
+  },
+  installateurs: {
+    visitorSituation: "Een bezoeker wil installatie, onderhoud of storing onderscheiden en weten welke systeeminformatie nodig is.",
+    contentAngle: "Systeemtypes, onderhoud, storingen, certificering en voorbereiding vragen aparte routes.",
+    example: "Een onderhoudsblok kan vragen naar merk, type, leeftijd, storingcode en onderhoudshistorie.",
+    intakeFields: ["installatietype", "merk of model", "storingcode", "onderhoudshistorie", "planning"],
+    seoExpansion: ["installatie", "onderhoud", "storing", "cv onderhoud", "warmtepomp service"],
+    avoid: "Claim geen certificering, garantie of spoeddekking zonder bewijs.",
+    proofUse: "Technische checklist, onderhoudsstappen en systeemtypes maken de aanvraag beter.",
+    aiAnswer: "AI moet installatie, onderhoud, storing en systeemtype correct kunnen onderscheiden."
+  },
+  fotografen: {
+    visitorSituation: "Een bezoeker beoordeelt stijl, portfolio, beschikbaarheid, pakketinhoud en levering.",
+    contentAngle: "Portfolio, stijluitleg, pakketten, voorbereiding en oplevering moeten zichtbaar samenhangen.",
+    example: "Een bruiloftsblok kan uitleggen hoeveel uren, locaties, nabewerking en levertijd het pakket bepalen.",
+    intakeFields: ["datum", "type shoot", "locatie", "gewenste stijl", "pakketvraag"],
+    seoExpansion: ["portretfotografie", "bruidsfotograaf", "zakelijke fotografie", "familieshoot", "fotografie pakket"],
+    avoid: "Gebruik geen portfolio of klantresultaat dat niet eigen of toegestaan is.",
+    proofUse: "Echt portfolio, stijlbeschrijving en pakketdetails helpen bezoekers sneller beslissen.",
+    aiAnswer: "AI moet stijl, fotografiesoorten, beschikbaarheid, pakketten en levering correct kunnen samenvatten."
+  },
+  advocatenkantoren: {
+    visitorSituation: "Een bezoeker zoekt voorzichtig naar rechtsgebied, urgentie, vertrouwelijkheid en eerste contact.",
+    contentAngle: "Rechtsgebieden, intakeproces, grenzen, team en discretie moeten zorgvuldig geformuleerd zijn.",
+    example: "Een intakeblok kan uitleggen welke documenten nuttig zijn en dat inhoudelijke beoordeling pas na contact gebeurt.",
+    intakeFields: ["rechtsgebied", "korte situatie", "urgentie", "documenten", "contactvoorkeur"],
+    seoExpansion: ["arbeidsrecht", "ondernemingsrecht", "familierecht", "juridisch advies", "advocaat intake"],
+    avoid: "Geef geen juridisch advies als marketingclaim en beloof geen uitkomst.",
+    proofUse: "Rechtsgebieden, teamprofielen, intakeproces en duidelijke grenzen geven professioneel vertrouwen.",
+    aiAnswer: "AI moet rechtsgebieden, intake, vertrouwelijkheid en contactroute kunnen begrijpen zonder uitkomstclaims."
+  }
+};
+
+function branchDepth(branch: Branch) {
+  return branchDepthBySlug[branch.slug];
+}
+
 function linkSet(branch?: Branch, place?: Place) {
   const links = [
     { label: "Home", href: "/" },
@@ -537,6 +756,7 @@ function makeBranchLocationPages(): KeywordDraftPageContent[] {
 
   for (const place of primaryPlaces) {
     for (const branch of branches) {
+      const depth = branchDepth(branch);
       const slug = `website-laten-maken-voor-${branch.slug}-${place.slug}`;
       const priority: KeywordDraftPageContent["priority"] =
         ["voorschoten", "leiden"].includes(place.slug) && ["kappers", "loodgieters", "elektriciens", "hoveniers"].includes(branch.slug)
@@ -561,7 +781,7 @@ function makeBranchLocationPages(): KeywordDraftPageContent[] {
           description: `Een professionele website voor ${branch.plural} die klanten snel helpt kiezen, vertrouwen opbouwt en de stap naar ${branch.conversion} duidelijk maakt.`,
           primaryCta: "Vraag gratis websiteplan aan",
           secondaryCta: "Bekijk prijzen",
-          directAnswer: `Voor ${branch.plural} in ${place.name} moet een website direct uitleggen welke diensten je levert, waar je werkt, waarom klanten je kunnen vertrouwen en hoe zij contact opnemen. De pagina hoort ${branch.problem}, met ${place.context.toLowerCase()}`,
+          directAnswer: `Voor ${branch.plural} in ${place.name} moet een website direct uitleggen welke diensten je levert, waar je werkt, waarom klanten je kunnen vertrouwen en hoe zij contact opnemen. ${depth.visitorSituation} De pagina hoort ${branch.problem}, met ${place.context.toLowerCase()}`,
           visual: {
             label: "Pagina-opbouw",
             title: `${branch.articleSingular} website als beslisroute`,
@@ -572,7 +792,30 @@ function makeBranchLocationPages(): KeywordDraftPageContent[] {
             { title: "Duidelijk aanbod", text: branch.services.join(", ") + " krijgen elk een herkenbare plek." },
             { title: "Lokale context", text: place.localExample },
             { title: "Mobiel contact", text: branch.mobile },
-            { title: "SEO-basis", text: "Metadata, H1, interne links, FAQ en schema worden vanaf start meegenomen." }
+            { title: "Echte diepte", text: depth.contentAngle }
+          ],
+          valueSections: [
+            {
+              title: `Wat bezoekers van ${branch.plural} echt willen weten`,
+              paragraphs: [
+                depth.visitorSituation,
+                `Daarom moet deze pagina meer doen dan webdesign verkopen. Ze moet uitleggen wanneer ${branch.services.join(", ").toLowerCase()} relevant zijn, welke voorbereiding handig is en welke stap naar ${branch.conversion} logisch voelt.`
+              ]
+            },
+            {
+              title: "Voorbeeld van nuttige inhoud",
+              paragraphs: [
+                depth.example,
+                `Een goede pagina vraagt niet alleen om naam en telefoonnummer. Voor ${branch.plural} zijn vooral ${depth.intakeFields.join(", ")} nuttig. Daarmee wordt de aanvraag concreter voor de ondernemer en begrijpelijker voor de bezoeker.`
+              ]
+            },
+            {
+              title: `Hoe je deze pagina later veilig uitbouwt`,
+              paragraphs: [
+                `Als er genoeg inhoud en vraag is, kunnen aparte pagina's ontstaan rond ${depth.seoExpansion.join(", ")}. Elke pagina moet dan een eigen probleem beantwoorden in plaats van dezelfde lokale tekst te herhalen.`,
+                `${depth.avoid} Dat houdt de pagina geloofwaardig en verlaagt doorway-risico.`
+              ]
+            }
           ],
           sections: [
             {
@@ -580,7 +823,7 @@ function makeBranchLocationPages(): KeywordDraftPageContent[] {
               text: `Klanten zoeken niet alleen een naam. Ze willen snel weten of je past bij hun vraag, of je in ${place.name} werkt en wat de volgende stap is.`,
               items: [
                 { title: "Bezoeker wil richting", text: branch.questions[0] },
-                { title: "Twijfel moet weg", text: `Bewijs hoort dichtbij ${branch.trust}, niet verstopt onderaan de pagina.` },
+                { title: "Twijfel moet weg", text: depth.proofUse },
                 { title: "Regio moet kloppen", text: place.buyerContext }
               ]
             },
@@ -602,7 +845,7 @@ function makeBranchLocationPages(): KeywordDraftPageContent[] {
               items: [
                 { title: "Echte lokale signalen", text: place.context },
                 { title: "Dienst plus plaats", text: `Elke tekst koppelt ${branch.services[0].toLowerCase()} en andere diensten aan echte zoekintentie.` },
-                { title: "Geen verzonnen claims", text: "Geen neplocatie, geen fake reviews, geen garanties over posities." }
+                { title: "Geen verzonnen claims", text: depth.avoid }
               ]
             }
           ],
@@ -612,6 +855,8 @@ function makeBranchLocationPages(): KeywordDraftPageContent[] {
             `Zijn ${branch.services.slice(0, 2).join(" en ").toLowerCase()} apart scanbaar?`,
             `Is duidelijk hoe iemand ${branch.conversion} kan starten?`,
             `Staan ${branch.proof.slice(0, 2).join(" en ")} dichtbij de keuze?`,
+            `Vraagt de pagina om ${depth.intakeFields.slice(0, 3).join(", ")} zonder het formulier te lang te maken?`,
+            `Is duidelijk welke vervolgpagina's rond ${depth.seoExpansion.slice(0, 3).join(", ")} later zinvol zijn?`,
             "Zijn title, description, FAQ en interne links uniek?"
           ],
           comparison: {
@@ -628,20 +873,21 @@ function makeBranchLocationPages(): KeywordDraftPageContent[] {
             { title: "Kans bepalen", text: `We bekijken aanbod, doelgroep en lokale zoekintentie in ${place.name}.` },
             { title: "Structuur maken", text: `We zetten ${branch.pageStructure.slice(0, 4).join(", ")} in logische volgorde.` },
             { title: "Pagina bouwen", text: "Design, copy, metadata en interne links worden samen uitgewerkt." },
-            { title: "Publiceren", text: "Pas live zetten wanneer inhoud uniek genoeg is en sitemap bewust wordt bijgewerkt." }
+            { title: "Lanceren en meten", text: "Na akkoord meten we of bezoekers de route naar contact begrijpen en waar verfijning nodig is." }
           ],
           faqs: [
             { question: `Wat kost een website voor ${branch.plural} in ${place.name}?`, answer: "Dat hangt af van aantal pagina's, copy, SEO, beelden en onderhoud. De prijzenpagina geeft richting; voor een concrete keuze is pakketadvies logischer." },
             { question: "Kan ik bestaande foto's en teksten gebruiken?", answer: "Ja, als ze duidelijk en actueel zijn. We scherpen teksten aan zodat klanten en zoekmachines ze beter begrijpen." },
             { question: `Moet ik echt een lokale pagina voor ${place.name} hebben?`, answer: `Alleen als je ${place.name} feitelijk bedient en genoeg eigen context hebt. Anders is een algemene branchepagina sterker.` },
-            { question: "Komt deze pagina direct in Google?", answer: "Nee. Publiceer pas na kwaliteitscontrole, interne links en sitemap-update. Rankings worden niet gegarandeerd." }
+            { question: "Levert een lokale pagina meteen aanvragen op?", answer: "Dat hangt af van concurrentie, bestaande vindbaarheid en de kwaliteit van de rest van de website. We bouwen de basis goed, maar geven geen rankinggaranties." },
+            { question: `Welke informatie moet een ${branch.singular} aanvraagformulier vragen?`, answer: `Begin met ${depth.intakeFields.join(", ")}. Houd het formulier kort en gebruik extra velden alleen wanneer ze de eerste reactie echt verbeteren.` }
           ],
           internalLinks: linkSet(branch, place),
           qualityNotes: [
             "Unieke branchevragen aanwezig.",
             "Lokale context aanwezig zonder fake vestiging.",
             "Geen verzonnen testimonials of resultaten.",
-            "Sitemap pas handmatig toevoegen bij publicatie."
+            "Rustige CTA en realistische SEO-verwachting aanwezig."
           ],
           schemaType: "Service"
         })
@@ -659,6 +905,7 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
   let id = 121;
 
   for (const branch of branches) {
+    const depth = branchDepth(branch);
     const problemSlug = `waarom-krijgt-mijn-${branch.slug}-website-weinig-aanvragen`;
     pages.push(
       basePage({
@@ -678,17 +925,40 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
         description: `Je website kan er netjes uitzien en toch weinig contact opleveren. Voor ${branch.plural} ligt het vaak aan onduidelijk aanbod, te weinig bewijs of een contactroute die niet past bij de vraag.`,
         primaryCta: "Stuur je pagina voor korte feedback",
         secondaryCta: "Bekijk webontwikkeling",
-        directAnswer: `Een website voor ${branch.plural} krijgt weinig aanvragen wanneer bezoekers niet snel genoeg zien welke dienst past, waarom jij betrouwbaar bent en welke stap zij moeten zetten. Controleer eerst ${branch.problem}, daarna bewijs en mobiel contact.`,
+        directAnswer: `Een website voor ${branch.plural} krijgt weinig aanvragen wanneer bezoekers niet snel genoeg zien welke dienst past, waarom jij betrouwbaar bent en welke stap zij moeten zetten. Controleer eerst ${branch.problem}, daarna bewijs, mobiel contact en de informatie die nodig is voor een goede eerste aanvraag.`,
         visual: {
           label: "Diagnose",
           title: "Waar aanvragen weglekken",
           text: "Aanbod, bewijs en contactroute moeten op hetzelfde moment duidelijk zijn.",
-          items: ["aanbod onduidelijk", "bewijs te ver weg", "mobiele CTA zwak", "te weinig lokale context"]
+          items: ["aanbod onduidelijk", "bewijs te ver weg", "mobiele CTA zwak", "intake vraagt te weinig"]
         },
         highlights: [
           { title: "Aanbod", text: `Maak ${branch.services.join(", ").toLowerCase()} apart herkenbaar.` },
-          { title: "Bewijs", text: `Gebruik ${branch.proof.join(", ")} waar dat feitelijk beschikbaar is.` },
+          { title: "Bewijs", text: depth.proofUse },
           { title: "Contact", text: branch.mobile }
+        ],
+        valueSections: [
+          {
+            title: "Waarom bezoekers afhaken",
+            paragraphs: [
+              depth.visitorSituation,
+              `Als de pagina dit moment niet begrijpt, leest de bezoeker verder zonder contact op te nemen. Voor ${branch.plural} moet de pagina daarom eerst keuzehulp geven en pas daarna overtuigen.`
+            ]
+          },
+          {
+            title: "Wat je pagina concreter maakt",
+            paragraphs: [
+              depth.example,
+              `Controleer daarna of het formulier of de contactroute vraagt om ${depth.intakeFields.join(", ")}. Die gegevens helpen de ondernemer sneller reageren en geven bezoekers het gevoel dat de aanvraag serieus wordt opgepakt.`
+            ]
+          },
+          {
+            title: "Wanneer extra SEO-pagina's logisch zijn",
+            paragraphs: [
+              `Extra content is pas zinvol wanneer er echte inhoud is voor ${depth.seoExpansion.join(", ")}. Anders ontstaat herhaling en dat helpt bezoekers niet.`,
+              `${depth.avoid} Een betere eerste stap is de bestaande pagina scherper maken en meten waar bezoekers blijven hangen.`
+            ]
+          }
         ],
         sections: [
           {
@@ -697,7 +967,7 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
             items: [
               { title: "Onduidelijk aanbod", text: `De bezoeker ziet niet direct of jij helpt met ${branch.services.slice(0, 2).join(" of ").toLowerCase()}.` },
               { title: "Te weinig vertrouwen", text: `${branch.trust} moeten zichtbaar zijn voor de aanvraag.` },
-              { title: "Verkeerde contactroute", text: branch.mobile }
+              { title: "Verkeerde contactroute", text: `${branch.mobile}. Vraag ook om ${depth.intakeFields.slice(0, 3).join(", ")}.` }
             ]
           },
           {
@@ -705,7 +975,7 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
             text: "Begin met kleine inhoudelijke aanpassingen voordat je direct een volledige herbouw plant.",
             items: [
               { title: "Hero herschrijven", text: `Noem doelgroep, dienst en regio in gewone taal.` },
-              { title: "Bewijs verplaatsen", text: `Zet ${branch.proof[0]} dichter bij de dienst waar iemand twijfelt.` },
+              { title: "Bewijs verplaatsen", text: depth.proofUse },
               { title: "Formulier inkorten", text: "Vraag alleen gegevens die nodig zijn voor een eerste reactie." }
             ]
           },
@@ -725,6 +995,7 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
           `Zijn ${branch.services.slice(0, 2).join(" en ").toLowerCase()} duidelijk genoeg?`,
           `Staat ${branch.proof[0]} bij de belangrijkste dienst?`,
           `Is ${branch.conversion} op mobiel makkelijk?`,
+          `Vraag je om ${depth.intakeFields.slice(0, 3).join(", ")}?`,
           "Vertel je wat er na contact gebeurt?"
         ],
         steps: [
@@ -736,7 +1007,8 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
         faqs: [
           { question: "Moet ik meteen een nieuwe website laten maken?", answer: "Niet altijd. Soms zijn betere koppen, bewijs en contactroutes genoeg. Een rebuild past pas wanneer structuur of techniek structureel remt." },
           { question: "Welke verbetering levert het snelst meer aanvragen op?", answer: "Meestal een concretere eerste schermhoogte en een kortere mobiele contactroute." },
-          { question: "Kan MagisData kort meekijken?", answer: "Ja. Stuur je belangrijkste pagina mee; dan krijg je praktische feedback zonder verplichting." }
+          { question: "Kan MagisData kort meekijken?", answer: "Ja. Stuur je belangrijkste pagina mee; dan krijg je praktische feedback zonder verplichting." },
+          { question: `Welke SEO-onderwerpen passen bij ${branch.plural}?`, answer: `Vaak zijn ${depth.seoExpansion.join(", ")} geschikt, maar alleen wanneer elk onderwerp eigen uitleg, FAQ en vervolgstap krijgt.` }
         ],
         internalLinks: linkSet(branch),
         qualityNotes: ["Probleemdiagnose is branchegericht.", "Guide hoort onder /inzichten/.", "Soft CTA, geen harde salespush."],
@@ -774,8 +1046,31 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
         },
         highlights: [
           { title: "Diensten", text: branch.services.join(", ") },
-          { title: "Bewijs", text: branch.proof.join(", ") },
+          { title: "Bewijs", text: depth.proofUse },
           { title: "Veelgestelde vragen", text: branch.questions.join(" ") }
+        ],
+        valueSections: [
+          {
+            title: "Gebruik de checklist als beslisroute",
+            paragraphs: [
+              `Een checklist voor ${branch.plural} moet niet alleen afvinken wat op een website hoort. De volgorde moet passen bij de manier waarop bezoekers kiezen: ${depth.visitorSituation}`,
+              `Daarom begint de pagina met dienst en situatie, gaat daarna naar bewijs en voorbereiding, en sluit af met een contactroute die ${branch.conversion} logisch maakt.`
+            ]
+          },
+          {
+            title: "De velden die aanvragen beter maken",
+            paragraphs: [
+              `Vraag niet om alles, maar wel om de informatie die de eerste reactie verbetert: ${depth.intakeFields.join(", ")}.`,
+              `Deze informatie helpt ook bij copywriting. Als je weet welke gegevens bezoekers moeten doorgeven, kun je de pagina precies uitleggen wat er na contact gebeurt.`
+            ]
+          },
+          {
+            title: "Van checklist naar SEO-structuur",
+            paragraphs: [
+              `De checklist laat zien welke onderwerpen later eigen pagina's kunnen verdienen: ${depth.seoExpansion.join(", ")}.`,
+              `Maak die pagina's pas wanneer er genoeg uitleg, voorbeelden en FAQ's zijn. ${depth.avoid}`
+            ]
+          }
         ],
         sections: [
           {
@@ -809,6 +1104,8 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
         checklistTitle: `Volledige checklist voor ${branch.plural}`,
         checklist: [
           ...branch.pageStructure.map((item) => `${item[0].toUpperCase() + item.slice(1)} staat op een logische plek.`),
+          `Formulier of intake vraagt om ${depth.intakeFields.slice(0, 4).join(", ")}.`,
+          `Mogelijke SEO-uitbreidingen rond ${depth.seoExpansion.slice(0, 3).join(", ")} zijn bewust gekozen.`,
           "Pagina heeft eigen title, description en FAQ.",
           "CTA past bij de fase van de bezoeker.",
           "Geen claims die je niet kunt onderbouwen."
@@ -817,15 +1114,16 @@ function makeBranchGuides(): KeywordDraftPageContent[] {
           { title: "Bepaal hoofddienst", text: `Kies welke dienst voor ${branch.plural} bovenaan moet staan.` },
           { title: "Orden bewijs", text: `Koppel ${branch.proof[0]} aan de plek waar bezoekers twijfelen.` },
           { title: "Controleer mobiel", text: "Lees de pagina en start contact vanaf een telefoon." },
-          { title: "Publiceer bewust", text: "Voeg pas aan sitemap toe wanneer kwaliteit goed genoeg is." }
+          { title: "Maak vervolg logisch", text: "Sluit af met een passende contactroute of volgende informatiepagina." }
         ],
         faqs: [
           { question: `Welke pagina's heeft een ${branch.singular} website nodig?`, answer: `Minimaal home, diensten, over/vertrouwen, contact en waar nodig aparte pagina's voor ${branch.services.slice(0, 2).join(" en ").toLowerCase()}.` },
           { question: "Moet ik prijzen noemen?", answer: "Een vaste prijs hoeft niet altijd, maar scopefactoren of indicaties helpen bezoekers wel beter kiezen." },
-          { question: "Wat als ik nog weinig foto's of bewijs heb?", answer: "Gebruik dan procesuitleg, heldere dienstinformatie en echte praktische details. Verzin nooit resultaten of reviews." }
+          { question: "Wat als ik nog weinig foto's of bewijs heb?", answer: "Gebruik dan procesuitleg, heldere dienstinformatie en echte praktische details. Verzin nooit resultaten of reviews." },
+          { question: "Welke bewijsstukken horen het dichtst bij de CTA?", answer: depth.proofUse }
         ],
         internalLinks: linkSet(branch),
-        qualityNotes: ["Checklist bevat concrete brancheonderdelen.", "Publiceren als inzichtartikel.", "Geen fake bewijs."],
+        qualityNotes: ["Checklist bevat concrete brancheonderdelen.", "Publiceren als inzichtartikel wanneer intern gelinkt.", "Geen fake bewijs."],
         schemaType: "Article"
       })
     );
@@ -1121,7 +1419,7 @@ function makePricingPages(): KeywordDraftPageContent[] {
           { title: "Scope kiezen", text: "Bepaal welke pagina's direct nodig zijn." },
           { title: "Content verzamelen", text: "Logo, foto's, diensten, prijzen of scopefactoren." },
           { title: "Pakket bepalen", text: "Kies compact, groei of autoriteit op basis van doel." },
-          { title: "Publicatie plannen", text: "Zet pas live met metadata, interne links en sitemapkeuze." }
+          { title: "Keuze afronden", text: "Leg vast welk pakket past, welke onderdelen later kunnen en welke vervolgstap logisch is." }
         ],
         faqs: [
           { question: `Is een website in ${place.name} duurder dan elders?`, answer: "Niet door de plaatsnaam zelf. Kosten komen vooral door scope, inhoud, ontwerp, SEO en onderhoud." },
@@ -1239,6 +1537,7 @@ function makePricingPages(): KeywordDraftPageContent[] {
 
 function makeAiVisibilityPages(): KeywordDraftPageContent[] {
   return branches.map((branch, index) => {
+    const depth = branchDepth(branch);
     const id = 221 + index;
     const slug = `ai-vindbaarheid-voor-${branch.slug}`;
 
@@ -1259,7 +1558,7 @@ function makeAiVisibilityPages(): KeywordDraftPageContent[] {
       description: `Zorg dat AI-systemen je bedrijf beter kunnen begrijpen: wat je doet, waar je werkt, welke vragen je beantwoordt en waarom je betrouwbaar bent.`,
       primaryCta: "Vraag AI-vindbaarheid check aan",
       secondaryCta: "Bekijk AI-vindbaarheid",
-      directAnswer: `AI-vindbaarheid voor ${branch.plural} betekent dat je website duidelijk uitlegt welke diensten je aanbiedt, voor wie je werkt, welke regio je bedient en hoe klanten contact opnemen. Voor deze branche zijn vooral ${branch.aiEntities.join(", ")} belangrijk.`,
+      directAnswer: `AI-vindbaarheid voor ${branch.plural} betekent dat je website duidelijk uitlegt welke diensten je aanbiedt, voor wie je werkt, welke regio je bedient en hoe klanten contact opnemen. ${depth.aiAnswer} Voor deze branche zijn vooral ${branch.aiEntities.join(", ")} belangrijk.`,
       visual: {
         label: "AI antwoordkaart",
         title: `Wanneer noemt AI een ${branch.singular}?`,
@@ -1269,7 +1568,31 @@ function makeAiVisibilityPages(): KeywordDraftPageContent[] {
       highlights: [
         { title: "Entiteiten", text: branch.aiEntities.join(", ") },
         { title: "Antwoordblokken", text: branch.questions.join(" ") },
-        { title: "Betrouwbaarheid", text: `Maak ${branch.trust} controleerbaar.` }
+        { title: "Betrouwbaarheid", text: depth.proofUse },
+        { title: "Geen garantieclaim", text: "AI-vermeldingen worden nooit beloofd; de inhoud wordt wel beter begrijpbaar." }
+      ],
+      valueSections: [
+        {
+          title: `Wat AI over ${branch.plural} moet begrijpen`,
+          paragraphs: [
+            depth.aiAnswer,
+            `Een AI-systeem kan alleen betrouwbaar samenvatten wat zichtbaar, consistent en concreet op de website staat. Daarom moeten diensten, regio, contactroute en bewijs niet alleen in schema staan, maar ook leesbaar op de pagina zelf.`
+          ]
+        },
+        {
+          title: "Maak antwoorden zelfstandig bruikbaar",
+          paragraphs: [
+            `Goede antwoordblokken geven direct context. Bijvoorbeeld: ${depth.example}`,
+            `Voor ${branch.plural} horen ook aanvraagvelden zichtbaar te zijn, zoals ${depth.intakeFields.join(", ")}. Daardoor kan een AI-antwoord beter uitleggen welke informatie iemand moet voorbereiden.`
+          ]
+        },
+        {
+          title: "Entity map voor verdere groei",
+          paragraphs: [
+            `Sterke vervolgonderwerpen zijn ${depth.seoExpansion.join(", ")}. Die onderwerpen verdienen alleen eigen pagina's wanneer ze eigen vragen, voorbeelden en vervolgstappen hebben.`,
+            `${depth.avoid} AI-vindbaarheid werkt niet met losse claims, maar met consistente informatie die bezoekers ook echt kunnen controleren.`
+          ]
+        }
       ],
       sections: [
         {
@@ -1278,7 +1601,7 @@ function makeAiVisibilityPages(): KeywordDraftPageContent[] {
           items: [
             { title: "Diensten", text: branch.services.join(", ") },
             { title: "Klantvragen", text: branch.questions.join(" ") },
-            { title: "Contactroute", text: branch.mobile }
+            { title: "Contactroute", text: `${branch.mobile}. Voor de intake zijn ${depth.intakeFields.slice(0, 4).join(", ")} belangrijk.` }
           ]
         },
         {
@@ -1297,9 +1620,9 @@ function makeAiVisibilityPages(): KeywordDraftPageContent[] {
             title: question,
             text:
               itemIndex === 0
-                ? `Een goede pagina beantwoordt dit met concrete uitleg over ${branch.services[0].toLowerCase()} en de vervolgstap.`
+                ? `Een goede pagina beantwoordt dit met concrete uitleg over ${branch.services[0].toLowerCase()} en de vervolgstap. ${depth.example}`
                 : itemIndex === 1
-                  ? `Gebruik feitelijke informatie over ${branch.trust}, zonder claims die niet zichtbaar zijn.`
+                  ? `Gebruik feitelijke informatie over ${branch.trust}, zonder claims die niet zichtbaar zijn. ${depth.avoid}`
                   : `Sluit af met een praktische contactroute: ${branch.conversion}.`
           }))
         }
@@ -1310,6 +1633,8 @@ function makeAiVisibilityPages(): KeywordDraftPageContent[] {
         `Diensten zijn expliciet: ${branch.services.join(", ")}.`,
         `Klantvragen zijn zichtbaar: ${branch.questions.join(" ")}`,
         `Bewijs is feitelijk: ${branch.proof.join(", ")}.`,
+        `Intake-informatie is zichtbaar: ${depth.intakeFields.join(", ")}.`,
+        `Vervolgonderwerpen zijn afgebakend: ${depth.seoExpansion.join(", ")}.`,
         "FAQ's zijn kort, concreet en zelfstandig begrijpelijk.",
         "Schema klopt met zichtbare inhoud."
       ],
@@ -1332,7 +1657,8 @@ function makeAiVisibilityPages(): KeywordDraftPageContent[] {
       faqs: [
         { question: "Kunnen jullie garanderen dat AI mijn bedrijf noemt?", answer: "Nee. AI-systemen bepalen zelf bronnen en antwoorden. We kunnen wel de informatie duidelijker, consistenter en beter gestructureerd maken." },
         { question: "Moet mijn hele website opnieuw?", answer: "Niet altijd. Vaak verbeteren we eerst dienstpagina's, FAQ's, schema en interne links." },
-        { question: `Wat is specifiek voor ${branch.plural}?`, answer: `Voor ${branch.plural} moet AI vooral ${branch.aiEntities.join(", ")} goed kunnen herkennen.` }
+        { question: `Wat is specifiek voor ${branch.plural}?`, answer: `Voor ${branch.plural} moet AI vooral ${branch.aiEntities.join(", ")} goed kunnen herkennen. Daarnaast moet duidelijk zijn welke informatie een bezoeker moet voorbereiden: ${depth.intakeFields.join(", ")}.` },
+        { question: "Welke content helpt AI-antwoorden het meest?", answer: `Directe antwoorden, concrete dienstblokken, echte bewijsvoering en vervolgonderwerpen zoals ${depth.seoExpansion.join(", ")} helpen meer dan algemene marketingclaims.` }
       ],
       internalLinks: [
         { label: "AI-vindbaarheid", href: "/ai-vindbaarheid" },
@@ -1429,9 +1755,74 @@ const technicalGuides = [
   }
 ];
 
+const technicalGuideDepthBySlug: Record<string, { scenario: string; quickWin: string; avoid: string; usefulExample: string }> = {
+  "website-onderhoud-voor-kleine-bedrijven": {
+    scenario: "Een kleine bedrijfswebsite raakt zelden in een keer kapot. Meestal stapelen kleine risico's zich op: een formulier dat niet meer mailt, een plugin-update die blijft liggen, een verlopen cookie-instelling of een oude dienstpagina.",
+    quickWin: "Plan een vaste maandelijkse controle van formulier, backups, updates en belangrijkste contactpagina's.",
+    avoid: "Wacht niet tot een klant meldt dat iets niet werkt; dan ben je vaak al aanvragen misgelopen.",
+    usefulExample: "Test elke maand een echte formulierverzending en noteer wie de mail ontvangt, welke bedankpagina verschijnt en of tracking nog klopt."
+  },
+  "website-snelheid-verbeteren-voor-lokale-ondernemer": {
+    scenario: "Lokale bezoekers zitten vaak op mobiel en vergelijken snel. Een trage hero, zware foto's of onnodige scripts maken de eerste indruk zwakker voordat de inhoud gelezen wordt.",
+    quickWin: "Comprimeer grote hero-afbeeldingen, beperk scripts bovenaan en controleer de mobiele eerste schermhoogte.",
+    avoid: "Begin niet met willekeurige speed plugins voordat duidelijk is wat de pagina echt vertraagt.",
+    usefulExample: "Een dienstenpagina met een grote ongeoptimaliseerde foto kan sneller worden door webp/avif, vaste afmetingen en lazy loading onder de vouw."
+  },
+  "contactformulier-werkt-niet-website": {
+    scenario: "Een formulier kan visueel prima lijken terwijl mails in spam verdwijnen, validatie blokkeert of de bedankpagina nooit laadt.",
+    quickWin: "Stuur een testaanvraag vanaf mobiel, desktop en een ander e-mailadres en controleer inbox, spam en bedankpagina.",
+    avoid: "Ga niet alleen af op 'formulier verzonden' in de browser; controleer of de aanvraag ook echt aankomt.",
+    usefulExample: "Vraag maximaal de velden die nodig zijn voor opvolging en toon direct wat er na verzending gebeurt."
+  },
+  "meer-aanvragen-via-website-zonder-advertenties": {
+    scenario: "Meer aanvragen begint vaak niet met meer verkeer, maar met minder frictie voor bezoekers die al op de website komen.",
+    quickWin: "Herschrijf de hero naar dienst, doelgroep, regio en actie en zet bewijs dichter bij de CTA.",
+    avoid: "Koop geen extra advertentieverkeer naar een pagina waar aanbod, bewijs of formulier nog onduidelijk is.",
+    usefulExample: "Een lokale dienstverlener kan vaak meer halen uit betere dienstblokken, FAQ en formulierroute dan uit een brede advertentiecampagne."
+  },
+  "homepage-opbouw-voor-lokale-dienstverlener": {
+    scenario: "Een homepage probeert vaak alles tegelijk te vertellen. Bezoekers hebben juist een duidelijke volgorde nodig: wat doe je, voor wie, waar, waarom vertrouwen en hoe contact?",
+    quickWin: "Maak boven de vouw dienst, werkgebied en eerste actie zichtbaar zonder slider of lange introductie.",
+    avoid: "Open niet met een algemene slogan die ook op twintig andere websites kan staan.",
+    usefulExample: "Een sterke homepage toont eerst hoofdservice, regio en CTA, daarna diensten, bewijs, proces, FAQ en contact."
+  },
+  "dienstenpagina-maken-voor-seo": {
+    scenario: "Een dienstenpagina rankt en converteert pas wanneer ze een concrete zoekvraag beantwoordt en tegelijk uitlegt wanneer de dienst past.",
+    quickWin: "Begin met een direct antwoord, voeg daarna problemen, aanpak, bewijs, scopefactoren, FAQ en interne links toe.",
+    avoid: "Maak geen dienstenpagina die alleen een verkooptekst is zonder voorbeelden, vragen of vervolgstap.",
+    usefulExample: "Een pagina voor 'lokale SEO' hoort te laten zien wat wordt gecontroleerd: servicepagina's, Google-profiel, NAP, reviews, interne links en meting."
+  },
+  "website-redesign-zonder-ranking-verlies": {
+    scenario: "Bij een redesign verdwijnen rankings vaak door gewijzigde URL's, ontbrekende redirects, verloren content of metadata die niet is meegenomen.",
+    quickWin: "Maak voor ontwerpstart een URL-inventaris met huidige titels, trafficpagina's, interne links en redirectplan.",
+    avoid: "Zet geen nieuwe site live voordat redirects, sitemap, robots, metadata en belangrijke content zijn gecontroleerd.",
+    usefulExample: "Behoud de URL van een sterke dienstpagina of redirect hem gericht naar de nieuwe equivalente pagina, niet naar de homepage."
+  },
+  "ai-automatisering-voor-intake-opvolging": {
+    scenario: "AI kan helpen bij intake en opvolging, maar mag menselijk oordeel, privacykeuzes en klantrelatie niet vervangen.",
+    quickWin: "Laat AI aanvragen samenvatten, prioriteit voorstellen en een mailconcept maken, met menselijke controle voor verzending.",
+    avoid: "Laat AI geen definitieve offertes, medische/juridische adviezen of bindende toezeggingen versturen zonder review.",
+    usefulExample: "Een formulier kan diensttype, urgentie en context verzamelen; AI vat dit samen en zet een conceptreactie klaar voor de ondernemer."
+  },
+  "veelgestelde-vragen-pagina-voor-lokale-seo": {
+    scenario: "FAQ's helpen alleen wanneer ze echte klantvragen beantwoorden. Een lange lijst met zoekwoorden zonder nut maakt de pagina dunner.",
+    quickWin: "Verzamel vragen uit gesprekken, mail, formulieren en Google-profiel en groepeer ze rond kosten, planning, werkgebied en aanpak.",
+    avoid: "Gebruik FAQPage-schema niet als truc; de antwoorden moeten zichtbaar, nuttig en actueel zijn.",
+    usefulExample: "Een vraag als 'Werk je ook in Voorschoten?' is sterker wanneer het antwoord servicegebied, voorwaarden en contactverwachting uitlegt."
+  },
+  "website-vertrouwen-verbeteren": {
+    scenario: "Vertrouwen ontstaat door controleerbare informatie: wie je helpt, hoe je werkt, wat er na contact gebeurt en welke claims je wel of niet maakt.",
+    quickWin: "Plaats bewijs, proces en contactverwachting naast de belangrijkste CTA in plaats van op een losse onderpagina.",
+    avoid: "Gebruik geen nep-logo's, testimonials, reviewsterren of resultaatclaims.",
+    usefulExample: "Een procesblok met intake, voorstel, bouw, controle en livegang kan betrouwbaarder zijn dan een grote claim over kwaliteit."
+  }
+};
+
 function makeTechnicalGuides(): KeywordDraftPageContent[] {
-  return technicalGuides.map((guide) =>
-    basePage({
+  return technicalGuides.map((guide) => {
+    const depth = technicalGuideDepthBySlug[guide.slug];
+
+    return basePage({
       id: guide.id,
       priority: "P2",
       pageKind: "guide",
@@ -1448,7 +1839,7 @@ function makeTechnicalGuides(): KeywordDraftPageContent[] {
       description: `Een nuchtere gids om ${guide.problem}. Eerst zelf controleren, daarna pas hulp inschakelen als dat nodig is.`,
       primaryCta: "Vraag korte feedback aan",
       secondaryCta: "Bekijk diensten",
-      directAnswer: `Begin met de belangrijkste controlepunten: ${guide.checks.join(", ")}. Los eerst zichtbare frictie op voordat je nieuwe campagnes, redesigns of extra pagina's plant.`,
+      directAnswer: `Begin met de belangrijkste controlepunten: ${guide.checks.join(", ")}. ${depth.quickWin} Los eerst zichtbare frictie op voordat je nieuwe campagnes, redesigns of extra pagina's plant.`,
       visual: {
         label: "Controlepaneel",
         title: "Van probleem naar prioriteit",
@@ -1457,8 +1848,32 @@ function makeTechnicalGuides(): KeywordDraftPageContent[] {
       },
       highlights: [
         { title: "Zelf te checken", text: guide.checks.slice(0, 3).join(", ") },
-        { title: "Wanneer hulp", text: "Als techniek, SEO of conversie elkaar raken." },
+        { title: "Snelle winst", text: depth.quickWin },
+        { title: "Valkuil", text: depth.avoid },
         { title: "Geen ruis", text: "Alleen verbeteren wat bezoeker of vindbaarheid echt raakt." }
+      ],
+      valueSections: [
+        {
+          title: "Waarom dit probleem vaak onzichtbaar begint",
+          paragraphs: [
+            depth.scenario,
+            "Daarom is een korte, herhaalbare controle sterker dan wachten op grote signalen. Je zoekt eerst naar frictie die aanvragen, vertrouwen of indexatie direct raakt."
+          ]
+        },
+        {
+          title: "Een praktische eerste verbetering",
+          paragraphs: [
+            depth.quickWin,
+            depth.usefulExample
+          ]
+        },
+        {
+          title: "Wat je beter niet doet",
+          paragraphs: [
+            depth.avoid,
+            "Houd wijzigingen klein genoeg om het effect te kunnen beoordelen. Noteer wat je aanpast, op welke pagina, en welk gedrag of technisch signaal je daarna opnieuw controleert."
+          ]
+        }
       ],
       sections: [
         {
@@ -1479,7 +1894,7 @@ function makeTechnicalGuides(): KeywordDraftPageContent[] {
         },
         {
           title: "Wanneer je hulp vraagt",
-          text: "Vraag hulp wanneer meerdere onderdelen samenhangen of wanneer je niet zeker weet wat publicatie of SEO raakt.",
+          text: "Vraag hulp wanneer meerdere onderdelen samenhangen of wanneer je niet zeker weet wat techniek, content of SEO raakt.",
           items: [
             { title: "Technisch risico", text: "Wijzigingen raken indexatie, formulieren, snelheid of beveiliging." },
             { title: "Conversierisico", text: "Bezoekers snappen de route naar contact niet." },
@@ -1498,13 +1913,862 @@ function makeTechnicalGuides(): KeywordDraftPageContent[] {
       faqs: [
         { question: "Kan ik dit zelf doen?", answer: "Veel controles wel. Vraag hulp wanneer techniek, SEO of formulieren risico krijgen." },
         { question: "Moet dit direct een groot project worden?", answer: "Nee. Begin klein en los de grootste frictie eerst op." },
-        { question: "Kan MagisData meekijken?", answer: "Ja. Stuur de pagina of situatie mee voor korte praktische feedback." }
+        { question: "Kan MagisData meekijken?", answer: "Ja. Stuur de pagina of situatie mee voor korte praktische feedback." },
+        { question: "Wat is een goede eerste controle?", answer: depth.usefulExample }
       ],
       internalLinks: linkSet(),
       qualityNotes: ["Guide-intentie: leren/fixen.", "Praktische checklist aanwezig.", "Soft CTA."],
       schemaType: "Article"
-    })
-  );
+    });
+  });
+}
+
+function applyAuthoredKeywordPageContent(page: KeywordDraftPageContent): KeywordDraftPageContent {
+  if (page.slug === "website-laten-maken-voor-kappers-voorschoten") {
+    return {
+      ...page,
+      metaTitle: "Website laten maken voor kappers in Voorschoten | MagisData",
+      metaDescription:
+        "Kapperswebsite voor Voorschoten met behandelingen, prijzen, sfeer, boekroute, lokale SEO en een rustige route naar meer passende afspraken.",
+      description:
+        "Een kapperswebsite voor Voorschoten moet snel laten voelen of de salon past: behandelingen, prijzen, sfeer, openingstijden en boeken zonder omweg.",
+      directAnswer:
+        "Een website voor een kapper in Voorschoten moet bovenaan duidelijk maken welke behandelingen je aanbiedt, hoe iemand boekt, wat klanten ongeveer kunnen verwachten qua prijs of voorbereiding, en waarom jouw salon de moeite waard is. Omdat klanten ook salons in Leiden vergelijken, moet de pagina lokaal duidelijk zijn zonder een vestiging of resultaten te claimen die er niet zijn.",
+      visual: {
+        label: "Salonroute",
+        title: "Van behandeling naar afspraak",
+        text:
+          "De pagina helpt een bezoeker in korte stappen: herkennen welke behandeling past, vertrouwen krijgen in de salon en direct een afspraak starten.",
+        items: ["behandelingen", "prijsindicatie", "sfeer en bewijs", "boekroute", "openingstijden"]
+      },
+      highlights: [
+        {
+          title: "Behandelingen scanbaar",
+          text: "Knippen, kleuren, highlights en styling krijgen elk een duidelijke plek met korte uitleg."
+        },
+        {
+          title: "Voorschoten-context",
+          text: "De pagina maakt duidelijk dat je lokale klanten bedient, zonder nepvestiging of overdreven lokale claims."
+        },
+        {
+          title: "Boeken op mobiel",
+          text: "Boekknop, route, telefoon en openingstijden staan dicht bij de keuze, niet verstopt onderaan."
+        },
+        {
+          title: "SEO zonder spam",
+          text: "Koppen, FAQ, metadata en interne links ondersteunen vindbaarheid zonder keyword stuffing."
+        }
+      ],
+      valueSections: [
+        {
+          title: "Waarom deze pagina niet op een algemene webdesignpagina lijkt",
+          paragraphs: [
+            "Een salonbezoek is persoonlijk. Iemand kiest niet alleen op afstand of prijs, maar ook op stijl, vertrouwen, behandelingstype en hoe makkelijk een afspraak voelt. Daarom moet de pagina meer doen dan zeggen dat MagisData websites maakt.",
+            "Deze pagina behandelt de concrete keuzes die een kappersklant maakt: past de behandeling, is de sfeer goed, kan ik snel boeken, weet ik ongeveer wat het kost en is de salon praktisch bereikbaar vanuit Voorschoten of omgeving?"
+          ]
+        },
+        {
+          title: "Voorbeeld van inhoud die waarde toevoegt",
+          paragraphs: [
+            "Een sterke kapperswebsite kan per behandeling kort uitleggen wanneer die behandeling past. Bij kleuren kan dat gaan over uitgroei, toner, highlights, balayage of onderhoud. Bij knippen kan het gaan over advies, krullen, kinderen of heren.",
+            "Dat soort informatie helpt bezoekers echt kiezen en geeft Google meer context dan een losse lijst met diensten. Het maakt de pagina inhoudelijk anders dan een generieke lokale landingspagina."
+          ]
+        },
+        {
+          title: "Wat MagisData concreet zou bouwen",
+          paragraphs: [
+            "De pagina krijgt een rustige hero met behandeling, plaats en boekactie. Daaronder komen behandelblokken, sfeer of bewijs, prijsfactoren, openingstijden, Google-profielconsistentie, FAQ en een korte route naar afspraak.",
+            "Als de salon meerdere sterke behandelingen heeft, is het slimmer om die later uit te bouwen als aparte behandelpagina's. Zo groeit de website vanuit echte zoekvragen in plaats van vanuit herhaalde plaatsnaamteksten."
+          ]
+        }
+      ],
+      sections: [
+        {
+          title: "Waarom een kapperswebsite in Voorschoten anders moet werken",
+          text:
+            "Iemand die een kapper zoekt, wil meestal niet eerst een lang verhaal lezen. De bezoeker wil snel weten of de salon past bij de gewenste behandeling, planning, stijl en afstand.",
+          items: [
+            {
+              title: "Behandeling eerst",
+              text:
+                "Knippen, kleuren, highlights en styling moeten herkenbaar zijn, zodat bezoekers niet hoeven te raden of de salon hun vraag aankan."
+            },
+            {
+              title: "Sfeer maakt keuze makkelijker",
+              text:
+                "Foto's, een korte werkwijze en duidelijke voorbereiding helpen meer dan brede woorden over kwaliteit."
+            },
+            {
+              title: "Voorschoten vergelijkt regionaal",
+              text:
+                "Veel klanten kijken ook naar salons rond Leiden. Daarom moet bereikbaarheid, beschikbaarheid en boekgemak direct duidelijk zijn."
+            }
+          ]
+        },
+        {
+          title: "Wat er bovenaan de pagina moet staan",
+          text:
+            "De eerste schermhoogte moet niet alleen mooi zijn, maar de belangrijkste keuze in een paar seconden ondersteunen.",
+          items: [
+            {
+              title: "Heldere belofte",
+              text:
+                "Noem direct voor wie de salon is en welke behandelingen centraal staan, bijvoorbeeld kleur, knippen, krullen of styling."
+            },
+            {
+              title: "Boekroute",
+              text:
+                "Maak de afspraakknop zichtbaar op mobiel en leg kort uit wat er na boeken of aanvragen gebeurt."
+            },
+            {
+              title: "Prijs of scope",
+              text:
+                "Vaste prijzen hoeven niet altijd, maar indicaties of factoren zoals haarlengte en kleurbehandeling halen twijfel weg."
+            }
+          ]
+        },
+        {
+          title: "Lokale SEO voor kappers zonder plaatsnaamvulling",
+          text:
+            "Een sterke lokale pagina gebruikt Voorschoten waar het logisch is: werkgebied, bereikbaarheid, klantvragen en lokale vergelijking. De rest moet gewoon goede saloninformatie zijn.",
+          items: [
+            {
+              title: "Dienstpagina's",
+              text:
+                "Behandelingen met eigen uitleg kunnen beter ranken dan een homepage die alles tegelijk probeert te doen."
+            },
+            {
+              title: "FAQ voor echte twijfels",
+              text:
+                "Beantwoord vragen over boeken, voorbereiding, kleuradvies, prijzen en openingstijden in gewone taal."
+            },
+            {
+              title: "Consistente signalen",
+              text:
+                "Website, Google Business Profile, openingstijden en contactgegevens moeten hetzelfde verhaal vertellen."
+            }
+          ]
+        }
+      ],
+      checklistTitle: "Checklist voor een kapperswebsite in Voorschoten",
+      checklist: [
+        "Staat bovenaan welke behandelingen de salon aanbiedt?",
+        "Kan iemand op mobiel direct boeken of contact opnemen?",
+        "Zijn prijzen, vanaf-prijzen of prijsfactoren begrijpelijk uitgelegd?",
+        "Laat de pagina sfeer, stijl en vertrouwen zien zonder nepclaims?",
+        "Zijn openingstijden, route, Google-profiel en contactgegevens consistent?",
+        "Heeft de pagina FAQ's over boeken, kleuradvies, voorbereiding en planning?"
+      ],
+      comparison: {
+        title: "Compacte salonwebsite of groeisite?",
+        leftLabel: "Compact",
+        rightLabel: "Groei",
+        rows: [
+          {
+            label: "Geschikt voor",
+            left: "Een salon met helder aanbod en vooral behoefte aan professionele basis",
+            right: "Een salon met meerdere behandelingen, lokale SEO-ambitie en meer content"
+          },
+          {
+            label: "Inhoud",
+            left: "Home, behandelingen, sfeer, contact en boekroute",
+            right: "Losse behandelpagina's, FAQ's, lokale SEO, interne links en contentstructuur"
+          },
+          {
+            label: "Beste keuze als",
+            left: "Klanten je al kennen en vooral snel informatie zoeken",
+            right: "Je meer nieuwe klanten uit Voorschoten en omgeving wilt aantrekken"
+          }
+        ]
+      },
+      steps: [
+        {
+          title: "Salonaanbod scherp maken",
+          text: "We bepalen welke behandelingen, stijl en klantvragen bovenaan moeten staan."
+        },
+        {
+          title: "Boekroute ontwerpen",
+          text: "We maken de mobiele route naar afspraak, telefoon of formulier kort en helder."
+        },
+        {
+          title: "SEO-structuur bouwen",
+          text: "Behandelingen, FAQ's, metadata en interne links krijgen een logische plek."
+        },
+        {
+          title: "Meten en verfijnen",
+          text: "Na livegang kijk je welke vragen, behandelingen en contactroutes verder aangescherpt moeten worden."
+        }
+      ],
+      faqs: [
+        {
+          question: "Wat kost een website voor een kapper in Voorschoten?",
+          answer:
+            "Dat hangt af van het aantal pagina's, behandelteksten, foto's, boekroute, lokale SEO en onderhoud. Een compacte salonwebsite is vaak genoeg als het aanbod simpel is; een groeisite past beter bij meerdere behandelingen en lokale vindbaarheid."
+        },
+        {
+          question: "Moet ik prijzen op mijn kapperswebsite zetten?",
+          answer:
+            "Als vaste prijzen lastig zijn, gebruik dan vanaf-prijzen of prijsfactoren. Denk aan haarlengte, kleurtechniek, toner, styling of extra verzorging. Dat maakt de aanvraag beter voorbereid."
+        },
+        {
+          question: "Kan ik mijn bestaande salonfoto's gebruiken?",
+          answer:
+            "Ja, zolang ze actueel, scherp en representatief zijn. Echte sfeerbeelden werken beter dan generieke stockfoto's, omdat klanten willen voelen of de salon bij hen past."
+        },
+        {
+          question: "Heeft een kapper in Voorschoten lokale SEO nodig?",
+          answer:
+            "Dat is logisch wanneer je nieuwe klanten uit Voorschoten en omgeving wilt aantrekken. De pagina moet dan wel echte lokale relevantie hebben en niet alleen de plaatsnaam herhalen."
+        },
+        {
+          question: "Kunnen jullie ook mijn Google Business Profile meenemen?",
+          answer:
+            "Ja. Website en Google Business Profile horen samen te kloppen: behandelingen, openingstijden, foto's, afspraaklink, adres of service-informatie en veelgestelde vragen."
+        }
+      ],
+      qualityNotes: [
+        "Authored page 1.",
+        "Kapperscontext and Voorschoten context present.",
+        "No fake reviews, results, or office claims.",
+        "Uses unique valueSections, sections, FAQ, and checklist."
+      ]
+    };
+  }
+
+  if (page.slug === "website-laten-maken-voor-loodgieters-voorschoten") {
+    return {
+      ...page,
+      metaTitle: "Website laten maken voor loodgieters in Voorschoten | MagisData",
+      metaDescription:
+        "Loodgieterswebsite voor Voorschoten met spoedroute, lekkage- en verstoppingspagina's, servicegebied, mobiel bellen en lokale SEO zonder valse claims.",
+      description:
+        "Een loodgieterswebsite voor Voorschoten moet rust brengen in een urgente situatie: probleem kiezen, servicegebied checken en snel contact opnemen.",
+      directAnswer:
+        "Een website voor een loodgieter in Voorschoten moet direct onderscheid maken tussen spoed en gepland werk. Bezoekers willen weten of je helpt bij lekkage, verstopping, sanitair of leidingwerk, of je in Voorschoten werkt, wat ze moeten doorgeven en hoe snel ze contact kunnen starten. De pagina moet geen 24/7 of spoedclaim maken tenzij dat echt klopt.",
+      visual: {
+        label: "Storingsroute",
+        title: "Van probleem naar contact",
+        text:
+          "De pagina moet een gestreste bezoeker helpen kiezen: is dit spoed, welk probleem speelt er, welke informatie is nodig en hoe loopt de opvolging?",
+        items: ["spoed of gepland", "lekkage", "verstopping", "servicegebied", "belroute"]
+      },
+      highlights: [
+        {
+          title: "Spoed gescheiden",
+          text: "Lekkage en verstopping krijgen een andere route dan renovatie, sanitair of gepland leidingwerk."
+        },
+        {
+          title: "Voorschoten praktisch",
+          text: "De pagina maakt servicegebied en bereikbaarheid duidelijk zonder een lokale vestiging te verzinnen."
+        },
+        {
+          title: "Mobiel eerst",
+          text: "Telefoon, foto's meesturen en korte probleemuitleg moeten op een telefoon snel werken."
+        },
+        {
+          title: "Betere aanvragen",
+          text: "Een goede intake vraagt om locatie, probleemtype, urgentie, foto's en bereikbaarheid."
+        }
+      ],
+      valueSections: [
+        {
+          title: "Waarom een loodgieterspagina anders is dan een gewone servicepagina",
+          paragraphs: [
+            "Een bezoeker op een loodgieterswebsite heeft vaak haast. Bij lekkage of verstopping is er weinig geduld voor merkverhalen, sliders of lange introducties. De pagina moet eerst helpen bepalen wat er aan de hand is en welke contactroute past.",
+            "Daarom werkt deze pagina met probleemcategorieen in plaats van algemene diensten. Lekkage, verstopping, sanitair, leidingwerk en onderhoud vragen elk om andere informatie en een andere verwachting."
+          ]
+        },
+        {
+          title: "Wat waarde toevoegt voor bezoekers in Voorschoten",
+          paragraphs: [
+            "Een sterke pagina legt uit welke informatie de loodgieter nodig heeft: adres of wijk, type probleem, foto's, wanneer het is ontstaan, of er nog water loopt en of er schade zichtbaar is. Dat helpt de bezoeker en maakt de aanvraag bruikbaarder.",
+            "Voor Voorschoten is lokale duidelijkheid belangrijk omdat klanten ook aanbieders uit Leiden en omliggende plaatsen vergelijken. Een feitelijke uitleg van werkgebied is sterker dan doen alsof er overal een eigen kantoor zit."
+          ]
+        },
+        {
+          title: "Hoe deze pagina vindbaarheid kan ondersteunen",
+          paragraphs: [
+            "Loodgieters zoeken niet op een abstracte term, maar op concrete problemen: lekkage oplossen, afvoer verstopt, wc verstopping, kraan vervangen of leidingwerk laten doen. De website moet die vragen met aparte blokken of pagina's beantwoorden.",
+            "FAQ's kunnen echte twijfels wegnemen: wanneer is iets spoed, welke foto's moet ik sturen, kan een verstopping wachten, wat bepaalt de prijs en wat gebeurt er na het eerste telefoontje? Zulke inhoud maakt de pagina nuttiger dan een herhaalde plaatsnaamtekst."
+          ]
+        }
+      ],
+      sections: [
+        {
+          title: "Bovenaan moet de bezoeker meteen kunnen kiezen",
+          text:
+            "Een loodgieterswebsite moet de eerste stress verlagen. Niet eerst uitleggen wie je bent, maar eerst duidelijk maken welke problemen je oppakt en hoe contact loopt.",
+          items: [
+            {
+              title: "Spoed of geen spoed",
+              text:
+                "Maak duidelijk welke situaties direct bellen vragen en welke beter via een offerte- of contactformulier lopen."
+            },
+            {
+              title: "Probleemcategorie",
+              text:
+                "Gebruik herkenbare keuzes zoals lekkage, verstopping, sanitair, leidingwerk en onderhoud."
+            },
+            {
+              title: "Vervolgverwachting",
+              text:
+                "Vertel kort wat iemand moet doorgeven en wanneer hij of zij reactie kan verwachten."
+            }
+          ]
+        },
+        {
+          title: "Wat vertrouwen geeft bij loodgieterswerk",
+          text:
+            "Bij waterproblemen gaat vertrouwen niet om mooie woorden. Het gaat om duidelijk proces, realistische bereikbaarheid en feitelijke uitleg.",
+          items: [
+            {
+              title: "Geen valse spoedclaim",
+              text:
+                "Claim alleen 24/7, spoedservice of garanties als die echt bestaan en zichtbaar onderbouwd kunnen worden."
+            },
+            {
+              title: "Werkgebied helder",
+              text:
+                "Leg uit dat Voorschoten binnen het servicegebied valt en welke omliggende plaatsen eventueel ook bediend worden."
+            },
+            {
+              title: "Voorbereiding",
+              text:
+                "Vraag foto's, probleemlocatie, urgentie en contactgegevens zodat de loodgieter sneller kan inschatten wat nodig is."
+            }
+          ]
+        },
+        {
+          title: "Lokale SEO voor loodgieters zonder doorway-risico",
+          text:
+            "De pagina moet over loodgietersproblemen gaan, niet alleen over Voorschoten. Lokale relevantie ontstaat door servicegebied, praktische voorbeelden en echte klantvragen.",
+          items: [
+            {
+              title: "Probleempagina's",
+              text:
+                "Maak later aparte pagina's voor lekkage, verstopping en sanitair als daar genoeg vraag en inhoud voor is."
+            },
+            {
+              title: "Interne links",
+              text:
+                "Verbind de pagina met lokale SEO, prijzen, contact en eventuele loodgieter-dienstpagina's."
+            },
+            {
+              title: "FAQ en schema",
+              text:
+                "Gebruik FAQ alleen voor vragen die zichtbaar worden beantwoord. Geen review- of rating-schema zonder echte bron."
+            }
+          ]
+        }
+      ],
+      checklistTitle: "Checklist voor een loodgieterswebsite in Voorschoten",
+      checklist: [
+        "Kan iemand direct kiezen tussen spoed en gepland werk?",
+        "Zijn lekkage, verstopping, sanitair en leidingwerk apart herkenbaar?",
+        "Staat de belroute op mobiel bovenaan of dicht bij de probleemkeuze?",
+        "Is het servicegebied rond Voorschoten feitelijk uitgelegd?",
+        "Vraagt het formulier om probleemtype, urgentie, foto's en bereikbaarheid?",
+        "Vermijdt de pagina garanties, 24/7-claims of vestigingsclaims die niet bewezen zijn?"
+      ],
+      comparison: {
+        title: "Spoedpagina of groeisite voor loodgieters?",
+        leftLabel: "Compact",
+        rightLabel: "Groei",
+        rows: [
+          {
+            label: "Doel",
+            left: "Snel professioneel vindbaar zijn met heldere contactroute",
+            right: "Meer lokale zoekvragen afdekken rond specifieke problemen"
+          },
+          {
+            label: "Inhoud",
+            left: "Home, diensten, servicegebied, contact en FAQ",
+            right: "Aparte pagina's voor lekkage, verstopping, sanitair en onderhoud"
+          },
+          {
+            label: "Past als",
+            left: "Je vooral bestaande vraag beter wilt opvangen",
+            right: "Je structureel lokale aanvragen uit Voorschoten en omgeving wilt opbouwen"
+          }
+        ]
+      },
+      steps: [
+        {
+          title: "Problemen ordenen",
+          text: "We scheiden spoed, lekkage, verstopping, sanitair en gepland leidingwerk."
+        },
+        {
+          title: "Mobiele route bouwen",
+          text: "Belknop, probleemuitleg en formulier worden kort en duidelijk ingericht."
+        },
+        {
+          title: "Lokale basis schrijven",
+          text: "Servicegebied, FAQ, metadata en interne links worden feitelijk opgebouwd."
+        },
+        {
+          title: "Aanvragen verbeteren",
+          text: "Na livegang kun je meten welke probleemcategorieen contact opleveren en waar extra pagina's zinvol zijn."
+        }
+      ],
+      faqs: [
+        {
+          question: "Wat moet bovenaan een loodgieterswebsite staan?",
+          answer:
+            "Een duidelijke keuze tussen spoed en gepland werk, herkenbare probleemcategorieen, servicegebied en een directe bel- of contactroute. Bij urgentie telt snelheid meer dan lange introductietekst."
+        },
+        {
+          question: "Moet ik 24/7 spoedservice noemen?",
+          answer:
+            "Alleen als je dat echt levert. Als je bereikbaarheid beperkter is, is het beter om eerlijk te zijn over tijden, opvolging en wat iemand alvast kan doorgeven."
+        },
+        {
+          question: "Welke loodgietersdiensten verdienen eigen pagina's?",
+          answer:
+            "Meestal lekkage, verstopping, sanitair en leidingwerk. Aparte pagina's zijn pas zinvol als je genoeg unieke uitleg, voorbeelden, FAQ's en contactinformatie hebt."
+        },
+        {
+          question: "Hoe maak je een loodgieterspagina lokaal relevant voor Voorschoten?",
+          answer:
+            "Door werkgebied, bereikbaarheid, lokale vergelijking met omliggende aanbieders en praktische klantvragen te benoemen. Niet door alleen de plaatsnaam vaak te herhalen."
+        },
+        {
+          question: "Wat kan een formulier beter vragen?",
+          answer:
+            "Vraag probleemtype, urgentie, adres of plaats, foto's, wanneer het probleem begon, of er schade is en hoe iemand bereikbaar is. Houd het formulier kort genoeg voor mobiel."
+        }
+      ],
+      qualityNotes: [
+        "Authored page 2.",
+        "Loodgieter-specific urgency, intake, and service-area content present.",
+        "No false 24/7, guarantee, or local-office claims.",
+        "Uses unique valueSections, sections, FAQ, and checklist."
+      ]
+    };
+  }
+
+  if (page.slug === "website-laten-maken-voor-elektriciens-voorschoten") {
+    return {
+      ...page,
+      metaTitle: "Website laten maken voor elektriciens in Voorschoten | MagisData",
+      metaDescription:
+        "Elektricienswebsite voor Voorschoten met storing-vs-project routing, veiligheidsuitleg, dienstpagina's, intakevragen en lokale SEO zonder verzonnen certificaten.",
+      description:
+        "Een elektricienswebsite voor Voorschoten moet bezoekers helpen inschatten of ze een storing, inspectie of installatieproject hebben en welke vervolgstap veilig is.",
+      directAnswer:
+        "Een website voor een elektricien in Voorschoten moet direct onderscheid maken tussen storingen en gepland installatiewerk. Bezoekers willen weten of het gaat om een groepenkast, kortsluiting, laadpunt, verlichting, inspectie of uitbreiding, welke informatie ze moeten doorgeven en wanneer ze beter direct bellen. Veiligheid en certificering mogen alleen worden genoemd als ze feitelijk kloppen.",
+      visual: {
+        label: "Diagnoseroute",
+        title: "Storing, inspectie of project?",
+        text:
+          "De pagina moet bezoekers naar de juiste route sturen: direct bellen bij risico, intake bij projectwerk en duidelijke voorbereiding bij offertevragen.",
+        items: ["storing", "groepenkast", "laadpunt", "inspectie", "offerte"]
+      },
+      highlights: [
+        {
+          title: "Veiligheid eerst",
+          text: "Risicosignalen zoals brandlucht, vonken of uitvallende groepen verdienen een duidelijke contactroute."
+        },
+        {
+          title: "Projecten apart",
+          text: "Laadpunten, groepenkasten en uitbreidingen vragen om andere informatie dan acute storingen."
+        },
+        {
+          title: "Voorschoten feitelijk",
+          text: "Servicegebied en bereikbaarheid worden helder uitgelegd zonder neplocatie of overdreven claims."
+        },
+        {
+          title: "Bewijs zonder verzinnen",
+          text: "Certificaten, keurmerken en garanties worden alleen gebruikt wanneer ze echt aantoonbaar zijn."
+        }
+      ],
+      valueSections: [
+        {
+          title: "Waarom elektricienscontent voorzichtig moet zijn",
+          paragraphs: [
+            "Bij elektra speelt veiligheid een grotere rol dan bij veel andere lokale diensten. Een pagina mag bezoekers niet het gevoel geven dat ze zelf risicovolle situaties moeten oplossen. De inhoud moet helpen herkennen wanneer direct contact nodig is.",
+            "Daarom werkt een goede elektricienswebsite met duidelijke scheiding tussen storing, inspectie en project. De pagina verkoopt niet alleen een dienst, maar geeft richting op een moment waarop de bezoeker zekerheid zoekt."
+          ]
+        },
+        {
+          title: "Welke informatie bezoekers echt nodig hebben",
+          paragraphs: [
+            "Voor een storing wil iemand weten wat hij moet doorgeven: welke groep valt uit, of er brandlucht is, wanneer het probleem begon, of meerdere ruimtes geraakt worden en of er foto's mogelijk zijn. Voor projectwerk gaat het juist om woningtype, gewenste uitbreiding, planning en bestaande installatie.",
+            "Die intake-informatie maakt de pagina nuttig. Het helpt de bezoeker om de vraag beter te formuleren en voorkomt dat de website alleen uit algemene termen als betrouwbaar, snel en professioneel bestaat."
+          ]
+        },
+        {
+          title: "Hoe deze pagina kan groeien zonder herhaling",
+          paragraphs: [
+            "Als er genoeg vraag is, kunnen groepenkast vervangen, laadpaal installeren, storing oplossen en elektra inspectie later eigen pagina's krijgen. Elke pagina moet dan een ander probleem beantwoorden in plaats van dezelfde tekst met een ander keyword te herhalen.",
+            "Voor Voorschoten is de eerste stap vooral duidelijkheid: servicegebied, probleemroutes, veilige contactinstructies, realistische verwachtingen en interne links naar prijzen, lokale SEO en contact."
+          ]
+        }
+      ],
+      sections: [
+        {
+          title: "De eerste keuze: storing of project",
+          text:
+            "Een elektricienpagina moet bezoekers niet in een algemeen dienstenoverzicht laten zoeken. De belangrijkste keuze is of er een acuut probleem speelt of een gepland project.",
+          items: [
+            {
+              title: "Storing",
+              text:
+                "Kortsluiting, uitvallende groepen, brandlucht of vonken vragen om een snelle en duidelijke contactroute."
+            },
+            {
+              title: "Project",
+              text:
+                "Groepenkast vervangen, laadpunt plaatsen of uitbreiding van elektra vraagt om voorbereiding en offerte-informatie."
+            },
+            {
+              title: "Inspectie",
+              text:
+                "Bij twijfel over veiligheid of capaciteit is een inspectie- of adviesroute logischer dan direct projectverkoop."
+            }
+          ]
+        },
+        {
+          title: "Wat vertrouwen geeft bij elektra",
+          text:
+            "Bezoekers willen weten dat de elektricien zorgvuldig werkt. Dat vraagt om procesuitleg, niet om onbewezen claims.",
+          items: [
+            {
+              title: "Veiligheidsproces",
+              text:
+                "Leg uit hoe een aanvraag wordt beoordeeld en welke informatie nodig is voordat werk wordt ingepland."
+            },
+            {
+              title: "Certificaten als ze kloppen",
+              text:
+                "Noem alleen erkenningen, certificaten of keurmerken die de elektricien werkelijk heeft en kan tonen."
+            },
+            {
+              title: "Heldere voorbereiding",
+              text:
+                "Vraag foto's van groepenkast, locatie, gewenste aansluiting en korte omschrijving van het probleem."
+            }
+          ]
+        },
+        {
+          title: "Lokale vindbaarheid voor elektriciens",
+          text:
+            "Lokale SEO werkt beter wanneer de pagina echte elektrische vragen beantwoordt. Alleen Voorschoten herhalen voegt weinig toe.",
+          items: [
+            {
+              title: "Dienstclusters",
+              text:
+                "Maak onderscheid tussen storing, groepenkast, laadpunt, verlichting, inspectie en uitbreiding."
+            },
+            {
+              title: "Servicegebied",
+              text:
+                "Benoem waar de elektricien werkt en voorkom claims over adressen of vestigingen die niet bestaan."
+            },
+            {
+              title: "FAQ-blokken",
+              text:
+                "Beantwoord concrete vragen over veiligheid, voorbereiding, planning en prijsfactoren."
+            }
+          ]
+        }
+      ],
+      checklistTitle: "Checklist voor een elektricienswebsite in Voorschoten",
+      checklist: [
+        "Kan iemand direct kiezen tussen storing, inspectie en project?",
+        "Staan risicosituaties duidelijk genoeg uitgelegd zonder doe-het-zelf advies?",
+        "Zijn groepenkast, laadpunt, verlichting en uitbreiding apart scanbaar?",
+        "Is het servicegebied rond Voorschoten feitelijk beschreven?",
+        "Vraagt het formulier om foto's, probleemtype, locatie en bereikbaarheid?",
+        "Worden certificaten of garanties alleen genoemd als ze echt aantoonbaar zijn?"
+      ],
+      comparison: {
+        title: "Compacte elektricienswebsite of groeisite?",
+        leftLabel: "Compact",
+        rightLabel: "Groei",
+        rows: [
+          {
+            label: "Doel",
+            left: "Heldere basis voor storingen en projectaanvragen",
+            right: "Meer vindbaarheid rond specifieke elektrische diensten"
+          },
+          {
+            label: "Inhoud",
+            left: "Home, diensten, servicegebied, contact en FAQ",
+            right: "Aparte pagina's voor groepenkast, laadpunt, storing en inspectie"
+          },
+          {
+            label: "Past als",
+            left: "Je vooral aanvragen beter wilt laten binnenkomen",
+            right: "Je lokaal sterker wilt concurreren op meerdere zoekvragen"
+          }
+        ]
+      },
+      steps: [
+        {
+          title: "Dienstkaart maken",
+          text: "We scheiden storingen, inspecties en projecten zodat bezoekers sneller de juiste route vinden."
+        },
+        {
+          title: "Veiligheidscopy schrijven",
+          text: "We formuleren risico's voorzichtig en zonder gevaarlijk doe-het-zelf advies."
+        },
+        {
+          title: "Intake verbeteren",
+          text: "Formulier en CTA vragen om informatie die een elektricien echt nodig heeft."
+        },
+        {
+          title: "Zoekstructuur uitbreiden",
+          text: "Later kunnen specifieke diensten eigen pagina's krijgen wanneer daar genoeg inhoud voor is."
+        }
+      ],
+      faqs: [
+        {
+          question: "Wat moet een elektricienswebsite bovenaan duidelijk maken?",
+          answer:
+            "Of de bezoeker een storing, inspectie of project heeft. Daarna moeten servicegebied, contactroute en benodigde informatie zichtbaar zijn."
+        },
+        {
+          question: "Mag ik certificaten en keurmerken noemen?",
+          answer:
+            "Alleen als ze echt kloppen en zichtbaar onderbouwd kunnen worden. Bij elektra is vertrouwen belangrijk, maar verzonnen bewijs schaadt juist."
+        },
+        {
+          question: "Welke diensten verdienen eigen SEO-pagina's?",
+          answer:
+            "Vaak groepenkast vervangen, laadpaal of laadpunt installeren, elektrische storing oplossen, verlichting en elektra inspectie. Elke pagina moet eigen uitleg en FAQ hebben."
+        },
+        {
+          question: "Hoe maak je de pagina lokaal relevant voor Voorschoten?",
+          answer:
+            "Door servicegebied, bereikbaarheid en lokale klantvragen feitelijk te benoemen. De pagina moet vooral elektrische problemen goed uitleggen."
+        },
+        {
+          question: "Wat moet een aanvraagformulier vragen?",
+          answer:
+            "Vraag om probleemtype, locatie, foto's van de groepenkast of situatie, urgentie, gewenste planning en contactgegevens. Houd het kort genoeg voor mobiel."
+        }
+      ],
+      qualityNotes: [
+        "Authored page 3.",
+        "Electrician-specific safety and project routing present.",
+        "No invented certification, guarantee, or office claims.",
+        "Uses unique valueSections, sections, FAQ, and checklist."
+      ]
+    };
+  }
+
+  if (page.slug === "website-laten-maken-voor-hoveniers-voorschoten") {
+    return {
+      ...page,
+      metaTitle: "Website laten maken voor hoveniers in Voorschoten | MagisData",
+      metaDescription:
+        "Hovenierswebsite voor Voorschoten met tuinontwerp, aanleg, onderhoud, projectfoto's, seizoensvragen, offerte-intake en lokale SEO.",
+      description:
+        "Een hovenierswebsite voor Voorschoten moet laten zien welk tuinwerk je doet, hoe je projecten aanpakt en welke informatie nodig is voor een goede aanvraag.",
+      directAnswer:
+        "Een website voor een hovenier in Voorschoten moet direct onderscheid maken tussen tuinontwerp, tuinaanleg, tuinonderhoud en renovatie. Bezoekers willen projectvoorbeelden zien, begrijpen hoe een aanvraag loopt, weten welke foto's of afmetingen nuttig zijn en kunnen inschatten of de hovenier past bij hun tuin en planning. Lokale context helpt alleen wanneer werkgebied en projectsoort feitelijk kloppen.",
+      visual: {
+        label: "Tuinprojectroute",
+        title: "Van tuinwens naar aanvraag",
+        text:
+          "De pagina vertaalt een vage tuinwens naar een concreet gesprek: type tuin, gewenste aanpak, foto's, seizoen en vervolgstap.",
+        items: ["tuinontwerp", "aanleg", "onderhoud", "projectfoto's", "intake"]
+      },
+      highlights: [
+        {
+          title: "Projecten zichtbaar",
+          text: "Voor en na, werkwijze en materiaalkeuzes geven meer vertrouwen dan algemene beloftes."
+        },
+        {
+          title: "Seizoen en planning",
+          text: "Onderhoud, aanleg en renovatie hebben elk hun eigen timing en voorbereiding."
+        },
+        {
+          title: "Voorschoten-context",
+          text: "De pagina koppelt werkgebied aan echte aanvragen, niet aan een verzonnen lokale vestiging."
+        },
+        {
+          title: "Betere offertevragen",
+          text: "Een goede intake vraagt om foto's, afmetingen, wensen, budgetrichting en planning."
+        }
+      ],
+      valueSections: [
+        {
+          title: "Waarom hovenierscontent visueel en praktisch moet zijn",
+          paragraphs: [
+            "Bij hovenierswerk wil een bezoeker niet alleen lezen dat het resultaat mooi wordt. Hij wil voorbeelden zien, begrijpen welke soorten werk je doet en weten of zijn tuinwens past bij jouw aanpak.",
+            "Daarom moet de pagina projectgericht zijn. Tuinontwerp, aanleg, onderhoud en renovatie hebben andere vragen, andere bewijsstukken en andere CTA's. Die verschillen maken de pagina waardevol en voorkomen herhaling."
+          ]
+        },
+        {
+          title: "Welke informatie een tuinaanvraag beter maakt",
+          paragraphs: [
+            "Een sterke aanvraag vraagt om meer dan naam en telefoonnummer. Foto's van de tuin, globale afmetingen, gewenste stijl, huidige probleem, timing en budgetrichting helpen om een eerste gesprek nuttiger te maken.",
+            "De website kan bezoekers daarop voorbereiden zonder drempel te hoog te maken. Korte uitleg bij het formulier zorgt dat iemand weet wat handig is om mee te sturen."
+          ]
+        },
+        {
+          title: "Hoe lokale SEO voor hoveniers inhoud krijgt",
+          paragraphs: [
+            "Een hovenierspagina voor Voorschoten wordt pas sterk wanneer de inhoud tuinvragen behandelt die lokaal relevant kunnen zijn: onderhoud, renovatie, kleine stadstuinen, grotere tuinen, seizoenswerk en bereikbaarheid.",
+            "Als er genoeg projectmateriaal is, kunnen losse pagina's voor tuinontwerp, tuinaanleg en tuinonderhoud later ieder een eigen rol krijgen. Dat is sterker dan dezelfde plaatsnaampagina voor meerdere dorpen kopiëren."
+          ]
+        }
+      ],
+      sections: [
+        {
+          title: "Bezoekers zoeken een passende aanpak, niet alleen een hovenier",
+          text:
+            "Een tuinproject voelt voor klanten vaak groot. De pagina moet duidelijk maken welk type werk je doet en hoe iemand van eerste idee naar aanvraag gaat.",
+          items: [
+            {
+              title: "Tuinontwerp",
+              text:
+                "Leg uit wanneer ontwerp nodig is, welke keuzes worden gemaakt en welke input de klant kan voorbereiden."
+            },
+            {
+              title: "Tuinaanleg",
+              text:
+                "Laat zien hoe aanlegprojecten verlopen: intake, plan, materiaalkeuze, planning en uitvoering."
+            },
+            {
+              title: "Tuinonderhoud",
+              text:
+                "Maak onderscheid tussen eenmalige onderhoudsbeurt, seizoenswerk en terugkerend onderhoud."
+            }
+          ]
+        },
+        {
+          title: "Bewijs dat past bij hovenierswerk",
+          text:
+            "Voor hoveniers zijn beelden en proces belangrijk. Niet als decoratie, maar als bewijs dat de bezoeker helpt inschatten of de stijl past.",
+          items: [
+            {
+              title: "Projectfoto's",
+              text:
+                "Gebruik echte foto's met korte context: type tuin, wens, gekozen oplossing en eventueel seizoen."
+            },
+            {
+              title: "Werkwijze",
+              text:
+                "Vertel hoe het proces loopt, van intake en tuinplan tot uitvoering en oplevering."
+            },
+            {
+              title: "Materiaal en onderhoud",
+              text:
+                "Leg uit welke keuzes invloed hebben op onderhoud, uitstraling, duurzaamheid en planning."
+            }
+          ]
+        },
+        {
+          title: "Lokale vindbaarheid zonder generieke regio-copy",
+          text:
+            "De pagina moet niet doen alsof elke tuin in Voorschoten hetzelfde is. Lokale context is ondersteunend; de echte waarde zit in projectuitleg.",
+          items: [
+            {
+              title: "Werkgebied",
+              text:
+                "Benoem Voorschoten feitelijk als werkgebied wanneer dat klopt, zonder adres of vestiging te claimen."
+            },
+            {
+              title: "Seizoensvragen",
+              text:
+                "Gebruik FAQ's over voorjaarsonderhoud, renovatieplanning en wanneer aanleg logisch is."
+            },
+            {
+              title: "Interne structuur",
+              text:
+                "Koppel de pagina aan webontwikkeling, lokale SEO, prijzen en later aan losse hoveniersdiensten."
+            }
+          ]
+        }
+      ],
+      checklistTitle: "Checklist voor een hovenierswebsite in Voorschoten",
+      checklist: [
+        "Zijn tuinontwerp, aanleg, onderhoud en renovatie apart herkenbaar?",
+        "Laat de pagina echte projectfoto's of procesuitleg zien zonder nepresultaten?",
+        "Vraagt het formulier om foto's, afmetingen, wensen, planning en budgetrichting?",
+        "Is duidelijk of de hovenier in Voorschoten werkt zonder nepvestiging te claimen?",
+        "Zijn seizoensvragen en onderhoudsvragen beantwoord in gewone taal?",
+        "Is de mobiele aanvraagroute kort genoeg voor iemand die foto's wil meesturen?"
+      ],
+      comparison: {
+        title: "Compacte hovenierswebsite of groeisite?",
+        leftLabel: "Compact",
+        rightLabel: "Groei",
+        rows: [
+          {
+            label: "Doel",
+            left: "Professioneel uitleggen wat je doet en aanvragen ontvangen",
+            right: "Meer vindbaarheid rond ontwerp, aanleg, onderhoud en renovatie"
+          },
+          {
+            label: "Inhoud",
+            left: "Home, diensten, projectbeelden, werkwijze en contact",
+            right: "Aparte dienstpagina's, projectcases, FAQ's en lokale content"
+          },
+          {
+            label: "Past als",
+            left: "Je vooral vertrouwen en betere aanvragen nodig hebt",
+            right: "Je genoeg projecten en diensten hebt om inhoudelijk uit te bouwen"
+          }
+        ]
+      },
+      steps: [
+        {
+          title: "Diensten scheiden",
+          text: "We bepalen welke rol ontwerp, aanleg, onderhoud en renovatie op de pagina krijgen."
+        },
+        {
+          title: "Bewijs verzamelen",
+          text: "We ordenen projectfoto's, procesinformatie en praktische klantvragen."
+        },
+        {
+          title: "Aanvraagroute maken",
+          text: "Het formulier vraagt om informatie die een hoveniersgesprek direct concreter maakt."
+        },
+        {
+          title: "Uitbouwen waar zinvol",
+          text: "Later kunnen sterke diensten of projecttypen eigen pagina's krijgen."
+        }
+      ],
+      faqs: [
+        {
+          question: "Wat moet bovenaan een hovenierswebsite staan?",
+          answer:
+            "Maak direct duidelijk of je tuinontwerp, aanleg, onderhoud of renovatie doet. Toon daarna bewijs, werkwijze en een duidelijke aanvraagroute."
+        },
+        {
+          question: "Zijn projectfoto's belangrijk voor SEO?",
+          answer:
+            "Ze helpen vooral bezoekers vertrouwen krijgen. Voor SEO worden ze sterker wanneer ze goede alt-tekst, context en bijbehorende projectuitleg krijgen."
+        },
+        {
+          question: "Welke informatie moet een offerteformulier vragen?",
+          answer:
+            "Vraag foto's, globale afmetingen, gewenste werkzaamheden, stijlvoorkeur, planning en eventueel budgetrichting. Houd het formulier overzichtelijk."
+        },
+        {
+          question: "Hoe maak je de pagina lokaal relevant voor Voorschoten?",
+          answer:
+            "Door werkgebied, bereikbaarheid en lokale servicecontext feitelijk te noemen, maar de pagina vooral te vullen met nuttige hoveniersinformatie."
+        },
+        {
+          question: "Wanneer zijn losse dienstpagina's zinvol?",
+          answer:
+            "Wanneer ontwerp, aanleg of onderhoud genoeg eigen vragen, foto's en voorbeelden heeft. Dan voegt elke pagina echt iets toe."
+        }
+      ],
+      qualityNotes: [
+        "Authored page 4.",
+        "Hoveniers-specific visual proof, seasonal planning, and intake content present.",
+        "No fake project results or local-office claims.",
+        "Uses unique valueSections, sections, FAQ, and checklist."
+      ]
+    };
+  }
+
+  return page;
 }
 
 export const draftKeywordPages: KeywordDraftPageContent[] = [
@@ -1514,7 +2778,7 @@ export const draftKeywordPages: KeywordDraftPageContent[] = [
   ...makePricingPages(),
   ...makeAiVisibilityPages(),
   ...makeTechnicalGuides()
-].sort((a, b) => a.id - b.id);
+].map(applyAuthoredKeywordPageContent).sort((a, b) => a.id - b.id);
 
 export function getDraftKeywordPage(slug: string) {
   return draftKeywordPages.find((page) => page.slug === slug);
