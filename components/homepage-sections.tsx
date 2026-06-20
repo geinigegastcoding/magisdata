@@ -3,8 +3,7 @@ import type { ReactNode } from "react";
 import {
   ArrowRight,
   ChevronRight,
-  HelpCircle,
-  Sparkles
+  HelpCircle
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TrustProofRow } from "@/components/trust-proof-row";
@@ -72,10 +71,7 @@ export function Hero() {
     <section className="relative overflow-hidden pb-[4.5rem] pt-7 md:pb-24 md:pt-14 lg:pb-28 lg:pt-16">
       <div className="container grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-10">
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full bg-blue-soft/85 px-6 py-2.5 text-xs font-extrabold uppercase tracking-[0.16em] text-blue shadow-sm">
-            Meer aanvragen via je website <Sparkles className="h-4 w-4 text-yellow" strokeWidth={2.2} />
-          </div>
-          <h1 className="mt-8 max-w-[640px] text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.025em] text-navy sm:text-[3.5rem] md:text-[4.45rem] lg:text-[4.65rem] lg:leading-[1.01]">
+          <h1 className="max-w-[640px] text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.025em] text-navy sm:text-[3.5rem] md:text-[4.45rem] lg:text-[4.65rem] lg:leading-[1.01]">
             Website laten maken voor betere vindbaarheid en{" "}
             <span className="text-orange">meer aanvragen</span>
           </h1>
