@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import { JsonLd } from "@/components/json-ld";
 import { ConsentManager } from "@/components/consent-manager";
@@ -66,9 +67,15 @@ export const viewport: Viewport = {
   themeColor: "#FFF9ED"
 };
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl">
+    <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
       <body>
         <Script id="google-tag-consent-default" strategy="beforeInteractive">
           {`

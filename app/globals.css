@@ -7,7 +7,7 @@
   --background: #fffcf7;
   --surface: #ffffff;
   --surface-soft: #fff7ed;
-  --text-main: #274c7e;
+  --text-main: #1A1D22;
   --text-muted: #536179;
   --text-soft: #7a8499;
   --orange: #ff6b1a;
@@ -23,7 +23,6 @@
   --border-soft: #eaecef;
   --shadow-soft: 0 16px 42px rgba(83, 97, 121, 0.1);
   --shadow-card: 0 10px 26px rgba(83, 97, 121, 0.085);
-  --font-inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -31,7 +30,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background: var(--background);
 }
 
@@ -96,7 +94,6 @@ select {
     border: 1px solid rgba(234, 236, 239, 0.95);
     background: rgba(255, 255, 255, 0.94);
     box-shadow: 0 12px 30px rgba(83, 97, 121, 0.12);
-    backdrop-filter: blur(12px);
   }
 
   .photo-scene {
