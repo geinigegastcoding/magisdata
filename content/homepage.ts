@@ -99,18 +99,9 @@ export const metrics = [
 ];
 
 export const insights = [
-  {
-    title: "Beter gevonden worden in Google als lokaal bedrijf",
-    href: "/inzichten/seo-zonder-jargon"
-  },
-  {
-    title: "5 simpele tips voor meer aanvragen via je website",
-    href: "/inzichten/website-meer-aanvragen"
-  },
-  {
-    title: "Waarom duidelijke uitleg belangrijker wordt voor AI",
-    href: "/inzichten/ai-vindbaarheid"
-  }
+  
+  
+  
 ];
 
 export const AdviceIcon = Lightbulb;

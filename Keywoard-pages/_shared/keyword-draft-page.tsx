@@ -9,7 +9,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
-import { absoluteUrl, articleSchema, breadcrumbSchema, faqSchema, graphSchema, serviceSchema, webPageSchema } from "@/schemas/seo";
+import { absoluteUrl,  breadcrumbSchema, faqSchema, graphSchema, serviceSchema, webPageSchema } from "@/schemas/seo";
 import { getDraftKeywordPage, type KeywordDraftPageContent } from "./keyword-page-data";
 
 type KeywordDraftPageProps = {
@@ -117,7 +117,7 @@ function pageSchema(page: KeywordDraftPageContent) {
 
   if (page.schemaType === "Article") {
     nodes.push(
-      articleSchema({
+      ({
         title: page.title,
         summary: page.metaDescription,
         slug: page.slug,

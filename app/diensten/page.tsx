@@ -17,6 +17,14 @@ import { JsonLd } from "@/components/json-ld";
 import { TrustProofRow } from "@/components/trust-proof-row";
 import { metadataForPath } from "@/content/seo";
 import { breadcrumbSchema, collectionPageSchema, graphSchema, webPageSchema } from "@/schemas/seo";
+import {
+  advicePlans,
+  automationPlans,
+  PlanGrid,
+  pricingFaqs,
+  visibilityPlans,
+  websitePlans
+} from "./pricing-data";
 
 export const metadata: Metadata = metadataForPath("/diensten");
 
@@ -242,6 +250,63 @@ export default function ServicesPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-14 md:py-20" id="websites">
+        <div className="container">
+          <div className="mb-9 grid gap-5 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+                Websites
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy md:text-4xl">
+                Websitepakketten met basis SEO inbegrepen
+              </h2>
+            </div>
+            <p className="leading-7 text-muted">
+              Deze pakketten zijn voor ondernemers die een duidelijke, snelle en nette website willen. Voor actieve groei in Google en AI-antwoorden staat er los een vindbaarheidspakket onder.
+            </p>
+          </div>
+          <PlanGrid plans={websitePlans} />
+        </div>
+      </section>
+
+      <section className="py-14 md:py-20">
+        <div className="container">
+          <div className="mb-9 grid gap-5 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+                SEO, AEO en GEO
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy md:text-4xl">
+                Vindbaarheidspakketten voor wie structureel gevonden wil worden
+              </h2>
+            </div>
+            <p className="leading-7 text-muted">
+              Gratis scan vooraf. Eerst kijken waar kansen en gaten zitten, daarna pas kiezen of een pakket logisch is.
+            </p>
+          </div>
+          <PlanGrid plans={visibilityPlans} cta="Vraag gratis scan aan" />
+        </div>
+      </section>
+
+      <section className="bg-white py-14 md:py-20">
+        <div className="container">
+          <div className="mb-9 grid gap-5 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
+                AI automatisering
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy md:text-4xl">
+                Automatiseringen die terugkerend werk verminderen
+              </h2>
+            </div>
+            <p className="leading-7 text-muted">
+              Maandelijkse checks zijn optioneel voor EUR 50 p/m. Handig voor controle en kleine verbeteringen, niet verplicht.
+            </p>
+          </div>
+          <PlanGrid plans={automationPlans} cta="Bespreek automatisering" />
         </div>
       </section>
 

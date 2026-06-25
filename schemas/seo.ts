@@ -77,9 +77,35 @@ export function localBusinessSchema() {
     email: siteEmail,
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Suze Groenwegerf 25",
+      postalCode: "2253 RZ",
       addressLocality: "Voorschoten",
+      addressRegion: "Zuid-Holland",
       addressCountry: "NL"
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 52.1287,
+      longitude: 4.4447
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        opens: "09:00",
+        closes: "18:00"
+      }
+    ],
+    sameAs: [
+      "https://share.google/fPu1P47PQzUwG210Z",
+      founderLinkedIn
+    ],
     areaServed: [
       "Nederland",
       "Leiden",
@@ -181,33 +207,6 @@ export function serviceSchema(content: PageContent, path: string) {
   };
 }
 
-export function articleSchema(article: {
-  title: string;
-  summary: string;
-  slug: string;
-  datePublished: string;
-  dateModified: string;
-}) {
-  const path = `/inzichten/${article.slug}`;
-
-  return {
-    "@type": "Article",
-    "@id": `${absoluteUrl(path)}#article`,
-    headline: article.title,
-    description: article.summary,
-    image: defaultImage,
-    datePublished: article.datePublished,
-    dateModified: article.dateModified,
-    inLanguage: "nl-NL",
-    author: {
-      "@id": `${siteUrl}/#founder`
-    },
-    publisher: {
-      "@id": `${siteUrl}/#organization`
-    },
-    mainEntityOfPage: absoluteUrl(path)
-  };
-}
 
 export function caseStudySchema(caseStudy: {
   title: string;

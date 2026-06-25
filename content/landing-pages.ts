@@ -1254,7 +1254,7 @@ export const landingPages: LandingPage[] = [
       { question: "Kan ik extra informatie sturen?", answer: "Ja. Mail gerust naar contact [at] magisdata.nl." }
     ]
   }
-];
+].filter(p => !["website-laten-maken-den-haag", "website-laten-maken-leiden", "website-laten-maken-rotterdam", "website-voor-elektriciens", "website-voor-hoveniers", "website-voor-kappers", "website-voor-loodgieters"].includes(p.slug)) as LandingPage[];
 
 export function getLandingPage(slug: string) {
   return landingPages.find((page) => page.slug === slug);

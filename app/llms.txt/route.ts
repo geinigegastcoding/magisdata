@@ -39,7 +39,7 @@ export function GET() {
       "- GEO-optimalisatie: " + siteUrl + "/geo-optimalisatie",
       "- AEO-optimalisatie: " + siteUrl + "/aeo-optimalisatie",
       "- Conversie-optimalisatie: " + siteUrl + "/conversie-optimalisatie",
-      "- Prijzen en pakketten: " + siteUrl + "/prijzen",
+      "- Diensten en pakketten: " + siteUrl + "/diensten",
       "- Portfolio en ontwerpvoorbeelden: " + siteUrl + "/cases",
       "- Contact: " + siteUrl + "/contact",
       "",

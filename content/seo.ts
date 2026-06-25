@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { landingPages } from "@/content/landing-pages";
-import { caseStudies, insights } from "@/content/pages";
+import { caseStudies } from "@/content/pages";
 import { currentStatus } from "@/content/status";
 import { absoluteUrl, defaultImage, lastModified, siteName } from "@/schemas/seo";
 
@@ -34,15 +34,6 @@ const coreSeoRoutes: SeoRoute[] = [
     description: "Bekijk hoe MagisData webontwikkeling, SEO, GEO, AEO, AI-automatisering en strategisch advies verbindt tot een helder groeisysteem.",
     keywords: ["website laten maken", "SEO diensten", "GEO optimalisatie", "AEO optimalisatie", "AI automatisering", "strategisch online advies"],
     priority: 0.9,
-    changeFrequency: "monthly",
-    lastModified
-  },
-  {
-    path: "/prijzen",
-    title: "Prijzen voor websites, SEO en AI-automatisering | MagisData",
-    description: "Bekijk de prijzen van MagisData voor websites, SEO, AEO, GEO, AI automatisering en groeigesprekken met duidelijke pakketten.",
-    keywords: ["MagisData prijzen", "website prijs", "SEO pakket prijs", "AI automatisering prijs", "groeigesprek"],
-    priority: 0.82,
     changeFrequency: "monthly",
     lastModified
   },
@@ -83,7 +74,7 @@ const coreSeoRoutes: SeoRoute[] = [
     lastModified
   },
   {
-    path: "/ai-infrastructuur",
+    path: "/ai-automatisering",
     title: "AI en automatisering voor ondernemers",
     description: "Praktische AI en automatisering voor betere leadopvolging, minder handwerk, duidelijke intake en slimmere processen.",
     keywords: ["AI automatisering", "AI voor ondernemers", "leadopvolging automatiseren", "AI workflows"],
@@ -153,31 +144,9 @@ const caseStudySeoRoutes: SeoRoute[] = [
   }))
 ];
 
-const insightSeoRoutes: SeoRoute[] = [
-  {
-    path: "/inzichten",
-    title: "Inzichten over SEO, AI-vindbaarheid en websites | MagisData",
-    description: "Lees praktische inzichten over websites, SEO, GEO, AEO, AI-vindbaarheid, conversie en digitale groei voor ondernemers.",
-    keywords: ["SEO inzichten", "website tips ondernemers", "AI vindbaarheid", "GEO optimalisatie", "AEO optimalisatie", "online groei"],
-    priority: 0.75,
-    changeFrequency: "monthly",
-    lastModified
-  },
-  ...insights.map((insight) => ({
-    path: `/inzichten/${insight.slug}`,
-    title: insight.metaTitle ?? insight.title,
-    description: insight.summary,
-    keywords: [insight.title, "SEO inzicht", "website tips", "AI vindbaarheid", "MagisData"],
-    priority: 0.65,
-    changeFrequency: "monthly" as const,
-    lastModified: insight.dateModified
-  }))
-];
-
 export const seoRoutes: SeoRoute[] = [
   ...coreSeoRoutes,
   ...caseStudySeoRoutes,
-  ...insightSeoRoutes,
   ...landingPages.map((page) => ({
     path: `/${page.slug}`,
     title: page.metaTitle,

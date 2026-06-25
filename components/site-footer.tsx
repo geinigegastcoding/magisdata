@@ -15,9 +15,9 @@ const columns = [
       { label: "AI vindbaarheid", href: "/ai-vindbaarheid" },
       { label: "GEO optimalisatie", href: "/geo-optimalisatie" },
       { label: "AEO optimalisatie", href: "/aeo-optimalisatie" },
-      { label: "AI en automatisering", href: "/ai-infrastructuur" },
+      { label: "AI en automatisering", href: "/ai-automatisering" },
       { label: "Strategisch advies", href: "/strategisch-advies" },
-      { label: "Prijzen", href: "/prijzen" }
+      { label: "SEO bureau Leiden", href: "/seo-bureau-leiden" }
     ]
   },
   {
@@ -31,33 +31,10 @@ const columns = [
     ]
   },
   {
-    title: "Branches",
+    title: "Bedrijf",
     links: [
-      { label: "Website voor loodgieters", href: "/website-voor-loodgieters" },
-      { label: "Website voor elektriciens", href: "/website-voor-elektriciens" },
-      { label: "Website voor kappers", href: "/website-voor-kappers" },
-      { label: "Website voor hoveniers", href: "/website-voor-hoveniers" }
-    ]
-  },
-  {
-    title: "Regio",
-    links: [
-      { label: "SEO bureau Leiden", href: "/seo-bureau-leiden" },
-      { label: "Website laten maken Leiden", href: "/website-laten-maken-leiden" },
-      { label: "Website laten maken Den Haag", href: "/website-laten-maken-den-haag" },
-      { label: "Website laten maken Rotterdam", href: "/website-laten-maken-rotterdam" }
-    ]
-  },
-  {
-    title: "Kennis",
-    links: [
-      { label: "Inzichten", href: "/inzichten" },
-      { label: "Website krijgt weinig aanvragen", href: "/inzichten/website-meer-aanvragen" },
-      { label: "SEO zonder jargon", href: "/inzichten/seo-zonder-jargon" },
-      { label: "AI-vindbaarheid", href: "/inzichten/ai-vindbaarheid" },
       { label: "Over MagisData", href: "/over-ons" },
       { label: "Contact", href: "/contact" },
-      { label: "Prijzen", href: "/prijzen" },
       { label: "Status", href: "/status" },
       { label: "Privacybeleid", href: "/privacybeleid" },
       { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }
@@ -79,7 +56,7 @@ export function SiteFooter() {
           </Link>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {columns.map((column) => (
             <div key={column.title}>
               <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy">

@@ -8,7 +8,6 @@ import {
 import { cn } from "@/lib/utils";
 import { TrustProofRow } from "@/components/trust-proof-row";
 import {
-  insights,
   metrics,
   processSteps,
   services
@@ -332,7 +331,7 @@ export function CaseStudyInsights() {
   return (
     <section className="relative bg-cream py-8 md:py-12">
       <SmallDoodle className="right-14 top-4 hidden h-14 w-36 rotate-3 text-orange/20 lg:block" />
-      <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="container max-w-5xl">
         <article className="overflow-hidden rounded-[2rem] border border-line bg-white p-7 shadow-sm md:p-9">
           <div className="grid gap-7 md:grid-cols-[0.96fr_1.04fr] md:items-center">
             <div>
@@ -382,27 +381,6 @@ export function CaseStudyInsights() {
               </div>
             </div>
           </div>
-        </article>
-
-        <article className="rounded-[2rem] border border-line bg-white p-7 shadow-sm md:p-9">
-          <Eyebrow>Laatste inzichten</Eyebrow>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-[-0.03em] text-navy">Tips, trends en inspiratie</h2>
-          <div className="mt-7 grid gap-5 md:grid-cols-3">
-            {insights.map((insight) => (
-              <Link className="focus-ring group rounded-2xl border border-line bg-cream/50 p-4" href={insight.href} key={insight.href}>
-                <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-blue">Inzicht</p>
-                <h3 className="mt-4 text-sm font-bold leading-5 text-navy transition group-hover:text-orange">
-                  {insight.title}
-                </h3>
-                <span className="mt-3 inline-flex items-center text-xs font-bold text-orange">
-                  Lees verder <ChevronRight className="ml-1 h-3.5 w-3.5" />
-                </span>
-              </Link>
-            ))}
-          </div>
-          <Link className="focus-ring mt-7 inline-flex items-center rounded-full text-sm font-bold text-orange" href="/inzichten">
-            Bekijk alle inzichten <ChevronRight className="ml-1 h-4 w-4" />
-          </Link>
         </article>
       </div>
     </section>
