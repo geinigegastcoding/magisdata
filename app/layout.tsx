@@ -75,7 +75,7 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
-      <head>
+      <body>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -102,8 +102,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `
           }}
         />
-      </head>
-      <body>
         <JsonLd data={graphSchema([organizationSchema(), personSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
         {children}
