@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import { JsonLd } from "@/components/json-ld";
 import { ConsentManager } from "@/components/consent-manager";
 import { SiteFooter } from "@/components/site-footer";
@@ -76,29 +75,35 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied'
+              });
+            `
+          }}
+        />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6G8TMGDWY" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-H6G8TMGDWY');
+            `
+          }}
+        />
+      </head>
       <body>
-        <Script id="google-tag-consent-default" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('consent', 'default', {
-              analytics_storage: 'denied',
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied'
-            });
-          `}
-        </Script>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-H6G8TMGDWY" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-H6G8TMGDWY');
-          `}
-        </Script>
         <JsonLd data={graphSchema([organizationSchema(), personSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
         {children}
