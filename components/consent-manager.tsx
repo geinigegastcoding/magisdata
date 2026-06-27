@@ -9,8 +9,10 @@ import {
   trackEvent,
   type ConsentState
 } from "@/lib/analytics-consent";
+import { usePathname } from "next/navigation";
 
 export function ConsentManager() {
+  const pathname = usePathname();
   const [choice, setChoice] = useState<ConsentState>("unset");
   const [settingsOpen, setSettingsOpen] = useState(false);
 
@@ -61,7 +63,7 @@ export function ConsentManager() {
       document.removeEventListener("click", onClick);
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [pathname]);
 
   if (choice !== "unset" && !settingsOpen) {
     return null;

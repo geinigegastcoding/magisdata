@@ -14,18 +14,18 @@ function listFiles(url) {
   });
 }
 
-test("retired intent and legacy case URLs redirect to canonical pages", () => {
+test("retired intent and legacy case URLs return 410 gone", () => {
   const redirects = read("public/_redirects");
 
   [
-    "/website-laten-maken /webontwikkeling 301",
-    "/seo-website-laten-maken /webontwikkeling 301",
-    "/seo-bureau /seo-diensten 301",
-    "/seo-services /seo-diensten 301",
-    "/ai-seo-bureau /ai-vindbaarheid 301",
-    "/cases/lokale-dienstverlener /cases 301",
-    "/cases/adviesbureau /cases 301",
-    "/cases/groeiende-webshop /cases 301"
+    "/website-laten-maken 410",
+    "/seo-website-laten-maken 410",
+    "/seo-bureau 410",
+    "/seo-services 410",
+    "/ai-seo-bureau 410",
+    "/cases/lokale-dienstverlener 410",
+    "/cases/adviesbureau 410",
+    "/cases/groeiende-webshop 410"
   ].forEach((rule) => assert.match(redirects, new RegExp(rule.replaceAll("/", "\\/"))));
 
   const landingPages = read("content/landing-pages.ts");
@@ -42,7 +42,7 @@ test("legacy English SEO slug is not exposed as an indexable route", () => {
   assert.match(sitemap, /sitemapRoutes/);
 
   const redirects = read("public/_redirects");
-  assert.match(redirects, /\/seo-services \/seo-diensten 301/);
+  assert.match(redirects, /\/seo-services 410/);
 });
 
 test("analytics is gated by consent and has no automatic layout loader", async () => {
