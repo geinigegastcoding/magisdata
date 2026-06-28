@@ -72,6 +72,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  preload: false,
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

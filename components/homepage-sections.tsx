@@ -93,9 +93,9 @@ export function Hero() {
             <img
               alt="Website-ontwerp voor een hoveniersbedrijf uit het MagisData portfolio"
               className="h-full w-full rounded-[2.1rem] object-cover object-top"
-              fetchPriority="high"
               height="1402"
               loading="eager"
+              decoding="async"
               sizes="(min-width: 1024px) 52vw, 100vw"
               src="/assets/case1-1122.webp"
               srcSet="/assets/case1-640.webp 640w, /assets/case1-768.webp 768w, /assets/case1-1122.webp 1122w"

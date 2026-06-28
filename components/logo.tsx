@@ -16,6 +16,8 @@ export function Logo({ className }: LogoProps) {
         alt="MagisData"
         className="h-12 w-auto sm:h-14"
         height="56"
+        fetchPriority="low"
+        decoding="async"
         src="/assets/logo.webp"
         srcSet="/assets/logo-96.webp 96w, /assets/logo-112.webp 112w, /assets/logo.webp 500w"
         sizes="(min-width: 640px) 56px, 48px"
