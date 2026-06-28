@@ -70,7 +70,7 @@ export function ConsentManager() {
   }
 
   return (
-    <aside aria-label="Cookievoorkeuren" aria-modal="true" className="fixed inset-x-4 bottom-4 z-[80] mx-auto max-w-3xl rounded-2xl border border-line bg-white p-5 shadow-card md:p-6" role="dialog">
+    <div aria-label="Cookievoorkeuren" aria-modal="true" className="fixed inset-x-4 bottom-4 z-[80] mx-auto max-w-3xl rounded-2xl border border-line bg-white p-5 shadow-card md:p-6" role="dialog">
       <h2 className="text-lg font-extrabold text-navy">Cookies en analytics</h2>
       <p className="mt-2 text-sm leading-6 text-muted">
         We laden Google Analytics alleen na jouw toestemming. Formulieren werken ook zonder analytics. Lees meer in het{" "}
@@ -103,6 +103,6 @@ export function ConsentManager() {
           Weigeren
         </button>
       </div>
-    </aside>
+    </div>
   );
 }

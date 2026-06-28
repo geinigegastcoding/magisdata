@@ -19,7 +19,6 @@ import { metadataForPath } from "@/content/seo";
 import { breadcrumbSchema, collectionPageSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 import {
   advicePlans,
-  automationPlans,
   PlanGrid,
   pricingFaqs,
   visibilityPlans,
@@ -60,14 +59,6 @@ const services = [
     text: "Klantvragen scherp beantwoorden zodat twijfel verdwijnt voordat iemand contact opneemt.",
     icon: FileQuestion,
     color: "bg-yellow-soft text-yellow"
-  },
-  {
-    href: "/ai-infrastructuur",
-    title: "AI en automatisering",
-    label: "Voor minder handwerk",
-    text: "Praktische AI-flows voor intake, opvolging, content en terugkerende processen.",
-    icon: Bot,
-    color: "bg-green-soft text-green"
   },
   {
     href: "/strategisch-advies",
@@ -204,7 +195,7 @@ export default function ServicesPage() {
               Wat we bouwen
             </p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy md:text-4xl">
-              Zes diensten, een helder doel: je digitale basis laten werken als acquisitiesysteem.
+              Vijf diensten, een helder doel: je digitale basis laten werken als acquisitiesysteem.
             </h2>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -291,24 +282,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-white py-14 md:py-20">
-        <div className="container">
-          <div className="mb-9 grid gap-5 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
-            <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
-                AI automatisering
-              </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-normal text-navy md:text-4xl">
-                Automatiseringen die terugkerend werk verminderen
-              </h2>
-            </div>
-            <p className="leading-7 text-muted">
-              Maandelijkse checks zijn optioneel voor EUR 50 p/m. Handig voor controle en kleine verbeteringen, niet verplicht.
-            </p>
-          </div>
-          <PlanGrid plans={automationPlans} cta="Bespreek automatisering" />
-        </div>
-      </section>
+
 
       <section className="py-14 md:py-20">
         <div className="container grid gap-8 lg:grid-cols-[0.38fr_0.62fr]">
@@ -353,11 +327,10 @@ export default function ServicesPage() {
               Soms heb je geen nieuwe campagne nodig, maar een duidelijkere pagina. Soms is vindbaarheid het probleem. En soms komen aanvragen wel binnen, maar kost opvolging te veel tijd.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             {[
               ["Te weinig vertrouwen", "Start bij positionering, webontwikkeling, cases en duidelijke servicepagina's."],
-              ["Te weinig bezoekers", "Versterk SEO, AEO en GEO met pagina's die echte zoekvragen beantwoorden."],
-              ["Te veel handwerk", "Maak intake, opvolging en terugkerende communicatie slimmer met praktische automatisering."]
+              ["Te weinig bezoekers", "Versterk SEO, AEO en GEO met pagina's die echte zoekvragen beantwoorden."]
             ].map(([title, text]) => (
               <article className="rounded-2xl border border-line bg-cream/50 p-5 shadow-sm" key={title}>
                 <h3 className="font-extrabold text-navy">{title}</h3>

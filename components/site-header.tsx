@@ -24,7 +24,6 @@ const navigation: NavigationItem[] = [
       "/ai-vindbaarheid",
       "/geo-optimalisatie",
       "/aeo-optimalisatie",
-      "/ai-infrastructuur",
       "/strategisch-advies"
     ]
   },

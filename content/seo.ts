@@ -74,15 +74,6 @@ const coreSeoRoutes: SeoRoute[] = [
     lastModified
   },
   {
-    path: "/ai-automatisering",
-    title: "AI en automatisering voor ondernemers",
-    description: "Praktische AI en automatisering voor betere leadopvolging, minder handwerk, duidelijke intake en slimmere processen.",
-    keywords: ["AI automatisering", "AI voor ondernemers", "leadopvolging automatiseren", "AI workflows"],
-    priority: 0.75,
-    changeFrequency: "monthly",
-    lastModified
-  },
-  {
     path: "/strategisch-advies",
     title: "Strategisch online advies voor website, SEO en groei",
     description: "Krijg helder strategisch advies over je website, SEO, content, AEO, GEO en online groei zonder technische ruis.",
@@ -128,7 +119,7 @@ const caseStudySeoRoutes: SeoRoute[] = [
     keywords: ["webdesign portfolio", "website ontwerp voorbeelden", "portfolio webdesign", "SEO webdesign", "MagisData portfolio"],
     priority: 0.75,
     changeFrequency: "monthly",
-    lastModified: "2026-05-26"
+    lastModified: "2026-06-28"
   },
   ...caseStudies.map((caseStudy) => ({
     path: `/cases/${caseStudy.slug}`,

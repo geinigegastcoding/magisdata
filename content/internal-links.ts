@@ -26,11 +26,6 @@ const serviceLinks: InternalLink[] = [
     description: "Maak je bedrijf beter begrijpbaar voor AI-zoekmachines."
   },
   {
-    href: "/ai-automatisering",
-    label: "AI en automatisering",
-    description: "Verminder handwerk en verbeter leadopvolging."
-  },
-  {
     href: "/strategisch-advies",
     label: "Strategisch advies",
     description: "Kies de juiste volgorde voor online groei."
@@ -77,27 +72,22 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
     { href: "/contact", label: "Onderhoud bespreken", description: "Bekijk welke technische en contentchecks logisch zijn." }
   ],
   "/seo-diensten": [
-    serviceLinks[6],
-    serviceLinks[8],
+    serviceLinks[4],
+    serviceLinks[4],
     pricingLink,
     { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Lokale vindbaarheid voor servicebedrijven rond Leiden." }
   ],
   "/geo-optimalisatie": [
-    serviceLinks[7],
+    serviceLinks[4],
     serviceLinks[1]
   ],
   "/aeo-optimalisatie": [
-    serviceLinks[7],
+    serviceLinks[4],
     serviceLinks[1]
-  ],
-  "/ai-automatisering": [
-    serviceLinks[5],
-    serviceLinks[0],
-    { href: "/contact", label: "Bespreek automatisering", description: "Bekijk welke workflow als eerste slim is." }
   ],
   "/strategisch-advies": [
     serviceLinks[0],
-    serviceLinks[6],
+    serviceLinks[4],
     { href: "/cases", label: "Bekijk portfolio", description: "Zie hoe strategie, structuur en gebruikservaring in eerder ontwerpwerk samenkomen." }
   ],
   "/over-ons": [
@@ -108,17 +98,16 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/contact": [
     { href: "/diensten", label: "Alle diensten", description: "Bekijk eerst welke hulp past bij je vraag." },
     pricingLink,
-    serviceLinks[5]
+    serviceLinks[4]
   ],
 
   "/cases/website-design-hoveniersbedrijf": [
     serviceLinks[0],
-    serviceLinks[8],
-    { href: "/website-voor-hoveniers", label: "Website voor hoveniers", description: "Lees welke structuur past bij diensten, projecten en lokale vindbaarheid." }
+    serviceLinks[4]
   ],
   "/cases/website-design-dakbedrijf": [
     serviceLinks[0],
-    serviceLinks[8],
+    serviceLinks[4],
     { href: "/conversie-optimalisatie", label: "Conversie optimalisatie", description: "Maak offerte- en spoedroutes duidelijker op je website." }
   ],
   "/cases/website-design-social-growth-platform": [
@@ -129,31 +118,30 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   "/cases/website-design-it-consultancy": [
     serviceLinks[0],
     serviceLinks[1],
-    serviceLinks[7]
+    serviceLinks[4]
   ],
 
   "/lokale-seo": [
     { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Lokale vindbaarheid rond Leiden verbeteren." },
-    serviceLinks[6]
+    serviceLinks[4]
   ],
   "/seo-bureau-leiden": [
-    serviceLinks[8],
+    serviceLinks[4],
     pricingLink,
     serviceLinks[0]
   ],
   "/ai-vindbaarheid": [
-    serviceLinks[7],
+    serviceLinks[4],
     serviceLinks[3],
     pricingLink
   ],
   "/online-marketing-bureau": [
     serviceLinks[1],
-    serviceLinks[7],
-    serviceLinks[9],
-    serviceLinks[5]
+    serviceLinks[4],
+    serviceLinks[4],
+    serviceLinks[4]
   ],
   "/conversie-optimalisatie": [
-    { href: "/inzichten/website-meer-aanvragen", label: "Waarom websites weinig aanvragen krijgen", description: "Zie waar conversie vaak stukloopt." },
     serviceLinks[0],
     pricingLink,
     { href: "/cases/website-design-dakbedrijf", label: "Portfolio: dakbedrijf", description: "Zie hoe duidelijke offertestappen zichtbaar in het ontwerp landen." }

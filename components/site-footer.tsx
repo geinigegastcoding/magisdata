@@ -15,7 +15,6 @@ const columns = [
       { label: "AI vindbaarheid", href: "/ai-vindbaarheid" },
       { label: "GEO optimalisatie", href: "/geo-optimalisatie" },
       { label: "AEO optimalisatie", href: "/aeo-optimalisatie" },
-      { label: "AI en automatisering", href: "/ai-automatisering" },
       { label: "Strategisch advies", href: "/strategisch-advies" },
       { label: "SEO bureau Leiden", href: "/seo-bureau-leiden" }
     ]

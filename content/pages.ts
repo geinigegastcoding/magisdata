@@ -1075,8 +1075,8 @@ export const caseStudies = [
     sector: "Hoveniersbedrijf",
     title: "Webdesign voor een hoveniersbedrijf dat rust en vakmanschap uitstraalt",
     metaTitle: "Webdesign hoveniersbedrijf | Portfolio MagisData",
-    datePublished: "2026-05-26",
-    dateModified: "2026-05-26",
+    datePublished: "2026-06-28",
+    dateModified: "2026-06-28",
     summary:
       "Voor BuitenLijn ontwierp ik een rustige, premium website waarin tuinen, projecten en lokale diensten centraal staan.",
     focus: "Lokale vindbaarheid en adviesaanvraag",
@@ -1136,8 +1136,8 @@ export const caseStudies = [
     sector: "Dakbedrijf",
     title: "Webdesign voor een dakbedrijf met focus op urgentie en vertrouwen",
     metaTitle: "Webdesign dakbedrijf | Portfolio MagisData",
-    datePublished: "2026-05-26",
-    dateModified: "2026-05-26",
+    datePublished: "2026-06-28",
+    dateModified: "2026-06-28",
     summary:
       "Voor Dakbedrijf Hoogstad ontwierp ik een heldere website voor dakrenovatie, lekkageherstel en isolatie, met inspectie en offerte als duidelijke routes.",
     focus: "Lokale service-intentie en offerte",
@@ -1197,8 +1197,8 @@ export const caseStudies = [
     sector: "Social media platform",
     title: "Webdesign voor een social growth platform met productfocus",
     metaTitle: "Webdesign social platform | Portfolio MagisData",
-    datePublished: "2026-05-26",
-    dateModified: "2026-05-26",
+    datePublished: "2026-06-28",
+    dateModified: "2026-06-28",
     summary:
       "Voor OrbitFlow ontwierp ik een productwebsite die social strategie, platformfuncties en een duidelijke kennismakingsroute samenbrengt.",
     focus: "Productuitleg en kennismaking",
@@ -1258,8 +1258,8 @@ export const caseStudies = [
     sector: "IT consultancy",
     title: "Webdesign voor een IT consultancy met technische autoriteit",
     metaTitle: "Webdesign IT consultancy | Portfolio MagisData",
-    datePublished: "2026-05-26",
-    dateModified: "2026-05-26",
+    datePublished: "2026-06-28",
+    dateModified: "2026-06-28",
     summary:
       "Voor Nexora IT Solutions ontwierp ik een zakelijke website voor software, cloud, cybersecurity en data & AI, gericht op heldere expertise en projectintake.",
     focus: "Expertisepositionering en projectaanvraag",
@@ -1322,7 +1322,7 @@ export const insights = [
     summary:
       "Een mooie website werkt pas goed als bezoekers snel begrijpen wat je doet, waarom ze jou kunnen vertrouwen en welke stap ze moeten zetten.",
     datePublished: "2026-05-16",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     icon: LayoutTemplate
   },
   {
@@ -1331,7 +1331,7 @@ export const insights = [
     summary:
       "SEO draait niet om trucjes. Het gaat om duidelijke pagina's, echte klantvragen en een website die zoekmachines goed kunnen lezen.",
     datePublished: "2026-05-16",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     icon: Search
   },
   {
@@ -1340,7 +1340,7 @@ export const insights = [
     summary:
       "AI-systemen begrijpen bedrijven beter wanneer websites concreet, consistent en goed gestructureerd zijn.",
     datePublished: "2026-05-16",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     icon: Bot
   }
 ];

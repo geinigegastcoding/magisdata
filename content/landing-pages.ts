@@ -423,7 +423,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Lokale SEO voor betere vindbaarheid in je regio",
     description:
       "Verbeter je lokale vindbaarheid met sterke servicepagina's, regio-content, Google-profiel signalen en duidelijke contactinformatie.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     primaryKeyword: "lokale SEO",
     secondaryKeywords: ["lokale SEO specialist", "Google vindbaarheid verbeteren", "SEO voor lokale bedrijven", "regionale SEO"],
     audience: "lokale dienstverleners en MKB-bedrijven",
@@ -518,7 +518,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "SEO bureau Leiden voor lokale bedrijven | MagisData",
     description:
       "MagisData helpt bedrijven rond Leiden beter gevonden worden met lokale SEO, sterke servicepagina's en technische optimalisatie.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     serviceArea: "Leiden",
     primaryKeyword: "SEO bureau Leiden",
     secondaryKeywords: ["SEO Leiden", "lokale SEO Leiden", "zoekmachine optimalisatie Leiden", "SEO specialist Leiden"],
@@ -624,7 +624,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "AI-vindbaarheid verbeteren voor moderne zoekers",
     description:
       "Maak je bedrijf beter begrijpbaar, citeerbaar en vindbaar in AI-antwoorden met duidelijke content en sterke structuur.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     primaryKeyword: "AI vindbaarheid",
     secondaryKeywords: ["vindbaar in ChatGPT", "vindbaar in Perplexity", "AI Overviews optimalisatie", "GEO optimalisatie"],
     audience: "ondernemers, adviseurs en B2B-dienstverleners",
@@ -713,7 +713,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Online marketing bureau voor vindbare websites",
     description:
       "MagisData helpt ondernemers hun website, vindbaarheid, conversieroute en meetbasis in de juiste volgorde verbeteren.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     primaryKeyword: "online marketing bureau",
     secondaryKeywords: ["online marketing bureau Nederland", "website en SEO bureau", "online marketing voor MKB", "groeimarketing voor dienstverleners"],
     audience: "MKB-bedrijven en professionele dienstverleners",
@@ -828,7 +828,7 @@ export const landingPages: LandingPage[] = [
     title: "Conversie optimalisatie voor meer aanvragen uit je website",
     description:
       "Haal meer resultaat uit bestaande bezoekers met duidelijkere pagina's, betere CTA's, vertrouwenstekens en kortere contactroutes.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     primaryKeyword: "conversie optimalisatie",
     secondaryKeywords: ["website conversie verbeteren", "meer leads uit website", "CRO bureau", "website optimalisatie"],
     audience: "bedrijven met websiteverkeer dat te weinig aanvragen oplevert",
@@ -981,7 +981,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Website voor hoveniers met lokale SEO | MagisData",
     description:
       "Een professionele website voor hoveniers met duidelijke diensten, projectbewijs en SEO voor lokale aanvragen.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     kind: "industry",
     audience: "hoveniers",
     answer:
@@ -1018,7 +1018,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Website laten maken Leiden + SEO | MagisData",
     description:
       "Laat rond Leiden een professionele website maken met duidelijke diensten, lokale SEO en een korte route naar contact.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     kind: "location",
     audience: "ondernemers",
     location: "Leiden",
@@ -1083,7 +1083,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Website laten maken Den Haag met lokale SEO",
     description:
       "Laat in Den Haag een snelle, duidelijke website maken met sterke lokale SEO en een heldere contactroute.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     kind: "location",
     audience: "ondernemers",
     location: "Den Haag",
@@ -1107,7 +1107,7 @@ export const landingPages: LandingPage[] = [
     metaTitle: "Website laten maken Rotterdam voor meer aanvragen",
     description:
       "Laat in Rotterdam een professionele website maken die vertrouwen opbouwt en bezoekers helpt de stap naar een aanvraag te zetten.",
-    dateModified: "2026-06-13",
+    dateModified: "2026-06-28",
     kind: "location",
     audience: "ondernemers",
     location: "Rotterdam",

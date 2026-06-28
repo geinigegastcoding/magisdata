@@ -6,7 +6,7 @@ export const siteEmail = "contact@magisdata.nl";
 export const sitePhone = "+31 6 42280029";
 export const sitePhoneHref = "tel:+31642280029";
 export const defaultImage = `${siteUrl}/assets/og-image.png`;
-export const lastModified = "2026-06-13";
+export const lastModified = "2026-06-28";
 export const founderName = "Daniel Magis";
 export const founderLinkedIn = "https://www.linkedin.com/in/daniel-magis-4088262bb";
 

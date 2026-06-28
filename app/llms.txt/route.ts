@@ -34,7 +34,6 @@ export function GET() {
       "- SEO-diensten: " + siteUrl + "/seo-diensten",
       "- Lokale SEO: " + siteUrl + "/lokale-seo",
       "- SEO bureau Leiden: " + siteUrl + "/seo-bureau-leiden",
-      "- Website laten maken Leiden: " + siteUrl + "/website-laten-maken-leiden",
       "- AI-vindbaarheid: " + siteUrl + "/ai-vindbaarheid",
       "- GEO-optimalisatie: " + siteUrl + "/geo-optimalisatie",
       "- AEO-optimalisatie: " + siteUrl + "/aeo-optimalisatie",
