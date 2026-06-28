@@ -90,20 +90,17 @@ export function Hero() {
           <div className="absolute right-24 top-0 h-24 w-24 rounded-full bg-orange-soft/70" />
           <div className="doodle-loop left-0 top-64 h-28 w-28 lg:-left-4 lg:top-72 lg:h-32 lg:w-32" />
           <figure className="relative z-10 h-[370px] overflow-hidden rounded-[2.75rem] border border-line bg-white p-3 shadow-card sm:h-[420px] lg:h-[440px] lg:rounded-[3rem]">
-            <picture>
-              <source media="(max-width: 1023px)" srcSet="/assets/case1-640.webp" type="image/webp" />
-              <source media="(min-width: 1024px)" srcSet="/assets/case1-1122.webp" type="image/webp" />
-              <img
-                alt="Website-ontwerp voor een hoveniersbedrijf uit het MagisData portfolio"
-                className="h-full w-full rounded-[2.1rem] object-cover object-top"
-                fetchPriority="high"
-                height="1402"
-                loading="eager"
-                sizes="(min-width: 1024px) 52vw, 100vw"
-                src="/assets/case1-1122.webp"
-                width="1122"
-              />
-            </picture>
+            <img
+              alt="Website-ontwerp voor een hoveniersbedrijf uit het MagisData portfolio"
+              className="h-full w-full rounded-[2.1rem] object-cover object-top"
+              fetchPriority="high"
+              height="1402"
+              loading="eager"
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              src="/assets/case1-1122.webp"
+              srcSet="/assets/case1-640.webp 640w, /assets/case1-768.webp 768w, /assets/case1-1122.webp 1122w"
+              width="1122"
+            />
             <figcaption className="absolute bottom-6 left-6 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-navy shadow-sm">
               Ontwerpportfolio
             </figcaption>

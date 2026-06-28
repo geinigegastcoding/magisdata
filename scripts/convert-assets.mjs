@@ -4,9 +4,9 @@ import sharp from "sharp";
 const sourceRoot = "scripts/source-assets/public-originals";
 
 const responsiveJobs = [
-  { source: `${sourceRoot}/Case1.png`, name: "case1", widths: [640, 1122] },
-  { source: `${sourceRoot}/Case2.png`, name: "case2", widths: [640, 1086] },
-  { source: `${sourceRoot}/Case3.png`, name: "case3", widths: [480, 935] },
+  { source: `${sourceRoot}/Case1.png`, name: "case1", widths: [640, 768, 1122] },
+  { source: `${sourceRoot}/Case2.png`, name: "case2", widths: [640, 768, 1086] },
+  { source: `${sourceRoot}/Case3.png`, name: "case3", widths: [480, 768, 935] },
   { source: `${sourceRoot}/Case4.png`, name: "case4", widths: [480, 748] },
   { source: `${sourceRoot}/Founder-removebg.png`, name: "founder", widths: [336, 672] }
 ];

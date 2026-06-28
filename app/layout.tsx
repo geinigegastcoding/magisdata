@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { JsonLd } from "@/components/json-ld";
 import { ConsentManager } from "@/components/consent-manager";
 import { SiteFooter } from "@/components/site-footer";
@@ -77,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
       <body>
-        <Script id="consent-default" strategy="lazyOnload">
+        <Script id="consent-default" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -90,18 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             });
           `}
         </Script>
-        <Script 
-          src="https://www.googletagmanager.com/gtag/js?id=G-H6G8TMGDWY" 
-          strategy="lazyOnload" 
-        />
-        <Script id="ga-config" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-H6G8TMGDWY');
-          `}
-        </Script>
+        <GoogleAnalytics gaId="G-H6G8TMGDWY" />
         <JsonLd data={graphSchema([organizationSchema(), personSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
         {children}
