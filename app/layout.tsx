@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
       <body>
-        <Script id="consent-default" strategy="afterInteractive">
+        <Script id="consent-default" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -92,9 +92,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-H6G8TMGDWY" 
-          strategy="afterInteractive" 
+          strategy="lazyOnload" 
         />
-        <Script id="ga-config" strategy="afterInteractive">
+        <Script id="ga-config" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
