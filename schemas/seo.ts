@@ -8,7 +8,9 @@ export const sitePhoneHref = "tel:+31642280029";
 export const defaultImage = `${siteUrl}/assets/og-image.png`;
 export const lastModified = "2026-06-28";
 export const founderName = "Daniel Magis";
-export const founderLinkedIn = "https://www.linkedin.com/in/daniel-magis-4088262bb";
+export const founderLinkedIn = "https://www.linkedin.com/in/daniel-magis-4088262bb/";
+export const magisdataTikTok = "https://www.tiktok.com/@magisdata";
+export const magisdataInstagram = "https://www.instagram.com/magisdata_web/";
 
 export function absoluteUrl(path: string) {
   if (path.startsWith("http")) {
@@ -27,6 +29,11 @@ export function organizationSchema() {
     logo: `${siteUrl}/assets/logo.png`,
     telephone: sitePhone,
     email: siteEmail,
+    sameAs: [
+      magisdataTikTok,
+      magisdataInstagram,
+      founderLinkedIn
+    ],
     founder: {
       "@id": `${siteUrl}/#founder`
     },
@@ -53,7 +60,11 @@ export function personSchema() {
     worksFor: {
       "@id": `${siteUrl}/#organization`
     },
-    sameAs: [founderLinkedIn],
+    sameAs: [
+      founderLinkedIn,
+      magisdataTikTok,
+      magisdataInstagram
+    ],
     knowsAbout: [
       "SEO",
       "local SEO",
@@ -104,7 +115,9 @@ export function localBusinessSchema() {
     ],
     sameAs: [
       "https://share.google/fPu1P47PQzUwG210Z",
-      founderLinkedIn
+      founderLinkedIn,
+      magisdataTikTok,
+      magisdataInstagram
     ],
     areaServed: [
       "Nederland",

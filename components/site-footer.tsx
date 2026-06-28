@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { sitePhone, sitePhoneHref } from "@/schemas/seo";
+import { sitePhone, sitePhoneHref, founderLinkedIn, magisdataTikTok, magisdataInstagram } from "@/schemas/seo";
 
 const columns = [
   {
@@ -35,6 +35,9 @@ const columns = [
       { label: "Over MagisData", href: "/over-ons" },
       { label: "Contact", href: "/contact" },
       { label: "Status", href: "/status" },
+      { label: "LinkedIn", href: founderLinkedIn },
+      { label: "TikTok", href: magisdataTikTok },
+      { label: "Instagram", href: magisdataInstagram },
       { label: "Privacybeleid", href: "/privacybeleid" },
       { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }
     ]
