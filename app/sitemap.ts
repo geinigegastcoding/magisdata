@@ -10,11 +10,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: route.lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
-    alternates: {
-      languages: {
-        "nl-NL": absoluteUrl(route.path),
-        "x-default": absoluteUrl(route.path)
-      }
-    }
   }));
 }
