@@ -391,14 +391,19 @@ export function FinalCta() {
       <div className="container">
         <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-yellow-soft via-orange-soft to-[#fff9e8] px-7 pb-0 pt-8 shadow-sm md:px-12">
           <div className="grid gap-6 md:grid-cols-[0.62fr_1.1fr_0.78fr] md:items-end">
-            <div className="relative min-h-[245px] self-end">
+            <div className="relative min-h-[245px] self-end" itemScope itemType="https://schema.org/Person">
+              <meta itemProp="name" content="Daniël" />
+              <meta itemProp="jobTitle" content="Oprichter MagisData" />
               <img
-                alt="Vriendelijke medewerker van MagisData"
+                alt="Daniël, oprichter van MagisData - helpt je graag met jouw websiteplan"
+                title="Daniël, oprichter van MagisData"
                 className="absolute bottom-0 left-0 h-[255px] w-auto object-contain md:h-[285px]"
-                height="285"
+                height="558"
+                width="447"
                 loading="lazy"
-                src="/assets/girl.webp"
-                width="285"
+                decoding="async"
+                src="/assets/founder_final_cta_transparent.webp"
+                itemProp="image"
               />
             </div>
             <div>

@@ -12,6 +12,7 @@ import { JsonLd } from "@/components/json-ld";
 import { services } from "@/content/homepage";
 import { metadataForPath } from "@/content/seo";
 import { graphSchema, siteUrl, webPageSchema } from "@/schemas/seo";
+import { RoiPromo } from "@/components/roi-promo";
 
 export const metadata: Metadata = metadataForPath("/");
 
@@ -43,6 +44,7 @@ export default function HomePage() {
       <Process />
       <Results />
       <CustomerQuestions />
+      <RoiPromo />
       <CaseStudyInsights />
       <FinalCta />
     </main>

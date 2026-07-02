@@ -30,9 +30,9 @@ const coreSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/diensten",
-    title: "Diensten voor websites, SEO, GEO, AEO en AI | MagisData",
-    description: "Bekijk hoe MagisData webontwikkeling, SEO, GEO, AEO, AI-automatisering en strategisch advies verbindt tot een helder groeisysteem.",
-    keywords: ["website laten maken", "SEO diensten", "GEO optimalisatie", "AEO optimalisatie", "AI automatisering", "strategisch online advies"],
+    title: "Diensten voor websites, SEO, GEO, AEO | MagisData",
+    description: "Bekijk hoe MagisData webontwikkeling, SEO, GEO, AEO en strategisch advies verbindt tot een helder groeisysteem.",
+    keywords: ["website laten maken", "SEO diensten", "GEO optimalisatie", "AEO optimalisatie", "strategisch online advies"],
     priority: 0.9,
     changeFrequency: "monthly",
     lastModified
@@ -84,9 +84,9 @@ const coreSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/over-ons",
-    title: "Over MagisData | Strategische websites en AI-vindbaarheid",
-    description: "Leer hoe MagisData websites behandelt als digitale infrastructuur voor autoriteit, SEO, GEO, AEO, AI en conversie.",
-    keywords: ["MagisData", "AI webbureau", "strategisch webbureau", "SEO bureau Nederland", "GEO bureau"],
+    title: "Over MagisData | Strategische websites en vindbaarheid",
+    description: "Leer hoe MagisData websites behandelt als digitale infrastructuur voor autoriteit, SEO, GEO, AEO en conversie.",
+    keywords: ["MagisData", "webbureau", "strategisch webbureau", "SEO bureau Nederland", "GEO bureau"],
     priority: 0.65,
     changeFrequency: "monthly",
     lastModified
@@ -96,6 +96,15 @@ const coreSeoRoutes: SeoRoute[] = [
     title: "Contact met MagisData | Vraag gratis websiteplan aan",
     description: "Neem contact op met MagisData voor een gratis eerste richting over je website, SEO, GEO, AEO, AI-vindbaarheid of online groei.",
     keywords: ["contact MagisData", "website plan", "gratis website advies", "website laten maken", "website scan"],
+    priority: 0.8,
+    changeFrequency: "monthly",
+    lastModified
+  },
+  {
+    path: "/roi-calculator",
+    title: "Website ROI Calculator | Bereken rendement van je website | MagisData",
+    description: "Gebruik onze gratis Website ROI calculator om snel het verwachte rendement van een nieuwe website of websitepakket te berekenen.",
+    keywords: ["website ROI calculator", "rendement website berekenen", "kosten website terugverdienen", "website investering"],
     priority: 0.8,
     changeFrequency: "monthly",
     lastModified

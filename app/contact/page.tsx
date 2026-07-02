@@ -62,34 +62,36 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 overflow-hidden rounded-[2rem] border border-line bg-white shadow-card">
-              <div className="photo-scene relative min-h-[260px] p-6">
-                <div className="max-w-xs rounded-2xl bg-white/86 p-5 shadow-sm backdrop-blur">
-                  <p className="text-sm font-extrabold text-navy">Liever direct contact?</p>
-                  <span className="mt-3 inline-flex items-center gap-3 rounded-xl bg-peach px-4 py-3 text-sm font-bold text-orange">
-                    <Mail className="h-4 w-4" />
-                    contact [at] magisdata.nl
+            <div className="mt-8 rounded-[2rem] border border-line bg-white p-6 md:p-8 shadow-card">
+              <h2 className="text-xl font-extrabold text-navy">Liever direct contact?</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <a href="mailto:contact@magisdata.nl" className="focus-ring group flex items-center gap-4 rounded-2xl bg-peach p-4 transition hover:opacity-90">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-orange shadow-sm transition-transform group-hover:scale-105">
+                    <Mail className="h-5 w-5" />
                   </span>
-                  <Link className="focus-ring mt-3 inline-flex items-center gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-bold text-navy hover:text-orange" href={sitePhoneHref}>
-                    <Phone className="h-4 w-4" />
-                    {sitePhone}
-                  </Link>
-                  <p className="mt-3 flex items-start gap-3 rounded-xl bg-white/90 px-4 py-3 text-sm font-semibold leading-6 text-ink">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-orange" />
-                    Voorschoten, nabij Leiden
-                  </p>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-orange/80">E-mail</p>
+                    <p className="mt-0.5 text-sm font-extrabold text-orange">contact@magisdata.nl</p>
+                  </div>
+                </a>
+                <Link className="focus-ring group flex items-center gap-4 rounded-2xl border border-line bg-cream/30 p-4 transition hover:border-orange-soft hover:bg-peach/50" href={sitePhoneHref}>
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-navy shadow-sm transition-all group-hover:scale-105 group-hover:text-orange">
+                    <Phone className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-muted">Telefoon</p>
+                    <p className="mt-0.5 text-sm font-extrabold text-navy transition-colors group-hover:text-orange">{sitePhone}</p>
+                  </div>
+                </Link>
+                <div className="flex items-center gap-4 rounded-2xl border border-line bg-cream/30 p-4 sm:col-span-2">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-orange shadow-sm">
+                    <MapPin className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-muted">Locatie</p>
+                    <p className="mt-0.5 text-sm font-extrabold text-navy">Voorschoten, nabij Leiden</p>
+                  </div>
                 </div>
-                <picture>
-                  <source srcSet="/assets/founder-336.webp 336w, /assets/founder-672.webp 672w" type="image/webp" />
-                  <img
-                    alt="Oprichter van MagisData"
-                    className="absolute bottom-0 right-4 h-auto w-[min(46%,13rem)]"
-                    height={400}
-                    loading="lazy"
-                    src="/assets/founder-336.webp"
-                    width={336}
-                  />
-                </picture>
               </div>
             </div>
           </div>

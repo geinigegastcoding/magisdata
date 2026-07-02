@@ -679,127 +679,6 @@ export const servicePages = {
       }
     ]
   },
-  "ai-infrastructure": {
-    eyebrow: "AI en automatisering",
-    title: "Slimme digitale hulp die je werk makkelijker maakt",
-    description:
-      "We zetten AI en automatisering alleen in waar het echt waarde toevoegt: sneller reageren, minder handwerk en betere opvolging van leads.",
-    directAnswer: {
-      title: "Wat levert AI en automatisering concreet op?",
-      text:
-        "MagisData onderzoekt terugkerend handwerk en bouwt alleen een beheersbare automatisering wanneer die intake, opvolging of interne overdracht eenvoudiger maakt."
-    },
-    deliverables: [
-      { title: "Procesinventarisatie", text: "Welke terugkerende stap kost tijd of veroorzaakt vertraging?" },
-      { title: "Kleine workflow", text: "Een passende automatisering met duidelijke menselijke controle." },
-      { title: "Beheerafspraken", text: "Uitleg over werking, privacy en momenten waarop je controleert." }
-    ],
-    audienceFit: {
-      for: ["Bedrijven met repeterende intake- of opvolgstappen.", "Teams die klein en beheersbaar willen starten."],
-      notFor: ["Automatisering zonder duidelijk probleem.", "Besluiten die zonder menselijke controle hoog risico dragen."]
-    },
-    primaryCta: "Bespreek mijn automatisering",
-    secondaryCta: "Bekijk diensten",
-    heroPoints: [
-      "Praktische AI zonder hype",
-      "Minder handmatig werk in je proces",
-      "Duidelijke uitleg en controle"
-    ],
-    sections: [
-      {
-        title: "Waar AI nuttig voor is",
-        text:
-          "AI is geen doel op zich. Het moet je bedrijf rustiger, sneller of consistenter maken.",
-        items: [
-          {
-            title: "Leads beter opvolgen",
-            text:
-              "Automatische bevestigingen, betere intakevragen en snellere interne meldingen helpen om geen aanvraag te laten liggen."
-          },
-          {
-            title: "Veelgestelde vragen afvangen",
-            text:
-              "Slimme content en eenvoudige chatflows kunnen bezoekers sneller antwoord geven."
-          },
-          {
-            title: "Interne taken versnellen",
-            text:
-              "Denk aan samenvattingen, contentvoorstellen, rapportages of standaardmails die minder tijd kosten."
-          }
-        ]
-      },
-      {
-        title: "Onze nuchtere aanpak",
-        text:
-          "We bouwen geen ingewikkeld systeem als een simpele verbetering genoeg is. Eerst kijken we waar tijd of omzet weglekt.",
-        items: [
-          {
-            title: "Begrijpelijk voor je team",
-            text:
-              "Je krijgt geen zwarte doos. We leggen uit wat er gebeurt en hoe je controle houdt."
-          },
-          {
-            title: "Passend bij bestaande tools",
-            text:
-              "Waar mogelijk sluiten we aan op je website, mail, CRM of formulieren."
-          },
-          {
-            title: "Stapsgewijs uitbreidbaar",
-            text:
-              "We beginnen klein, meten waarde en breiden pas uit wanneer dat logisch is."
-          }
-        ]
-      }
-    ],
-    detailSections: [
-      {
-        eyebrow: "Praktische automatisering",
-        title: "Waar AI en automatisering direct rust kunnen brengen",
-        text:
-          "De beste automatisering begint klein. Kijk eerst naar terugkerende taken, trage opvolging en informatie die steeds opnieuw handmatig wordt overgezet. Daar zit vaak de snelste winst.",
-        items: [
-          {
-            title: "Leadopvolging",
-            text:
-              "Een goede intake, automatische bevestiging en interne melding voorkomen dat warme aanvragen blijven liggen."
-          },
-          {
-            title: "Content en kennis",
-            text:
-              "AI kan helpen bij samenvattingen, concepten en hergebruik van bestaande expertise, zolang er menselijke controle blijft."
-          },
-          {
-            title: "Rapportage en overzicht",
-            text:
-              "Terugkerende updates, simpele dashboards en vaste checklists maken groei makkelijker te volgen."
-          }
-        ]
-      }
-    ],
-    steps: [
-      { title: "Proces bekijken", text: "We zoeken waar veel herhaling of vertraging zit." },
-      { title: "Kans kiezen", text: "We kiezen een verbetering met duidelijke waarde." },
-      { title: "Simpel bouwen", text: "We koppelen tools en testen met echte situaties." },
-      { title: "Controleren", text: "We houden kwaliteit, privacy en gebruiksgemak in beeld." }
-    ],
-    faqs: [
-      {
-        question: "Moet mijn team technisch zijn?",
-        answer:
-          "Nee. We maken het praktisch en leggen uit wat je moet weten om ermee te werken."
-      },
-      {
-        question: "Kan AI fouten maken?",
-        answer:
-          "Ja. Daarom bouwen we controlepunten in en gebruiken we AI vooral waar fouten geen groot risico vormen."
-      },
-      {
-        question: "Beginnen jullie groot of klein?",
-        answer:
-          "Meestal klein. Een eerste nuttige automatisering is beter dan een groot systeem dat niemand gebruikt."
-      }
-    ]
-  },
   "strategic-consulting": {
     eyebrow: "Strategisch advies",
     title: "Maak betere keuzes voor je website, vindbaarheid en online groei",
@@ -1351,7 +1230,6 @@ export const pageIcons = {
   "seo-services": Search,
   "geo-optimization": BrainCircuit,
   "aeo-optimization": FileQuestion,
-  "ai-infrastructure": Bot,
   "strategic-consulting": Target,
   about: Sparkles,
   contact: MessageSquareText,
