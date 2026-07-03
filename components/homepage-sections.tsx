@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import {
   ArrowRight,
   ChevronRight,
-  HelpCircle
+  HelpCircle,
+  BookOpen
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TrustProofRow } from "@/components/trust-proof-row";
@@ -426,6 +427,62 @@ export function FinalCta() {
                 Reactie binnen 1 werkdag
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function RecentInsights() {
+  return (
+    <section className="bg-white py-10 md:py-14">
+      <div className="container">
+        <div className="mb-10 text-center max-w-2xl mx-auto">
+          <Eyebrow>Onze Kennisbank</Eyebrow>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-navy md:text-4xl">
+            Praktische Inzichten
+          </h2>
+          <p className="mt-4 leading-7 text-muted">
+            Handige artikelen en antwoorden op veelgestelde vragen van lokale ondernemers over websites en vindbaarheid.
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <Link href="/inzichten/heeft-een-loodgieter-een-website-nodig" className="group block">
+            <article className="rounded-2xl border border-line bg-cream/40 p-6 shadow-sm transition hover:border-orange-soft hover:shadow-md h-full flex flex-col">
+              <span className="text-xs font-bold text-orange mb-3 block">Lokale SEO</span>
+              <h3 className="text-xl font-extrabold text-navy group-hover:text-orange transition-colors">
+                Heeft een loodgieter een website nodig in 2026?
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-muted line-clamp-3">
+                Een website is voor een loodgieter in 2026 essentieel als direct conversiekanaal voor spoedklussen en lokaal zoekverkeer.
+              </p>
+              <div className="mt-auto pt-6 flex items-center gap-2 text-sm font-bold text-navy group-hover:text-orange">
+                Lees artikel <ArrowRight className="h-4 w-4" />
+              </div>
+            </article>
+          </Link>
+          <Link href="/inzichten/website-laten-maken-leiden-kosten" className="group block">
+            <article className="rounded-2xl border border-line bg-cream/40 p-6 shadow-sm transition hover:border-orange-soft hover:shadow-md h-full flex flex-col">
+              <span className="text-xs font-bold text-orange mb-3 block">Webontwikkeling</span>
+              <h3 className="text-xl font-extrabold text-navy group-hover:text-orange transition-colors">
+                Wat kost een website laten maken in Leiden in 2026?
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-muted line-clamp-3">
+                Een professionele website laten maken in Leiden kost gemiddeld tussen de €1.500 en €4.500, afhankelijk van de benodigde pagina's en SEO.
+              </p>
+              <div className="mt-auto pt-6 flex items-center gap-2 text-sm font-bold text-navy group-hover:text-orange">
+                Lees artikel <ArrowRight className="h-4 w-4" />
+              </div>
+            </article>
+          </Link>
+          <div className="rounded-2xl border border-dashed border-line bg-white p-6 flex flex-col items-center justify-center text-center h-full min-h-[220px]">
+            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-orange-soft text-orange mb-4">
+              <BookOpen className="h-6 w-6" />
+            </span>
+            <h3 className="text-lg font-extrabold text-navy mb-2">Alle Inzichten</h3>
+            <p className="text-sm text-muted mb-4">Bekijk al onze artikelen en praktische gidsen.</p>
+            <TextCta href="/inzichten">Naar de kennisbank</TextCta>
           </div>
         </div>
       </div>

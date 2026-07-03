@@ -111,6 +111,15 @@ const coreSeoRoutes: SeoRoute[] = [
     lastModified
   },
   {
+    path: "/inzichten",
+    title: "Inzichten & Kennisbank over SEO en Websites | MagisData",
+    description: "Praktische artikelen, inzichten en antwoorden over SEO, webontwikkeling en online groei voor lokale dienstverleners.",
+    keywords: ["SEO kennisbank", "website artikelen", "lokale SEO tips", "inzichten MagisData"],
+    priority: 0.8,
+    changeFrequency: "weekly",
+    lastModified
+  },
+  {
     path: "/status",
     title: "Status en bereikbaarheid | MagisData",
     description: "Bekijk de actuele bereikbaarheid van MagisData en neem contact op voor een vrijblijvend eerste gesprek.",

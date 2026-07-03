@@ -6,7 +6,8 @@ import {
   Hero,
   Process,
   Results,
-  Services
+  Services,
+  RecentInsights
 } from "@/components/homepage-sections";
 import { JsonLd } from "@/components/json-ld";
 import { services } from "@/content/homepage";
@@ -45,6 +46,7 @@ export default function HomePage() {
       <Results />
       <CustomerQuestions />
       <RoiPromo />
+      <RecentInsights />
       <CaseStudyInsights />
       <FinalCta />
     </main>
