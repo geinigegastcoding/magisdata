@@ -20,3 +20,8 @@
 - Controleer toegankelijkheid en responsive afwerking voor homepage, contact, portfolio en artikelen: toetsenbordfocus, alt-teksten, contrast, formulieren en mobiele layout.
 - Meet performance na assetoptimalisatie en UI-updates en los grootste Lighthouse/Core Web Vitals knelpunten op.
 - Run voor iedere grotere wijziging `npm run typecheck` en `npm run build`, en controleer daarna belangrijke routes handmatig.
+- Creëer een knowledge base (context base) met merkmiddelen en een custom copywriting skill om 'AI slop' te vermijden en de eigen 'tone of voice' te behouden.
+- Maak vergelijkingspagina's: MagisData versus andere bureaus, versus doe-het-zelf, versus Lovable, en versus WordPress.
+- Automatiseer of optimaliseer het keyword research proces (keyword strategie).
+- Onderzoek en implementeer (indien mogelijk) gratis automatische artikelpublicatie.
+- Begin met het tracken van LLM citations en zoekrangschikkingen (search rankings).

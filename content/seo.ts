@@ -3,6 +3,7 @@ import { landingPages } from "@/content/landing-pages";
 import { caseStudies } from "@/content/pages";
 import { currentStatus } from "@/content/status";
 import { absoluteUrl, defaultImage, lastModified, siteName } from "@/schemas/seo";
+import { articles } from "@/content/articles";
 
 export type SeoRoute = {
   path: string;
@@ -156,6 +157,16 @@ export const seoRoutes: SeoRoute[] = [
     changeFrequency: "monthly" as const,
     lastModified: page.dateModified ?? lastModified,
     indexable: page.kind !== "thanks"
+  })),
+  ...articles.map((article) => ({
+    path: `/inzichten/${article.slug}`,
+    title: article.metaTitle,
+    description: article.metaDescription,
+    keywords: article.keywords,
+    priority: 0.70,
+    changeFrequency: "monthly" as const,
+    lastModified: article.dateModified ?? article.datePublished,
+    image: article.image
   }))
 ];
 
