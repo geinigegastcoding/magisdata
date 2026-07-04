@@ -85,7 +85,7 @@ export function SiteFooter() {
           <div className="mt-4 grid gap-3 text-sm text-muted">
             <Link href="/contact" className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange">
               <Mail className="h-5 w-5" />
-              <span>contact@magisdata.nl</span>
+              <span>contact<span>@</span>magisdata.nl</span>
             </Link>
             <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href={sitePhoneHref}>
               <Phone className="h-4 w-4" />

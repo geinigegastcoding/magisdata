@@ -79,7 +79,7 @@ export function ContactForm() {
       </label>
       {state === "error" ? (
         <p aria-live="assertive" className="rounded-xl bg-peach px-4 py-3 text-sm font-semibold text-navy" role="alert">
-          Versturen lukte niet. Probeer opnieuw of mail naar <span className="font-bold">contact@magisdata.nl</span>.
+          Versturen lukte niet. Probeer opnieuw of mail naar <span className="font-bold">contact<span>@</span>magisdata.nl</span>.
         </p>
       ) : null}
       <button className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-orange-dark disabled:cursor-wait disabled:opacity-70" data-track-cta="contact-form" disabled={state === "submitting"} type="submit">

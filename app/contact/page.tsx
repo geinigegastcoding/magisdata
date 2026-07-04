@@ -71,7 +71,7 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-orange/80">E-mail</p>
-                    <p className="mt-0.5 text-sm font-extrabold text-orange">contact@magisdata.nl</p>
+                    <p className="mt-0.5 text-sm font-extrabold text-orange">contact<span>@</span>magisdata.nl</p>
                   </div>
                 </div>
                 <Link className="focus-ring group flex items-center gap-4 rounded-2xl border border-line bg-cream/30 p-4 transition hover:border-orange-soft hover:bg-peach/50" href={sitePhoneHref}>

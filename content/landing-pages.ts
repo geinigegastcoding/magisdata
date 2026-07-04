@@ -1137,7 +1137,7 @@ export const landingPages: LandingPage[] = [
     keywords: ["privacybeleid MagisData", "privacy website", "persoonsgegevens"],
     primaryCta: "Neem contact op",
     secondaryCta: "Algemene voorwaarden",
-    heroPoints: ["Alleen noodzakelijke gegevens", "Geen verkoop van persoonsgegevens", "Vragen via contact@magisdata.nl"],
+    heroPoints: ["Alleen noodzakelijke gegevens", "Geen verkoop van persoonsgegevens", "Vragen via contact@\u200Bmagisdata.nl"],
     directAnswer: {
       title: "Hoe gebruikt MagisData persoonsgegevens en cookies?",
       text:
@@ -1173,7 +1173,7 @@ export const landingPages: LandingPage[] = [
     ],
     faqs: [
       { question: "Verkoopt MagisData persoonsgegevens?", answer: "Nee. We verkopen persoonsgegevens niet." },
-      { question: "Kan ik mijn gegevens laten verwijderen?", answer: "Ja. Mail naar contact@magisdata.nl." },
+      { question: "Kan ik mijn gegevens laten verwijderen?", answer: "Ja. Mail naar contact@\u200Bmagisdata.nl." },
       { question: "Gebruiken jullie analytics?", answer: "Alleen na je toestemming. Zonder akkoord wordt Google Analytics niet geladen." },
       { question: "Hoe wijzig ik mijn cookiekeuze?", answer: "Gebruik Cookie-instellingen in de footer om analytics later toe te staan of opnieuw te weigeren." }
     ]
@@ -1251,7 +1251,7 @@ export const landingPages: LandingPage[] = [
     faqs: [
       { question: "Wanneer krijg ik reactie?", answer: "Meestal binnen een werkdag." },
       { question: "Is het gesprek verplicht?", answer: "Nee. Eerst kijken we of we kunnen helpen." },
-      { question: "Kan ik extra informatie sturen?", answer: "Ja. Mail gerust naar contact@magisdata.nl." }
+      { question: "Kan ik extra informatie sturen?", answer: "Ja. Mail gerust naar contact@\u200Bmagisdata.nl." }
     ]
   }
 ].filter(p => !["website-laten-maken-den-haag", "website-laten-maken-leiden", "website-laten-maken-rotterdam", "website-voor-elektriciens", "website-voor-hoveniers", "website-voor-kappers", "website-voor-loodgieters"].includes(p.slug)) as LandingPage[];
