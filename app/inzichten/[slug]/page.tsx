@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { webPageSchema, faqSchema } from "@/schemas/seo";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
+import { metadataForPath } from "@/content/seo";
 export async function generateStaticParams() {
   return articles.map((article) => ({
     slug: article.slug,
@@ -20,14 +20,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const article = articles.find((a) => a.slug === slug);
-  if (!article) return {};
-  
-  return {
-    title: article.metaTitle,
-    description: article.metaDescription,
-    keywords: article.keywords,
-  };
+  return metadataForPath(`/inzichten/${slug}`);
 }
 
 export default async function ArticlePage({ params }: PageProps) {

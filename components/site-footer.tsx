@@ -39,7 +39,8 @@ const columns = [
       { label: "TikTok", href: magisdataTikTok },
       { label: "Instagram", href: magisdataInstagram },
       { label: "Privacybeleid", href: "/privacybeleid" },
-      { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }
+      { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" },
+      { label: "ROI Calculator", href: "/roi-calculator" }
     ]
   }
 ];
@@ -82,10 +83,10 @@ export function SiteFooter() {
             Contact
           </h2>
           <div className="mt-4 grid gap-3 text-sm text-muted">
-            <a href="mailto:contact@magisdata.nl" className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange">
-              <Mail className="h-4 w-4" />
-              contact@magisdata.nl
-            </a>
+            <Link href="/contact" className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange">
+              <Mail className="h-5 w-5" />
+              <span>contact@magisdata.nl</span>
+            </Link>
             <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href={sitePhoneHref}>
               <Phone className="h-4 w-4" />
               {sitePhone}

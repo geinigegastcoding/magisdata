@@ -3,10 +3,9 @@ import { articles } from "@/content/articles";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ArrowRight, BookOpen } from "lucide-react";
 
-export const metadata = {
-  title: "Inzichten & Kennisbank | MagisData",
-  description: "Praktische artikelen, inzichten en antwoorden over SEO, webontwikkeling en online groei voor lokale dienstverleners."
-};
+import { metadataForPath } from "@/content/seo";
+
+export const metadata = metadataForPath("/inzichten");
 
 export default function InzichtenPage() {
   const breadcrumbItems = [

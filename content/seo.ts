@@ -103,7 +103,7 @@ const coreSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/roi-calculator",
-    title: "Website ROI Calculator | Bereken rendement van je website | MagisData",
+    title: "Website ROI Calculator | Bereken website rendement | MagisData",
     description: "Gebruik onze gratis Website ROI calculator om snel het verwachte rendement van een nieuwe website of websitepakket te berekenen.",
     keywords: ["website ROI calculator", "rendement website berekenen", "kosten website terugverdienen", "website investering"],
     priority: 0.8,

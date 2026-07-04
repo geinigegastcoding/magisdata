@@ -65,7 +65,7 @@ export default function ContactPage() {
             <div className="mt-8 rounded-[2rem] border border-line bg-white p-6 md:p-8 shadow-card">
               <h2 className="text-xl font-extrabold text-navy">Liever direct contact?</h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <a href="mailto:contact@magisdata.nl" className="focus-ring group flex items-center gap-4 rounded-2xl bg-peach p-4 transition hover:opacity-90">
+                <div className="group flex items-center gap-4 rounded-2xl bg-peach p-4 transition">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-orange shadow-sm transition-transform group-hover:scale-105">
                     <Mail className="h-5 w-5" />
                   </span>
@@ -73,7 +73,7 @@ export default function ContactPage() {
                     <p className="text-xs font-bold uppercase tracking-wider text-orange/80">E-mail</p>
                     <p className="mt-0.5 text-sm font-extrabold text-orange">contact@magisdata.nl</p>
                   </div>
-                </a>
+                </div>
                 <Link className="focus-ring group flex items-center gap-4 rounded-2xl border border-line bg-cream/30 p-4 transition hover:border-orange-soft hover:bg-peach/50" href={sitePhoneHref}>
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-navy shadow-sm transition-all group-hover:scale-105 group-hover:text-orange">
                     <Phone className="h-5 w-5" />
