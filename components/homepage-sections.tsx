@@ -68,29 +68,30 @@ function SmallDoodle({ className }: { className?: string }) {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pb-[4.5rem] pt-7 md:pb-24 md:pt-14 lg:pb-28 lg:pt-16">
+    <section className="hero-bg relative overflow-hidden pb-[4.5rem] pt-7 md:pb-24 md:pt-14 lg:pb-28 lg:pt-16">
       <div className="container grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-10">
         <div className="relative z-10">
-          <h1 className="max-w-[640px] text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.025em] text-navy sm:text-[3.5rem] md:text-[4.45rem] lg:text-[4.65rem] lg:leading-[1.01]">
+          <h1 className="hero-fade-up max-w-[640px] text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.025em] text-navy sm:text-[3.5rem] md:text-[4.45rem] lg:text-[4.65rem] lg:leading-[1.01]">
             Website laten maken voor betere vindbaarheid en{" "}
-            <span className="text-orange">meer aanvragen</span>
+            <span className="bg-gradient-to-r from-orange to-[#e85d0c] bg-clip-text text-transparent">meer aanvragen</span>
           </h1>
-          <p className="mt-7 max-w-[560px] text-[1.08rem] leading-8 text-muted md:text-lg">
+          <div className="hero-fade-up mt-3 h-1 w-20 rounded-full bg-gradient-to-r from-orange/60 to-yellow/30" />
+          <p className="hero-fade-up-delay mt-7 max-w-[560px] text-[1.08rem] leading-8 text-muted md:text-lg">
             MagisData maakt professionele websites voor lokale ondernemers die
             betrouwbaar willen overkomen en beter gevonden willen worden.
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="hero-fade-up-delay-2 mt-9 flex flex-col gap-4 sm:flex-row">
             <PrimaryButton>Vraag gratis websiteplan aan</PrimaryButton>
             <SecondaryButton>Bekijk onze diensten</SecondaryButton>
           </div>
-          <TrustProofRow className="mt-6" />
+          <TrustProofRow className="hero-fade-up-delay-3 mt-6" />
         </div>
 
-        <div className="relative rounded-[2rem] pt-2">
-          <div className="absolute -right-6 top-9 h-52 w-52 rounded-[4.5rem] bg-yellow-soft lg:-right-2 lg:h-60 lg:w-60" />
-          <div className="absolute right-24 top-0 h-24 w-24 rounded-full bg-orange-soft/70" />
+        <div className="hero-fade-up-delay-2 relative rounded-[2rem] pt-2">
+          <div className="blob-float absolute -right-6 top-9 h-52 w-52 rounded-[4.5rem] bg-yellow-soft lg:-right-2 lg:h-60 lg:w-60" />
+          <div className="blob-float-alt absolute right-24 top-0 h-24 w-24 rounded-full bg-orange-soft/70" />
           <div className="doodle-loop left-0 top-64 h-28 w-28 lg:-left-4 lg:top-72 lg:h-32 lg:w-32" />
-          <figure className="relative z-10 h-[370px] overflow-hidden rounded-[2.75rem] border border-line bg-white p-3 shadow-card sm:h-[420px] lg:h-[440px] lg:rounded-[3rem]">
+          <figure className="hero-figure relative z-10 h-[370px] overflow-hidden rounded-[2.75rem] border border-line p-3 shadow-card sm:h-[420px] lg:h-[440px] lg:rounded-[3rem]">
             <img
               alt="Website-ontwerp voor een hoveniersbedrijf uit het MagisData portfolio"
               className="h-full w-full rounded-[2.1rem] object-cover object-top"
@@ -102,22 +103,22 @@ export function Hero() {
               srcSet="/assets/case1-640.webp 640w, /assets/case1-768.webp 768w, /assets/case1-1122.webp 1122w"
               width="1122"
             />
-            <figcaption className="absolute bottom-6 left-6 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-navy shadow-sm">
+            <figcaption className="absolute bottom-6 left-6 rounded-full bg-white/90 px-4 py-2 text-xs font-extrabold text-navy shadow-sm backdrop-blur-sm">
               Ontwerpportfolio
             </figcaption>
           </figure>
           <div className="relative z-10 mt-4 grid gap-3 sm:grid-cols-3">
-            <div className="soft-card rounded-[1.35rem] p-4">
+            <div className="hero-mini-card soft-card rounded-[1.35rem] p-4">
               <p className="text-xs font-extrabold text-soft">Websitebouw</p>
               <p className="mt-2 text-lg font-extrabold leading-tight text-navy">Heldere structuur</p>
               <p className="mt-3 text-xs leading-5 text-muted">Aanbod, vertrouwen en contact logisch in beeld.</p>
             </div>
-            <div className="soft-card rounded-[1.35rem] p-4">
+            <div className="hero-mini-card soft-card rounded-[1.35rem] p-4">
               <p className="text-xs font-extrabold text-soft">SEO, AEO en GEO</p>
               <p className="mt-2 text-lg font-extrabold leading-tight text-navy">Vindbaar</p>
               <p className="mt-3 text-xs leading-5 text-muted">Inhoud die zoekvragen concreet beantwoordt.</p>
             </div>
-            <div className="soft-card rounded-[1.35rem] p-4">
+            <div className="hero-mini-card soft-card rounded-[1.35rem] p-4">
               <p className="text-xs font-extrabold text-soft">Websiteplan</p>
               <p className="mt-2 text-lg font-extrabold leading-tight text-navy">Gratis start</p>
               <p className="mt-3 text-xs leading-5 text-muted">Voor nieuwe sites en herbouw.</p>
