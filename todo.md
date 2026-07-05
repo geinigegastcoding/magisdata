@@ -25,3 +25,9 @@
 - Automatiseer of optimaliseer het keyword research proces (keyword strategie).
 - Onderzoek en implementeer (indien mogelijk) gratis automatische artikelpublicatie.
 - Begin met het tracken van LLM citations en zoekrangschikkingen (search rankings).
+# To-Do
+
+- Add tools section (e.g., Ahrefs, Cloudflare)
+- Integrate 21st.dev components:
+  - Banner: https://21st.dev/@nurui/components/banner
+  - Integration Hero: https://21st.dev/@ruixenui/components/integration-hero
