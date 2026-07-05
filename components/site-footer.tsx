@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Instagram, Play } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { sitePhone, sitePhoneHref, founderLinkedIn, magisdataTikTok, magisdataInstagram } from "@/schemas/seo";
+import { AnimatedGroup } from "@/components/ui/animated-group";
 
 const columns = [
   {
@@ -35,9 +36,6 @@ const columns = [
       { label: "Over MagisData", href: "/over-ons" },
       { label: "Contact", href: "/contact" },
       { label: "Status", href: "/status" },
-      { label: "LinkedIn", href: founderLinkedIn },
-      { label: "TikTok", href: magisdataTikTok },
-      { label: "Instagram", href: magisdataInstagram },
       { label: "Privacybeleid", href: "/privacybeleid" },
       { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" },
       { label: "ROI Calculator", href: "/roi-calculator" }
@@ -98,6 +96,44 @@ export function SiteFooter() {
             <button className="focus-ring w-fit rounded-full text-left hover:text-orange" data-consent-open type="button">
               Cookie-instellingen
             </button>
+          </div>
+          
+          <div className="mt-8">
+            <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy mb-4">
+              Socials
+            </h2>
+            <AnimatedGroup
+              className="flex gap-3"
+              variants={{
+                container: { visible: { transition: { staggerChildren: 0.1 } } },
+                item: {
+                  hidden: { opacity: 0, scale: 0.8, y: 10 },
+                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 300 } }
+                }
+              }}
+            >
+              <Link 
+                href={founderLinkedIn} 
+                className="grid h-10 w-10 place-items-center rounded-full bg-cream text-navy transition-all duration-300 hover:bg-orange hover:text-white hover:-translate-y-1"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </Link>
+              <Link 
+                href={magisdataInstagram} 
+                className="grid h-10 w-10 place-items-center rounded-full bg-cream text-navy transition-all duration-300 hover:bg-orange hover:text-white hover:-translate-y-1"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </Link>
+              <Link 
+                href={magisdataTikTok} 
+                className="grid h-10 w-10 place-items-center rounded-full bg-cream text-navy transition-all duration-300 hover:bg-orange hover:text-white hover:-translate-y-1"
+                aria-label="TikTok"
+              >
+                <Play className="h-5 w-5" />
+              </Link>
+            </AnimatedGroup>
           </div>
         </div>
       </div>

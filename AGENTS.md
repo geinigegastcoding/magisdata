@@ -25,6 +25,7 @@ Build and maintain a premium, high-performance marketing website for MagisData f
 - Build check: `npm run build`
 - Type check: `npm run typecheck`
 - Asset pipeline: `npm run convert:assets`
+- Visual verify: `npx playwright screenshot http://localhost:3000 screenshot.png`
 - Optional asset helpers:
   - `npm run download:stock`
   - `npm run extract:logo`
