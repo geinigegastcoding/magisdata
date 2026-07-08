@@ -72,8 +72,7 @@ export function Hero() {
       <div className="container grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-10">
         <div className="relative z-10">
           <h1 className="hero-fade-up max-w-[640px] text-balance text-[2.65rem] font-bold leading-[1.05] tracking-[-0.025em] text-navy sm:text-[3.5rem] md:text-[4.45rem] lg:text-[4.65rem] lg:leading-[1.01]">
-            Website laten maken voor betere vindbaarheid en{" "}
-            <span className="bg-gradient-to-r from-orange to-[#e85d0c] bg-clip-text text-transparent">meer aanvragen</span>
+            Websites die gevonden worden en klanten opleveren
           </h1>
           <div className="hero-fade-up mt-3 h-1 w-20 rounded-full bg-gradient-to-r from-orange/60 to-yellow/30" />
           <p className="hero-fade-up-delay mt-7 max-w-[560px] text-[1.08rem] leading-8 text-muted md:text-lg">
