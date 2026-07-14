@@ -66,7 +66,7 @@ export default async function PortfolioProjectPage({ params }: PageProps) {
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
               Portfolio / {item.sector}
             </p>
-            <h1 className="mt-4 text-balance text-[4em] font-extrabold leading-tight text-navy">
+            <h1 className="mt-4 text-balance text-[2.5em] sm:text-[3.5em] md:text-[4em] font-extrabold leading-tight text-navy">
               {item.title}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">{item.summary}</p>

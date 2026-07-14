@@ -63,7 +63,7 @@ export default function AboutPage() {
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
               Over MagisData
             </p>
-            <h1 className="mt-4 max-w-4xl text-balance text-[4em] font-extrabold leading-tight tracking-normal text-navy">
+            <h1 className="mt-4 max-w-4xl text-balance text-[2.5em] sm:text-[3.5em] md:text-[4em] font-extrabold leading-tight tracking-normal text-navy">
               Gebouwd voor merken die digitaal serieuzer willen winnen
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">

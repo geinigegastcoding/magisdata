@@ -400,7 +400,7 @@ export function ContentPage({
             <p className={cn("text-xs font-extrabold uppercase tracking-[0.16em]", style.eyebrow)}>
               {content.eyebrow}
             </p>
-            <h1 className="mt-4 max-w-4xl text-balance text-[4em] font-extrabold leading-tight tracking-[-0.035em] text-navy">
+            <h1 className="mt-4 max-w-4xl text-balance text-[2.5em] sm:text-[3.5em] md:text-[4em] font-extrabold leading-tight tracking-[-0.035em] text-navy">
               {content.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">

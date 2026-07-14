@@ -30,7 +30,7 @@ export default function StatusPage() {
       <section className="py-16 md:py-24">
         <div className="container max-w-4xl">
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">Status</p>
-          <h1 className="mt-4 text-[4em] font-extrabold tracking-normal text-navy">
+          <h1 className="mt-4 text-[2.5em] sm:text-[3.5em] md:text-[4em] font-extrabold tracking-normal text-navy">
             Actuele bereikbaarheid
           </h1>
           <div className="mt-10 rounded-[2rem] border border-line bg-white p-7 shadow-sm md:p-10">
