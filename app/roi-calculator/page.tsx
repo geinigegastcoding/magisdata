@@ -30,7 +30,7 @@ export default function RoiCalculatorPage() {
             <Calculator className="w-4 h-4" />
             Interactieve Tool
           </p>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-navy tracking-tight mb-6">
+          <h1 className="text-[4em] font-extrabold text-navy tracking-tight mb-6">
             Wat levert een nieuwe website eigenlijk op?
           </h1>
           <p className="text-lg md:text-xl text-muted leading-relaxed max-w-2xl mx-auto">

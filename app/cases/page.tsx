@@ -65,7 +65,7 @@ export default function PortfolioPage() {
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
               Portfolio
             </p>
-            <h1 className="mt-4 text-balance text-4xl font-extrabold leading-tight text-navy md:text-6xl">
+            <h1 className="mt-4 text-balance text-[4em] font-extrabold leading-tight text-navy">
               Webdesign dat ik heb uitgewerkt voor verschillende werelden
             </h1>
           </div>

@@ -44,7 +44,7 @@ export default function ContactPage() {
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
               Contact
             </p>
-            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold leading-tight tracking-normal text-navy md:text-6xl">
+            <h1 className="mt-4 max-w-4xl text-balance text-[4em] font-extrabold leading-tight tracking-normal text-navy">
               Vertel ons waar je website naartoe moet
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">

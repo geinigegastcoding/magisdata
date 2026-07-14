@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <div className="flex items-center gap-3 mb-4">
             <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">{article.category}</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-[-0.03em] text-navy leading-tight">
+          <h1 className="text-[4em] font-extrabold tracking-[-0.03em] text-navy leading-tight">
             {article.title}
           </h1>
           <div className="mt-6 flex items-center gap-4 text-sm text-muted">

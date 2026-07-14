@@ -25,7 +25,7 @@ export default function InzichtenPage() {
             </span>
             <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">Kennisbank</p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-[-0.03em] text-navy">
+          <h1 className="text-[4em] font-extrabold tracking-[-0.03em] text-navy">
             Inzichten & Praktische Antwoorden
           </h1>
           <p className="mt-4 text-lg leading-8 text-muted">

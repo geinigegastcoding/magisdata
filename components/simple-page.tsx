@@ -16,7 +16,7 @@ export function SimplePage({ eyebrow, title, description }: SimplePageProps) {
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue">
             {eyebrow}
           </p>
-          <h1 className="mt-4 text-4xl font-extrabold tracking-[-0.035em] text-navy md:text-6xl">
+          <h1 className="mt-4 text-[4em] font-extrabold tracking-[-0.035em] text-navy">
             {title}
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted">
