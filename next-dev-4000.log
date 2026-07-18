@@ -1,0 +1,121 @@
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://127.0.0.1:4000
+- Network:       http://127.0.0.1:4000
+✓ Ready in 1192ms
+- Experiments (use with caution):
+  ✓ inlineCss
+
+ GET / 200 in 3.6s (next.js: 409ms, application-code: 3.2s)
+ GET / 200 in 506ms (next.js: 11ms, application-code: 495ms)
+ GET / 200 in 422ms (next.js: 10ms, application-code: 412ms)
+ GET / 200 in 772ms (next.js: 61ms, application-code: 711ms)
+✓ Compiled in 5.9s
+ GET / 200 in 2.1s (next.js: 461ms, application-code: 1673ms)
+ GET / 200 in 885ms (next.js: 63ms, application-code: 823ms)
+✓ Compiled in 220ms
+ GET / 200 in 961ms (next.js: 200ms, application-code: 761ms)
+ GET / 200 in 559ms (next.js: 12ms, application-code: 548ms)
+ GET / 200 in 321ms (next.js: 12ms, application-code: 309ms)
+ GET / 200 in 2.1s (next.js: 10ms, application-code: 2.1s)
+ GET / 200 in 406ms (next.js: 10ms, application-code: 397ms)
+ GET / 200 in 286ms (next.js: 8ms, application-code: 278ms)
+✓ Compiled in 155ms
+ GET / 200 in 878ms (next.js: 190ms, application-code: 688ms)
+ GET / 200 in 493ms (next.js: 17ms, application-code: 476ms)
+ GET / 200 in 283ms (next.js: 13ms, application-code: 270ms)
+✓ Compiled in 205ms
+ GET / 200 in 971ms (next.js: 165ms, application-code: 805ms)
+ GET / 200 in 605ms (next.js: 9ms, application-code: 596ms)
+ GET / 200 in 441ms (next.js: 12ms, application-code: 429ms)
+ GET / 200 in 2.2s (next.js: 11ms, application-code: 2.1s)
+ GET / 200 in 815ms (next.js: 14ms, application-code: 802ms)
+ GET / 200 in 291ms (next.js: 8ms, application-code: 283ms)
+✓ Compiled in 244ms
+ GET / 200 in 793ms (next.js: 193ms, application-code: 600ms)
+ GET / 200 in 397ms (next.js: 9ms, application-code: 388ms)
+ GET / 200 in 260ms (next.js: 14ms, application-code: 247ms)
+✓ Compiled in 318ms
+ GET / 200 in 902ms (next.js: 182ms, application-code: 721ms)
+ GET / 200 in 503ms (next.js: 9ms, application-code: 494ms)
+ GET / 200 in 312ms (next.js: 12ms, application-code: 299ms)
+ GET / 200 in 1109ms (next.js: 7ms, application-code: 1102ms)
+ GET / 200 in 248ms (next.js: 8ms, application-code: 239ms)
+ GET / 200 in 315ms (next.js: 9ms, application-code: 306ms)
+ GET / 200 in 1153ms (next.js: 89ms, application-code: 1064ms)
+ GET / 200 in 549ms (next.js: 12ms, application-code: 537ms)
+ GET / 200 in 475ms (next.js: 9ms, application-code: 466ms)
+ GET / 200 in 859ms (next.js: 23ms, application-code: 836ms)
+ GET / 200 in 1084ms (next.js: 14ms, application-code: 1071ms)
+ GET / 200 in 1766ms (next.js: 236ms, application-code: 1530ms)
+ GET / 200 in 1136ms (next.js: 153ms, application-code: 984ms)
+ GET / 200 in 648ms (next.js: 25ms, application-code: 623ms)
+ GET / 200 in 373ms (next.js: 17ms, application-code: 357ms)
+✓ Compiled in 1971ms
+ GET / 200 in 5.3s (next.js: 428ms, application-code: 4.9s)
+ GET / 200 in 4.2s (next.js: 96ms, application-code: 4.1s)
+ GET / 200 in 3.2s (next.js: 23ms, application-code: 3.2s)
+ GET / 200 in 2.7s (next.js: 120ms, application-code: 2.6s)
+ GET / 200 in 1784ms (next.js: 107ms, application-code: 1678ms)
+ GET / 200 in 1784ms (next.js: 745ms, application-code: 1039ms)
+ GET / 200 in 788ms (next.js: 47ms, application-code: 741ms)
+ GET / 200 in 471ms (next.js: 20ms, application-code: 452ms)
+ GET / 200 in 6.2s (next.js: 8ms, application-code: 6.2s)
+ GET / 200 in 2.8s (next.js: 921ms, application-code: 1895ms)
+ GET / 200 in 1699ms (next.js: 26ms, application-code: 1672ms)
+ GET / 200 in 1686ms (next.js: 263ms, application-code: 1424ms)
+ GET / 200 in 1194ms (next.js: 229ms, application-code: 965ms)
+ GET / 200 in 1197ms (next.js: 16ms, application-code: 1181ms)
+ GET / 200 in 772ms (next.js: 12ms, application-code: 760ms)
+ GET / 200 in 549ms (next.js: 12ms, application-code: 537ms)
+ GET / 200 in 277ms (next.js: 10ms, application-code: 267ms)
+ GET / 200 in 1676ms (next.js: 14ms, application-code: 1662ms)
+✓ Compiled in 171ms
+ GET / 200 in 5.0s (next.js: 205ms, application-code: 4.8s)
+ GET / 200 in 4.5s (next.js: 996ms, application-code: 3.5s)
+ GET / 200 in 4.5s (next.js: 32ms, application-code: 4.5s)
+ GET / 200 in 3.0s (next.js: 26ms, application-code: 2.9s)
+ GET / 200 in 3.0s (next.js: 725ms, application-code: 2.2s)
+ GET / 200 in 3.0s (next.js: 367ms, application-code: 2.6s)
+ GET / 200 in 1783ms (next.js: 539ms, application-code: 1245ms)
+ GET / 200 in 1793ms (next.js: 37ms, application-code: 1756ms)
+ GET / 200 in 4.5s (next.js: 17ms, application-code: 4.5s)
+✓ Compiled in 259ms
+ GET / 200 in 4.8s (next.js: 330ms, application-code: 4.4s)
+ GET / 200 in 4.0s (next.js: 172ms, application-code: 3.9s)
+ GET / 200 in 4.0s (next.js: 913ms, application-code: 3.1s)
+ GET / 200 in 2.7s (next.js: 29ms, application-code: 2.6s)
+ GET / 200 in 2.7s (next.js: 470ms, application-code: 2.2s)
+ GET / 200 in 1769ms (next.js: 43ms, application-code: 1725ms)
+ GET / 200 in 1145ms (next.js: 10ms, application-code: 1135ms)
+○ Compiling /inzichten ...
+ GET /inzichten 200 in 4.3s (next.js: 4.0s, application-code: 291ms)
+ GET /inzichten 200 in 118ms (next.js: 20ms, application-code: 97ms)
+ GET /cases 200 in 887ms (next.js: 529ms, application-code: 357ms)
+ GET /over-ons 200 in 433ms (next.js: 160ms, application-code: 273ms)
+○ Compiling /cases/[slug] ...
+⨯ Error: Jest worker encountered 2 child process exceptions, exceeding retry limit
+    at ignore-listed frames {
+  type: 'WorkerError',
+  page: '/cases/website-design-hoveniersbedrijf'
+}
+ GET /cases/website-design-hoveniersbedrijf 500 in 7.1s (next.js: 5.8s, application-code: 1211ms)
+⨯ Error: Jest worker encountered 2 child process exceptions, exceeding retry limit
+    at ignore-listed frames {
+  type: 'WorkerError',
+  page: '/cases/website-design-hoveniersbedrijf'
+}
+ GET /cases/website-design-hoveniersbedrijf 500 in 141ms (next.js: 103ms, application-code: 38ms)
+[browser] Uncaught Error: Jest worker encountered 2 child process exceptions, exceeding retry limit
+⨯ Error: Jest worker encountered 2 child process exceptions, exceeding retry limit
+    at ignore-listed frames {
+  type: 'WorkerError',
+  page: '/cases/website-design-hoveniersbedrijf'
+}
+ GET /cases/website-design-hoveniersbedrijf 500 in 271ms (next.js: 153ms, application-code: 118ms)
+[browser] Uncaught Error: Jest worker encountered 2 child process exceptions, exceeding retry limit
+ GET / 200 in 1812ms (next.js: 42ms, application-code: 1770ms)
+ GET /diensten 200 in 703ms (next.js: 72ms, application-code: 631ms)
+ GET /cases 200 in 1065ms (next.js: 43ms, application-code: 1022ms)
+ GET /over-ons 200 in 1113ms (next.js: 67ms, application-code: 1046ms)
+ GET /inzichten 200 in 753ms (next.js: 17ms, application-code: 737ms)
+ GET / 200 in 1258ms (next.js: 48ms, application-code: 1210ms)
