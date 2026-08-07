@@ -1,0 +1,497 @@
+::1 - - [07/Aug/2026 20:06:57] "GET / HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:57] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/image?url=%2Fassets%2Fmagisdata-hero.png&w=384&q=75 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/static/chunks/14l0r6lr.via9.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/static/chunks/0ba3y65x2l5rb.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/static/chunks/11-r_iyy.4__o.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/static/chunks/0yvnz6qmv5.3_.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:57] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/image?url=%2Fassets%2Fmagisdata-hero.png&w=640&q=75 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/static/chunks/0v5ny52ekbu9a.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/static/chunks/turbopack-0sgz~oo02_700.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:57] "GET /_next/static/chunks/089jyo90uu~b4.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /_next/static/media/83afe278b6a6bb3c-s.0q-301v4kxxnr.woff2 HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /_next/static/chunks/0zu.s03gvaird.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /favicon.svg HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /privacybeleid HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /privacybeleid/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /privacybeleid/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:06:58] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /privacybeleid/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /privacybeleid/__next.privacybeleid.txt?_rsc=6Cx7aQoboGkS3Ck0 HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /privacybeleid/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:58] "GET /privacybeleid/__next.privacybeleid.__PAGE__.txt?_rsc=RQVeWBvqkP3lL8Kg HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:58] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:58] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:58] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:58] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:58] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:58] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:58] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:58] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:58] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:58] "GET /__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:59] "HEAD /algemene-voorwaarden HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:06:59] "HEAD /algemene-voorwaarden/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:59] "GET /algemene-voorwaarden/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:59] code 404, message File not found
+::1 - - [07/Aug/2026 20:06:59] "GET /algemene-voorwaarden/__next.algemene-voorwaarden.txt?_rsc=TfoW4yQ08Swjbv0m HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:06:59] "GET /algemene-voorwaarden/__next.algemene-voorwaarden.__PAGE__.txt?_rsc=-4cRhhrvXrnCVVNR HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:06:59] "GET /algemene-voorwaarden/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:07:00] code 404, message File not found
+::1 - - [07/Aug/2026 20:07:00] "GET /_next/image?url=%2Fassets%2Fmagisdata-hero.png&w=640&q=75 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:09:14] "GET / HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:14] "GET /assets/magisdata-hero.png HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:14] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:14] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:14] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /privacybeleid HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /privacybeleid/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:09:15] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] "GET /__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:09:15] code 404, message File not found
+::1 - - [07/Aug/2026 20:09:15] "GET /_next//_next/static/chunks/0v5ny52ekbu9a.js HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:09:15] code 404, message File not found
+::1 - - [07/Aug/2026 20:09:15] "GET /_next/static/chunks//_next/static/chunks/089jyo90uu~b4.js.undefined.js HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:09:16] "HEAD /algemene-voorwaarden HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:09:16] "HEAD /algemene-voorwaarden/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:10:11] "GET / HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:11] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:12] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:10:12] "GET /__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:10:12] code 404, message File not found
+::1 - - [07/Aug/2026 20:10:12] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:10:12] "GET /_next//_next/static/chunks/0v5ny52ekbu9a.js HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:10:12] code 404, message File not found
+::1 - - [07/Aug/2026 20:10:12] "GET /_next/static/chunks//_next/static/chunks/089jyo90uu~b4.js.undefined.js HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:10:12] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:10:12] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:10:12] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:10:12] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:10:12] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:10:12] "HEAD /diensten/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /assets/magisdata-hero.png HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /diensten/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /over-ons/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /contact/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /privacybeleid/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /algemene-voorwaarden/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /robots.txt HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /sitemap.xml HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:12:10] "GET /llms.txt HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:28] "GET / HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:28] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] code 404, message File not found
+::1 - - [07/Aug/2026 20:12:29] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:12:29] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /contact/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] code 404, message File not found
+::1 - - [07/Aug/2026 20:12:29] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:12:29] code 404, message File not found
+::1 - - [07/Aug/2026 20:12:29] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:12:29] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] code 404, message File not found
+::1 - - [07/Aug/2026 20:12:29] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:12:29] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /_next/static/chunks/app/contact/page-c105a7a6bf9515cc.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:12:29] "GET /__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "GET / HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /contact/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:23] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /_next/static/chunks/app/contact/page-c105a7a6bf9515cc.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:23] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:23] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:23] "GET /__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "GET /__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:23] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:23] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:37] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:37] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:37] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:37] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:37] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:37] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:37] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:37] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:37] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:49] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:14:49] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:49] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:49] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:49] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:49] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:49] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:14:49] code 404, message File not found
+::1 - - [07/Aug/2026 20:14:49] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:02] "GET / HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:02] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:02] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /contact/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:02] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:02] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/app/contact/page-c105a7a6bf9515cc.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:02] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:02] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:02] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:02] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:02] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:02] "GET /__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:15:02] "GET /diensten.txt?_rsc=UuQtoIbJOvpUn8Je HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:02] "GET /_next/static/chunks/app/diensten/page-48c0d981a9daf35e.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:06] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:15:06] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:06] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:06] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:06] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:06] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:06] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:15:06] code 404, message File not found
+::1 - - [07/Aug/2026 20:15:06] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /diensten/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /over-ons/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /contact/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /privacybeleid/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /algemene-voorwaarden/ HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /robots.txt HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /sitemap.xml HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /llms.txt HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:26] "GET /favicon.svg HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [07/Aug/2026 20:16:27] "GET /assets/magisdata-hero.png HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET / HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] code 404, message File not found
+::1 - - [07/Aug/2026 20:16:51] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:16:51] "GET /contact/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /_next/static/chunks/app/contact/page-c105a7a6bf9515cc.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] code 404, message File not found
+::1 - - [07/Aug/2026 20:16:51] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:16:51] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] code 404, message File not found
+::1 - - [07/Aug/2026 20:16:51] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:16:51] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] code 404, message File not found
+::1 - - [07/Aug/2026 20:16:51] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:16:51] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:16:51] "GET /__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:17:11] "GET / HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:11] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:11] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:11] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:11] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:11] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:11] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:17:12] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:17:12] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /contact/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] code 404, message File not found
+::1 - - [07/Aug/2026 20:17:12] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:17:12] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /_next/static/chunks/app/contact/page-c105a7a6bf9515cc.js HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] code 404, message File not found
+::1 - - [07/Aug/2026 20:17:12] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:17:12] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] code 404, message File not found
+::1 - - [07/Aug/2026 20:17:12] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:17:12] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] code 404, message File not found
+::1 - - [07/Aug/2026 20:17:12] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:17:12] "GET /__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:17:12] "GET /__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:58:56] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:58:56] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:58:56] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:58:56] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:58:56] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:58:56] code 404, message File not found
+::1 - - [07/Aug/2026 20:58:56] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:58:57] "GET /diensten/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:58:57] "GET /_next/static/chunks/app/diensten/page-48c0d981a9daf35e.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:00] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:00] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:00] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:00] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:00] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:00] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:00] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:08] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:08] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:17] "GET / HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /assets/magisdata-hero.png HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/webpack-bb5560228e8b7c5b.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/4bd1b696-215e5051988c3dde.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/794-337e750527b970b0.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/media/e4af272ccee01ff0-s.woff2 HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/500-c99b8dfd3de17c86.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/main-app-423250ffd01f06c1.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/648-b0674cda9e5796d7.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/app/layout-7a5be33a30d1674f.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:17] "GET /_next/static/chunks/app/page-e0eeeeefc5c1c986.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:18] "GET /favicon.svg HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /contact/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /diensten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /contact/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /contact/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:18] "GET /contact/__next.contact.txt?_rsc=JFWGu_dmBAb9P0LW HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:18] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /_next/static/chunks/app/contact/page-c105a7a6bf9515cc.js HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:18] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:18] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:18] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:18] "GET /diensten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /diensten/__next.diensten.txt?_rsc=AeaRDQxxUAXJDvzA HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:18] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:18] "GET /__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:18] "GET /__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:30] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:30] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /contact HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /inzichten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /over-ons HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /diensten HTTP/1.1" 301 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /contact/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /inzichten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /over-ons/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:55] "HEAD /diensten/ HTTP/1.1" 200 -
+::1 - - [07/Aug/2026 20:59:55] "GET /inzichten/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:55] "GET /over-ons/__next._tree.txt?_rsc=5CB68i4pnAekjehf HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:55] "GET /contact/__next._index.txt?_rsc=yIp22O3xgPPxC28X HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:55] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:55] "GET /inzichten/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:55] "GET /contact/__next.contact.__PAGE__.txt?_rsc=BiuOixuigeBXVJn7 HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:55] "GET /inzichten/__next.inzichten.txt?_rsc=qoUxcIGV5j17HPrF HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:55] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:55] "GET /inzichten/__next.inzichten.__PAGE__.txt?_rsc=MCMLQPjf6QRDsS8s HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:55] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:55] "GET /over-ons/__next._head.txt?_rsc=7h4NYy5eoyMcNlUN HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:55] "GET /over-ons/__next.over-ons.__PAGE__.txt?_rsc=NT3sJp1gvjaHv8Kd HTTP/1.1" 404 -
+::1 - - [07/Aug/2026 20:59:55] "GET /over-ons/__next.over-ons.txt?_rsc=IQcg1yQk0al06zwk HTTP/1.1" 304 -
+::1 - - [07/Aug/2026 20:59:55] code 404, message File not found
+::1 - - [07/Aug/2026 20:59:55] "GET /diensten/__next.diensten.__PAGE__.txt?_rsc=xkcPZNWnommTqNAL HTTP/1.1" 404 -

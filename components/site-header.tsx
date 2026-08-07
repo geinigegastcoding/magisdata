@@ -1,96 +1,50 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { CtaProof } from "@/components/cta-proof";
 import { Logo } from "@/components/logo";
 
-type NavigationItem = {
-  label: string;
-  href: string;
-  activePaths?: string[];
-};
-
-const navigation: NavigationItem[] = [
-  { label: "Home", href: "/" },
-  {
-    label: "Diensten",
-    href: "/diensten",
-    activePaths: [
-      "/diensten",
-      "/webontwikkeling",
-      "/seo-diensten",
-      "/website-onderhoud",
-      "/online-marketing-bureau",
-      "/lokale-seo",
-      "/ai-vindbaarheid",
-      "/geo-optimalisatie",
-      "/aeo-optimalisatie",
-      "/strategisch-advies"
-    ]
-  },
-  { label: "Over MagisData", href: "/over-ons" },
-  { label: "Portfolio", href: "/cases" },
+const navigation = [
+  { label: "Systemen", href: "/diensten" },
+  { label: "Werkwijze", href: "/over-ons" },
+  { label: "Kennis", href: "/inzichten" },
   { label: "Contact", href: "/contact" }
 ];
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-white/88 backdrop-blur-xl">
-      <nav
-        aria-label="Primaire navigatie"
-        className="container flex min-h-[5.25rem] items-center justify-between gap-4 py-4 sm:gap-6"
-      >
-        <Logo className="shrink-0" />
+    <header className="sticky top-0 z-50 border-b border-line/80 bg-white/90 backdrop-blur-xl">
+      <nav aria-label="Primaire navigatie" className="container flex min-h-[5.5rem] items-center justify-between gap-6">
+        <Logo />
 
-        <div className="hidden items-center gap-9 xl:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {navigation.map((item) => (
-            <Link
-              className="focus-ring rounded-full px-1 py-2 text-[0.95rem] font-semibold text-ink transition hover:text-orange"
-              href={item.href}
-              key={item.href}
-            >
+            <Link className="focus-ring rounded-sm px-1 py-2 text-sm font-semibold text-muted transition hover:text-blue" href={item.href} key={item.href}>
               {item.label}
             </Link>
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 xl:flex">
-          <Link
-            data-track-cta="header"
-            className="focus-ring inline-flex items-center rounded-xl bg-orange px-7 py-3.5 text-[0.95rem] font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-dark"
-            href="/contact"
-          >
-            Vraag gratis websiteplan aan
-            <span aria-hidden className="ml-2">
-              -&gt;
-            </span>
+        <div className="hidden items-center gap-4 lg:flex">
+          <span className="hidden text-xs text-soft xl:inline">AI begint met een goed gesprek</span>
+          <Link className="focus-ring inline-flex items-center gap-2 bg-blue px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
+            Plan een AI-scan
           </Link>
-          <CtaProof className="max-w-28" />
         </div>
 
-        <details className="group relative xl:hidden">
-          <summary className="focus-ring grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line bg-white text-navy shadow-card [&::-webkit-details-marker]:hidden">
+        <details className="relative lg:hidden">
+          <summary className="focus-ring grid h-11 w-11 cursor-pointer list-none place-items-center border border-line bg-white text-navy [&::-webkit-details-marker]:hidden">
             <span className="sr-only">Navigatie openen</span>
-            <Menu className="h-5 w-5" />
+            <Menu aria-hidden="true" className="h-5 w-5" />
           </summary>
-          <div className="absolute right-0 top-[calc(100%+1.25rem)] w-[min(20rem,calc(100vw-2rem))] rounded-2xl border border-line bg-white p-3 shadow-card">
+          <div className="absolute right-0 top-[calc(100%+1rem)] w-[min(20rem,calc(100vw-2rem))] border border-line bg-white p-3 shadow-card">
             <div className="grid gap-1">
               {navigation.map((item) => (
-                <Link
-                  className="focus-ring rounded-xl px-4 py-3 text-sm font-semibold text-ink hover:bg-peach hover:text-orange"
-                  href={item.href}
-                  key={item.href}
-                >
+                <Link className="focus-ring px-4 py-3 text-sm font-semibold text-muted hover:bg-blue-soft hover:text-blue" href={item.href} key={item.href}>
                   {item.label}
                 </Link>
               ))}
-              <Link
-                data-track-cta="mobile-header"
-                className="focus-ring mt-2 rounded-xl bg-orange px-5 py-3 text-center text-sm font-bold text-white shadow-sm"
-                href="/contact"
-              >
-                Gratis websiteplan
+              <Link className="focus-ring mt-2 bg-blue px-4 py-3 text-center text-sm font-bold text-white" href="/contact">
+                Plan een AI-scan
               </Link>
-              <CtaProof className="px-1 pt-1" />
             </div>
           </div>
         </details>

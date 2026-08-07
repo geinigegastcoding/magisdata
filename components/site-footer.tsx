@@ -1,145 +1,49 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, Linkedin, Instagram, Play } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { sitePhone, sitePhoneHref, founderLinkedIn, magisdataTikTok, magisdataInstagram } from "@/schemas/seo";
-import { AnimatedGroup } from "@/components/ui/animated-group";
 
-const columns = [
-  {
-    title: "Diensten",
-    links: [
-      { label: "SEO", href: "/seo-diensten" },
-      { label: "Webontwikkeling", href: "/webontwikkeling" },
-      { label: "Website onderhoud", href: "/website-onderhoud" },
-      { label: "Online marketing", href: "/online-marketing-bureau" },
-      { label: "Lokale SEO", href: "/lokale-seo" },
-      { label: "AI vindbaarheid", href: "/ai-vindbaarheid" },
-      { label: "GEO optimalisatie", href: "/geo-optimalisatie" },
-      { label: "AEO optimalisatie", href: "/aeo-optimalisatie" },
-      { label: "Strategisch advies", href: "/strategisch-advies" },
-      { label: "SEO bureau Leiden", href: "/seo-bureau-leiden" }
-    ]
-  },
-  {
-    title: "Portfolio",
-    links: [
-      { label: "Alle projecten", href: "/cases" },
-      { label: "Hoveniersbedrijf", href: "/cases/website-design-hoveniersbedrijf" },
-      { label: "Dakbedrijf", href: "/cases/website-design-dakbedrijf" },
-      { label: "Social platform", href: "/cases/website-design-social-growth-platform" },
-      { label: "IT consultancy", href: "/cases/website-design-it-consultancy" }
-    ]
-  },
-  {
-    title: "Bedrijf",
-    links: [
-      { label: "Over MagisData", href: "/over-ons" },
-      { label: "Contact", href: "/contact" },
-      { label: "Status", href: "/status" },
-      { label: "Privacybeleid", href: "/privacybeleid" },
-      { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" },
-      { label: "ROI Calculator", href: "/roi-calculator" }
-    ]
-  }
+const footerLinks = [
+  { label: "Systemen", href: "/diensten" },
+  { label: "Werkwijze", href: "/over-ons" },
+  { label: "Kennis", href: "/inzichten" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacybeleid", href: "/privacybeleid" },
+  { label: "Algemene voorwaarden", href: "/algemene-voorwaarden" }
 ];
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-white">
-      <div className="container grid gap-10 py-12 xl:grid-cols-[0.85fr_2.6fr_0.7fr]">
+      <div className="container grid gap-10 py-12 md:grid-cols-[1.1fr_0.9fr_0.8fr] md:py-16">
         <div>
           <Logo />
-          <p className="mt-5 max-w-xs text-sm font-medium text-muted">
-            Digitale groei voor ambitieuze bedrijven
+          <p className="mt-5 max-w-sm text-sm leading-7 text-muted">
+            MagisData bouwt AI-systemen die terugkerend werk uit je bedrijf halen en je team meer ruimte geven voor goed werk.
           </p>
-          <Link className="focus-ring mt-6 inline-flex rounded-full text-sm font-bold text-orange hover:text-orange-dark" href="/status">
-            Beschikbaar voor gesprek
+          <Link className="focus-ring mt-6 inline-flex items-center gap-2 text-sm font-bold text-blue hover:text-orange-dark" href="/contact">
+            Plan een AI-scan <ArrowUpRight aria-hidden="true" size={15} />
           </Link>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {columns.map((column) => (
-            <div key={column.title}>
-              <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
-                {column.title}
-              </h2>
-              <ul className="mt-4 grid gap-2 text-sm text-muted">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link className="focus-ring rounded-full hover:text-orange" href={link.href}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue">Navigatie</p>
+          <nav aria-label="Footer navigatie" className="mt-4 grid gap-2 text-sm text-muted">
+            {footerLinks.map((link) => <Link className="focus-ring w-fit hover:text-blue" href={link.href} key={link.href}>{link.label}</Link>)}
+          </nav>
         </div>
 
         <div>
-          <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy">
-            Contact
-          </h2>
-          <div className="mt-4 grid gap-3 text-sm text-muted">
-            <Link href="/contact" className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange">
-              <Mail className="h-5 w-5" />
-              <span>contact<span>@</span>magisdata.nl</span>
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue">Contact</p>
+          <div className="mt-4 grid gap-3 text-sm leading-6 text-muted">
+            <Link className="focus-ring inline-flex items-center gap-2 hover:text-blue" href="/contact">
+              <Mail aria-hidden="true" size={16} /> contact<span>@</span>magisdata.nl
             </Link>
-            <Link className="focus-ring inline-flex items-center gap-2 rounded-full hover:text-orange" href={sitePhoneHref}>
-              <Phone className="h-4 w-4" />
-              {sitePhone}
-            </Link>
-            <span className="inline-flex items-start gap-2 leading-6">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-              Voorschoten, nabij Leiden
-            </span>
-            <button className="focus-ring w-fit rounded-full text-left hover:text-orange" data-consent-open type="button">
-              Cookie-instellingen
-            </button>
-          </div>
-          
-          <div className="mt-8">
-            <h2 className="text-xs font-extrabold uppercase tracking-[0.14em] text-navy mb-4">
-              Socials
-            </h2>
-            <AnimatedGroup
-              className="flex gap-3"
-              variants={{
-                container: { visible: { transition: { staggerChildren: 0.1 } } },
-                item: {
-                  hidden: { opacity: 0, scale: 0.8, y: 10 },
-                  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 300 } }
-                }
-              }}
-            >
-              <Link 
-                href={founderLinkedIn} 
-                className="grid h-10 w-10 place-items-center rounded-full bg-cream text-navy transition-all duration-300 hover:bg-orange hover:text-white hover:-translate-y-1"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link 
-                href={magisdataInstagram} 
-                className="grid h-10 w-10 place-items-center rounded-full bg-cream text-navy transition-all duration-300 hover:bg-orange hover:text-white hover:-translate-y-1"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link 
-                href={magisdataTikTok} 
-                className="grid h-10 w-10 place-items-center rounded-full bg-cream text-navy transition-all duration-300 hover:bg-orange hover:text-white hover:-translate-y-1"
-                aria-label="TikTok"
-              >
-                <Play className="h-5 w-5" />
-              </Link>
-            </AnimatedGroup>
+            <span className="inline-flex items-start gap-2"><MapPin aria-hidden="true" className="mt-1 shrink-0" size={16} /> Voorschoten, Nederland</span>
+            <button className="focus-ring w-fit text-left hover:text-blue" data-consent-open type="button">Cookie-instellingen</button>
           </div>
         </div>
       </div>
-      <div className="border-t border-line py-5 text-center text-xs text-soft">
-        (c) 2026 MagisData. Alle rechten voorbehouden.
-      </div>
+      <div className="border-t border-line py-5 text-center text-xs text-soft">© 2026 MagisData. Alle rechten voorbehouden.</div>
     </footer>
   );
 }
