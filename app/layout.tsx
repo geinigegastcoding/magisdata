@@ -13,48 +13,29 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://magisdata.nl"),
   applicationName: "MagisData",
   icons: {
-    icon: [
-      {
-        url: "/assets/logo-icon.png",
-        type: "image/png"
-      }
-    ],
-    apple: [
-      {
-        url: "/assets/logo-icon.png",
-        type: "image/png"
-      }
-    ]
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }]
   },
   title: {
-    default: "MagisData | Websites, SEO en online groei voor ambitieuze bedrijven",
+    default: "MagisData | AI-systemen voor ondernemers",
     template: "%s | MagisData"
   },
   description:
-    "MagisData bouwt snelle, duidelijke websites en helpt bedrijven groeien met SEO, online marketing en conversie optimalisatie.",
-  keywords: [
-    "MagisData",
-    "webbureau Nederland",
-    "websites laten maken",
-    "SEO bureau",
-    "online groei",
-    "conversie optimalisatie",
-    "online marketing bureau"
-  ],
+    "MagisData onderzoekt waar AI je tijd teruggeeft en bouwt AI-systemen voor e-mail, leads, rapportages, kennis en terugkerend werk.",
   openGraph: {
     type: "website",
     locale: "nl_NL",
     url: "https://magisdata.nl",
     siteName: "MagisData",
-    title: "MagisData | Websites, SEO en online groei voor ambitieuze bedrijven",
-    description:
-      "Snelle websites, SEO en online marketing voor bedrijven die meer klanten online willen."
+    title: "MagisData | AI-systemen voor ondernemers",
+    description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
+    images: [{ url: "/assets/magisdata-hero.png", width: 2400, height: 1350, alt: "Blauw-wit beeld van MagisData" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "MagisData | Websites, SEO en online groei",
-    description:
-      "MagisData helpt ambitieuze bedrijven met websites, vindbaarheid en conversie."
+    title: "MagisData | AI-systemen voor ondernemers",
+    description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
+    images: ["/assets/magisdata-hero.png"]
   },
   robots: {
     index: true,
@@ -65,14 +46,14 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FFF9ED"
+  themeColor: "#F3F5FF"
 };
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-  preload: false,
+  preload: false
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
