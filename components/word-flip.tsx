@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-const words = ["AI", "skills", "agents"];
+const words = [
+  { label: "Claude", className: "is-claude", logo: "anthropic.svg" },
+  { label: "OpenAI", className: "is-openai", logo: "openai.svg" },
+  { label: "Gemini", className: "is-gemini", logo: "gemini.svg" }
+];
 
 export function WordFlip() {
   const [index, setIndex] = useState(0);
@@ -20,8 +24,9 @@ export function WordFlip() {
   }, []);
 
   return (
-    <span aria-live="polite" className="word-flip">
-      {words[index]}
+    <span aria-live="polite" className={`word-flip ${words[index].className}`}>
+      <img alt="" aria-hidden="true" src={`/assets/logos/${words[index].logo}`} />
+      {words[index].label}
     </span>
   );
 }
