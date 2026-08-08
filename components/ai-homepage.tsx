@@ -16,7 +16,7 @@ import {
   Workflow
 } from "lucide-react";
 import { AiCalculator } from "@/components/ai-calculator";
-import { WordFlip } from "@/components/word-flip";
+import { ScrollObserver } from "@/components/scroll-observer";
 
 export const homepageFaqs = [
   {
@@ -102,60 +102,44 @@ const skills = [
 export function AiHomepage() {
   return (
     <main>
-      <section className="ai-hero" id="top">
-        <div className="container ai-hero-grid">
-          <div className="ai-hero-copy reveal-up">
-            <p className="eyebrow">MagisData / AI systems studio</p>
-            <h1>
-              Geef je bedrijf <span className="word-frame"><WordFlip /></span> in de workflow.
-            </h1>
-            <p className="hero-lede">
-              MagisData onderzoekt waar AI je tijd teruggeeft en bouwt systemen die
-              e-mail, leads, rapportages en kenniswerk voor je voorbereiden. Jij houdt de regie.
-            </p>
-            <div className="hero-actions">
-              <Link className="button-primary" href="/contact">
-                Plan een AI-scan <ArrowUpRight aria-hidden="true" size={17} />
-              </Link>
-              <a className="text-link" href="#rekenen">
-                Bereken je tijdwaarde <ArrowRight aria-hidden="true" size={17} />
-              </a>
-            </div>
-            <div className="hero-signals" aria-label="Wat MagisData levert">
-              <span>Audit</span>
-              <span>Build</span>
-              <span>Enable</span>
-              <span>Systemen die blijven werken</span>
-            </div>
+      <ScrollObserver />
+      <section className="center-hero-preview ai-live-hero" id="top">
+        <Image
+          alt="Blauw-wit beeld van een klassiek standbeeld als symbool voor helder denken en nieuwe systemen"
+          className="center-hero-preview-image"
+          fill
+          priority
+          sizes="100vw"
+          src="/assets/magisdata-hero.png"
+        />
+        <div aria-hidden="true" className="center-hero-preview-overlay" />
+        <div className="center-hero-content reveal-up">
+          <p className="eyebrow">AI-systemen voor ondernemers</p>
+          <h1>Haal handwerk uit je bedrijf met AI.</h1>
+          <p>
+            MagisData onderzoekt waar AI je tijd teruggeeft en bouwt systemen die e-mail,
+            leads, rapportages en kenniswerk voor je voorbereiden. Jij houdt de regie.
+          </p>
+          <div className="center-hero-actions">
+            <Link className="button-primary" href="/contact">
+              Plan een AI-scan <ArrowUpRight aria-hidden="true" size={17} />
+            </Link>
+            <a className="text-link" href="#rekenen">
+              Bereken je tijdwaarde <ArrowRight aria-hidden="true" size={17} />
+            </a>
           </div>
-
-          <div className="ai-hero-visual reveal-up-delay">
-            <div className="hero-image-frame">
-              <Image
-                alt="Blauw-wit beeld van een klassiek standbeeld als symbool voor helder denken en nieuwe systemen"
-                className="hero-image"
-                fill
-                priority
-                sizes="(min-width: 1024px) 49vw, 100vw"
-                src="/assets/magisdata-hero.png"
-              />
-              <div className="hero-image-mark">AI / by design</div>
-            </div>
-            <div className="hero-float-card">
-              <span className="status-dot" />
-              <span>Van losse taak</span>
-              <ArrowRight aria-hidden="true" size={15} />
-              <strong>naar systeem</strong>
-            </div>
+          <div className="hero-tools center-hero-tools" aria-label="Voorbeelden van AI-platforms waarmee we werken">
+            <span className="hero-tools-label">Onder meer met</span>
+            <span className="tool-chip tool-chip-claude"><span className="tool-chip-logo"><img alt="" aria-hidden="true" src="/assets/logos/anthropic.svg" /></span>Claude</span>
+            <span className="tool-chip tool-chip-openai"><span className="tool-chip-logo"><img alt="" aria-hidden="true" src="/assets/logos/openai.svg" /></span>OpenAI</span>
+            <span className="tool-chip tool-chip-gemini"><span className="tool-chip-logo"><img alt="" aria-hidden="true" src="/assets/logos/gemini.svg" /></span>Gemini</span>
+            <span className="tool-chip tool-chip-cloud"><span className="tool-chip-logo"><img alt="" aria-hidden="true" src="/assets/logos/googlecloud.svg" /></span>Google Cloud</span>
           </div>
-        </div>
-        <div className="container hero-footnote">
-          <span className="scroll-line" /> Scroll voor de werkwijze
         </div>
       </section>
 
       <section className="ai-section ai-statement" id="werkwijze">
-        <div className="container statement-grid">
+        <div className="container statement-grid" data-scroll-reveal>
           <p className="section-kicker">Het uitgangspunt</p>
           <div>
             <h2>AI moet niet naast je werk staan. Het moet erin zitten.</h2>
@@ -168,11 +152,34 @@ export function AiHomepage() {
               Bekijk wat we bouwen <ArrowRight aria-hidden="true" size={17} />
             </Link>
           </div>
+          <div className="statement-system-card" data-scroll-reveal aria-label="Voorbeeld van een AI-workflow">
+            <div className="statement-card-header">
+              <span>AI in de workflow</span>
+              <small>01 — 03</small>
+            </div>
+            <div className="statement-flow">
+              <div className="statement-flow-step">
+                <span>01</span>
+                <div><strong>Komt binnen</strong><small>E-mail, lead of document</small></div>
+              </div>
+              <div className="statement-flow-line" />
+              <div className="statement-flow-step">
+                <span>02</span>
+                <div><strong>AI bereidt voor</strong><small>Context, keuze en concept</small></div>
+              </div>
+              <div className="statement-flow-line" />
+              <div className="statement-flow-step">
+                <span>03</span>
+                <div><strong>Jij beslist</strong><small>Controle waar het telt</small></div>
+              </div>
+            </div>
+            <div className="statement-card-footer"><span className="status-dot" /> Geen zwarte doos</div>
+          </div>
         </div>
       </section>
 
       <section className="ai-section calculator-section" id="rekenen">
-        <div className="container">
+        <div className="container" data-scroll-reveal>
           <AiCalculator />
         </div>
       </section>
@@ -193,7 +200,7 @@ export function AiHomepage() {
             {systems.map((system) => {
               const Icon = system.icon;
               return (
-                <article className="system-row" key={system.number}>
+                <article className="system-row" data-scroll-reveal key={system.number}>
                   <div className="system-number">{system.number}</div>
                   <div className="system-icon"><Icon aria-hidden="true" size={21} /></div>
                   <div className="system-copy">
@@ -214,7 +221,7 @@ export function AiHomepage() {
       </section>
 
       <section className="ai-section brain-section" id="second-brain">
-        <div className="container brain-grid">
+        <div className="container brain-grid" data-scroll-reveal>
           <div className="brain-preview" aria-label="Voorbeeld van een second brain-interface">
             <div className="brain-window-bar"><span /><span /><span /><small>magisdata / second brain</small></div>
             <div className="brain-window-body">
@@ -271,7 +278,7 @@ export function AiHomepage() {
               we van een rommelige opdracht naar controleerbare output gaan.
             </p>
           </div>
-          <div className="skills-grid">
+          <div className="skills-grid" data-scroll-reveal>
             {skills.map((skill, index) => (
               <details className="skill-card" key={skill.title}>
                 <summary>
@@ -295,7 +302,7 @@ export function AiHomepage() {
             <p className="section-kicker">Zo werken we samen</p>
             <h2>Van eerste vraag naar iets dat draait.</h2>
           </div>
-          <div className="process-grid">
+          <div className="process-grid" data-scroll-reveal>
             <article><span>01</span><ScanLine aria-hidden="true" size={22} /><h3>Audit</h3><p>We brengen terugkerend werk, tools en beslismomenten in kaart.</p></article>
             <article><span>02</span><Workflow aria-hidden="true" size={22} /><h3>Build</h3><p>We bouwen een kleine eerste route en testen die met echte input.</p></article>
             <article><span>03</span><BrainCircuit aria-hidden="true" size={22} /><h3>Enable</h3><p>Je team weet wat het systeem doet, waar controle zit en hoe het verder kan.</p></article>
@@ -304,7 +311,7 @@ export function AiHomepage() {
       </section>
 
       <section className="ai-section comparison-section" id="community">
-        <div className="container comparison-grid">
+        <div className="container comparison-grid" data-scroll-reveal>
           <div>
             <p className="section-kicker">Een andere route</p>
             <h2>Niet nog een cursus. Niet nog een losse zzp-oplossing.</h2>
@@ -325,7 +332,7 @@ export function AiHomepage() {
       </section>
 
       <section className="ai-section faq-section" id="faq">
-        <div className="container faq-grid">
+        <div className="container faq-grid" data-scroll-reveal>
           <div className="faq-aside">
             <p className="section-kicker">Veelgestelde vragen</p>
             <h2>Geen magie. Wel een heldere volgende stap.</h2>
@@ -343,7 +350,7 @@ export function AiHomepage() {
       </section>
 
       <section className="ai-final-cta">
-        <div className="container final-cta-inner">
+        <div className="container final-cta-inner" data-scroll-reveal>
           <div>
             <p className="section-kicker">Eerste stap</p>
             <h2>Laat zien waar je bedrijf tijd laat liggen.</h2>
