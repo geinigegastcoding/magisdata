@@ -26,7 +26,7 @@ export default function CenterHeroPreviewPage() {
       </Link>
       <div className="center-hero-content reveal-up">
         <p className="eyebrow">Losse ontwerpvariant / center text</p>
-        <h1>Haal handwerk uit je bedrijf met AI.</h1>
+        <h1>Haal terugkerend werk uit je bedrijf met AI.</h1>
         <p>
           MagisData onderzoekt waar AI je tijd teruggeeft en bouwt systemen die e-mail,
           leads, rapportages en kenniswerk voor je voorbereiden.
