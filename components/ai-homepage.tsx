@@ -115,7 +115,7 @@ export function AiHomepage() {
         <div aria-hidden="true" className="center-hero-preview-overlay" />
         <div className="center-hero-content reveal-up">
           <p className="eyebrow">AI-systemen voor ondernemers</p>
-          <h1>Haal handwerk uit je bedrijf met AI.</h1>
+          <h1>Haal terugkerend werk uit je bedrijf met AI.</h1>
           <p>
             MagisData onderzoekt waar AI je tijd teruggeeft en bouwt systemen die e-mail,
             leads, rapportages en kenniswerk voor je voorbereiden. Jij houdt de regie.
