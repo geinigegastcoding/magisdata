@@ -44,26 +44,23 @@ export default async function ArticlePage({ params }: PageProps) {
   ];
 
   return (
-    <main className="bg-cream/40 min-h-screen pb-16">
+    <main className="article-page bg-cream/40 min-h-screen pb-16">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": schemaNodes }} />
       <Breadcrumbs items={breadcrumbItems} />
       
       <article className="container max-w-3xl pt-10 md:pt-16">
         <header className="mb-10">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-orange">{article.category}</span>
-          </div>
           <h1 className="text-[2.5em] sm:text-[3.5em] md:text-[4em] font-extrabold tracking-[-0.03em] text-navy leading-tight">
             {article.title}
           </h1>
-          <div className="mt-6 flex items-center gap-4 text-sm text-muted">
+          <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted">
             <div className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-full bg-orange/20 grid place-items-center text-orange font-bold text-xs">
                 {article.author.charAt(0)}
               </div>
               <span className="font-semibold">{article.author}</span>
             </div>
-            <span>&bull;</span>
+            <span>{article.category}</span><span aria-hidden="true">&bull;</span>
             <time dateTime={article.datePublished}>
               {new Date(article.datePublished).toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" })}
             </time>

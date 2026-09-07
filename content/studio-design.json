@@ -1,0 +1,72 @@
+{
+  "identity": "MagisData: warm ivory, forest green, sage, editorial typography and architectural paper sculptures with amber details",
+  "sourceOfTruth": ["app/globals.css", "app/layout.tsx", "tailwind.config.ts", "components/ai-homepage.tsx", "components/site-header.tsx", "components/contact-form.tsx", "components/ai-calculator.tsx", "components/consent-manager.tsx"],
+  "palette": {
+    "cssVariables": {
+      "--background": "#f5f3ec", "--surface": "#fffefa", "--surface-soft": "#eaece2", "--surface-blue": "#eaece2",
+      "--text-main": "#263e33", "--text-muted": "#60675d", "--text-soft": "#6b7166",
+      "--blue": "#294d3b", "--blue-dark": "#1d392b", "--blue-soft": "#e7ebdf",
+      "--line": "#d9dbcf", "--line-strong": "#b9c0af"
+    },
+    "sectionColors": {"method": "#e9ecdf", "calculator": "#ece5d8", "calculatorResult": "#f8f5ee", "closingCta": "#dfe5d2", "headingEmphasis": "#6d7c5f", "logoPeriod": "#a9673b", "focus": "#8d542f"},
+    "tailwindAliases": {
+      "navy": "#263E33", "ink": "#263E33", "cloud": "#FFFEFA", "cream": "#F5F3EC", "peach": "#ECE5D8",
+      "orange": "#294D3B", "orange-dark": "#1D392B", "orange-soft": "#E7EBDF", "blue": "#294D3B", "blue-soft": "#E9ECDF",
+      "green": "#4F6641", "green-soft": "#E7EBDF", "yellow": "#815E29", "yellow-soft": "#F1E8D6",
+      "pink": "#845440", "pink-soft": "#F1E5DC", "purple": "#596B50", "purple-soft": "#EAECE2",
+      "mist": "#EAECE2", "muted": "#60675D", "soft": "#6B7166", "line": "#D9DBCF", "line-strong": "#B9C0AF"
+    },
+    "aliasNote": "Legacy blue/orange names now map to forest green; Tailwind blue-soft differs from CSS --blue-soft. Read exact source tokens when editing."
+  },
+  "typography": {
+    "display": {"family": "DM Serif Display", "variable": "--font-display", "weight": 400, "styles": ["normal", "italic"], "fallback": "Georgia, serif"},
+    "body": {"family": "Inter", "variable": "--font-inter", "fallback": "sans-serif", "preload": false},
+    "loading": "next/font/google; Latin subset; display swap",
+    "headings": "H1/H2 balanced, tracking -0.025em, default line-height 1.06; sage italic emphasis",
+    "heroH1": "clamp(50px, 5.7vw, 82px), line-height 1.03; 60px at <=1100px; clamp(47px, 10.5vw, 72px) at <=767px",
+    "sectionH2": "clamp(38px, 4vw, 55px); 40px at <=767px for primary section headings",
+    "bodyScale": "Section copy 13–14px with 1.8–1.9 line-height; desktop hero copy 16px; labels and captions 10–12px; tabular calculator numerals"
+  },
+  "layout": {
+    "container": "CSS width min(100%, 1360px), centered; horizontal padding 48px, 32px at <=1100px, 22px at <=767px",
+    "tailwindContainer": "Config separately declares 2xl 1680px and 1.25/1.5/2rem padding; studio container rules in globals.css set the visual width/padding",
+    "breakpointsPx": {"mobileMax": 767, "tabletMax": 1100, "largeMin": 1600},
+    "header": "Sticky top 0, z-index 50, solid ivory and 1px bottom rule; nav height 92/80/76px for desktop/tablet/mobile",
+    "hero": "Desktop columns 1.14fr 1fr, gap 38px; one column and 34px gap on mobile",
+    "sections": "110px vertical spacing, 65px mobile; method 95/60px, calculator 90/60px, closing CTA 85/60px",
+    "patterns": "Ruled service/use-case rows; three-column method; two-column knowledge, skills, calculator and FAQ; single-column mobile; reading article capped at 850px",
+    "surfaces": "Square primary buttons and contact controls; flat ivory/sage/sand bands; 1px rules; retained shared reading surfaces use 4px corners and remove card shadows/gradients",
+    "cssShadows": {"card": "0 12px 32px rgba(37, 52, 37, .07)", "soft": "0 20px 60px rgba(37, 52, 37, .08)"}
+  },
+  "motion": {
+    "artwork": "1s cubic-bezier(.16,1,.3,1) clip-path reveal from inset(0 0 7% 0) to inset(0)",
+    "controls": "0.2s background/transform transitions; primary hover lifts 2px; open accordion plus rotates 45deg; insight arrow shifts 3px right and up",
+    "scroll": "Smooth with 110px top padding",
+    "reducedMotion": "prefers-reduced-motion: reduce disables all animations/transitions and switches scroll behavior to auto"
+  },
+  "interaction": {
+    "focus": "2px solid #8d542f outline with 5px offset; visible skip link targets focusable #main-content",
+    "navigation": "Desktop current-page underline; 44px mobile menu button with aria-expanded/aria-controls; Escape closes and restores toggle focus; links close menu",
+    "accordions": "Native details/summary with decorative plus icon",
+    "calculator": "Labeled native range inputs, output values, polite live result; people 1–25, hours 0–20, rate EUR25–150 step 5",
+    "form": "Labeled required name/email/question; native email validation; submit disabled with busy text while sending; polite success, assertive error",
+    "consent": "Fixed bottom-left notice with accept/refuse; analytics requires consent; footer reopens preferences"
+  },
+  "imagery": {
+    "provenance": "public/assets/studio-images.json",
+    "generated": [
+      {"path": "/assets/studio-flow.webp", "role": "Home and services hero: folded forest-green paper, ivory stone, amber sphere", "displayHeightPx": {"desktop": 510, "tablet": 485, "mobile": 370, "large": 560}},
+      {"path": "/assets/studio-knowledge.webp", "role": "Knowledge sections: architectural paper archive, amber glass and green tabs", "displayHeightPx": {"desktop": 435, "mobile": 310}},
+      {"path": "/assets/studio-og.webp", "role": "Open Graph/Twitter; 1200 × 630 center crop of studio-flow"}
+    ],
+    "existing": ["/assets/founder-672.webp", "/assets/founder-336.webp", "/assets/logos/anthropic.svg", "/assets/logos/openai.svg", "/assets/logos/gemini.svg", "/assets/logos/googlecloud.svg"],
+    "treatment": "Object-fit cover for editorial sculptures; descriptive Dutch alt text; founder portrait contain on studio page; grayscale platform logos"
+  },
+  "productConstraints": [
+    "Dutch practical AI studio for entrepreneurs: audit, build and enable; direct contact with Daniel Magis.",
+    "Do not invent proof, client results or fixed prices. Old website pricing numbers are illustrative scenarios.",
+    "Calculator shows the value of entered hours over 52 weeks, not guaranteed savings; audit establishes cost and feasibility.",
+    "Platform marks describe tools used, not partnerships or endorsements.",
+    "The user authorized a new design system; earlier light-blue-only and Inter-only restrictions are superseded."
+  ]
+}

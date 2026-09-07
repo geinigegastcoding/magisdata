@@ -1,0 +1,18 @@
+{
+  "generator": "Built-in image generation (Image v2 requested)",
+  "assets": [
+    {
+      "file": "studio-flow.webp",
+      "prompt": "Use case: stylized-concept. Asset type: main website hero artwork for MagisData, a premium Dutch independent studio building practical AI systems to give entrepreneurs their time back. Generate with Image v2. Create an exquisitely art-directed, physically plausible still-life photograph of one continuous ribbon of matte deep forest-green folded paper, looping from an elegant loose sweeping arc into precisely organized accordion folds, resting on a warm ivory travertine plinth. One small polished amber glass sphere nestles alongside the folds. This is an artistic metaphor for turning complexity into an orderly workflow. Large sculptural object, tactile natural materials, immaculate premium design magazine photography, subtle paper fiber, warm daylight from upper left, long soft directional shadow. Background seamless warm ivory #f5f2e9 with architectural wall meeting floor. Portrait 4:5 composition, object fills central 75%, viewed slightly above eye level, generous breathing room around edges. Sophisticated and striking, contemporary gallery aesthetic. No text, no logos, no interface, no humans, no computers, no robots, no neon, no glow, no blue, no collage."
+    },
+    {
+      "file": "studio-knowledge.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial website section image for MagisData, Dutch practical AI studio. Image v2. Wide 3:2 premium still life photograph: a small open architectural archive made of stacked warm ivory paper sheets and translucent amber glass dividers, three deliberate deep forest green paper tabs. Physical sculpture symbolizing a personal knowledge system, NOT an actual computer or office software. Art-directed gallery installation on a pale sand stone table, off-white background, soft warm side sunlight, exquisite detail and real tactile materials, composition balanced asymmetrically with stepped sheets on right and a loose curved green paper element on left connecting them. The same visual family as luxury paper sculpture photography, calm intelligent editorial aesthetic. No lettering, no logos, no people, no interfaces, no robotic imagery, no neon or blue. All objects large and simple, no clutter."
+    },
+    {
+      "file": "studio-og.webp",
+      "source": "studio-flow.webp",
+      "transformation": "1200 × 630 centre crop"
+    }
+  ]
+}

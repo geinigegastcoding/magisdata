@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { StudioCta } from "@/components/studio-cta";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Check, Mail } from "lucide-react";
@@ -8,6 +10,7 @@ import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 export const metadata: Metadata = {
   title: "Plan een AI-scan voor je bedrijf",
   description: "Vertel waar je bedrijf tijd laat liggen. MagisData geeft je een eerste richting voor audit, bouw of enablement.",
+  openGraph: { title: "Plan een AI-scan voor je bedrijf" , description: "Vertel waar je bedrijf tijd laat liggen. MagisData geeft je een eerste richting voor audit, bouw of enablement.", url: "https://magisdata.nl/contact", images: [{ url: "/assets/studio-og.webp", width: 1200, height: 630 }] },
   alternates: { canonical: "https://magisdata.nl/contact" }
 };
 
@@ -17,11 +20,7 @@ export default function ContactPage() {
     breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])
   ]);
 
-  return (
-    <main>
-      <JsonLd data={schema} />
-      <section className="bg-blue-soft py-20 md:py-32"><div className="container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue">Eerste gesprek</p><h1 className="mt-5 max-w-3xl text-balance text-[3.4rem] font-medium leading-[0.94] tracking-[-0.08em] text-navy sm:text-[5.5rem]">Waar laat je bedrijf tijd liggen?</h1><p className="mt-7 max-w-xl text-lg leading-8 text-muted">Vertel kort wat er nu steeds terugkomt. We kijken samen of een audit, build of leertraject de logische volgende stap is.</p><div className="mt-8 grid gap-3 text-sm font-semibold text-navy">{["30 minuten, zonder verkooppraat.", "Een concrete eerste richting.", "Geen verplicht voorstel."].map((item) => <div className="flex items-start gap-3" key={item}><Check aria-hidden="true" className="mt-0.5 shrink-0 text-blue" size={17} />{item}</div>)}</div><div className="mt-8 flex items-center gap-3 text-sm text-muted"><Mail aria-hidden="true" className="text-blue" size={17} /> contact<span>@</span>magisdata.nl</div></div><div className="border border-line-strong bg-white p-6 shadow-card md:p-8"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue">Plan je AI-scan</p><h2 className="mt-3 text-3xl font-medium tracking-[-0.06em] text-navy">Kort is goed.</h2><p className="mt-3 text-sm leading-7 text-muted">Omschrijf het proces of de taak waar je vanaf wilt. De rest vullen we samen aan.</p></div><ContactForm /></div></div></section>
-      <section className="py-16"><div className="container flex flex-col justify-between gap-5 border-t border-line pt-6 text-sm text-muted sm:flex-row"><span>Lievereerst lezen?</span><Link className="inline-flex items-center gap-2 font-semibold text-blue" href="/">Terug naar de homepage <ArrowUpRight aria-hidden="true" size={15} /></Link></div></section>
-    </main>
-  );
+  return <main className="studio-page"><JsonLd data={schema} />
+    <section className="container contact-layout"><div><h1>Waar wil jij<br /><em>ruimte maken?</em></h1><p>Vertel welke taak steeds terugkomt. Samen kijken we of een audit, een systeem of een leertraject de juiste volgende stap is.</p><ul className="knowledge-checks">{["30 minuten om je proces te begrijpen.","Een concrete eerste richting.","Geen verplicht voorstel."].map(item=><li key={item}><Check aria-hidden="true" size={17} />{item}</li>)}</ul><div className="text-link"><Mail aria-hidden="true" size={17} /><span>contact<span>@</span>magisdata.nl</span></div><div className="contact-person"><Image src="/assets/founder-336.webp" alt="Daniel Magis" width={60} height={70} /><p>Je spreekt met Daniel.<br /><span>Oprichter en bouwer bij MagisData.</span></p></div></div><div className="contact-form-panel"><h2 id="contact-form-title">Vertel. We luisteren.</h2><p>Een paar regels is genoeg. De rest ontdekken we samen.</p><ContactForm /></div></section>
+  </main>;
 }

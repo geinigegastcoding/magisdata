@@ -1,19 +1,9 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type LogoProps = {
-  className?: string;
-};
-
-export function Logo({ className }: LogoProps) {
-  return (
-    <Link
-      aria-label="MagisData home"
-      className={cn("inline-flex items-center gap-3", className)}
-      href="/"
-    >
-      <span aria-hidden="true" className="grid h-9 w-9 place-items-center bg-blue text-sm font-black text-white">M</span>
-      <span className="text-[1.05rem] font-semibold tracking-[-0.04em] text-navy">MagisData</span>
-    </Link>
-  );
+export function Logo({ className }: { className?: string }) {
+  return <Link aria-label="MagisData home" className={cn("studio-logo", className)} href="/">
+    <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M4 27V5l12 13L28 5v22M10 27V17l6 7 6-7v10" stroke="currentColor" strokeWidth="2.6" strokeLinejoin="round" /></svg>
+    <span>MagisData<span className="logo-period">.</span></span>
+  </Link>;
 }

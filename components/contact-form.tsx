@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { TrustProofRow } from "@/components/trust-proof-row";
+
 import { trackEvent } from "@/lib/analytics-consent";
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
@@ -65,12 +65,12 @@ export function ContactForm() {
       <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-subject">
         Waar wil je vooral beweging in?
         <select className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-subject" name="onderwerp">
-          <option>Nieuwe website of herbouw</option>
-          <option>Website onderhoud</option>
-          <option>SEO, GEO of AEO vindbaarheid</option>
-          <option>Online marketing en meetbasis</option>
-          <option>AI en automatisering</option>
-          <option>Strategische richting</option>
+          <option>AI-audit: ontdek de mogelijkheden</option>
+          <option>Een AI-systeem laten bouwen</option>
+          <option>Second brain en skills</option>
+          <option>AI leren gebruiken</option>
+          <option>Website en vindbaarheid</option>
+          <option>Ik weet het nog niet</option>
         </select>
       </label>
       <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-question">
@@ -83,10 +83,10 @@ export function ContactForm() {
         </p>
       ) : null}
       <button className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-orange-dark disabled:cursor-wait disabled:opacity-70" data-track-cta="contact-form" disabled={state === "submitting"} type="submit">
-        {state === "submitting" ? "Bezig met versturen..." : "Vraag websiteplan aan"}
+        {state === "submitting" ? "Bezig met versturen..." : "Plan mijn AI-scan"}
         {state !== "submitting" ? <ArrowRight className="ml-2 h-4 w-4" /> : null}
       </button>
-      <TrustProofRow compact />
+      <p className="text-xs text-muted">Je gegevens gebruiken we om op je vraag te reageren. <a className="underline" href="/privacybeleid">Lees het privacybeleid</a>.</p>
     </form>
   );
 }

@@ -54,8 +54,8 @@ const serviceLinks: InternalLink[] = [
 
 const pricingLink: InternalLink = {
   href: "/diensten",
-  label: "Prijzen & Diensten",
-  description: "Bekijk startpunten voor websites, SEO, AI en advies."
+  label: "AI-diensten",
+  description: "Bekijk de mogelijkheden voor AI-audit, systemen en training."
 };
 
 export const relatedLinksByPath: Record<string, InternalLink[]> = {
@@ -72,7 +72,6 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
     { href: "/contact", label: "Onderhoud bespreken", description: "Bekijk welke technische en contentchecks logisch zijn." }
   ],
   "/seo-diensten": [
-    serviceLinks[4],
     serviceLinks[4],
     pricingLink,
     { href: "/seo-bureau-leiden", label: "SEO bureau Leiden", description: "Lokale vindbaarheid voor servicebedrijven rond Leiden." }
@@ -137,8 +136,6 @@ export const relatedLinksByPath: Record<string, InternalLink[]> = {
   ],
   "/online-marketing-bureau": [
     serviceLinks[1],
-    serviceLinks[4],
-    serviceLinks[4],
     serviceLinks[4]
   ],
   "/conversie-optimalisatie": [

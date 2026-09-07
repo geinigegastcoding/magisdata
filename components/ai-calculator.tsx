@@ -24,11 +24,10 @@ export function AiCalculator() {
     <div className="calculator-shell">
       <div className="calculator-inputs">
         <div className="calculator-intro">
-          <p className="section-kicker">Jouw rekensom</p>
-          <h2>Wat kost handwerk dat elke week terugkomt?</h2>
+
+          <h2>Wat is jouw tijd waard?</h2>
           <p>
-            Schuif met je eigen situatie. Dit is geen belofte, maar een snelle
-            indicatie van de waarde die vrijkomt als een systeem repetitief werk overneemt.
+            Schuif met je eigen situatie. Bekijk de waarde van het werk dat elke week terugkomt.
           </p>
         </div>
 
@@ -93,8 +92,7 @@ export function AiCalculator() {
           </div>
         </div>
         <p className="calculator-note">
-          Als je één werkdag per week terugwint, ontstaat er ruimte voor klanten,
-          strategie en werk dat niet te automatiseren is.
+          Rekenvoorbeeld op basis van 52 weken. Dit is de waarde van alle ingevulde uren, geen gegarandeerde besparing. Kosten en haalbaarheid bepalen we in een audit.
         </p>
         <Link className="text-link" href="/contact">
           Laat je grootste tijdlek onderzoeken <ArrowRight aria-hidden="true" size={17} />

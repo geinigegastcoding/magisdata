@@ -6,9 +6,9 @@ import { ArrowRight, ChevronDown, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const WEBSITE_PACKAGES = [
-  { id: "web-start", name: "Start (€ 300 / jr)", priceYearly: 300, estimatedValue: 780, roiExplanation: "Gebaseerd op een lichte toename in geloofwaardigheid en een makkelijkere contactroute voor bestaande relaties." },
-  { id: "web-groei", name: "Groei (€ 500 / jr)", priceYearly: 500, estimatedValue: 1400, roiExplanation: "Gebaseerd op een sterkere opbouw van de diensten en betere conversie door gerichte bewijsvoering." },
-  { id: "web-autoriteit", name: "Autoriteit (€ 999 / jr)", priceYearly: 999, estimatedValue: 3197, roiExplanation: "Gebaseerd op optimale conversie-inrichting en autoriteit, wat high-value leads sneller overtuigt." },
+  { id: "web-start", name: "Voorbeeld: € 300 / jaar", priceYearly: 300, estimatedValue: 780, roiExplanation: "Gebaseerd op een lichte toename in geloofwaardigheid en een makkelijkere contactroute voor bestaande relaties." },
+  { id: "web-groei", name: "Voorbeeld: € 500 / jaar", priceYearly: 500, estimatedValue: 1400, roiExplanation: "Gebaseerd op een sterkere opbouw van de diensten en betere conversie door gerichte bewijsvoering." },
+  { id: "web-autoriteit", name: "Voorbeeld: € 999 / jaar", priceYearly: 999, estimatedValue: 3197, roiExplanation: "Gebaseerd op optimale conversie-inrichting en autoriteit, wat high-value leads sneller overtuigt." },
 ];
 
 export function RoiCalculatorClient() {
@@ -26,11 +26,12 @@ export function RoiCalculatorClient() {
       
       {/* Left Column: Input */}
       <div className="pt-2 lg:pt-6">
-        <label className="block text-sm font-bold text-navy mb-4">
-          Welk pakket past bij jou?
+        <label htmlFor="website-roi-scenario" className="block text-sm font-bold text-navy mb-4">
+          Kies een rekenvoorbeeld
         </label>
         <div className="relative">
           <select
+            id="website-roi-scenario"
             value={selectedWeb}
             onChange={(e) => setSelectedWeb(e.target.value)}
             className="block w-full appearance-none rounded-2xl border-2 border-line bg-white pl-5 pr-12 py-5 text-navy focus:border-orange focus:ring-0 text-lg font-bold transition cursor-pointer shadow-sm hover:border-orange-soft"
@@ -47,7 +48,7 @@ export function RoiCalculatorClient() {
         </div>
         
         <div className="mt-8">
-           <p className="text-sm font-bold text-navy uppercase tracking-wider mb-2">Jouw investering</p>
+           <p className="text-sm font-bold text-navy uppercase tracking-wider mb-2">Voorbeeldinvestering</p>
            <p className="text-3xl sm:text-4xl font-black text-navy tracking-tighter">
              € {totalInvestmentYear1.toLocaleString('nl-NL')} <span className="text-lg text-muted font-bold tracking-normal">/ jaar</span>
            </p>
@@ -58,7 +59,7 @@ export function RoiCalculatorClient() {
       <div className="bg-cream/40 rounded-3xl border border-line p-8 flex flex-col justify-center h-full">
         
         <div className="mb-6">
-          <p className="text-sm font-bold text-muted uppercase tracking-wider mb-2">Geschatte extra omzet</p>
+          <p className="text-sm font-bold text-muted uppercase tracking-wider mb-2">Aangenomen extra omzet</p>
           <p className="text-4xl font-black text-navy tracking-tighter">
             € {finalValue.toLocaleString('nl-NL')}
           </p>
@@ -66,7 +67,7 @@ export function RoiCalculatorClient() {
         
         <div className="flex items-center gap-6 mb-8">
           <div>
-            <p className="text-sm font-bold text-muted uppercase tracking-wider mb-2">Geschatte ROI</p>
+            <p className="text-sm font-bold text-muted uppercase tracking-wider mb-2">ROI in dit voorbeeld</p>
             <div className="flex items-center gap-3">
               <span className="text-5xl font-black text-orange tracking-tighter tabular-nums">
                 {roi.toFixed(0)}%
@@ -88,7 +89,7 @@ export function RoiCalculatorClient() {
             href="/contact"
             className="focus-ring flex w-full items-center justify-center rounded-xl bg-orange px-8 py-4 text-[1rem] font-bold text-white shadow-sm transition-all duration-200 hover:bg-orange-dark"
           >
-            Start met dit groeiplan
+            Bespreek jouw situatie
             <ArrowRight className="ml-2.5 h-5 w-5" />
           </Link>
         </div>

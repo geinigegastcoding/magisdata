@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { StudioCta } from "@/components/studio-cta";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Check, Compass, Network, SquareStack } from "lucide-react";
@@ -7,6 +9,7 @@ import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 export const metadata: Metadata = {
   title: "Over MagisData | AI begrijpelijk en werkbaar maken",
   description: "MagisData helpt ondernemers AI praktisch maken: eerst begrijpen, dan bouwen, daarna zelf verder kunnen.",
+  openGraph: { title: "Over MagisData | AI begrijpelijk en werkbaar maken" , description: "MagisData helpt ondernemers AI praktisch maken: eerst begrijpen, dan bouwen, daarna zelf verder kunnen.", url: "https://magisdata.nl/over-ons", images: [{ url: "/assets/studio-og.webp", width: 1200, height: 630 }] },
   alternates: { canonical: "https://magisdata.nl/over-ons" }
 };
 
@@ -22,13 +25,10 @@ export default function AboutPage() {
     breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Over MagisData", path: "/over-ons" }])
   ]);
 
-  return (
-    <main>
-      <JsonLd data={schema} />
-      <section className="bg-blue-soft py-20 md:py-32"><div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue">Over MagisData</p><h1 className="mt-5 max-w-4xl text-balance text-[3.4rem] font-medium leading-[0.94] tracking-[-0.08em] text-navy sm:text-[5.5rem]">AI begrijpelijk maken. En bruikbaar.</h1></div><div className="max-w-xl"><p className="text-lg leading-8 text-muted">MagisData is de AI-pivot van Daniel Magis: een kleine studio voor ondernemers die niet nog een tool willen, maar een werkwijze die hun bedrijf kent.</p><p className="mt-5 text-sm leading-7 text-muted">We combineren onderzoek, bouwen en kennisoverdracht. Zo ontstaat er iets dat niet alleen vandaag indruk maakt, maar morgen nog steeds gebruikt wordt.</p></div></div></section>
-      <section className="py-20 md:py-32"><div className="container"><div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue">Waar we in geloven</p><h2 className="mt-4 text-4xl font-medium leading-none tracking-[-0.07em] text-navy md:text-6xl">Rust is een voordeel als de techniek complex wordt.</h2></div><div className="mt-14 grid gap-10 border-t border-line-strong pt-8 md:grid-cols-3">{principles.map(({ icon: Icon, ...principle }) => <article className="grid gap-4" key={principle.title}><Icon aria-hidden="true" className="text-blue" size={24} /><h3 className="text-2xl font-medium tracking-[-0.05em] text-navy">{principle.title}</h3><p className="text-sm leading-7 text-muted">{principle.text}</p></article>)}</div></div></section>
-      <section className="border-y border-line bg-blue-soft py-20 md:py-28"><div className="container grid gap-12 lg:grid-cols-[0.8fr_1.2fr]"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue">De belofte</p><h2 className="mt-4 max-w-xl text-4xl font-medium leading-none tracking-[-0.07em] text-navy md:text-6xl">Je houdt de regie.</h2></div><div className="grid gap-4">{["Je weet waarom een systeem iets doet.", "Je ziet waar menselijke controle nodig blijft.", "Je kunt de werkwijze later zelf verder bouwen.", "Je krijgt geen belofte die niet te testen is."].map((item) => <div className="flex items-start gap-3 border-b border-line py-4 text-sm font-semibold text-navy" key={item}><Check aria-hidden="true" className="mt-0.5 shrink-0 text-blue" size={17} />{item}</div>)}</div></div></section>
-      <section className="py-20 md:py-28"><div className="container flex flex-col justify-between gap-8 border-t border-line-strong pt-8 md:flex-row md:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue">Volgende stap</p><h2 className="mt-4 max-w-2xl text-4xl font-medium leading-none tracking-[-0.07em] text-navy md:text-6xl">Vertel waar je nu nog op vastloopt.</h2></div><Link className="inline-flex shrink-0 items-center gap-2 bg-blue px-5 py-3.5 text-sm font-bold text-white" href="/contact">Plan een AI-scan <ArrowUpRight aria-hidden="true" size={17} /></Link></div></section>
-    </main>
-  );
+  return <main className="studio-page"><JsonLd data={schema} />
+    <section className="inner-hero container inner-split"><div><h1>Techniek met<br /><em>menselijk inzicht.</em></h1><p>Ik ben Daniel Magis. Met MagisData help ik ondernemers AI begrijpelijk en bruikbaar maken. Door goed te kijken, gericht te bouwen en kennis te delen.</p><p>Een kleine studio, korte lijnen. Je werkt direct met degene die je systeem bouwt.</p><Link className="text-link" href="/contact">Maak kennis <ArrowUpRight aria-hidden="true" size={18} /></Link></div><figure className="studio-about-portrait"><Image src="/assets/founder-672.webp" alt="Daniel Magis, oprichter van MagisData" width={672} height={672} priority sizes="(max-width: 767px) 100vw, 45vw" /><figcaption><span>Daniel Magis</span><span>Oprichter · MagisData</span></figcaption></figure></section>
+    <section className="studio-method"><div className="container"><h2 className="about-belief">De beste techniek geeft je ruimte.<br /><em>Om na te denken. Om te ondernemen.<br />Om goed werk te leveren.</em></h2><div className="studio-principles">{principles.map(principle=><article key={principle.title}><h3>{principle.title}</h3><p>{principle.text}</p></article>)}</div></div></section>
+    <section className="studio-section container inner-split"><h2 className="about-belief">Je houdt<br /><em>de regie.</em></h2><div><p className="text-muted leading-8">Een systeem is pas bruikbaar als je weet wat het doet. Daarom maken we keuzes, instructies en controlemomenten zichtbaar.</p><ul className="knowledge-checks">{["Je weet waarom een systeem iets doet.","Je ziet waar menselijke controle nodig blijft.","Je kunt de werkwijze later zelf verder bouwen.","Je krijgt geen belofte die niet te testen is."].map(item=><li key={item}><Check aria-hidden="true" size={17} />{item}</li>)}</ul><Link className="text-link" href="/diensten">Zo kunnen we samenwerken <ArrowUpRight aria-hidden="true" size={17} /></Link></div></section>
+    <StudioCta />
+  </main>;
 }

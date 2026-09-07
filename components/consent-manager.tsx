@@ -70,7 +70,7 @@ export function ConsentManager() {
   }
 
   return (
-    <div aria-label="Cookievoorkeuren" aria-modal="true" className="fixed inset-x-4 bottom-4 z-[80] mx-auto max-w-3xl rounded-2xl border border-line bg-white p-5 shadow-card md:p-6" role="dialog">
+    <div aria-label="Cookievoorkeuren" className="cookie-notice" role="region">
       <h2 className="text-lg font-extrabold text-navy">Cookies en analytics</h2>
       <p className="mt-2 text-sm leading-6 text-muted">
         We laden Google Analytics alleen na jouw toestemming. Formulieren werken ook zonder analytics. Lees meer in het{" "}
@@ -79,9 +79,9 @@ export function ConsentManager() {
         </Link>
         .
       </p>
-      <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+      <div className="cookie-actions">
         <button
-          className="focus-ring rounded-xl bg-orange px-5 py-3 text-sm font-bold text-white hover:bg-orange-dark"
+          className="focus-ring bg-orange px-5 py-3 text-sm font-bold text-white hover:bg-orange-dark"
           onClick={() => {
             setConsent("analytics_granted");
             setChoice("analytics_granted");
@@ -92,7 +92,7 @@ export function ConsentManager() {
           Accepteren
         </button>
         <button
-          className="focus-ring rounded-xl border border-line bg-white px-5 py-3 text-sm font-bold text-navy hover:border-orange-soft hover:text-orange"
+          className="focus-ring border border-line bg-white px-5 py-3 text-sm font-bold text-navy hover:border-orange-soft hover:text-orange"
           onClick={() => {
             setConsent("denied");
             setChoice("denied");

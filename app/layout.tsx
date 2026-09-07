@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { ConsentManager } from "@/components/consent-manager";
 import { SiteFooter } from "@/components/site-footer";
@@ -29,13 +27,13 @@ export const metadata: Metadata = {
     siteName: "MagisData",
     title: "MagisData | AI-systemen voor ondernemers",
     description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
-    images: [{ url: "/assets/magisdata-hero.png", width: 2400, height: 1350, alt: "Blauw-wit beeld van MagisData" }]
+    images: [{ url: "/assets/studio-og.webp", width: 1200, height: 630, alt: "MagisData — praktische AI, menselijke aandacht" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "MagisData | AI-systemen voor ondernemers",
     description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
-    images: ["/assets/magisdata-hero.png"]
+    images: ["/assets/studio-og.webp"]
   },
   robots: {
     index: true,
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F3F5FF"
+  themeColor: "#F5F3EC"
 };
 
 const inter = Inter({
@@ -56,27 +54,15 @@ const inter = Inter({
   preload: false
 });
 
+const display = DM_Serif_Display({ weight: "400", style: ["normal", "italic"], subsets: ["latin"], variable: "--font-display", display: "swap" });
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
+    <html lang="nl" data-scroll-behavior="smooth" className={inter.variable + " " + display.variable}>
       <body>
-        <Script id="consent-default" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('consent', 'default', {
-              analytics_storage: 'denied',
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied'
-            });
-          `}
-        </Script>
-        <GoogleAnalytics gaId="G-H6G8TMGDWY" />
         <JsonLd data={graphSchema([organizationSchema(), personSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
-        {children}
+        <div id="main-content" tabIndex={-1}>{children}</div>
         <SiteFooter />
         <ConsentManager />
       </body>

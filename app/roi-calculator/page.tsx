@@ -5,7 +5,7 @@ import { metadataForPath } from "@/content/seo";
 import { JsonLd } from "@/components/json-ld";
 import { graphSchema, webPageSchema } from "@/schemas/seo";
 import { RoiCalculatorClient } from "./RoiCalculatorClient";
-import { FinalCta } from "@/components/homepage-sections";
+import { StudioCta } from "@/components/studio-cta";
 
 export const metadata: Metadata = metadataForPath("/roi-calculator");
 
@@ -23,18 +23,14 @@ export default function RoiCalculatorPage() {
       <JsonLd data={schema} />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <section className="relative pt-16 pb-16 md:pt-24 md:pb-20">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-soft/40 via-cream to-white"></div>
         <div className="container max-w-4xl mx-auto text-center">
-          <p className="text-sm font-extrabold uppercase tracking-widest text-orange mb-4 flex items-center justify-center gap-2">
-            <Calculator className="w-4 h-4" />
-            Interactieve Tool
-          </p>
           <h1 className="text-[2.5em] sm:text-[3.5em] md:text-[4em] font-extrabold text-navy tracking-tight mb-6">
             Wat levert een nieuwe website eigenlijk op?
           </h1>
           <p className="text-lg md:text-xl text-muted leading-relaxed max-w-2xl mx-auto">
-            Een website is geen kostenpost, maar een investering in je bedrijf. Gebruik onze ROI-calculator om direct te zien wat een professionele website jou kan opleveren in het eerste jaar.
+            Een website is geen kostenpost, maar een investering in je bedrijf. Verken met deze rekenvoorbeelden hoe kosten en extra omzet samen het rendement bepalen. De bedragen zijn illustratief, geen actuele pakketten of resultaatbelofte.
           </p>
         </div>
       </section>
@@ -90,7 +86,7 @@ export default function RoiCalculatorPage() {
                   <ExternalLink className="w-4 h-4 text-muted group-hover:text-orange transition-colors" />
                 </Link>
                 <Link href="/diensten" className="flex items-center justify-between p-4 rounded-xl border border-line hover:border-orange hover:bg-orange-soft/20 transition-all group">
-                  <span className="font-bold text-navy text-sm">Bekijk alle pakketten & prijzen</span>
+                  <span className="font-bold text-navy text-sm">Bekijk onze diensten</span>
                   <ExternalLink className="w-4 h-4 text-muted group-hover:text-orange transition-colors" />
                 </Link>
               </div>
@@ -99,7 +95,7 @@ export default function RoiCalculatorPage() {
         </div>
       </section>
 
-      <FinalCta />
+      <StudioCta />
     </main>
   );
 }
