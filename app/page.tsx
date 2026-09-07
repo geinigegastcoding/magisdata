@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     description:
       "Van AI-audit tot werkend systeem. MagisData helpt ondernemers tijd terugwinnen met duidelijke, praktische AI-systemen.",
     url: "https://magisdata.nl/",
-    images: [{ url: "/assets/studio-og.webp", width: 1200, height: 630, alt: "MagisData — praktische AI, menselijke aandacht" }]
+    images: [{ url: "/assets/process-og.webp", width: 1200, height: 630, alt: "MagisData — praktische AI, menselijke aandacht" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "AI-systemen die handwerk uit je bedrijf halen | MagisData",
     description: "Onderzoek, bouw en gebruik AI-systemen die je werk lichter maken.",
-    images: ["/assets/studio-og.webp"]
+    images: ["/assets/process-og.webp"]
   }
 };
 
@@ -29,7 +29,7 @@ export default function HomePage() {
       path: "/",
       name: "MagisData: AI-systemen voor ondernemers",
       description: metadata.description ?? "",
-      primaryImage: `${siteUrl}/assets/studio-og.webp`
+      primaryImage: `${siteUrl}/assets/process-og.webp`
     }),
     faqSchema(homepageFaqs, "/"),
     {

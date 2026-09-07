@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, DM_Serif_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { ConsentManager } from "@/components/consent-manager";
 import { SiteFooter } from "@/components/site-footer";
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     siteName: "MagisData",
     title: "MagisData | AI-systemen voor ondernemers",
     description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
-    images: [{ url: "/assets/studio-og.webp", width: 1200, height: 630, alt: "MagisData — praktische AI, menselijke aandacht" }]
+    images: [{ url: "/assets/process-og.webp", width: 1200, height: 630, alt: "MagisData — praktische AI, menselijke aandacht" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "MagisData | AI-systemen voor ondernemers",
     description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
-    images: ["/assets/studio-og.webp"]
+    images: ["/assets/process-og.webp"]
   },
   robots: {
     index: true,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F5F3EC"
+  themeColor: "#FFFFFF"
 };
 
 const inter = Inter({
@@ -54,11 +54,10 @@ const inter = Inter({
   preload: false
 });
 
-const display = DM_Serif_Display({ weight: "400", style: ["normal", "italic"], subsets: ["latin"], variable: "--font-display", display: "swap" });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" data-scroll-behavior="smooth" className={inter.variable + " " + display.variable}>
+    <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
       <body>
         <JsonLd data={graphSchema([organizationSchema(), personSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />

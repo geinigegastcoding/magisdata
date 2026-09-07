@@ -2,8 +2,5 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export function StudioCta() {
-  return <section className="studio-cta"><div className="container">
-    <h2>Meer ruimte voor<br /><em>het echte werk.</em></h2>
-    <div><p>Begin bij die ene taak die elke week terugkomt. Samen kijken we wat er slimmer kan.</p><Link className="button-primary" href="/contact">Plan een AI-scan <ArrowUpRight aria-hidden="true" size={18} /></Link></div>
-  </div></section>;
+  return <section className="studio-cta"><div className="container"><div><span className="section-number">Begin bij één proces</span><h2>Welk werk mag<br />van je bord?</h2></div><div><p>Vertel wat er steeds terugkomt. We kijken samen waar AI kan helpen en wat een logische eerste stap is.</p><Link className="button-primary" href="/contact">Plan een AI-scan <ArrowUpRight size={20} aria-hidden="true" /></Link></div></div></section>;
 }

@@ -1,38 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Plus, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Plus } from "lucide-react";
 import { AiCalculator } from "@/components/ai-calculator";
 import { StudioCta } from "@/components/studio-cta";
-import { homepageFaqs, systems, skills } from "@/content/ai-homepage";
+import { WorkflowExample } from "@/components/workflow-example";
+import { homepageFaqs } from "@/content/ai-homepage";
 export { homepageFaqs } from "@/content/ai-homepage";
 
 export function AiHomepage() {
   return <main className="studio-home">
-    <section className="studio-hero container" id="top">
-      <div className="hero-copy">
-        <h1>Minder handwerk.<br />Meer <em>vooruit.</em></h1>
-        <p>AI die ruimte maakt voor ondernemen. We bouwen slimme systemen rond je dagelijkse werk. Van een volle inbox tot kennis die je direct kunt gebruiken.</p>
-        <div className="hero-actions"><Link className="button-primary" href="/contact">Ontdek wat AI kan doen <ArrowUpRight aria-hidden="true" size={18} /></Link><a className="text-link" href="#systemen">Bekijk de mogelijkheden <ArrowRight aria-hidden="true" size={17} /></a></div>
-        <div className="hero-note"><span aria-hidden="true" /> Praktische AI. Jij houdt de regie.</div>
-      </div>
-      <figure className="hero-art">
-        <Image src="/assets/studio-flow.webp" alt="Een groene papieren boog loopt over in geordende vouwen op natuursteen" width={1120} height={1400} priority sizes="(max-width: 767px) 100vw, 46vw" />
-        <figcaption><span>Van losse taken naar een logisch geheel.</span><ArrowUpRight aria-hidden="true" size={18} /></figcaption>
-      </figure>
+    <section className="system-hero container">
+      <div className="hero-index"><span>AI-systemen voor ondernemers</span><span>Van terugkerend werk naar een werkend systeem</span></div>
+      <h1>AI die<br />werk verzet.</h1>
+      <div className="hero-baseline"><a className="hero-scroll" href="#voorbeeld"><ArrowRight size={22} aria-hidden="true" />Bekijk het in de praktijk</a><p>MagisData bouwt AI rond het werk dat elke week terugkomt. Je inbox, je documenten, je bedrijfskennis. Minder uitzoekwerk. Meer tijd om te ondernemen.</p><Link className="button-primary" href="/contact">Plan een AI-scan<ArrowUpRight size={19} aria-hidden="true" /></Link></div>
     </section>
-    <div className="platform-strip container"><p>De juiste tools.<br /><strong>Voor jouw manier van werken.</strong></p><div aria-label="AI-platforms waarmee we werken">{[{name:"Claude",logo:"anthropic"},{name:"OpenAI",logo:"openai"},{name:"Gemini",logo:"gemini"},{name:"Google Cloud",logo:"googlecloud"}].map(tool => <span key={tool.name}><img src={`/assets/logos/${tool.logo}.svg`} width="24" height="24" alt="" />{tool.name}</span>)}</div></div>
-    <section className="studio-section container" id="systemen">
-      <div className="section-intro"><h2>Het werk herhaalt zich.<br /><em>Jij hoeft dat niet.</em></h2><p>Lezen, zoeken, overtypen, opvolgen. Het hoort bij je bedrijf, maar het hoeft niet je dag te bepalen. Hier kan AI het verschil maken.</p></div>
-      <div className="use-cases">{systems.map(({icon:Icon,...system}) => <article key={system.number}><div className="use-case-title"><Icon aria-hidden="true" size={24} /><h3>{system.label}</h3></div><div><h4>{system.title}</h4><p>{system.text}</p></div><span className="use-case-outcome">{system.outcome}<ArrowUpRight aria-hidden="true" size={20} /></span></article>)}</div>
-      <div className="section-tail"><span>Voorbeelden van wat mogelijk is. De juiste oplossing begint bij jouw proces.</span><Link className="text-link" href="/diensten">Alle mogelijkheden <ArrowRight aria-hidden="true" size={17} /></Link></div>
+    <WorkflowExample />
+    <section className="system-intro container">
+      <div className="section-number">01 / De aanpak</div>
+      <div><h2>Eerst het werk begrijpen.<br />Dan pas automatiseren.</h2><div className="intro-columns"><p>AI toevoegen is makkelijk. Er iets bruikbaars van maken vraagt om inzicht in je bedrijf. Wat komt er binnen? Welke stappen herhalen zich? Waar is jouw oordeel nodig?</p><p>We brengen dat samen in kaart en beginnen bij één proces. Klein genoeg om te testen. Concreet genoeg om te zien of het je helpt.</p></div><Link className="text-link" href="/diensten">Bekijk hoe we samenwerken <ArrowUpRight size={18} aria-hidden="true" /></Link></div>
     </section>
-    <section className="studio-method" id="werkwijze"><div className="container"><div className="section-intro"><h2>Van ‘kan dit slimmer?’<br />naar <em>‘het werkt’.</em></h2><Link className="text-link" href="/over-ons">Leer de studio kennen <ArrowUpRight aria-hidden="true" size={17} /></Link></div>
-      <ol className="method-steps">{[{title:"Eerst begrijpen.",text:"We brengen je terugkerende werk in kaart. Waar lekt tijd weg? Wat kan beter? En wat moet vooral menselijk blijven?",label:"Audit"},{title:"Dan bouwen.",text:"Een kleine, werkende oplossing in je bestaande tools. Getest met echte input, met controle op de momenten die ertoe doen.",label:"Build"},{title:"Zelf verder kunnen.",text:"Je leert hoe het systeem werkt. Je krijgt de kennis en instructies om ermee te werken en het verder uit te bouwen.",label:"Enable"}].map((step,i)=><li key={step.label}><div><span>0{i+1}</span><span>{step.label}</span></div><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol>
-    </div></section>
-    <section className="studio-section container knowledge-section" id="second-brain"><figure><Image src="/assets/studio-knowledge.webp" alt="Een tastbaar kennisarchief van papier, amberkleurig glas en groene tabbladen" width={1536} height={1024} sizes="(max-width: 767px) 100vw, 50vw" /><figcaption>Je kennis, verbonden.</figcaption></figure><div><h2>Een tweede brein.<br /><em>Helemaal van jou.</em></h2><p>Je projecten, bronnen en manier van werken op één plek. Zodat AI niet telkens opnieuw hoeft te beginnen, maar voortbouwt op wat jij al weet.</p><ul className="knowledge-checks">{["Je eigen kennis, doorzoekbaar en bruikbaar.","Skills die jouw manier van werken vastleggen.","Een systeem dat je begrijpt en zelf kunt uitbreiden."].map(item=><li key={item}><Check size={17} aria-hidden="true" />{item}</li>)}</ul><Link href="/contact" className="text-link">Bespreek je eigen systeem <ArrowUpRight size={17} aria-hidden="true" /></Link></div></section>
-    <section className="skills-section-new container" id="skills"><div><h2>Goed werk begint<br />met goede instructies.</h2><p>Een skill legt vast hoe je AI een taak aanpakt. Open een voorbeeld.</p></div><div className="studio-accordions">{skills.map(skill=><details key={skill.title}><summary>{skill.title}<Plus aria-hidden="true" size={20} /></summary><p>{skill.text}</p><p className="skill-route">{skill.sample}</p></details>)}</div></section>
-    <section className="studio-calculator" id="rekenen"><div className="container"><AiCalculator /></div></section>
-    <section className="studio-section container studio-faq" id="faq"><div><h2>Goede vragen.<br /><em>Eerlijke antwoorden.</em></h2><p>Je hoeft nog niet precies te weten wat je nodig hebt. Daar begint ons werk.</p><Link className="text-link" href="/contact">Stel je vraag <ArrowUpRight aria-hidden="true" size={17} /></Link></div><div className="studio-accordions">{homepageFaqs.map(faq=><details key={faq.question}><summary>{faq.question}<Plus aria-hidden="true" size={20} /></summary><p>{faq.answer}</p></details>)}</div></section>
+    <figure className="process-photo container"><Image src="/assets/process-mapping.webp" alt="Handen brengen een werkproces in kaart met notitiekaarten en verbindingen op een bureau" width={1774} height={887} sizes="(max-width: 767px) 100vw, 90vw" /><figcaption><span>Van losse handelingen naar een overzichtelijk proces.</span><span>Procesanalyse · illustratief beeld</span></figcaption></figure>
+    <section className="container method-grid" aria-label="Onze werkwijze">
+      {[{name:"Onderzoeken",label:"01 / Audit",text:"We vinden het terugkerende werk, bekijken je tools en kiezen waar AI praktisch iets toevoegt."},{name:"Bouwen",label:"02 / Build",text:"Een werkende oplossing in je bestaande werkomgeving. Getest met echte input en duidelijke controlemomenten."},{name:"Overdragen",label:"03 / Enable",text:"Je leert hoe het systeem werkt, waar de grenzen liggen en hoe je er zelf mee verder kunt."}].map(step=><article key={step.label}><span>{step.label}</span><h3>{step.name}</h3><p>{step.text}</p></article>)}
+    </section>
+    <section className="knowledge-system"><div className="container knowledge-layout"><div><span className="section-number">02 / Je eigen kennis</span><h2>AI werkt beter<br />als het je<br />bedrijf begrijpt.</h2><p>Een eigen kennisomgeving brengt je bronnen, projecten en werkwijze samen. Zo hoef je niet bij elke vraag opnieuw context te geven.</p><Link href="/diensten#kennis" className="text-link">Een second brain voor je bedrijf <ArrowUpRight size={18} aria-hidden="true" /></Link></div><div className="knowledge-register"><div className="register-heading"><span>Je bedrijfskennis</span><span>Wat je vastlegt</span></div>{[{title:"Context",text:"Wat je doet, voor wie je werkt en wat je belangrijk vindt.",example:"Bedrijf · Klanten · Uitgangspunten"},{title:"Bronnen",text:"De documenten en afspraken waarop AI mag terugvallen.",example:"Projecten · Documenten · Besluiten"},{title:"Werkwijze",text:"Instructies die vastleggen hoe een taak uitgevoerd wordt.",example:"Onderzoeken · Schrijven · Controleren"}].map((item,i)=><article key={item.title}><span>0{i+1}</span><div><h3>{item.title}</h3><p>{item.text}</p><small>{item.example}</small></div></article>)}<p className="register-note">Jouw bronnen. Jouw instructies. Jij houdt de regie.</p></div></div></section>
+    <section className="studio-calculator" id="rekenen"><div className="container"><span className="section-number">03 / De rekensom</span><AiCalculator /></div></section>
+    <section className="container studio-faq"><div><span className="section-number">Voor je begint</span><h2>Wat wil je weten?</h2><Link className="text-link" href="/contact">Stel je vraag <ArrowUpRight aria-hidden="true" size={17} /></Link></div><div className="studio-accordions">{homepageFaqs.map(faq=><details key={faq.question}><summary>{faq.question}<Plus aria-hidden="true" size={20} /></summary><p>{faq.answer}</p></details>)}</div></section>
     <StudioCta />
   </main>;
 }
