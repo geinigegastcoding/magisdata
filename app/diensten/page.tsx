@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
+import { metadataForPath } from "@/content/seo";
 import Link from "next/link";
 import { ArrowUpRight, BrainCircuit, ScanLine, Workflow } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
-export const metadata: Metadata = {
-  title: "AI-systemen bouwen voor e-mail, leads en kenniswerk",
-  description: "Van AI-audit tot werkend systeem: MagisData bouwt praktische AI-systemen rond de processen van je bedrijf.",
-  alternates: { canonical: "https://magisdata.nl/diensten" }
-};
+export const metadata: Metadata = metadataForPath("/diensten");
 
 const routes = [
   { icon: ScanLine, label: "01 / Audit", title: "Ontdek waar tijd weglekt", text: "We brengen terugkerend werk, tools en beslismomenten in kaart. Je krijgt een korte routekaart met wat eerst logisch is." },

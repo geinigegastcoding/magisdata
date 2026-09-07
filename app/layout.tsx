@@ -1,13 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Manrope, IBM_Plex_Mono } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { ConsentManager } from "@/components/consent-manager";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { graphSchema, localBusinessSchema, organizationSchema, personSchema, websiteSchema } from "@/schemas/seo";
 import "./globals.css";
+import "./redesign.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://magisdata.nl"),
@@ -29,54 +28,32 @@ export const metadata: Metadata = {
     siteName: "MagisData",
     title: "MagisData | AI-systemen voor ondernemers",
     description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
-    images: [{ url: "/assets/magisdata-hero.png", width: 2400, height: 1350, alt: "Blauw-wit beeld van MagisData" }]
+    images: [{ url: "/assets/redesign/social-cover.png", width: 1200, height: 630, alt: "MagisData — AI aan het werk. Jij aan het roer." }]
   },
   twitter: {
     card: "summary_large_image",
     title: "MagisData | AI-systemen voor ondernemers",
     description: "Onderzoek, bouw en gebruik AI-systemen die handwerk uit je bedrijf halen.",
-    images: ["/assets/magisdata-hero.png"]
-  },
-  robots: {
-    index: true,
-    follow: true
+    images: ["/assets/redesign/social-cover.png"]
   }
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F3F5FF"
+  themeColor: "#f5f2ec"
 };
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-  preload: false
-});
+const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-manrope" });
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], display: "swap", variable: "--font-mono", preload: false });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="nl" data-scroll-behavior="smooth" className={inter.variable}>
+    <html lang="nl" data-scroll-behavior="smooth" className={`${manrope.variable} ${mono.variable}`}>
       <body>
-        <Script id="consent-default" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('consent', 'default', {
-              analytics_storage: 'denied',
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied'
-            });
-          `}
-        </Script>
-        <GoogleAnalytics gaId="G-H6G8TMGDWY" />
         <JsonLd data={graphSchema([organizationSchema(), personSchema(), localBusinessSchema(), websiteSchema()])} />
         <SiteHeader />
-        {children}
+        <div id="page-content" tabIndex={-1}>{children}</div>
         <SiteFooter />
         <ConsentManager />
       </body>

@@ -16,16 +16,16 @@ const config: Config = {
     },
     extend: {
       colors: {
-        navy: "#171C2B",
-        ink: "#20263A",
-        cloud: "#FBFCFF",
-        cream: "#FBFCFF",
-        peach: "#F2F5FF",
-        orange: "#4F58FF",
-        "orange-dark": "#3D45D7",
-        "orange-soft": "#E9EDFF",
-        blue: "#4F58FF",
-        "blue-soft": "#E9EDFF",
+        navy: "#22241f",
+        ink: "#22241f",
+        cloud: "#f5f2ec",
+        cream: "#f5f2ec",
+        peach: "#eeeae2",
+        orange: "#c53d1a",
+        "orange-dark": "#a92f12",
+        "orange-soft": "#f0e2d6",
+        blue: "#c53d1a",
+        "blue-soft": "#f0e2d6",
         green: "#2B8A78",
         "green-soft": "#E7F5F1",
         yellow: "#B17C22",
@@ -34,11 +34,11 @@ const config: Config = {
         "pink-soft": "#FBEAF1",
         purple: "#726BDF",
         "purple-soft": "#EFEEFF",
-        mist: "#F2F5FF",
-        muted: "#5F6880",
-        soft: "#8B93A7",
-        line: "#DFE4F0",
-        "line-strong": "#CBD3E4"
+        mist: "#eeeae2",
+        muted: "#66685f",
+        soft: "#74766d",
+        line: "#d9d8ce",
+        "line-strong": "#c4c5b9"
       },
       borderRadius: { "4xl": "2rem", "5xl": "2.5rem" },
       boxShadow: {
@@ -46,7 +46,7 @@ const config: Config = {
         card: "0 12px 32px rgba(65, 75, 125, 0.08)",
         float: "0 12px 30px rgba(65, 75, 125, 0.1)"
       },
-      fontFamily: { sans: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui", "sans-serif"] }
+      fontFamily: { sans: ["var(--font-manrope)", "Manrope", "ui-sans-serif", "system-ui", "sans-serif"] }
     }
   },
   plugins: []

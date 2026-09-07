@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
+import { metadataForPath } from "@/content/seo";
 import Link from "next/link";
 import { ArrowUpRight, Check, Compass, Network, SquareStack } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbSchema, graphSchema, webPageSchema } from "@/schemas/seo";
 
-export const metadata: Metadata = {
-  title: "Over MagisData | AI begrijpelijk en werkbaar maken",
-  description: "MagisData helpt ondernemers AI praktisch maken: eerst begrijpen, dan bouwen, daarna zelf verder kunnen.",
-  alternates: { canonical: "https://magisdata.nl/over-ons" }
-};
+export const metadata: Metadata = metadataForPath("/over-ons");
 
 const principles = [
   { icon: Compass, title: "Eerst begrijpen", text: "We starten bij je bedrijf, je manier van werken en het werk dat terugkomt. Niet bij een trend of tool." },

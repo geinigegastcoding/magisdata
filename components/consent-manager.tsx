@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 
 export function ConsentManager() {
   const pathname = usePathname();
-  const [choice, setChoice] = useState<ConsentState>("unset");
+  const [choice, setChoice] = useState<ConsentState | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
@@ -65,23 +65,23 @@ export function ConsentManager() {
     };
   }, [pathname]);
 
-  if (choice !== "unset" && !settingsOpen) {
+  if (choice === null || (choice !== "unset" && !settingsOpen)) {
     return null;
   }
 
   return (
-    <div aria-label="Cookievoorkeuren" aria-modal="true" className="fixed inset-x-4 bottom-4 z-[80] mx-auto max-w-3xl rounded-2xl border border-line bg-white p-5 shadow-card md:p-6" role="dialog">
-      <h2 className="text-lg font-extrabold text-navy">Cookies en analytics</h2>
-      <p className="mt-2 text-sm leading-6 text-muted">
-        We laden Google Analytics alleen na jouw toestemming. Formulieren werken ook zonder analytics. Lees meer in het{" "}
-        <Link className="focus-ring rounded font-bold text-orange hover:text-orange-dark" href="/privacybeleid">
+    <section aria-label="Cookievoorkeuren" className="v2-cookie-banner">
+      <h2>Een kleine vraag over cookies.</h2>
+      <p>
+        Met jouw toestemming meten we websitebezoek via Google Analytics. De website en formulieren werken ook zonder. Meer in het{" "}
+        <Link href="/privacybeleid">
           privacybeleid
         </Link>
         .
       </p>
-      <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+      <div className="v2-cookie-actions">
         <button
-          className="focus-ring rounded-xl bg-orange px-5 py-3 text-sm font-bold text-white hover:bg-orange-dark"
+          className="v2-cookie-button"
           onClick={() => {
             setConsent("analytics_granted");
             setChoice("analytics_granted");
@@ -92,7 +92,7 @@ export function ConsentManager() {
           Accepteren
         </button>
         <button
-          className="focus-ring rounded-xl border border-line bg-white px-5 py-3 text-sm font-bold text-navy hover:border-orange-soft hover:text-orange"
+          className="v2-cookie-button"
           onClick={() => {
             setConsent("denied");
             setChoice("denied");
@@ -103,6 +103,6 @@ export function ConsentManager() {
           Weigeren
         </button>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,4 +1,4 @@
-import { founderName, lastModified, siteEmail, siteUrl } from "@/schemas/seo";
+import { founderName, siteEmail, siteUrl } from "@/schemas/seo";
 
 export const dynamic = "force-static";
 
@@ -18,7 +18,7 @@ export function GET() {
       "- Kern: AI-audits, AI-systemen, second brains, skills, training en enablement",
       `- Contact: ${siteEmail}`,
       `- Website: ${siteUrl}`,
-      `- Laatst bijgewerkt: ${lastModified}`,
+      "- Laatst bijgewerkt: 2026-09-07",
       "",
       "## What MagisData does",
       "",
@@ -33,8 +33,11 @@ export function GET() {
       "",
       "## Main pages",
       "",
+      `- AI en automatisering: ${siteUrl}/`,
+      `- Indicatieve tijdwaarde berekenen: ${siteUrl}/#rekenen`,
       `- Systemen: ${siteUrl}/diensten`,
       `- Werkwijze: ${siteUrl}/over-ons`,
+      `- Kennis: ${siteUrl}/inzichten`,
       `- Contact: ${siteUrl}/contact`,
       `- Privacybeleid: ${siteUrl}/privacybeleid`,
       `- Algemene voorwaarden: ${siteUrl}/algemene-voorwaarden`,

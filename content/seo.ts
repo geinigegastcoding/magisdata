@@ -22,21 +22,21 @@ export type SeoRoute = {
 const coreSeoRoutes: SeoRoute[] = [
   {
     path: "/",
-    title: "Websites en SEO voor lokale dienstverleners | MagisData",
-    description: "MagisData bouwt snelle websites en SEO-structuur voor lokale dienstverleners die beter gevonden willen worden en meer aanvragen willen krijgen.",
-    keywords: ["website laten maken", "SEO bureau", "lokale SEO", "dienstverleners", "AI vindbaarheid", "AEO optimalisatie", "GEO optimalisatie"],
+    title: "AI & automatisering voor je bedrijf | MagisData",
+    description: "MagisData onderzoekt waar AI je tijd teruggeeft en bouwt AI-systemen voor e-mail, leads, rapportages, kennis en terugkerend werk.",
+    keywords: ["AI automatisering", "AI-systemen", "AI voor bedrijven", "procesautomatisering", "AI-audit"],
     priority: 1,
     changeFrequency: "weekly",
-    lastModified
+    lastModified: "2026-09-07"
   },
   {
     path: "/diensten",
-    title: "Diensten voor websites, SEO, GEO, AEO | MagisData",
-    description: "Bekijk hoe MagisData webontwikkeling, SEO, GEO, AEO en strategisch advies verbindt tot een helder groeisysteem.",
-    keywords: ["website laten maken", "SEO diensten", "GEO optimalisatie", "AEO optimalisatie", "strategisch online advies"],
+    title: "AI-systemen bouwen voor e-mail, leads en kenniswerk | MagisData",
+    description: "Van AI-audit tot werkend systeem: MagisData bouwt praktische AI-systemen rond de processen van je bedrijf.",
+    keywords: ["AI-systemen bouwen", "AI-audit", "workflow automatisering", "second brain", "AI-training"],
     priority: 0.9,
     changeFrequency: "monthly",
-    lastModified
+    lastModified: "2026-09-07"
   },
   {
     path: "/webontwikkeling",
@@ -85,21 +85,21 @@ const coreSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/over-ons",
-    title: "Over MagisData | Strategische websites en vindbaarheid",
-    description: "Leer hoe MagisData websites behandelt als digitale infrastructuur voor autoriteit, SEO, GEO, AEO en conversie.",
-    keywords: ["MagisData", "webbureau", "strategisch webbureau", "SEO bureau Nederland", "GEO bureau"],
+    title: "Over MagisData | AI begrijpelijk en werkbaar maken",
+    description: "MagisData helpt ondernemers AI praktisch maken: eerst begrijpen, dan bouwen, daarna zelf verder kunnen.",
+    keywords: ["MagisData", "Daniel Magis", "AI voor ondernemers", "AI studio", "AI automatisering"],
     priority: 0.65,
     changeFrequency: "monthly",
-    lastModified
+    lastModified: "2026-09-07"
   },
   {
     path: "/contact",
-    title: "Contact met MagisData | Vraag gratis websiteplan aan",
-    description: "Neem contact op met MagisData voor een gratis eerste richting over je website, SEO, GEO, AEO, AI-vindbaarheid of online groei.",
-    keywords: ["contact MagisData", "website plan", "gratis website advies", "website laten maken", "website scan"],
+    title: "Plan een AI-scan voor je bedrijf | MagisData",
+    description: "Vertel waar je bedrijf tijd laat liggen. MagisData geeft je een eerste richting voor audit, bouw of enablement.",
+    keywords: ["contact MagisData", "AI-scan", "AI-audit", "AI advies", "automatisering bespreken"],
     priority: 0.8,
     changeFrequency: "monthly",
-    lastModified
+    lastModified: "2026-09-07"
   },
   {
     path: "/roi-calculator",

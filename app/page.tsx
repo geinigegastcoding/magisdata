@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/json-ld";
 import { faqSchema, graphSchema, siteUrl, webPageSchema } from "@/schemas/seo";
 
 export const metadata: Metadata = {
-  title: "AI-systemen die handwerk uit je bedrijf halen | MagisData",
+  title: { absolute: "AI & automatisering voor je bedrijf | MagisData" },
   description:
     "MagisData onderzoekt waar AI je tijd teruggeeft en bouwt AI-systemen voor e-mail, leads, rapportages, kennis en terugkerend werk.",
   alternates: { canonical: "https://magisdata.nl/" },
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     description:
       "Van AI-audit tot werkend systeem. MagisData helpt ondernemers tijd terugwinnen met duidelijke, praktische AI-systemen.",
     url: "https://magisdata.nl/",
-    images: [{ url: "/assets/magisdata-hero.png", width: 2400, height: 1350, alt: "Blauw-wit AI-beeld van MagisData" }]
+    images: [{ url: "/assets/redesign/social-cover.png", width: 1200, height: 630, alt: "MagisData — AI aan het werk. Jij aan het roer." }]
   },
   twitter: {
     card: "summary_large_image",
     title: "AI-systemen die handwerk uit je bedrijf halen | MagisData",
     description: "Onderzoek, bouw en gebruik AI-systemen die je werk lichter maken.",
-    images: ["/assets/magisdata-hero.png"]
+    images: ["/assets/redesign/social-cover.png"]
   }
 };
 
@@ -29,7 +29,7 @@ export default function HomePage() {
       path: "/",
       name: "MagisData: AI-systemen voor ondernemers",
       description: metadata.description ?? "",
-      primaryImage: `${siteUrl}/assets/magisdata-hero.png`
+      primaryImage: `${siteUrl}/assets/redesign/social-cover.png`
     }),
     faqSchema(homepageFaqs, "/"),
     {
