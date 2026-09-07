@@ -22,9 +22,9 @@ export type SeoRoute = {
 const coreSeoRoutes: SeoRoute[] = [
   {
     path: "/",
-    title: "Websites en SEO voor lokale dienstverleners | MagisData",
-    description: "MagisData bouwt snelle websites en SEO-structuur voor lokale dienstverleners die beter gevonden willen worden en meer aanvragen willen krijgen.",
-    keywords: ["website laten maken", "SEO bureau", "lokale SEO", "dienstverleners", "AI vindbaarheid", "AEO optimalisatie", "GEO optimalisatie"],
+    title: "MagisData | Praktische AI en automatisering voor bedrijven",
+    description: "MagisData onderzoekt waar AI je tijd teruggeeft en bouwt praktische AI-systemen voor e-mail, leads, rapportages en kenniswerk. Jij houdt de regie.",
+    keywords: ["AI automatisering", "AI voor bedrijven", "AI audit", "AI systemen", "workflow automatisering", "AI training"],
     priority: 1,
     changeFrequency: "weekly",
     lastModified

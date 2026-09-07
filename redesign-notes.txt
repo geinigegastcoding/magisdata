@@ -1,0 +1,59 @@
+MagisData main site v2 — development handoff
+
+Branch: codex/main-site-v2
+Base: main at b71ce26
+Scope: New homepage, shared navigation/footer/identity, contact experience.
+Production: No push, merge, domain change, or deployment performed.
+
+Creative direction
+Warm ivory, vermilion, charcoal and a restrained sage calculation surface.
+Instrument Sans and Instrument Serif, delivered locally through Next.js fonts.
+A continuous ribbon represents recurring tasks becoming a connected workflow.
+The supporting artwork connects clearly labelled project, agreement and knowledge folders.
+Both images were generated for this site; final WebP assets total 95,726 bytes.
+The founder photograph is the existing project asset. No client proof or prices were invented.
+
+Structure
+Hero and clear AI-scan CTA; technology context; three interactive workflow examples;
+audit/build/handover process; connected knowledge; working value calculator;
+founder and operating principles; FAQ; closing CTA and full footer.
+
+Preserved and verified
+Next.js static export and existing public routes.
+Postbuild normalizes Windows-generated Next 16 segment filenames so client prefetches resolve.
+Formspree endpoint, field names, required fields, loading/error/success states.
+Consent storage, Google Analytics measurement ID and consent-gated events.
+Analytics now loads only after consent and only on the production hostname.
+Calculator formula and inputs, with clearly stated assumptions and no promised savings.
+Canonical URLs, robots, sitemap, AI crawler access, JSON-LD and Open Graph metadata.
+
+Verification
+npm run build: passes, including TypeScript and static export.
+node --test tests/ai-savings.test.mjs tests/analytics-consent.test.mjs: 4 passed.
+Browser checks: 1440, 1280, 768, 390 and 360 px; no page errors, missing images or horizontal document overflow.
+Workflow tabs tested with mouse and keyboard, FAQs, calculator zero/example/maximum,
+mobile menu, Escape, anchors, cookie persistence/reopening, and saved consent on reload.
+Contact validation, error recovery and success tested using intercepted Formspree responses.
+No test message was submitted to Formspree. No local visit loads production analytics.
+SEO audit: 31 HTML exports; titles <=70 characters, at least 3 internal destinations each,
+no broken internal destinations or email-protection links, valid JSON-LD.
+Generated hero animation intentionally clips its decorative image inside the hero.
+
+Existing test debt
+The same three release1 checks fail on the untouched main checkout:
+- A historical exact image allowlist excludes assets already present on main.
+- A historical landing-page check expects removed routes such as website-voor-loodgieters.
+- A pricing check expects the removed prijzen page and superseded packages.
+These were not changed to hide the failures or reintroduce obsolete business offers.
+
+Before production
+Review and approve this visual direction. Reconcile the three historical tests with the
+current route/asset policy. Perform a real Formspree delivery and GA4 consent smoke check
+as part of an explicitly authorized release; the local checks deliberately use mocks.
+
+Preview
+Development: http://127.0.0.1:4387/
+Built static preview: http://127.0.0.1:4388/
+Screenshots and reports: output/playwright/ (local artifacts, ignored by Git).
+Browser verification: open the local site with playwright-cli, then run
+npx --yes --package @playwright/cli playwright-cli -s=magis-main-v2 run-code --filename scripts/verify-redesign.playwright.js --raw

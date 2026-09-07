@@ -9,11 +9,11 @@ export function Logo({ className }: LogoProps) {
   return (
     <Link
       aria-label="MagisData home"
-      className={cn("inline-flex items-center gap-3", className)}
+      className={cn("md-logo", className)}
       href="/"
     >
-      <span aria-hidden="true" className="grid h-9 w-9 place-items-center bg-blue text-sm font-black text-white">M</span>
-      <span className="text-[1.05rem] font-semibold tracking-[-0.04em] text-navy">MagisData</span>
+      <svg aria-hidden="true" viewBox="0 0 36 36" fill="none"><path d="M3 28V8h6l9 13L27 8h6v20h-6V18l-9 13L9 18v10H3Z" fill="currentColor" /></svg>
+      <span>MagisData</span>
     </Link>
   );
 }

@@ -1,54 +1,31 @@
+"use client";
+
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 
 const navigation = [
-  { label: "Systemen", href: "/diensten" },
-  { label: "Werkwijze", href: "/over-ons" },
-  { label: "Kennis", href: "/inzichten" },
-  { label: "Contact", href: "/contact" }
+  { label: "Wat we doen", href: "/#systemen" },
+  { label: "Onze aanpak", href: "/#werkwijze" },
+  { label: "Over MagisData", href: "/over-ons" },
+  { label: "Kennis", href: "/inzichten" }
 ];
 
 export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  useEffect(() => { setOpen(false); }, [pathname]);
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-white/90 backdrop-blur-xl">
-      <nav aria-label="Primaire navigatie" className="container flex min-h-[4.75rem] items-center justify-between gap-6">
+    <header className="md-header" onKeyDown={(event) => { if (event.key === "Escape") { setOpen(false); document.getElementById("md-menu-toggle")?.focus(); } }}>
+      <nav className="md-wrap md-nav" aria-label="Primaire navigatie">
         <Logo />
-
-        <div className="hidden items-center gap-8 lg:flex">
-          {navigation.map((item) => (
-            <Link className="focus-ring rounded-sm px-1 py-2 text-sm font-semibold text-muted transition hover:text-blue" href={item.href} key={item.href}>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-
-        <div className="hidden items-center gap-4 lg:flex">
-          <span className="hidden text-xs text-soft xl:inline">AI begint met een goed gesprek</span>
-          <Link className="focus-ring inline-flex items-center gap-2 bg-blue px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-dark" href="/contact">
-            Plan een AI-scan
-          </Link>
-        </div>
-
-        <details className="relative lg:hidden">
-          <summary className="focus-ring grid h-11 w-11 cursor-pointer list-none place-items-center border border-line bg-white text-navy [&::-webkit-details-marker]:hidden">
-            <span className="sr-only">Navigatie openen</span>
-            <Menu aria-hidden="true" className="h-5 w-5" />
-          </summary>
-          <div className="absolute right-0 top-[calc(100%+1rem)] w-[min(20rem,calc(100vw-2rem))] border border-line bg-white p-3 shadow-card">
-            <div className="grid gap-1">
-              {navigation.map((item) => (
-                <Link className="focus-ring px-4 py-3 text-sm font-semibold text-muted hover:bg-blue-soft hover:text-blue" href={item.href} key={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-              <Link className="focus-ring mt-2 bg-blue px-4 py-3 text-center text-sm font-bold text-white" href="/contact">
-                Plan een AI-scan
-              </Link>
-            </div>
-          </div>
-        </details>
+        <div className="md-nav-links">{navigation.map((item) => <Link key={item.label} href={item.href}>{item.label}</Link>)}</div>
+        <Link className="md-nav-cta" href="/contact" data-track-cta="redesign-header">Plan een AI-scan <ArrowUpRight size={18} aria-hidden="true" /></Link>
+        <button className="md-menu-toggle" id="md-menu-toggle" type="button" aria-expanded={open} aria-controls="md-mobile-menu" aria-label={open ? "Navigatie sluiten" : "Navigatie openen"} onClick={() => setOpen(!open)}>{open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}</button>
       </nav>
+      {open && <nav id="md-mobile-menu" className="md-mobile-menu" aria-label="Mobiele navigatie">{navigation.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}<ArrowUpRight size={20} aria-hidden="true" /></Link>)}<Link href="/contact" onClick={() => setOpen(false)}>Plan een AI-scan<ArrowUpRight size={20} aria-hidden="true" /></Link></nav>}
     </header>
   );
 }

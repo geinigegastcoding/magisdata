@@ -74,6 +74,22 @@ export function loadAnalytics(consent: ConsentState = readConsent()) {
     ad_user_data: "denied",
     ad_personalization: "denied"
   });
+
+  // Keep local and test previews out of the production analytics property.
+  if (!["magisdata.nl", "www.magisdata.nl"].includes(window.location.hostname)) return;
+
+  if (!window.magisAnalyticsLoaded) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+    window.magisAnalyticsLoaded = true;
+    window.gtag?.("js", new Date());
+  }
+  if (!window.magisAnalyticsConfigured) {
+    window.gtag?.("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+    window.magisAnalyticsConfigured = true;
+  }
 }
 
 export function setConsent(state: Exclude<ConsentState, "unset">) {

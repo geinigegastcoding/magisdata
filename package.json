@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/fix-static-segments.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "convert:assets": "node scripts/convert-assets.mjs"

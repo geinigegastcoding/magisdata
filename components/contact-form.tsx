@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { TrustProofRow } from "@/components/trust-proof-row";
 import { trackEvent } from "@/lib/analytics-consent";
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
@@ -64,7 +63,7 @@ export function ContactForm() {
       </label>
       <label className="grid gap-2 text-sm font-bold text-navy" htmlFor="contact-subject">
         Waar wil je vooral beweging in?
-        <select className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-subject" name="onderwerp">
+        <select className="focus-ring rounded-xl border border-line bg-cream/50 px-4 py-3 text-sm font-medium text-ink" id="contact-subject" name="onderwerp" defaultValue="AI en automatisering">
           <option>Nieuwe website of herbouw</option>
           <option>Website onderhoud</option>
           <option>SEO, GEO of AEO vindbaarheid</option>
@@ -83,10 +82,10 @@ export function ContactForm() {
         </p>
       ) : null}
       <button className="focus-ring inline-flex items-center justify-center rounded-xl bg-orange px-6 py-3.5 text-sm font-extrabold text-white transition hover:bg-orange-dark disabled:cursor-wait disabled:opacity-70" data-track-cta="contact-form" disabled={state === "submitting"} type="submit">
-        {state === "submitting" ? "Bezig met versturen..." : "Vraag websiteplan aan"}
+        {state === "submitting" ? "Bezig met versturen..." : "Vraag een AI-gesprek aan"}
         {state !== "submitting" ? <ArrowRight className="ml-2 h-4 w-4" /> : null}
       </button>
-      <TrustProofRow compact />
+      <p className="text-sm leading-6 text-muted">Je bericht gaat rechtstreeks naar Daniël. Een eerste gesprek is zonder verplichting.</p>
     </form>
   );
 }
