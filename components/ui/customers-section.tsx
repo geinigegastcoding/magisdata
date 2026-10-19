@@ -2,7 +2,7 @@ import React from "react"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { AnimatedGroup } from "@/components/ui/animated-group"
-import type { Variants } from "framer-motion"
+import type { Variants } from "motion/react"
 
 const transitionVariants: { item: Variants } = {
   item: {
